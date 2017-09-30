@@ -256,7 +256,7 @@ Suggested reading: 俞士汶等 (2003).《现代汉语语法信息词典详解�
 ###How NLP systems work?
 <br><br>
 
-<p align="center"><img src="images/NLP.jpg" width=600></p>
+<p align="center"><img src="images/NLP.JPG" width=600></p>
 ---
 ##Models and algorithms
 + Model
