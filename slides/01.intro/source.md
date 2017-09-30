@@ -30,13 +30,12 @@ class: center, middle
 &nbsp;
 &nbsp;
 
-class: middle
+class: center, middle
+&nbsp;
+&nbsp;
+
 https://www.aclweb.org
 
-&nbsp;
-&nbsp;
-&nbsp;
-&nbsp;
 <img src="images/acl_logo.png" width=500>
 ]
 
