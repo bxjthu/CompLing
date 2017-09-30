@@ -17,10 +17,18 @@ class: center, middle
 # That the powerful play goes on, 
 # and you may contribute a verse.
 
-<img src="images/image_ainewworld.gif" width=300>
+<img src="images/ainewworld.gif" width=300>
+
+---
+
+## What is __Computational Linguistics__?
+.left-column[
+<img src="images/acl_nav.png" width=200>
+
+https://www.aclweb.org
+
 ---
 ## What is __Computational Linguistics__?
-
 ### <font color="orangered">1. 第一部分</font> 
 
 ### 2. 第二部分
