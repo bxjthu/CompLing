@@ -21,13 +21,16 @@ class: center, middle
 
 ---
 
-## What is __Computational Linguistics__?
+## What is **Computational Linguistics**?
 .left-column[
 <img src="images/acl_nav.png" width=200>]
-
+.right-column[
 https://www.aclweb.org
 
+<img src="images/acl_nav.png" width=400>]
+
 ---
+
 ## What is __Computational Linguistics__?
 ### <font color="orangered">1. 第一部分</font> 
 
