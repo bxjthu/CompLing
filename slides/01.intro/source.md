@@ -5,7 +5,7 @@ class: center, middle
 
 ** Tsinghua University **
 
-** https://github.com/bxjthu **
+** https://github.com/bxjthu/CompLing **
 ---
 class: center, middle
 ##That the powerful play goes on, 
