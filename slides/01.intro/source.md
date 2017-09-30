@@ -31,8 +31,11 @@ class: center, middle
 &nbsp;
 
 https://www.aclweb.org
-
-<img src="images/acl_logo.png" width=600>
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+<img src="images/acl_logo.png" width=500>
 ]
 
 ---
