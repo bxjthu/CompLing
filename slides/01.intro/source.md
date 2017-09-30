@@ -311,7 +311,7 @@ Suggested reading: 俞士汶等 (2003).《现代汉语语法信息词典详解�
 .left-column-2[
 + Algorithm
 
-  + An algorithm is a series of mathematical steps, especially in a computer program, which will give you the answer to a particular kind of problem or question.
+  + An algorithm is a series of mathematical <font color="red">steps</font>, especially in a computer program, which will give you the answer to a particular kind of problem or question.
 
 + Important algorithms
   
