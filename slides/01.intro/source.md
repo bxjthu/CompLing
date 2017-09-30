@@ -26,13 +26,11 @@ class: center, middle
 <img src="images/acl_nav.png" width=200>
 ]
 
-
-
 .right-column-1[
+&nbsp;
+&nbsp;
+
 https://www.aclweb.org
-
-
-
 
 <img src="images/acl_logo.png" width=600>
 ]
