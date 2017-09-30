@@ -1,6 +1,6 @@
 class: center, middle
 # Computational Linguistics<br>
-
+##1. Introduction
 ** Xiaojing Bai **
 
 ** Tsinghua University **
@@ -81,18 +81,17 @@ speech recognition systems, text-to-speech synthesizers, automated voice respons
 
 engines, text editors, language instruction materials, to name just a few.<br><br><br>
 
-&nbsp;&nbsp;&nbsp;&nbsp;_“Linguistics has <font color="red">a hundred-year history</font> as a scientific discipline, and computational linguistics has <font color="red">a _
+> _“Linguistics has <font color="red">a hundred-year history</font> as a scientific discipline, and computational linguistics has_
 
-&nbsp;&nbsp;&nbsp;&nbsp;_ fifty-year history</font> as a part of computer science. But it is only in <font color="red">the last decade or so</font> that language_
+> _ <font color="red">a fifty-year history</font> as a part of computer science. But it is only in <font color="red">the last decade or so</font> that language_
 
-&nbsp;&nbsp;&nbsp;&nbsp;_ understanding has emerged as an industry reaching millions of people, with information retrieval and_
+> _ understanding has emerged as an industry reaching millions of people, with information retrieval and_
 
-&nbsp;&nbsp;&nbsp;&nbsp;_machine translation available on the Internet, and speech recognition becoming popular on desktop_
+> _machine translation available on the Internet, and speech recognition becoming popular on desktop_
 
-&nbsp;&nbsp;&nbsp;&nbsp;_computers."_
+> _computers."_
 
-<p align="right"> Peter Norvig and Stuart Russell. Foreword. J+M 2nd</p>
-
+.right[Peter Norvig and Stuart Russell. _Foreword_. J+M 2nd]
 ---
 
 ## Fire the _linguists_ ?
@@ -343,16 +342,18 @@ intellectual fields. But which are the best ones to start with? Even this is a
 difficult decision. Many people think that a very abstract activity, like the 
 playing of chess, would be best. It can also be maintained that it is best to 
 provide the machine with the best sense organs that money can buy, and 
-then teach it to understand and speak English. This process could follow 
+then <font color="red">teach it to understand and speak English</font>. This process could follow 
 the normal teaching of a child. Things would be pointed out and named, 
 etc. Again I do not know what the right answer is, but I think both approaches 
 should be tried. 
 
-We can only see a short distance ahead, but we can see plenty there that 
-needs to be done.  <br> <br>
+**We can only see a short distance ahead, but we can see plenty there that 
+needs to be done. ** <br> <br>
 
+.right[
 Turing, A. M. (1950). Computing machinery <br>
 and intelligence. _Mind_, 59(236), 433-460.
+]
 ]
 .right-column-3[
 <div style="text-align:center"><img src="images/imitation_game.jpg" width=250></div>
@@ -373,5 +374,5 @@ class: center, middle
 Regular Expressions, Text Normalization,
  
 and Finite State Transducers
----
+
 
