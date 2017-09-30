@@ -30,7 +30,9 @@ class: center, middle
 &nbsp;
 &nbsp;
 
+class: middle
 https://www.aclweb.org
+
 &nbsp;
 &nbsp;
 &nbsp;
