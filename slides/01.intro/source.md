@@ -17,8 +17,7 @@ class: center, middle
 # That the powerful play goes on, 
 # and you may contribute a verse.
 
-![AI newworld](//images/to/image_ainewworld.gif "AI")
-
+<img src="images/image_ainewworld.gif" width=300>
 ---
 ## What is __Computational Linguistics__?
 
