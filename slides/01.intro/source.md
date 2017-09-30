@@ -23,7 +23,7 @@ class: center, middle
 
 ## What is __Computational Linguistics__?
 .left-column[
-<img src="images/acl_nav.png" width=200>
+<img src="images/acl_nav.png" width=200>]
 
 https://www.aclweb.org
 
