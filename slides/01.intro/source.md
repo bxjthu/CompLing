@@ -21,14 +21,15 @@ class: center, middle
 
 ---
 
-## What is **Computational Linguistics**?
+## What is Computational Linguistics?
 .left-column[
-<img src="images/acl_nav.png" width=200>]
+<img src="images/acl_nav.png" width=200>
+]
 
 .right-column[
 https://www.aclweb.org
-
-<img src="images/acl_logo.png" width=400>]
+<img src="images/acl_logo.png" width=400>
+]
 
 ---
 
