@@ -368,6 +368,24 @@ and intelligence. _Mind_, 59(236), 433-460.
 
 +   get started with Python and learn basic data types and sequence operations in Python.
 ---
+##Assignment
+
+** 1. Readings **
+
+1b: J+M 1; What Science Underlies Natural Language Engineering; 《现代汉语语法信息词典详解》中文信息处理的困难;  《统计自然语言处理》序言; 《统计自然语言处理》基本方法
+
+** 2. Question **
+
+With an electronic application in your daily life, which has the ability to process human language, analyze what  it would need to know about language to perform the particular NLP task(s)? You may refer to the analysis in J+M_1.1 as an example.
+
+** 3. Read and practice **
+
+3.1 http://www.nltk.org/book/ch01.html
+
+3.2 Try to solve these problems using Python: a) create a list containing three names of you friends, and assign it to a variable called MyFriend; b) make items in MyFriend ordered alphabetically; c) reverse MyFriend.
+
+You are soooo allowed to search the internet. <br>Getting help from online sources is a crucial skill for programmers. 
+---
 class: center, middle
 ##Next session
 
