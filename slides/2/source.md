@@ -121,7 +121,7 @@ hyphenated words
 
 ---
 ##Text normalization in basic text processing
-### Tokenization: What counts as a _word_ ? >>> word boundary
+### Tokenization: What counts as a _word_ ? (word boundary)
  .left-column-2[
 + Space? Punctuations?  
 
@@ -154,11 +154,11 @@ hyphenated words
 ### Tokenization: language issues
 + **Chinese**: no space between words
 
-> E.g. _计算语言学课程是三个学时 >>> 计算语言学 课程 是 三 个 学时_
+> E.g. _计算语言学课程是三个学时 to 计算语言学 课程 是 三 个 学时_
 
 + **German**: noun compounds not segmented
 
-> E.g. _Lebensversicherungsgesellschaftsangestellter >>> ‘life insurance company employee’_ 
+> E.g. _Lebensversicherungsgesellschaftsangestellter  ‘life insurance company employee’_ 
 
 + **Japanese**: multiple	alphabets	intermingled Katakana
 
@@ -172,7 +172,7 @@ hyphenated words
 
 > E.g. _USA, U.S.A., US; uh-huh, uhhuh_
 
-+ Reduce all letters to lower case >>> case folding
++ Reduce all letters to lower case (case folding)
 
 > E.g. _US, us_
 
