@@ -6,6 +6,22 @@ class: center, middle
 ** Tsinghua University **
 
 ** https://bxjthu.github.io/CompLing **
+
+---
+##Modelling _actions_ and _events_
+
+Situations described by a predefined set of actions
+
+Examples: lift, traffic lights with motion sensors, vending machines
+
+<img src="images/lift.png" height=250>
+<img src="images/traffic_sensor.png" height=250>
+<img src="images/vending_machine.png" height=250>
+
+The order of actions depends on events happening at the time
+
+Finite state automata (FSA) or finite state machine
+
 ---
 class: center, middle
 <img src="images/nltk_download.png" width=900>
@@ -464,6 +480,7 @@ baaaaa!<br>
 + RE for the sheeptalk
 
 > /baa+!/
+<br><br><br><br><br><br><br><br>
 ]
 
 .right-column-1[
@@ -476,16 +493,117 @@ baaaaa!<br>
 .right-column-3[
 > <img src="images/baa_table.png" width=120>
 ]
-
-Parameters:
-
-_Q = q<sub>0</sub> q<sub>1</sub> q<sub>2</sub> ... q<sub>N-1</sub>_: a finite set of _N_ **states** <br>
-_Σ_: a finite **input alphabet** of symbols <br>
-_q<sub>0</sub>_: the **start state**<br>
-_F_: the set of **final states**, `\(x={a \over b}\)` <br>
-_δ(q, i)_: the transition function or transition matrix between states. Given a state _q_  _Q_ and an input symbol _i_  _Σ_, _δ(q, i)_ returns a new state _q'_ _Q_. δ is thus a relation from _Q_   _Σ_ to _Q_;
 ]
+
+<font color="red">_Q = q<sub>0</sub> q<sub>1</sub> q<sub>2</sub> ... q<sub>N-1</sub>_</font>: a finite set of _N_ **states** 
+<font color="red">_Σ_</font>: a finite **input alphabet** of symbols 
+<font color="red">_q<sub>0</sub>_</font>: the **start state**
+<font color="red">_F_</font>: the set of **final states**, _F_ `\( \subseteq \)` _Q_ 
+<font color="red">_δ(q, i)_</font>: the **transition function** or transition matrix between states. <br> Given a state _q_ `\( \in \)` _Q_ and an input symbol _i_  `\( \in \)` _Σ_, _δ(q, i)_ returns a new state <br> _q'_ `\( \in \)` _Q_. Thus δ is a relation from _Q_ `\( \times \)`  _Σ_ to _Q_.
+
 ---
+##Regular expressions (RE) and finite-state automaton (FSA)
+
+.left-column-1[
++ The sheeptalk<br><br>
+baa!<br>
+baaa!<br>
+baaaa!<br>
+baaaaa!<br>
+...
+
++ RE for the sheeptalk
+
+> /baa+!/
+
+]
+
+.right-column-1[
+
++ FSA for the sheeptalk
+
+<img src="images/baa_fsa.png" width=500>
+
+<img src="images/baa_tape1.png" width=380> 
+
+<img src="images/baa_tape2.png" width=380>
+]
+
+---
+##Regular expressions (RE) and finite-state automaton (FSA)
+
+.left-column-1[
++ The sheeptalk<br><br>
+baa!<br>
+baaa!<br>
+baaaa!<br>
+baaaaa!<br>
+...
+
++ RE for the sheeptalk
+
+> /baa+!/
+
+]
+
+.right-column-1[
+
++ FSA for the sheeptalk
+
+<img src="images/baa_fsa.png" width=500>
+
+<img src="images/baa_fsa_f.png" width=500> 
+
+]
+
+---
+##Regular expressions (RE) and finite-state automaton (FSA)
+
++ Formal language
+
+ + a set of strings, each composed of symbols from a finite symbol-set called an alphabet
+ 
+ + characterized by a model _m_ (such as a particular FSA)
+ 
+---
+
+##Regular expressions (RE) and finite-state automaton (FSA)
+
++ Formal language
+
+ + a set of strings, each composed of symbols from a finite symbol-set called an alphabet
+ 
+ + characterized by a model _m_ (such as a particular FSA)
+ 
+ >E.g. _L(m) = {baa!, baaa!, baaaa!, baaaaa!, baaaaaa!, <font color="red">**. . .**</font>}_
+
+ > The sheeptalk automaton helps us **recognize** and **generate** the sheeptalk.
+ 
+ > <img src="images/baa_fsa.png" width=500>
+
+ > **Usefulness** of an automaton: a <font color="red">finite</font> set of symbols to define an <font color="red">infinite</font> set
+---
+##Regular expressions (RE) and finite-state automaton (FSA)
+
++ Formal language
+
+ + a set of strings, each composed of symbols from a finite symbol-set called an alphabet
+ 
+ + characterized by a model _m_ (such as a particular FSA)
+ 
+ >E.g. _L(m) = {baa!, baaa!, baaaa!, baaaaa!, baaaaaa!, <font color="red">**. . .**</font>}_
+
+ > The sheeptalk automaton helps us **recognize** and **generate** the sheeptalk.
+ 
+ > <img src="images/baa_fsa.png" width=500>
+
+ > **Usefulness** of an automaton: a <font color="red">finite</font> set of symbols to define an <font color="red">infinite</font> set
+ 
+ + Formal language vs. natural language
+  
+---
++ Formal language vs. natural language
+
 
 ---
 
