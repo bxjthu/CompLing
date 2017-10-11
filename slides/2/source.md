@@ -109,7 +109,7 @@ multiword expressions
 hyphenated words
 
 ---
-##Text normalization >> basic text processing
+##Text normalization in basic text processing
 
  ###What every NLP task needs	to	do!
 
@@ -120,8 +120,8 @@ hyphenated words
 3. Segment sentences in running text
 
 ---
-##Text normalization >> basic text processing
-### Tokenization: What counts as a _word_ ? >> word boundary
+##Text normalization in basic text processing
+### Tokenization: What counts as a _word_ ? >>> word boundary
  .left-column-2[
 + Space? Punctuations?  
 
@@ -150,15 +150,15 @@ hyphenated words
 <img src="images/tokenization.png" width=800>
 
 ---
-##Text normalization >> basic text processing
+##Text normalization in basic text processing
 ### Tokenization: language issues
 + **Chinese**: no space between words
 
-> E.g. _计算语言学课程是三个学时 >> 计算语言学 课程 是 三 个 学时_
+> E.g. _计算语言学课程是三个学时 >>> 计算语言学 课程 是 三 个 学时_
 
 + **German**: noun compounds not segmented
 
-> E.g. _Lebensversicherungsgesellschaftsangestellter >> ‘life insurance company employee’_ 
+> E.g. _Lebensversicherungsgesellschaftsangestellter >>> ‘life insurance company employee’_ 
 
 + **Japanese**: multiple	alphabets	intermingled Katakana
 
@@ -166,13 +166,13 @@ hyphenated words
 
 + ...
 ---
-##Text normalization >> basic text processing
+##Text normalization in basic text processing
 ### Normalization and lemmatization
 + Choose a single normalized form for words with multiple forms
 
 > E.g. _USA, U.S.A., US; uh-huh, uhhuh_
 
-+ Reduce all letters to lower case >> case folding
++ Reduce all letters to lower case >>> case folding
 
 > E.g. _US, us_
 
@@ -180,11 +180,12 @@ hyphenated words
 
 > + Simply reduce inflections or variant forms to base form
 
->> E.g. _am, are, is >> be; dinner, dinners >> dinner_
+>> E.g. _am, are, is >>> be; dinner, dinners >>> dinner_
 
 > + Or, perform complete morphological parsing 
 
->>  E.g. _fox >> fox; cats >> cat + -s_
+>>  E.g. _fox >>> fox; cats >>> cat + -s_
+
 ???
 Applications	like IR reduce all	letters to lower case since users tend to use lower case.
 
@@ -201,8 +202,9 @@ affixes: adding “additional” meanings of various kinds
 finite-state transducers to build a full morphological parser: the most general way to deal with morphological variation in word forms
 
 simpler but cruder chopping off of affixes, naive version of morphological analysis called stemming
+
 ---
-##Text normalization >> basic text processing
+##Text normalization in basic text processing
 ### Sentence segmentation
 + Punctuations: 
 
@@ -223,7 +225,7 @@ Abbreviations like Inc.	or	Dr.
 Numbers like 4.3
  
 ---
-##Text normalization >> basic text processing
+##Text normalization in basic text processing
 
  ###What every NLP task needs to do!
 .left-column-2[
@@ -252,14 +254,14 @@ Numbers like 4.3
 ...
 ```
 
-### >> Pattern matching
+### >>> Pattern matching
 ]
 
 ---
 ##Regular expressions
 One of the **unsung successes** in standardization in computer science
 
-+ The most important tool for describing text pattern >> **computational model**
++ The most important tool for describing text pattern >>> **computational model**
 
 + Useful for searching in texts, with a **pattern** to search for and a corpus of **texts** to search through
 
@@ -267,7 +269,7 @@ One of the **unsung successes** in standardization in computer science
 ##Regular expressions
 One of the **unsung successes** in standardization in computer science
 
-+ The most important tool for describing text pattern >> **computational model**
++ The most important tool for describing text pattern >>> **computational model**
 
 + Useful for searching in texts, with a **pattern** to search for and a corpus of **texts** to search through
 
@@ -293,7 +295,7 @@ be made to appear even more civilized ..."_
 .left-column-2[
 > _"...the text is <font color="red">read and inspected</font> for the presence of a **keyword**. If such a word is found, the sentence is transformed according to a **rule** associated with the keyword, if not a content-free remark or, under certain conditions, an earlier transformation is retrieved. The text so computed or retrieved is then printed out."_
 
-E.g. "You are X" >> "What makes you think I am X?"
+E.g. "You are X" >>> "What makes you think I am X?"
 
 ]
 
@@ -304,7 +306,7 @@ E.g. "You are X" >> "What makes you think I am X?"
 .left-column-2[
 > _"...the text is <font color="red">read and inspected</font> for the presence of a **keyword**. If such a word is found, the sentence is transformed according to a **rule** associated with the keyword, if not a content-free remark or, under certain conditions, an earlier transformation is retrieved. The text so computed or retrieved is then printed out."_
 
-E.g. "You are X" >> "What makes you think I am X?"
+E.g. "You are X" >>> "What makes you think I am X?"
 
 ]
 
@@ -335,7 +337,7 @@ I AM SORRY TO HEAR YOU ARE DEPRESSED
 .left-column-2[
 > _"...the text is <font color="red">read and inspected</font> for the presence of a **keyword**. If such a word is found, the sentence is transformed according to a **rule** associated with the keyword, if not a content-free remark or, under certain conditions, an earlier transformation is retrieved. The text so computed or retrieved is then printed out."_
 
-E.g. "You are X" >> "What makes you think I am X?"
+E.g. "You are X" >>> "What makes you think I am X?"
 <br><br>
 
 >_"a fun diversion"_ 
