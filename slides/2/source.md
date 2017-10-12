@@ -1,6 +1,7 @@
 class: center, middle
 # Computational Linguistics<br>
-##2. Text Normalization, Regular Expressions, <br>and Finite State Transducers
+##2. Text Normalization, Finite State Automata <br>and Regular Expressions
+
 ** Xiaojing Bai **
 
 ** Tsinghua University **
@@ -8,21 +9,17 @@ class: center, middle
 ** https://bxjthu.github.io/CompLing **
 
 ---
-##Modelling _actions_ and _events_
+## At the end of this session you will
++ know some basic tasks in text processing; <br><br>
 
-Situations described by a predefined set of actions
++ understand what is a finite state automaton and how is it related to <br>regular expressions and regular languages; <br><br>
 
-Examples: lift, traffic lights with motion sensors, vending machines
++ be able to work with basic regular expressions in pattern matching;<br><br>
 
-<img src="images/lift.png" height=250>
-<img src="images/traffic_sensor.png" height=250>
-<img src="images/vending_machine.png" height=250>
-
-The order of actions depends on events happening at the time
-
-Finite state automata (FSA) or finite state machine
++ learn the structure of programs and some basic string operations. <br><br>
 
 ---
+
 class: center, middle
 <img src="images/nltk_download.png" width=900>
 
@@ -109,9 +106,9 @@ multiword expressions
 hyphenated words
 
 ---
-##Text normalization in basic text processing
+##Text normalization
 
- ###What every NLP task needs	to	do!
+ ###What every NLP task needs to do!
 
 1. Tokenize words in running text
 
@@ -120,7 +117,7 @@ hyphenated words
 3. Segment sentences in running text
 
 ---
-##Text normalization in basic text processing
+##Text normalization
 ### Tokenization: What counts as a _word_ ? (word boundary)
  .left-column-2[
 + Space? Punctuations?  
@@ -150,7 +147,7 @@ hyphenated words
 <img src="images/tokenization.png" width=800>
 
 ---
-##Text normalization in basic text processing
+##Text normalization
 ### Tokenization: language issues
 + **Chinese**: no space between words
 
@@ -166,7 +163,7 @@ hyphenated words
 
 + ...
 ---
-##Text normalization in basic text processing
+##Text normalization
 ### Normalization and lemmatization
 + Choose a single normalized form for words with multiple forms
 
@@ -180,11 +177,11 @@ hyphenated words
 
 > + Simply reduce inflections or variant forms to base form
 
->> E.g. _am, are, is >>> be; dinner, dinners >>> dinner_
+>> E.g. _am, are, is | be; dinner, dinners | dinner_
 
 > + Or, perform complete morphological parsing 
 
->>  E.g. _fox >>> fox; cats >>> cat + -s_
+>>  E.g. _fox | fox; cats | cat + -s_
 
 ???
 Applications	like IR reduce all	letters to lower case since users tend to use lower case.
@@ -204,7 +201,7 @@ finite-state transducers to build a full morphological parser: the most general 
 simpler but cruder chopping off of affixes, naive version of morphological analysis called stemming
 
 ---
-##Text normalization in basic text processing
+##Text normalization
 ### Sentence segmentation
 + Punctuations: 
 
@@ -225,7 +222,7 @@ Abbreviations like Inc.	or	Dr.
 Numbers like 4.3
  
 ---
-##Text normalization in basic text processing
+##Text normalization
 
  ###What every NLP task needs to do!
 .left-column-2[
@@ -254,8 +251,189 @@ Numbers like 4.3
 ...
 ```
 
-### >>> Pattern matching
+### Pattern matching
 ]
+---
+##Modelling _actions_ and _events_
+
+Situations with a predefined set of actions
+
+Examples: lift, traffic lights with motion sensors, vending machines
+
+<img src="images/lift.png" height=250>
+<img src="images/traffic_sensor.png" height=250>
+<img src="images/vending_machine.png" height=250>
+<img src="images/coffee_1.png" width=250>
+
+<br><br>
+The order of actions depends on events happening at the time.
+
+---
+##Modelling _actions_ and _events_ : finite state automaton (FSA)
+
+<img src="images/coffee_2.png" height=400>
+<img src="images/coffee_3.png" height=400>
+<img src="images/coffee_4.png" height=400>
+
+---
+##A toy example of FSA: Tele-fruit-sales
+.left-column-2[
+<img src="images/fruit.png" height=320>
+]
+.right-column-2[
+Based on the wordy description of what 
+
+happens when you call the Tele-fruit-sales 
+
+line, can you represent all the information 
+
+in a simpler way?
+] 
+
+---
+##A toy example of FSA: Tele-fruit-sales
+
+<img src="images/tele_fsa.png" width=800>
+
+---
+##FSA for recognizing language
+
+.left-column-1[
++ The sheep talk<br><br>
+baa!<br>
+baaa!<br>
+baaaa!<br>
+baaaaa!<br>
+...
+
+<br><br><br><br><br><br><br><br><br><br><br><br>
+]
+
+---
+##FSA for recognizing language
+
+.left-column-1[
++ The sheep talk<br><br>
+baa!<br>
+baaa!<br>
+baaaa!<br>
+baaaaa!<br>
+...
+
+<br><br><br><br><br><br><br><br><br><br>
+]
+
+.right-column-1[
+
+.left-column-3[
++ FSA for the sheep talk
+
+<img src="images/baa_fsa.png" width=500>
+]
+.right-column-3[
+> <img src="images/baa_table.png" width=120>
+]
+]
+
+<font color="red">_Q = q<sub>0</sub> q<sub>1</sub> q<sub>2</sub> ... q<sub>N-1</sub>_</font>: a finite set of _N_ **states** 
+<font color="red">_Σ_</font>: a finite **input alphabet** of symbols 
+<font color="red">_q<sub>0</sub>_</font>: the **start state**
+<font color="red">_F_</font>: the set of **final states**, _F_ `\( \subseteq \)` _Q_ 
+<font color="red">_δ(q, i)_</font>: the **transition function** or transition matrix between states. <br> Given a state _q_ `\( \in \)` _Q_ and an input symbol _i_  `\( \in \)` _Σ_, _δ(q, i)_ returns a new state <br> _q'_ `\( \in \)` _Q_. Thus δ is a relation from _Q_ `\( \times \)`  _Σ_ to _Q_.
+
+---
+##FSA for recognizing language
+
+.left-column-1[
++ The sheep talk<br><br>
+baa!<br>
+baaa!<br>
+baaaa!<br>
+baaaaa!<br>
+...
+
+<br><br><br><br><br><br><br><br><br><br>
+]
+
+.right-column-1[
+
++ FSA for the sheep talk
+
+<img src="images/baa_fsa.png" width=500>
+
+<img src="images/baa_tape1.png" width=380> 
+
+<img src="images/baa_tape2.png" width=380>
+]
+
+---
+##FSA for recognizing language
+
+.left-column-1[
++ The sheep talk<br><br>
+baa!<br>
+baaa!<br>
+baaaa!<br>
+baaaaa!<br>
+...
+
+<br><br><br><br><br><br><br><br><br><br>
+]
+
+.right-column-1[
+
++ FSA for the sheep talk
+
+<img src="images/baa_fsa.png" width=500>
+
+<img src="images/baa_fsa_f.png" width=500> 
+
+]
+
+---
+##How does a computer use an FSA?
+A pseudo-code example in J&M_2.1
+
+<img src="images/fsa_algorithm.png" width=600> 
+
+---
+##FSA for the sheep talk
+
+.left-column-1[
++ The sheep talk<br><br>
+baa!<br>
+baaa!<br>
+baaaa!<br>
+baaaaa!<br>
+...
+
++ <font color="red">RE for the sheep talk</font>
+
+> <font color="red">/baa+!/</font>
+<br><br><br><br><br><br><br><br>
+]
+
+.right-column-1[
+
+.left-column-3[
++ FSA for the sheep talk
+
+<img src="images/baa_fsa.png" width=500>
+]
+.right-column-3[
+> <img src="images/baa_table.png" width=120>
+]
+]
+
+_Q = q<sub>0</sub> q<sub>1</sub> q<sub>2</sub> ... q<sub>N-1</sub>_: a finite set of _N_ **states** 
+
+_Σ_: a finite **input alphabet** of symbols 
+
+_q<sub>0</sub>_: the **start state**
+
+_F_: the set of **final states**, _F_ `\( \subseteq \)` _Q_ 
+
+_δ(q, i)_: the **transition function** or transition matrix between states. <br> Given a state _q_ `\( \in \)` _Q_ and an input symbol _i_  `\( \in \)` _Σ_, _δ(q, i)_ returns a new state <br> _q'_ `\( \in \)` _Q_. Thus δ is a relation from _Q_ `\( \times \)`  _Σ_ to _Q_.
 
 ---
 ##Regular expressions
@@ -423,7 +601,7 @@ Modern conversational agents are much more than a diversion; they can answer que
 ###Any use of RE that you can think of?
 
 ---
-##Regular expressions (RE) and finite-state automaton (FSA)
+##RE and FSA
 
 .left-column-2[
 Three equivalent ways of describing regular languages
@@ -442,124 +620,7 @@ Three equivalent ways of describing regular languages
 ]
 
 ---
-##Regular expressions (RE) and finite-state automaton (FSA)
-
-.left-column-2[
-Three equivalent ways of describing regular languages
-
-<img src="images/regular_languages.png" width=400>
-]
-
-.right-column-2[
->+ The Chomsky hierarchy
-
->+ Natural language and its complexity
-
->+ Formal models and formal languages
-
->+ Power of formal models: complexity of the phenomena they can describe
-
->+ The sheeptalk<br><br>
-> baa!<br>
-> baaa!<br>
-> baaaa!<br>
-> baaaaa!<br>
-> ...
-
-]
-
----
-##Regular expressions (RE) and finite-state automaton (FSA)
-
-.left-column-1[
-+ The sheeptalk<br><br>
-baa!<br>
-baaa!<br>
-baaaa!<br>
-baaaaa!<br>
-...
-
-+ RE for the sheeptalk
-
-> /baa+!/
-<br><br><br><br><br><br><br><br>
-]
-
-.right-column-1[
-
-.left-column-3[
-+ FSA for the sheeptalk
-
-<img src="images/baa_fsa.png" width=500>
-]
-.right-column-3[
-> <img src="images/baa_table.png" width=120>
-]
-]
-
-<font color="red">_Q = q<sub>0</sub> q<sub>1</sub> q<sub>2</sub> ... q<sub>N-1</sub>_</font>: a finite set of _N_ **states** 
-<font color="red">_Σ_</font>: a finite **input alphabet** of symbols 
-<font color="red">_q<sub>0</sub>_</font>: the **start state**
-<font color="red">_F_</font>: the set of **final states**, _F_ `\( \subseteq \)` _Q_ 
-<font color="red">_δ(q, i)_</font>: the **transition function** or transition matrix between states. <br> Given a state _q_ `\( \in \)` _Q_ and an input symbol _i_  `\( \in \)` _Σ_, _δ(q, i)_ returns a new state <br> _q'_ `\( \in \)` _Q_. Thus δ is a relation from _Q_ `\( \times \)`  _Σ_ to _Q_.
-
----
-##Regular expressions (RE) and finite-state automaton (FSA)
-
-.left-column-1[
-+ The sheeptalk<br><br>
-baa!<br>
-baaa!<br>
-baaaa!<br>
-baaaaa!<br>
-...
-
-+ RE for the sheeptalk
-
-> /baa+!/
-
-]
-
-.right-column-1[
-
-+ FSA for the sheeptalk
-
-<img src="images/baa_fsa.png" width=500>
-
-<img src="images/baa_tape1.png" width=380> 
-
-<img src="images/baa_tape2.png" width=380>
-]
-
----
-##Regular expressions (RE) and finite-state automaton (FSA)
-
-.left-column-1[
-+ The sheeptalk<br><br>
-baa!<br>
-baaa!<br>
-baaaa!<br>
-baaaaa!<br>
-...
-
-+ RE for the sheeptalk
-
-> /baa+!/
-
-]
-
-.right-column-1[
-
-+ FSA for the sheeptalk
-
-<img src="images/baa_fsa.png" width=500>
-
-<img src="images/baa_fsa_f.png" width=500> 
-
-]
-
----
-##Regular expressions (RE) and finite-state automaton (FSA)
+##RE and FSA
 
 + Formal language
 
@@ -567,9 +628,12 @@ baaaaa!<br>
  
  + characterized by a model _m_ (such as a particular FSA)
  
+???
+The set of all of the strings that are generated by a regular expression (or its corresponding FSA) is called a regular language.
+
 ---
 
-##Regular expressions (RE) and finite-state automaton (FSA)
+##RE and FSA
 
 + Formal language
 
@@ -579,13 +643,13 @@ baaaaa!<br>
  
  >E.g. _L(m) = {baa!, baaa!, baaaa!, baaaaa!, baaaaaa!, <font color="red">**. . .**</font>}_
 
- > The sheeptalk automaton helps us **recognize** and **generate** the sheeptalk.
+ > The sheep talk automaton helps us **recognize** and **generate** the sheeptalk.
  
  > <img src="images/baa_fsa.png" width=500>
 
  > **Usefulness** of an automaton: a <font color="red">finite</font> set of symbols to define an <font color="red">infinite</font> set
 ---
-##Regular expressions (RE) and finite-state automaton (FSA)
+##RE and FSA
 
 + Formal language
 
@@ -595,53 +659,29 @@ baaaaa!<br>
  
  >E.g. _L(m) = {baa!, baaa!, baaaa!, baaaaa!, baaaaaa!, <font color="red">**. . .**</font>}_
 
- > The sheeptalk automaton helps us **recognize** and **generate** the sheeptalk.
+ > The sheep talk automaton helps us **recognize** and **generate** the sheeptalk.
  
  > <img src="images/baa_fsa.png" width=500>
 
  > **Usefulness** of an automaton: a <font color="red">finite</font> set of symbols to define an <font color="red">infinite</font> set
  
  + Formal language vs. natural language
-  
----
-+ Formal language vs. natural language
-
 
 ---
+## At the end of this session you will
++ know some basic tasks in text processing; <br><br>
 
-##Regular expressions (RE) and finite-state automaton (FSA)
++ understand what is a finite state automaton and how is it related to <br>regular expressions and regular languages; <br><br>
 
-.left-column-1[
-+ The sheeptalk<br><br>
-baa!<br>
-baaa!<br>
-baaaa!<br>
-baaaaa!<br>
-...
++ be able to work with basic regular expressions in pattern matching;<br><br>
 
-+ RE for the sheeptalk
-
-> /baa+!/
-]
-
-.right-column-1[
-.left-column-3[
-+ FSA for the sheeptalk
-
-<img src="images/baa_fsa.png" width=500>
-<br><br>
-
-<img src="images/baa_tape1.png" width=350><br>
-]
-.right-column-3[
-> <img src="images/baa_table.png" width=120>
-]
-]
----
-
-##Regular expressions and finite-state automaton (FSA)
-
-The set of all of the strings that are generated by a regular expression (or its corresponding FSA) is called a regular language.
++ learn the structure of programs and some basic string operations. <br><br>
 
 ---
+class: center, middle
+##Next session
+
+Finite State Transducers and N-grams
+
+
 
