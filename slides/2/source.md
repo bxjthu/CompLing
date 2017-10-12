@@ -23,6 +23,9 @@ class: center, middle
 class: center, middle
 <img src="images/nltk_download.png" width=900>
 
+???
+Once you've installed NLTK, start up the Python interpreter as before, and install the data required for the book by typing the following two commands at the Python prompt, then selecting the book collection as shown
+
 ---
 class: middle
 Over the past 20 years, computational linguistics has grown into both an exciting area of scientific research 
@@ -96,14 +99,12 @@ E.g. a. _He stepped out into the hall, was delighted to encounter a water brothe
 > e. _他特别喜欢北京烤鸭。_
 
 ???
-word boundary
-space
-(word-internal) punctuations, special characters, numbers, URLs, email addresses
-disfluency, fragment, filled pause
-non-alphabetic characters
-clitic contractions
-multiword expressions
-hyphenated words
+A lemma is a set of lexical forms having the same stem, the same major part-of-speech, and the same word sense. <br>
+The word- form is the full inflected or derived form of the word.<br>
+cat vs. cats<br>
+Types are the number of distinct words.<br>
+Tokens are the total number running words.<br>
+16 tokens and 14 types
 
 ---
 ##Text normalization
@@ -146,12 +147,18 @@ hyphenated words
 
 <img src="images/tokenization.png" width=800>
 
+???
+A clitic is a part of a word that can’t stand on its own, and can only occur when it is attached to another word. <br>
+One commonly used tokenization standard is known as the Penn Treebank tokenization standard, <br>
+used for the parsed corpora (treebanks) released by the Linguistic Data Consortium (LDC), the source of many useful datasets. <br>
+This standard separates out clitics (doesn’t becomes does plus n’t), <br>
+keeps hyphenated words together, and separates out all punctuation:
 ---
 ##Text normalization
 ### Tokenization: language issues
 + **Chinese**: no space between words
 
-> E.g. _计算语言学课程是三个学时 to 计算语言学 课程 是 三 个 学时_
+> E.g. _计算语言学课程是三个学时  &#8594;   计算语言学 课程 是 三 个 学时_
 
 + **German**: noun compounds not segmented
 
@@ -162,6 +169,12 @@ hyphenated words
 > <img src="images/japanese.png" width=700>
 
 + ...
+
+???
+片假名Katakana  |ˌkatəˈkɑːnə|<br>
+平假名Hiragana |ˌhɪrəˈɡɑːnə|<br>
+汉字kanji |ˈkandʒi, ˈkɑːndʒi| Chinese characters, used primarily for content words<br>
+罗马字Romaji|ˈrəʊmədʒi| a system of romanized  |ˈrəʊmənʌɪz|  spelling used to transliterate Japanese.
 ---
 ##Text normalization
 ### Normalization and lemmatization
@@ -177,27 +190,22 @@ hyphenated words
 
 > + Simply reduce inflections or variant forms to base form
 
->> E.g. _am, are, is | be; dinner, dinners | dinner_
+>> E.g. _am, are, is &#8594;  be; dinner, dinners &#8594; dinner_
 
 > + Or, perform complete morphological parsing 
 
->>  E.g. _fox | fox; cats | cat + -s_
+>>  E.g. _fox &#8594;  fox; cats &#8594;  cat + -s_
 
 ???
-Applications	like IR reduce all	letters to lower case since users tend to use lower case.
-
+Applications	like IR reduce all	letters to lower case since users tend to use lower case.<br>
 For sentiment analysis,	MT, information extraction, case is helpful.	
 
-Morphology is the study of the way words are built up from smaller meaning-bearing units called morphemes. 
-
-Two broad classes of morphemes can be distinguished: 
-
-stems: the central morpheme of the word, supplying the main meaning
-
+Morphology is the study of the way words are built up from smaller meaning-bearing units called morphemes. <br>
+Two broad classes of morphemes can be distinguished: <br>
+stems: the central morpheme of the word, supplying the main meaning<br>
 affixes: adding “additional” meanings of various kinds
 
-finite-state transducers to build a full morphological parser: the most general way to deal with morphological variation in word forms
-
+finite-state transducers to build a full morphological parser: the most general way to deal with morphological variation in word forms<br>
 simpler but cruder chopping off of affixes, naive version of morphological analysis called stemming
 
 ---
@@ -217,8 +225,8 @@ simpler but cruder chopping off of affixes, naive version of morphological analy
 
   \+ Abbreviation dictionary
 ???
-Sentence boundary
-Abbreviations like Inc.	or	Dr.
+Sentence boundary<br>
+Abbreviations like Inc.	or	Dr.<br>
 Numbers like 4.3
  
 ---
@@ -335,11 +343,11 @@ baaaaa!<br>
 ]
 ]
 
-<font color="red">_Q = q<sub>0</sub> q<sub>1</sub> q<sub>2</sub> ... q<sub>N-1</sub>_</font>: a finite set of _N_ **states** 
+<font color="red">_Q = {q<sub>0</sub> q<sub>1</sub> q<sub>2</sub> ... q<sub>N-1</sub>}_</font>: a finite set of _N_ **states** 
 <font color="red">_Σ_</font>: a finite **input alphabet** of symbols 
 <font color="red">_q<sub>0</sub>_</font>: the **start state**
 <font color="red">_F_</font>: the set of **final states**, _F_ `\( \subseteq \)` _Q_ 
-<font color="red">_δ(q, i)_</font>: the **transition function** or transition matrix between states. <br> Given a state _q_ `\( \in \)` _Q_ and an input symbol _i_  `\( \in \)` _Σ_, _δ(q, i)_ returns a new state <br> _q'_ `\( \in \)` _Q_. Thus δ is a relation from _Q_ `\( \times \)`  _Σ_ to _Q_.
+<font color="red">_δ(q, i)_</font>: the **transition function** or transition matrix between states. Given a state _q_ `\( \in \)` _Q_ and an input symbol _i_  `\( \in \)` _Σ_, _δ(q, i)_ returns a new state _q'_ `\( \in \)` _Q_. 
 
 ---
 ##FSA for recognizing language
@@ -390,6 +398,17 @@ baaaaa!<br>
 
 ]
 
+???
+
+The algorithm will fail whenever there is no legal transition for a given combination of state and input. 
+
+The input abc will fail to be recognized since there is no legal transition out of state q0 on the input a. 
+
+Even if the automaton had allowed an initial a it would have certainly failed on c, since c isn’t even in the sheeptalk alphabet!. 
+
+We can think of these ‘empty’ elements in the table as if they all pointed at one ‘empty’ state, which we might call the fail state or sink state. 
+
+In a sense then, we could view any machine with empty transitions as if we had augmented it with a fail state, and drawn in all the extra arcs, so we always had somewhere to go from any state on any possible input. Just for completeness, Figure 2.14 shows the FSA from Figure 2.9 with the fail state qF filled in.
 ---
 ##How does a computer use an FSA?
 A pseudo-code example in J&M_2.1
@@ -410,7 +429,7 @@ baaaaa!<br>
 + <font color="red">RE for the sheep talk</font>
 
 > <font color="red">/baa+!/</font>
-<br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br>
 ]
 
 .right-column-1[
@@ -425,7 +444,7 @@ baaaaa!<br>
 ]
 ]
 
-_Q = q<sub>0</sub> q<sub>1</sub> q<sub>2</sub> ... q<sub>N-1</sub>_: a finite set of _N_ **states** 
+_Q = {q<sub>0</sub> q<sub>1</sub> q<sub>2</sub> ... q<sub>N-1</sub>}_: a finite set of _N_ **states** 
 
 _Σ_: a finite **input alphabet** of symbols 
 
@@ -433,13 +452,13 @@ _q<sub>0</sub>_: the **start state**
 
 _F_: the set of **final states**, _F_ `\( \subseteq \)` _Q_ 
 
-_δ(q, i)_: the **transition function** or transition matrix between states. <br> Given a state _q_ `\( \in \)` _Q_ and an input symbol _i_  `\( \in \)` _Σ_, _δ(q, i)_ returns a new state <br> _q'_ `\( \in \)` _Q_. Thus δ is a relation from _Q_ `\( \times \)`  _Σ_ to _Q_.
+_δ(q, i)_: the **transition function** or transition matrix between states. Given a state _q_ `\( \in \)` _Q_ and an input symbol _i_  `\( \in \)` _Σ_, _δ(q, i)_ returns a new state  _q'_ `\( \in \)` _Q_. 
 
 ---
 ##Regular expressions
 One of the **unsung successes** in standardization in computer science
 
-+ The most important tool for describing text pattern >>> **computational model**
++ The most important tool for describing text pattern &#8594; **computational model**
 
 + Useful for searching in texts, with a **pattern** to search for and a corpus of **texts** to search through
 
@@ -447,7 +466,7 @@ One of the **unsung successes** in standardization in computer science
 ##Regular expressions
 One of the **unsung successes** in standardization in computer science
 
-+ The most important tool for describing text pattern >>> **computational model**
++ The most important tool for describing text pattern &#8594; **computational model**
 
 + Useful for searching in texts, with a **pattern** to search for and a corpus of **texts** to search through
 
@@ -466,6 +485,17 @@ be made to appear even more civilized ..."_
  .right-column-3[
 <img src="images/my-fair-lady.jpg" width=300>
  ]
+
+???
+Pygmalion |pɪɡˈmeɪlɪən| is a play by George Bernard Shaw, named after a Greek mythological figure. 
+
+In ancient Greek mythology, Pygmalion fell in love with one of his sculptures, which then came to life.  
+
+Eliza is a flower girl, who comes to Professor Henry Higgins asking for elocution lessons. 
+
+Higgins goes along with it for the purposes of a wager: That he can turn her into the toast of elite London society. 
+
+Doolittle receives voice coaching and learns the rules of etiquette.
 ---
 ##Regular expressions
 + **Eliza**: a program which makes natural language conversation between man and computer possible
@@ -473,7 +503,7 @@ be made to appear even more civilized ..."_
 .left-column-2[
 > _"...the text is <font color="red">read and inspected</font> for the presence of a **keyword**. If such a word is found, the sentence is transformed according to a **rule** associated with the keyword, if not a content-free remark or, under certain conditions, an earlier transformation is retrieved. The text so computed or retrieved is then printed out."_
 
-E.g. "You are X" >>> "What makes you think I am X?"
+E.g. "You are X" &#8594; "What makes you think I am X?"
 
 ]
 
@@ -484,7 +514,7 @@ E.g. "You are X" >>> "What makes you think I am X?"
 .left-column-2[
 > _"...the text is <font color="red">read and inspected</font> for the presence of a **keyword**. If such a word is found, the sentence is transformed according to a **rule** associated with the keyword, if not a content-free remark or, under certain conditions, an earlier transformation is retrieved. The text so computed or retrieved is then printed out."_
 
-E.g. "You are X" >>> "What makes you think I am X?"
+E.g. "You are X" &#8594; "What makes you think I am X?"
 
 ]
 
@@ -515,7 +545,7 @@ I AM SORRY TO HEAR YOU ARE DEPRESSED
 .left-column-2[
 > _"...the text is <font color="red">read and inspected</font> for the presence of a **keyword**. If such a word is found, the sentence is transformed according to a **rule** associated with the keyword, if not a content-free remark or, under certain conditions, an earlier transformation is retrieved. The text so computed or retrieved is then printed out."_
 
-E.g. "You are X" >>> "What makes you think I am X?"
+E.g. "You are X" &#8594; "What makes you think I am X?"
 <br><br>
 
 >_"a fun diversion"_ 
@@ -667,6 +697,10 @@ The set of all of the strings that are generated by a regular expression (or its
  
  + Formal language vs. natural language
 
+???
+Use a formal language to model part of a natural language, 
+
+such as parts of the phonology, morphology, syntax
 ---
 ## At the end of this session you will
 + know some basic tasks in text processing; <br><br>
