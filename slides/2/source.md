@@ -134,7 +134,7 @@ Tokens are the total number running words.<br>
 ]
 
 .right-column-2[
- e.g. _m.p.h,, Ph.D., AT&T, cap’n_
+ e.g. _m.p.h., Ph.D., AT&T, cap’n_
 
 > _what’re, we’re_
 
@@ -346,8 +346,8 @@ baaaaa!<br>
 <font color="red">_Q = {q<sub>0</sub> q<sub>1</sub> q<sub>2</sub> ... q<sub>N-1</sub>}_</font>: a finite set of _N_ **states** 
 <font color="red">_Σ_</font>: a finite **input alphabet** of symbols 
 <font color="red">_q<sub>0</sub>_</font>: the **start state**
-<font color="red">_F_</font>: the set of **final states**, _F_ `\( \subseteq \)` _Q_ 
-<font color="red">_δ(q, i)_</font>: the **transition function** or transition matrix between states. Given a state _q_ `\( \in \)` _Q_ and an input symbol _i_  `\( \in \)` _Σ_, _δ(q, i)_ returns a new state _q'_ `\( \in \)` _Q_. 
+<font color="red">_F_</font>: the set of **final states**, _F_ &#8838; _Q_ 
+<font color="red">_δ(q, i)_</font>: the **transition function** or transition matrix between states. Given a state _q_ &#8712; _Q_ and an input symbol _i_  &#8712; _Σ_, _δ(q, i)_ returns a new state _q'_ &#8712; _Q_. 
 
 ---
 ##FSA for recognizing language
@@ -450,9 +450,9 @@ _Σ_: a finite **input alphabet** of symbols
 
 _q<sub>0</sub>_: the **start state**
 
-_F_: the set of **final states**, _F_ `\( \subseteq \)` _Q_ 
+_F_: the set of **final states**, _F_ &#8838; _Q_ 
 
-_δ(q, i)_: the **transition function** or transition matrix between states. Given a state _q_ `\( \in \)` _Q_ and an input symbol _i_  `\( \in \)` _Σ_, _δ(q, i)_ returns a new state  _q'_ `\( \in \)` _Q_. 
+_δ(q, i)_: the **transition function** or transition matrix between states. Given a state _q_ &#8712; _Q_ and an input symbol _i_  &#8712; _Σ_, _δ(q, i)_ returns a new state  _q'_ &#8712; _Q_. 
 
 ---
 ##Regular expressions
