@@ -12,7 +12,7 @@ class: center, middle
 ## At the end of this session you will
 + know some basic tasks in text processing; <br><br>
 
-+ understand what is a finite state automaton and how is it related to <br>regular expressions and regular languages; <br><br>
++ understand what is a finite state automaton and how it is related to regular expressions and regular languages; <br><br>
 
 + be able to work with basic regular expressions in pattern matching;<br><br>
 
@@ -705,11 +705,24 @@ such as parts of the phonology, morphology, syntax
 ## At the end of this session you will
 + know some basic tasks in text processing; <br><br>
 
-+ understand what is a finite state automaton and how is it related to <br>regular expressions and regular languages; <br><br>
++ understand what is a finite state automaton and how it is related to regular expressions and regular languages; <br><br>
 
 + be able to work with basic regular expressions in pattern matching;<br><br>
 
 + learn the structure of programs and some basic string operations. <br><br>
+
+---
+##Assignment
+
+** 1. Readings **
+
+2b: J+M 2 (Regular Expressions and Automata); J+M[3rd] (Words and Corpora, Text Normalization) 
+
+** 2. Read and Practice **
+
+2.1 Read the Quick Reference at https://regex101.com/, particularly the common tokens. Review and test the regular expressions in J+M 2.
+
+2.2 Review Practical 2 (Refer to the related sections in http://www.nltk.org/book/ch02.html; http://www.nltk.org/book/ch03.html; http://www.nltk.org/book/ch04.html)
 
 ---
 class: center, middle
