@@ -716,7 +716,9 @@ such as parts of the phonology, morphology, syntax
 
 ** 1. Readings **
 
-2b: J+M 2 (Regular Expressions and Automata); J+M[3rd] (Words and Corpora, Text Normalization) 
+J+M 2 (Regular Expressions and Automata); 
+
+J+M[3rd] (Words and Corpora, Text Normalization) 
 
 ** 2. Read and Practice **
 
