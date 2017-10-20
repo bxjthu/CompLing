@@ -337,7 +337,7 @@ fox^s → _fox + N + PL_
 
 **2. Practice**
 
-+ Finish the exercise of Practical 3 and submit your codes at 网络学堂.
++ Finish the exercise of Practical 3 and submit your codes at 网络学堂. (DDL: Oct. 25)
 
 ---
 class: center, middle
