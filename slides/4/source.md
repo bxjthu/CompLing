@@ -86,16 +86,38 @@ _F= {q4}_
 + What might be the difficulties of morphological parsing in Chinese?
 
 ---
+
+.left-column-2[
+##I have the gub!
+<video width="480" height="360" controls src="images/gub.mp4" type="video/mp4"</video>
+]
+
+.right-column-2[
+<br><br>
+> _Bank Teller #1:_<br> 
+Does this look like "gub" or "gun"?
+
+> _Bank Teller #2: _<br>
+Gun. See? But what does "abt" mean?
+
+> _Virgil:_ <br>
+It's "act". A-C-T. Act natural. Please put fifty thousand dollars into this bag and act natural.
+
+> _Bank Teller #1:_ <br>
+Oh, I see. This is a holdup?
+.right[
+#####_Take the Money and Run_ (1969)
+]
+]
+---
 ##At the end of this session you will
 
 + understand what a finite state transducer is and how it might be used in morphological parsing;<br><br>
 
 + learn how to define a function, what is a namespace, what is a scope, and how they work.
 
+
 ---
-![image alt text](http//example.io/link-to-image)
-wrapped in a link
-[link text](http//example.io/my-link "link title")
 
 “You are uniformly charming!” cried he, with a smile of associating and now and then I bowed and they perceived a chaise and four to wish for.
 "Jane Austen"
