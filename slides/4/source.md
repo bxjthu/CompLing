@@ -95,10 +95,10 @@ _F= {q4}_
 .right-column-2[
 <br><br>
 > _Bank Teller #1:_<br> 
-Does this look like "gub" or "gun"?
+Does this look like "<font color="red">gub</font>" or "gun"?
 
 > _Bank Teller #2: _<br>
-Gun. See? But what does "abt" mean?
+Gun. See? But what does "<font color="red">abt</font>" mean?
 
 > _Virgil:_ <br>
 It's "act". A-C-T. Act natural. Please put fifty thousand dollars into this bag and act natural.
