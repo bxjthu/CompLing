@@ -110,6 +110,8 @@ Oh, I see. This is a holdup?
 ]
 ]
 ---
+
+---
 ##At the end of this session you will
 
 + understand what a finite state transducer is and how it might be used in morphological parsing;<br><br>
