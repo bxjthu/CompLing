@@ -87,9 +87,67 @@ _F= {q4}_
 
 ---
 
+class: center, middle
+<img src="images/word.png" width=600>
+
+---
+
+class: center, middle
+<img src="images/delicious.png" width=850>
+
+---
+
+class: center, middle
+<img src="images/delicious1.png" width=850>
+
+---
+
+.left-column-2[
+
+<br><br>
+
+_“You are uniformly charming!” cried he,_ 
+
+_with a smile of associating and now and_ 
+
+_then I bowed and they perceived a chaise_ 
+
+_and four to wish for._
+
+<br>
+.right[######A random sentence generated from <br>a Jane Austen <font color="red">trigram</font> model
+]
+]
+.right-column-2[
+.right[
+<img src="images/jane_austen.jpg" width=400>
+]
+]
+
+---
+class: middle
+.left[
+他 | 向 | 记者 | 介绍了 | 主要 | 内容 
+---|---|---|---|---|---
+He &nbsp; |to &nbsp; |reporters &nbsp; |introduced &nbsp; |main &nbsp; |content
+]
+
+1. he introduced reporters to the main contents of the statement 
+
+2. he briefed to reporters the main contents of the statement
+3. he briefed reporters on the main contents of the statement
+
+---
+class: center, middle
+
+<img src="images/hawking.jpg" width=800>
+
+---
 .left-column-2[
 ##I have the gub!
-<video width="480" height="360" controls src="images/gub.mp4" type="video/mp4"</video>
+
+<br>
+<br>
 ]
 
 .right-column-2[
@@ -106,10 +164,112 @@ It's "act". A-C-T. Act natural. Please put fifty thousand dollars into this bag 
 > _Bank Teller #1:_ <br>
 Oh, I see. This is a holdup?
 .right[
-#####_Take the Money and Run_ (1969)
+######_Take the Money and Run_ (1969)
+]
+]
+
+---
+##At the end of this session you will
+
++ understand how n-grams may help to model a language;<br><br>
+
++ learn how to define a function, what is a namespace, what is a scope, and how they work.
+
+
+---
+##N-grams for &nbsp;&nbsp;这菜不错！不咸！
+
++ unigram: 这 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;菜 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;不 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;错 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;！ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;不 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;咸 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;！
+<br>
++ bigram: &nbsp;&nbsp;这菜 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;菜不 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;不错 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;错！ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;！不 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;不咸 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;咸！
+
++ trigram: &nbsp;这菜不 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;菜不错 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;不错！ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;错！不 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ！不咸 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 不咸！
+
++ 4-gram: &nbsp;&nbsp;这菜不错 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 菜不错！&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 不错！不 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 错！不咸&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ！不咸！
+
++ 5-gram: &nbsp;&nbsp;这菜不错！&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 菜不错！不 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 不错！不咸 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 错！不咸！
+
++ ...
+
++ n-gram
+---
+.left-column-2[
+##N-grams as a model of language
+
+**Basic problem: **<br>
+Is this a probable sequence of words in the language and how probable is it?
+]
+  
+---
+.left-column-2[
+##N-grams as a model of language
+
+**Basic problem: **<br>
+Is this a probable sequence of words in the language and how probable is it?
+
+Using corpus data for probabilities
+
+<br>
+A toy corpus:
+```
+*<s>welcome home</s>
+*
+*<s>welcome back</s>**<s>welcome home</s>*
+*<s>you are a welcome sight</s>**<s>what a welcome</s>
+
+```
+]
+
+.right-column-2[
+<br>
+.right[
+<img src="images/bigram_toy.png" width=480>
+]
+.center[
+######The bigram counts and probabilities <br>for the toy corpus
+]
+]
+
+---
+.left-column-2[
+##Probabilities of bigrams
+
+`\(P(w_n|w_{n−1})=\frac{C(w_{n-1}w_n)}{\sum_wC(w_{n-1}w)}=\frac{C(w_{n-1}w_n)}{C(w_{n-1})} \)`
+]
+
+
+.right-column-2[
+<br>
+.right[
+<img src="images/bigram_toy.png" width=480>
+]
+.center[
+######The bigram counts and probabilities <br>for the toy corpus
 ]
 ]
 ---
+.left-column-2[
+##Probabilities of bigrams
+
+`\(P(w_n|w_{n−1})=\frac{C(w_{n-1}w_n)}{\sum_wC(w_{n-1}w)}=\frac{C(w_{n-1}w_n)}{C(w_{n-1})} \)`
+
+##Probabilities of sequences
+
+`\(P(w_1w_2...w_n)\approx\prod_{k=1}^nP(w_k|w_{k−1})\)`
+
+<br>
+Why approximately equal to?
+]
+
+.right-column-2[
+<br>
+.right[
+<img src="images/bigram_toy.png" width=480>
+]
+.center[
+######The bigram counts and probabilities <br>for the toy corpus
+]
+]
 
 ---
 ##At the end of this session you will
