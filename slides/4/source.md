@@ -207,10 +207,9 @@ Is this a probable sequence of words in the language and how probable is it?
 **Basic problem: **<br>
 Is this a probable sequence of words in the language and how probable is it?
 
+<br><br>
 Using corpus data for probabilities
 
-<br>
-A toy corpus:
 ```
 *<s>welcome home</s>
 *
@@ -218,35 +217,21 @@ A toy corpus:
 *<s>you are a welcome sight</s>**<s>what a welcome</s>
 
 ```
+.center[
+######A toy corpus
+]
 ]
 
 .right-column-2[
 <br>
 .right[
-<img src="images/bigram_toy.png" width=480>
+<img src="images/bigram_toy.png" width=450>
 ]
 .center[
 ######The bigram counts and probabilities <br>for the toy corpus
 ]
 ]
 
----
-.left-column-2[
-##Probabilities of bigrams
-
-`\(P(w_n|w_{n−1})=\frac{C(w_{n-1}w_n)}{\sum_wC(w_{n-1}w)}=\frac{C(w_{n-1}w_n)}{C(w_{n-1})} \)`
-]
-
-
-.right-column-2[
-<br>
-.right[
-<img src="images/bigram_toy.png" width=480>
-]
-.center[
-######The bigram counts and probabilities <br>for the toy corpus
-]
-]
 ---
 .left-column-2[
 ##Probabilities of bigrams
@@ -255,16 +240,18 @@ A toy corpus:
 
 ##Probabilities of sequences
 
-`\(P(w_1w_2...w_n)\approx\prod_{k=1}^nP(w_k|w_{k−1})\)`
+`\(P(w_1^n)\approx\prod_{k=1}^nP(w_k|w_{k−1})\)`
 
-<br>
-Why approximately equal to?
+Why approximately equal to?<br><br>
+
+`\(P(w_1^n)= P(w_1)P(w_2|w_1)P(w_3|w_1^2)...P(w_n|w_1^{n-1})\)`
+> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`\(=\prod_{k=1}^nP(w_k|w_1^{k−1})\)`
 ]
 
 .right-column-2[
 <br>
 .right[
-<img src="images/bigram_toy.png" width=480>
+<img src="images/bigram_toy.png" width=450>
 ]
 .center[
 ######The bigram counts and probabilities <br>for the toy corpus
@@ -272,6 +259,98 @@ Why approximately equal to?
 ]
 
 ---
+##The Markov model or the Markov chain
+
++ The Markov assumption
+
+ + the probability of a word depends only on the previous word<br><br>`\(P(q_i|q_1...q_{i-1}) = P(q_i|q_{i-1})\)`
+ 
++ An extension of an FSA: a special case of a weighted FSA 
+ + the weights being the probabilities 
+ + the input sequence uniquely determining the states to go through
+ 
++ Useful for assigning probabilities to unambiguous sequences
+
+---
+##The Markov model or the Markov chain
+.left-column-2[
+<img src="images/bigram_toy.png" width=415>
+
+> ######The bigram counts and probabilities <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for the toy corpus
+
+]
+
+.right-column-2[
+<img src="images/ngram_automaton.png" width=350>
+> ######Part of the Markov chain for the toy corpus
+]
+
+---
+##The Markov model or the Markov chain
+.left-column-2[
+<font color="red">`\(Q = q_1q_2 ...q_N\)` </font><br> A set of _N_ **states**
+
+<font color="red">`\(A = a_{01}a_{02}...a_{n1} ...a_{nn}\)` </font><br> A **transition probability matrix** A, each `\(a_{ij}\)` representing the probability of moving from state _i_ to state _j_, s.t. `\(\sum_{j=1}^n a_{ij} = 1 ∀i\)`
+
+<font color="red">`\(q_0\)`,`\(q_F\)` </font><br> A **start state** and a **end (final) state** that are not associated with observations
+]
+
+.right-column-2[
+<img src="images/markov_automaton.png" width=550>
+]
+---
+.left-column-2[
+
+##A Markov model
+Used to compute a probability for a sequence of observable events
+
+##A hidden Markov model (HMM)
+Used to compute a probability for a sequence of NOT observable events
+
+######Example: Jason's ice cream climatology data
+
+<img src="images/hot.png" height =100>&nbsp;&nbsp;
+<img src="images/ice_cream.png" height=100>&nbsp;&nbsp;
+<img src="images/cold.png" height =100>
+]
+.right-column-2[
+<img src="images/jason.png" width=450>
+]
+
+---
+##HMM and Part-Of-Speech (POS) tagging
+
+<img src="images/hmm.jpg" width=650>
+
+The sequence of words observed: 
+<table border="0" width="100%">
+    <tr>
+      <td align="center" style="color:#ffffff" bgcolor="#33FFFF">colorless</td>
+      <td align="center" style="color:#ffffff" bgcolor="#CC0000">green</td>
+      <td align="center" style="color:#ffffff" bgcolor="#FFCC99">ideas</td>
+      <td align="center" style="color:#ffffff" bgcolor="#006600">sleep</td>
+      <td align="center" style="color:#ffffff" bgcolor="#00FF00">furiously</td>
+    </tr>
+</table>
+
+???
+Colorless green ideas sleep furiously is a sentence composed by Noam Chomsky in his 1957 book Syntactic Structures as an example of a sentence that is grammatically correct, but semantically nonsensical. 
+ 
+---
+##The hidden Markov model
+
+<font color="red">`\(Q = q_1q_2 ...q_N\)` </font>: a set of _N_ **states**
+<font color="red">`\(A = a_{11}a_{12}...a_{n1} ...a_{nn}\)` </font>: a **transition probability matrix** A, each `\(a_{ij}\)` representing the probability of moving from state _i_ to state _j_, s.t. `\(\sum_{j=1}^n a_{ij} = 1 ∀i\)`<br>
+<font color="red">`\(O = o_1o_2 ...o_T\)` </font>: a sequence of _T_ **observations**, each one drawn from a vocabulary `\(V = v_1,v_2,...,v_V\)`<br>
+<font color="red">`\(B = b_i(o_t)\)`</font>: a sequence of **observation likelihoods**, also called **emission probabilities**, each expressing the probability of an observation `\(o_t\)` being generated from a state _i_<br>
+<font color="red">`\(q_0\)`,`\(q_F\)` </font>: a **start state** and a **end (final) state** that are not associated with observations
+
+---
+
+assign a label or class to each unit in a sequence, thus mapping a sequence of observations to a sequence of labels. An HMM is a probabilistic sequence model: given a sequence of units (words, letters, morphemes, sentences, whatever)
+
+---
+
 ##At the end of this session you will
 
 + understand what a finite state transducer is and how it might be used in morphological parsing;<br><br>
