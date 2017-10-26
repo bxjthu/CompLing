@@ -127,45 +127,9 @@ _and four to wish for._
 ]
 
 ---
-##Machine translation
-
-.left[
-他 | 向 | 记者 | 介绍了 | 主要 | 内容 
----|---|---|---|---|---
-He &nbsp; |to &nbsp; |reporters &nbsp; |introduced &nbsp; |main &nbsp; |content
-]
-
-1. he introduced reporters to the main contents of the statement 
-
-2. he briefed to reporters the main contents of the statement
-3. he briefed reporters on the main contents of the statement
-
----
-##Augmentative communication 
-
-<img src="images/hawking.jpg" width=700>
-
----
-##Speech recognition
-
-<img src="images/siri.jpg" width=500>
-
-<video width="480" height="360" controls src="images/helen.flv" type="video/flv"</video>
----
-class: center, middle
-<img src="images/delicious.png" width=850>
-
----
-
-class: center, middle
-<img src="images/delicious1.png" width=850>
-
----
-
-
----
 .left-column-2[
-##I have the gub!
+##Handwriting recognition
+_I have the gub!_
 
 <br>
 <br>
@@ -190,6 +154,41 @@ Oh, I see. This is a holdup?
 ]
 
 ---
+##Machine translation
+
+.left[
+他 | 向 | 记者 | 介绍了 | 主要 | 内容 
+---|---|---|---|---|---
+He &nbsp; |to &nbsp; |reporters &nbsp; |introduced &nbsp; |main &nbsp; |content
+]
+
+1. he introduced reporters to the main contents of the statement 
+
+2. he briefed to reporters the main contents of the statement
+3. he briefed reporters on the main contents of the statement
+
+---
+##Augmentative communication 
+
+<img src="images/hawking.jpg" width=700>
+
+---
+##Speech recognition
+
+<img src="images/siri.jpg" width=500>
+<video width="480" height="360" controls src="images/helen.mp4" type="video/mp4"</video>
+
+---
+class: center, middle
+<img src="images/delicious.png" width=850>
+
+---
+
+class: center, middle
+<img src="images/delicious1.png" width=850>
+
+---
+
 ##N-grams for &nbsp;&nbsp;这菜不错！不咸！
 
 + unigram: 这 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;菜 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;不 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;错 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;！ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;不 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;咸 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;！
