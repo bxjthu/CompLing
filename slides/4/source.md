@@ -176,13 +176,13 @@ He &nbsp; |to &nbsp; |reporters &nbsp; |introduced &nbsp; |main &nbsp; |content
 ##Speech recognition
 
 .left-column-2[
-.center[
+.middle[
 <img src="images/siri.jpg" height=320>
 ]
 ]
 
 .right-column-2[
-.center[
+.middle[
 <video width="480" height="320" controls src="images/helen.mp4" type="video/mp4"</video>
 ]
 ]
