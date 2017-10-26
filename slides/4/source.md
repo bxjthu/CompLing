@@ -175,7 +175,7 @@ He &nbsp; |to &nbsp; |reporters &nbsp; |introduced &nbsp; |main &nbsp; |content
 ---
 ##Speech recognition
 
-<img src="images/siri.jpg" width=500>
+<img src="images/siri.jpg" height=360>
 <video width="480" height="360" controls src="images/helen.mp4" type="video/mp4"</video>
 
 ---
