@@ -9,13 +9,20 @@ class: center, middle
 ** https://bxjthu.github.io/CompLing **
 
 ---
-##Recap
-+ Acceptor/recognizer vs. generator
+##Recap: FSA vs. FST
 
+Recognizer (acceptor) vs. generator
 
+.left-column-2[
+A recognizer takes a pair of strings as input and <font color="red">outputs</font> _accept_ if the string-pair is in the string-pair language, and _reject_ if it is not.A generator takes a pair of strings as input and <font color="red">outputs</font> pairs of strings of the language. Thus the output is a _yes_ or _no_, and a pair of output strings.
+]
+.right-column-2[
+> <img src="images/baa_fsa.png" width=450>
 
+> <img src="images/baa_fst.png" width=450>
+]
 ---
-##FST: a formal definition
+##Recap: a formal definition of FST
 
 .left-column-2[
 
@@ -42,7 +49,7 @@ _σ(q, i)_: the **output function**. Given a state _q_ &#8712; _Q_ and an input 
 
 
 ---
-##FST: a formal definition
+##Recap: a formal definition of FST
 
 .left-column-1[
 
@@ -66,7 +73,7 @@ _F= {q4}_
 ]
 
 ---
-##Morphological parsing with FST lexion and rules
+##Recap: morphological parsing
 .left-column-2[
 + **Lexion**: a list of the stems and affixes of a language
 
@@ -79,11 +86,11 @@ _F= {q4}_
 ]
 
 ---
-##Questions
+##Recap: questions
  
-+ How might morphological parsing work for the NLP applications in our daily life? Any example?
-
 + What might be the difficulties of morphological parsing in Chinese?
+
++ How might morphological parsing work for the NLP applications in our daily life? Any example?
 
 ---
 
@@ -91,20 +98,15 @@ class: center, middle
 <img src="images/word.png" width=600>
 
 ---
+##At the end of this session you will
 
-class: center, middle
-<img src="images/delicious.png" width=850>
++ understand how n-grams may help to model a language;<br><br>
 
----
-
-class: center, middle
-<img src="images/delicious1.png" width=850>
++ learn how to define a function, what is a namespace, what is a scope, and how they work.
 
 ---
-
 .left-column-2[
-
-<br><br>
+##Language generation
 
 _“You are uniformly charming!” cried he,_ 
 
@@ -115,7 +117,7 @@ _then I bowed and they perceived a chaise_
 _and four to wish for._
 
 <br>
-.right[######A random sentence generated from <br>a Jane Austen <font color="red">trigram</font> model
+.right[A random sentence generated from<br>a **Jane Austen <font color="red">trigram</font> model**
 ]
 ]
 .right-column-2[
@@ -125,7 +127,8 @@ _and four to wish for._
 ]
 
 ---
-class: middle
+##Machine translation
+
 .left[
 他 | 向 | 记者 | 介绍了 | 主要 | 内容 
 ---|---|---|---|---|---
@@ -138,9 +141,27 @@ He &nbsp; |to &nbsp; |reporters &nbsp; |introduced &nbsp; |main &nbsp; |content
 3. he briefed reporters on the main contents of the statement
 
 ---
-class: center, middle
+##Augmentative communication 
 
-<img src="images/hawking.jpg" width=800>
+<img src="images/hawking.jpg" width=700>
+
+---
+##Speech recognition
+
+<img src="images/siri.jpg" width=500>
+
+<video width="480" height="360" controls src="images/helen.flv" type="video/flv"</video>
+---
+class: center, middle
+<img src="images/delicious.png" width=850>
+
+---
+
+class: center, middle
+<img src="images/delicious1.png" width=850>
+
+---
+
 
 ---
 .left-column-2[
@@ -167,14 +188,6 @@ Oh, I see. This is a holdup?
 ######_Take the Money and Run_ (1969)
 ]
 ]
-
----
-##At the end of this session you will
-
-+ understand how n-grams may help to model a language;<br><br>
-
-+ learn how to define a function, what is a namespace, what is a scope, and how they work.
-
 
 ---
 ##N-grams for &nbsp;&nbsp;这菜不错！不咸！
