@@ -21,6 +21,13 @@ A recognizer takes a pair of strings as input and <font color="red">outputs</fon
 
 > <img src="images/baa_fst.png" width=450>
 ]
+
+---
+##Recap: FSA for English numbers 1-999
+
+<br><br>
+<img src="images/999.png" width=1000>
+
 ---
 ##Recap: a formal definition of FST
 
@@ -29,18 +36,18 @@ A recognizer takes a pair of strings as input and <font color="red">outputs</fon
 _Q_: a finite set of _N_ **states**
 >_{q<sub>0</sub>, q<sub>1</sub>, q<sub>2</sub>, ... q<sub>N-1</sub>}_
 
-_Σ_: a finite **input alphabet** of symbols 
+_Σ_: a finite **input alphabet** of symbols
 
 _∆_: a finite **output alphabet** of symbols
 
 _q<sub>0</sub>_: the **start state**
 
-_F_: the set of **final states**, _F_ &#8838; _Q_ 
+_F_: the set of **final states**, _F_ &#8838; _Q_
 ]
 
 .right-column-2[
 
-_δ(q, i)_: the **transition function**. Given a state _q_ &#8712; _Q_ and an input symbol _i_  &#8712; _Σ_, _δ(q, i)_ returns a set of new states, each state _q'_ &#8712; _Q_. 
+_δ(q, i)_: the **transition function**. Given a state _q_ &#8712; _Q_ and an input symbol _i_  &#8712; _Σ_, _δ(q, i)_ returns a set of new states, each state _q'_ &#8712; _Q_.
 
 _σ(q, i)_: the **output function**. Given a state _q_ &#8712; _Q_ and an input symbol _i_  &#8712; _Σ_, _σ(q, i)_ returns a set of output symbols, each symbol _o_ &#8712; _∆_ .
 ]
@@ -55,13 +62,13 @@ _σ(q, i)_: the **output function**. Given a state _q_ &#8712; _Q_ and an input 
 
 _Q={q<sub>0</sub>, q<sub>1</sub>, q<sub>2</sub>, q<sub>3</sub>, q<sub>4</sub>}_
 
-_Σ= {b,a,!}_ 
+_Σ= {b,a,!}_
 
 _∆= {b,o,!}_
 
 _q<sub>0</sub>=q<sub>0</sub>_
 
-_F= {q4}_ 
+_F= {q4}_
 ]
 
 .right-column-1[
@@ -86,12 +93,50 @@ _F= {q4}_
 ]
 
 ---
+.left-column-2[
 ##Recap: questions
- 
+
 + What might be the difficulties of morphological parsing in Chinese?
 
-+ How might morphological parsing work for the NLP applications in our daily life? Any example?
+<br><br><br>
 
++ How might morphological parsing work for the NLP applications in our daily life? Any example?
+]
+
+---
+.left-column-2[
+##Recap: questions
+
++ What might be the difficulties of morphological parsing in Chinese?
+
+ + Ambiguities
+ + Unknown words
+ + What is a WORD?
+
++ How might morphological parsing work for the NLP applications in our daily life? Any example?
+]
+
+---
+.left-column-2[
+##Recap: questions
+
++ What might be the difficulties of morphological parsing in Chinese?
+
+ + Ambiguities
+ + Unknown words
+ + What is a WORD?
+
++ How might morphological parsing work for the NLP applications in our daily life? Any example?
+]
+
+.right-column-2[
+.center[
+<br>
+<img src="images/CCP_Congress_18th_WordCloud.jpg" width=300>
+
+<img src="images/CCP_Congress_19th_WordCloud.jpg" width=300>
+]
+]
 ---
 
 class: center, middle
@@ -100,44 +145,29 @@ class: center, middle
 ---
 ##At the end of this session you will
 
-+ understand how n-grams may help to model a language;<br><br>
++ understand how n-grams can model a language;<br>
 
-+ learn how to define a function, what is a namespace, what is a scope, and how they work.
++ learn how to use corpus data to compute the probabilities of n-grams;<br>
 
----
-.left-column-2[
-##Language generation
++ understand how n-grams may help to develop NLP applications;<br>
 
-_“You are uniformly charming!” cried he,_ 
++ learn the difference between Markov models and hidden Markov models;<br>
 
-_with a smile of associating and now and_ 
++ know hidden Markov models can help parsing on different levels;<br>
 
-_then I bowed and they perceived a chaise_ 
-
-_and four to wish for._
-
-<br>
-.right[A random sentence generated from<br>a **Jane Austen <font color="red">trigram</font> model**
-]
-]
-.right-column-2[
-.right[
-<img src="images/jane_austen.jpg" width=400>
-]
-]
++ get a clearer picture of the fundamentals in python.
 
 ---
 .left-column-2[
 ##Handwriting recognition
 _I have the gub!_
 
-<br>
-<br>
+<video width="480" height="360" controls src="images/gub.mp4" type="video/mp4"</video>
 ]
 
 .right-column-2[
 <br><br>
-> _Bank Teller #1:_<br> 
+> _Bank Teller #1:_<br>
 Does this look like "<font color="red">gub</font>" or "gun"?
 
 > _Bank Teller #2: _<br>
@@ -153,34 +183,41 @@ Oh, I see. This is a holdup?
 ]
 ]
 
+???
+Take the Money and Run is a 1969 American mockumentary comedy film directed by Woody Allen and starring Allen and Janet Margolin (with Louise Lasser in a small role). Written by Allen and Mickey Rose, the film chronicles the life of Virgil Starkwell (Woody Allen), an inept bank robber.
 ---
-##Machine translation
 
-.left[
-他 | 向 | 记者 | 介绍了 | 主要 | 内容 
----|---|---|---|---|---
-He &nbsp; |to &nbsp; |reporters &nbsp; |introduced &nbsp; |main &nbsp; |content
-]
+##Speech recognition
 
-1. he introduced reporters to the main contents of the statement 
-
-2. he briefed to reporters the main contents of the statement
-3. he briefed reporters on the main contents of the statement
-
+&nbsp;|&nbsp;
+ -|-
+<video width="480" height="320" controls src="images/helen.mp4" type="video/mp4"</video> | <img src="images/siri.jpg" height=320>
 ---
-##Augmentative communication 
+##Augmentative communication
 
 <img src="images/hawking.jpg" width=700>
 
 ---
-##Speech recognition
 
 .left-column-2[
-<img src="images/siri.jpg" height=300>
-]
+##Language generation
 
+_“You are uniformly charming!” cried he,_
+
+_with a smile of associating and now and_
+
+_then I bowed and they perceived a chaise_
+
+_and four to wish for._
+
+<br>
+.right[A random sentence generated from<br>a **Jane Austen <font color="red">trigram</font> model**
+]
+]
 .right-column-2[
-<video width="480" height="320" controls src="images/helen.mp4" type="video/mp4"</video>
+.right[
+<img src="images/jane_austen.jpg" width=400>
+]
 ]
 
 ---
@@ -209,22 +246,25 @@ class: center, middle
 + ...
 
 + n-gram
+
 ---
+
 .left-column-2[
 ##N-grams as a model of language
 
 **Basic problem: **<br>
 Is this a probable sequence of words in the language and how probable is it?
 ]
-  
+
 ---
+
 .left-column-2[
 ##N-grams as a model of language
 
 **Basic problem: **<br>
 Is this a probable sequence of words in the language and how probable is it?
 
-<br><br>
+<br>
 Using corpus data for probabilities
 
 ```
@@ -274,18 +314,33 @@ Why approximately equal to?<br><br>
 ######The bigram counts and probabilities <br>for the toy corpus
 ]
 ]
+---
+##N-grams for Machine translation
+
+.left[
+他 | 向 | 记者 | 介绍了 | 主要 | 内容
+---|---|---|---|---|---
+He &nbsp; |to &nbsp; |reporters &nbsp; |introduced &nbsp; |main &nbsp; |content
+]
+
+1. he introduced reporters to the main contents of the statement
+
+2. he briefed to reporters the main contents of the statement
+
+3. he briefed reporters on the main contents of the statement
 
 ---
+
 ##The Markov model or the Markov chain
 
 + The Markov assumption
 
  + the probability of a word depends only on the previous word<br><br>`\(P(q_i|q_1...q_{i-1}) = P(q_i|q_{i-1})\)`
- 
-+ An extension of an FSA: a special case of a weighted FSA 
- + the weights being the probabilities 
+
++ An extension of an FSA: a special case of a weighted FSA
+ + the weights being the probabilities
  + the input sequence uniquely determining the states to go through
- 
+
 + Useful for assigning probabilities to unambiguous sequences
 
 ---
@@ -305,11 +360,11 @@ Why approximately equal to?<br><br>
 ---
 ##The Markov model or the Markov chain
 .left-column-2[
-<font color="red">`\(Q = q_1q_2 ...q_N\)` </font><br> A set of _N_ **states**
-
-<font color="red">`\(A = a_{01}a_{02}...a_{n1} ...a_{nn}\)` </font><br> A **transition probability matrix** A, each `\(a_{ij}\)` representing the probability of moving from state _i_ to state _j_, s.t. `\(\sum_{j=1}^n a_{ij} = 1 ∀i\)`
-
-<font color="red">`\(q_0\)`,`\(q_F\)` </font><br> A **start state** and a **end (final) state** that are not associated with observations
+<font color="red">`\(Q = \{q_1,q_2, ...q_N\}\)` </font><br> A set of _N_ **states**
+<br>
+<font color="red">`\(A = \{a_{ij}\}\)` </font><br> A **transition probability matrix** A, each `\(a_{ij}\)` representing the probability of moving from state _i_ to state _j_, s.t. `\(\sum_{j=1}^n a_{ij} = 1 ∀i\)`
+<br>
+<font color="red">`\(q_0\)`, `\(q_F\)` </font><br> A **start state** and an **end (final) state**, together with transition probabilities `\(\{a_{01},a_{02}...a_{0n}\}\)` out of the start state and `\(\{a_{1F},a_{2F}...a_{nF}\}\)` into the end state `\(q_0\)`, `\(q_F\)`
 ]
 
 .right-column-2[
@@ -337,9 +392,9 @@ Used to compute a probability for a sequence of NOT observable events
 ---
 ##HMM and Part-Of-Speech (POS) tagging
 
-<img src="images/hmm.jpg" width=650>
+<img src="images/hmm.png" width=800> <br>
 
-The sequence of words observed: 
+The sequence of words observed:
 <table border="0" width="100%">
     <tr>
       <td align="center" style="color:#ffffff" bgcolor="#33FFFF">colorless</td>
@@ -351,58 +406,58 @@ The sequence of words observed:
 </table>
 
 ???
-Colorless green ideas sleep furiously is a sentence composed by Noam Chomsky in his 1957 book Syntactic Structures as an example of a sentence that is grammatically correct, but semantically nonsensical. 
- 
+Colorless green ideas sleep furiously is a sentence composed by Noam Chomsky in his 1957 book Syntactic Structures as an example of a sentence that is grammatically correct, but semantically nonsensical.
+
 ---
 ##The hidden Markov model
 
-<font color="red">`\(Q = q_1q_2 ...q_N\)` </font>: a set of _N_ **states**
-<font color="red">`\(A = a_{11}a_{12}...a_{n1} ...a_{nn}\)` </font>: a **transition probability matrix** A, each `\(a_{ij}\)` representing the probability of moving from state _i_ to state _j_, s.t. `\(\sum_{j=1}^n a_{ij} = 1 ∀i\)`<br>
+<font color="red">`\(Q = \{q_1, q_2, ...q_N\}\)` </font>: a set of _N_ **states**
+<font color="red">`\(A = \{a_{ij}\}\)` </font>: a **transition probability matrix** A, each `\(a_{ij}\)` representing the probability of moving from state _i_ to state _j_, s.t. `\(\sum_{j=1}^n a_{ij} = 1 ∀i\)`<br>
 <font color="red">`\(O = o_1o_2 ...o_T\)` </font>: a sequence of _T_ **observations**, each one drawn from a vocabulary `\(V = v_1,v_2,...,v_V\)`<br>
-<font color="red">`\(B = b_i(o_t)\)`</font>: a sequence of **observation likelihoods**, also called **emission probabilities**, each expressing the probability of an observation `\(o_t\)` being generated from a state _i_<br>
-<font color="red">`\(q_0\)`,`\(q_F\)` </font>: a **start state** and a **end (final) state** that are not associated with observations
+<font color="red">`\(B = \{b_i(o_t)\}\)`</font>: an **observation probability matrix**, each expressing the probability of an observation `\(o_t\)` being generated from a state _i_<br>
+<font color="red">`\(q_0\)`, `\(q_F\)` </font>: a **start state** and an **end (final) state**, together with transition probabilities `\(\{a_{01},a_{02}...a_{0n}\}\)` out of the start state and `\(\{a_{1F},a_{2F}...a_{nF}\}\)` into the end state `\(q_0\)`, `\(q_F\)`
 
 ---
+## HMM: a probabilistic sequence model
 
-assign a label or class to each unit in a sequence, thus mapping a sequence of observations to a sequence of labels. An HMM is a probabilistic sequence model: given a sequence of units (words, letters, morphemes, sentences, whatever)
+Given a sequence of units (words, letters, morphemes, sentences, whatever), <br>
+a HMM assigns a label or class to each unit in the sequence, <br>
+thus mapping a sequence of observations to a sequence of labels.
+
+_colorless green ideas sleep furiously_
+
+<img src="images/hmm.png" width=700>
 
 ---
-
 ##At the end of this session you will
 
-+ understand what a finite state transducer is and how it might be used in morphological parsing;<br><br>
++ understand how n-grams can model a language;<br>
 
-+ learn how to define a function, what is a namespace, what is a scope, and how they work.
++ learn how to use corpus data to compute the probabilities of n-grams;<br>
 
++ understand how n-grams may help to develop NLP applications;<br>
+
++ learn the difference between Markov models and hidden Markov models;<br>
+
++ know hidden Markov models can help parsing on different levels;<br>
+
++ get a clearer picture of the fundamentals in python.
 
 ---
+class: center, middle
+##Next session
 
-“You are uniformly charming!” cried he, with a smile of associating and now and then I bowed and they perceived a chaise and four to wish for.
-"Jane Austen"
-Random sentence generated from a Jane Austen trigram model
+Part-Of-Speech Tagging and Syntactic Parsing
 
 ---
 ##Assignment
 
 **1. Review**
 
-+ J+M 3 
++ J+M 4
 
-> Questions: 1) How might morphological parsing work for the NLP applications in our daily life? Any example? 2) What might be the difficulties of morphological parsing in Chinese?
+> Questions:
 
-+ In-class practice for session 3
-
-+ Practical 3
++ Practical 4
 
 **2. Practice**
-
-+ Finish the exercise of Practical 3 and submit your codes at 网络学堂. (DDL: Oct. 25)
-
----
-class: center, middle
-##Next session
-
-N-grams and Hidden Markov Models
-
-
-
