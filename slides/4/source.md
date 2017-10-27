@@ -14,7 +14,7 @@ class: center, middle
 Recognizer (acceptor) vs. generator
 
 .left-column-2[
-A recognizer takes a pair of strings as input and <font color="red">outputs</font> _accept_ if the string-pair is in the string-pair language, and _reject_ if it is not.A generator takes a pair of strings as input and <font color="red">outputs</font> pairs of strings of the language. Thus the output is a _yes_ or _no_, and a pair of output strings.
+A recognizer takes a string as input and <font color="red">outputs</font> _accept_ if the string is in a string of the language, and _reject_ if it is not.A generator takes a string as input and <font color="red">outputs</font> a new string.
 ]
 .right-column-2[
 > <img src="images/baa_fsa.png" width=450>
