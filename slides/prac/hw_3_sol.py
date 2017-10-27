@@ -85,7 +85,7 @@ def Soundex_1(name):
 
 
 #################################################################################################
-# Second solution: an abstraction of the FST
+# Second solution: if you're not familiar with FSTs
 #################################################################################################
 
 def Soundex_2(name):
