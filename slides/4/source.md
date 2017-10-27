@@ -25,7 +25,7 @@ A recognizer takes a string as input and <font color="red">outputs</font> _accep
 ---
 ##Recap: FSA for English numbers 1-999
 
-<br><br>
+Updating ...<br>
 <img src="images/999.png" width=1000>
 
 ---
