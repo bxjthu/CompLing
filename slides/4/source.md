@@ -458,7 +458,6 @@ _colorless green ideas sleep furiously_
 Build a toy corpus of your own and:
 
 + Write out the equation for trigram probability estimation. Then write out all the non-zero trigram probabilities for a sentence in your corpus.
-
 + Calculate the probability of the sentences in your corpus.
 
 Bring your special findings, if any, to the class!
