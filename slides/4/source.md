@@ -444,20 +444,25 @@ _colorless green ideas sleep furiously_
 + get a clearer picture of the fundamentals in python.
 
 ---
-class: center, middle
-##Next session
-
-Part-Of-Speech Tagging and Syntactic Parsing
-
----
 ##Assignment
 
 **1. Review**
 
-+ J+M 4
-
-> Questions:
-
++ J+M 4 - pages 1-8
++ J+M 9 - pages 1-6
 + Practical 4
++ Mathematical foundations
 
 **2. Practice**
+
+Build a toy corpus of your own and:
+
++ Write out the equation for trigram probability estimation. Then write out all the non-zero trigram probabilities for a sentence in your corpus.
+
++ Calculate the probability of the sentences in your corpus.
+
+---
+class: center, middle
+##Next session
+
+Part-Of-Speech Tagging and Syntactic Parsing
