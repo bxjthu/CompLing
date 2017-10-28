@@ -461,6 +461,7 @@ Build a toy corpus of your own and:
 
 + Calculate the probability of the sentences in your corpus.
 
+Bring your special findings, if any, to the class!
 ---
 class: center, middle
 ##Next session
