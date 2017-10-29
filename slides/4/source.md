@@ -162,7 +162,7 @@ class: center, middle
 ##Handwriting recognition
 _I have the gub!_
 
-<video width="480" height="360" controls src="images/gub.mp4" type="video/mp4"</video>
+<video width="480" height="360" controls src="https://bxjthu.github.io/CompLing/slides/4/images/gub.mp4" type="video/mp4"</video>
 ]
 
 .right-column-2[
@@ -191,7 +191,7 @@ Take the Money and Run is a 1969 American mockumentary comedy film directed by W
 
 &nbsp;|&nbsp;
  -|-
-<video width="480" height="320" controls src="images/helen.mp4" type="video/mp4"</video> | <img src="images/siri.jpg" height=320>
+<video width="480" height="320" controls src="https://bxjthu.github.io/CompLing/slides/4/images/helen.mp4" type="video/mp4"</video> | <img src="images/siri.jpg" height=320>
 ---
 ##Augmentative communication
 
@@ -275,17 +275,33 @@ Using corpus data for probabilities
 
 ```
 .center[
-######A toy corpus
+.smaller[**A toy corpus**]
 ]
 ]
 
-.right-column-2[
-<br>
-.right[
-<img src="images/bigram_toy.png" width=450>
-]
+.right-column-4[
+<br><br>
+.smaller[
+w<sub>n−1</sub> | w<sub>n</sub> | count&nbsp;&nbsp; | probability
+--|--|:--:|:--:
+`<s>` | welcome&nbsp;&nbsp; | 3 | 0.60
+`<s>` | what | 1 | 0.20
+`<s>` | you | 1 | 0.20
+a | welcome | 2 | 1.00
+are | a | 1 | 1.00
+back | `</s>` | 1 | 1.00
+home | `</s>` | 2 | 1.00
+sight | `</s>` | 1 | 1.00
+welcome&nbsp;&nbsp; | home | 2 | 0.40
+welcome | back | 1 | 0.20
+welcome | sight | 1 | 0.20
+welcome | `</s>` | 1 | 0.20
+what | a | 1 | 1.00
+you | are | 1 | 1.00
+
 .center[
-######The bigram counts and probabilities <br>for the toy corpus
+**The bigram counts and probabilities <br>for the toy corpus**
+]
 ]
 ]
 
@@ -305,15 +321,32 @@ Why approximately equal to?<br><br>
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`\(=\prod_{k=1}^nP(w_k|w_1^{k−1})\)`
 ]
 
-.right-column-2[
-<br>
-.right[
-<img src="images/bigram_toy.png" width=450>
-]
+.right-column-4[
+<br><br>
+.smaller[
+w<sub>n−1</sub> | w<sub>n</sub> | count&nbsp;&nbsp; | probability
+--|--|:--:|:--:
+`<s>` | welcome&nbsp;&nbsp; | 3 | 0.60
+`<s>` | what | 1 | 0.20
+`<s>` | you | 1 | 0.20
+a | welcome | 2 | 1.00
+are | a | 1 | 1.00
+back | `</s>` | 1 | 1.00
+home | `</s>` | 2 | 1.00
+sight | `</s>` | 1 | 1.00
+welcome&nbsp;&nbsp; | home | 2 | 0.40
+welcome | back | 1 | 0.20
+welcome | sight | 1 | 0.20
+welcome | `</s>` | 1 | 0.20
+what | a | 1 | 1.00
+you | are | 1 | 1.00
+
 .center[
-######The bigram counts and probabilities <br>for the toy corpus
+**The bigram counts and probabilities <br>for the toy corpus**
 ]
 ]
+]
+
 ---
 ##N-grams for Machine translation
 
