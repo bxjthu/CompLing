@@ -379,10 +379,28 @@ He &nbsp; |to &nbsp; |reporters &nbsp; |introduced &nbsp; |main &nbsp; |content
 ---
 ##The Markov model or the Markov chain
 .left-column-2[
-<img src="images/bigram_toy.png" width=415>
+.smaller[
+w<sub>n−1</sub> | w<sub>n</sub> | count&nbsp;&nbsp; | probability
+:--|:--|:--:|:--:
+`<s>` | welcome&nbsp;&nbsp; | 3 | 0.60
+`<s>` | what | 1 | 0.20
+`<s>` | you | 1 | 0.20
+a | welcome | 2 | 1.00
+are | a | 1 | 1.00
+back | `</s>` | 1 | 1.00
+home | `</s>` | 2 | 1.00
+sight | `</s>` | 1 | 1.00
+welcome&nbsp;&nbsp; | home | 2 | 0.40
+welcome | back | 1 | 0.20
+welcome | sight | 1 | 0.20
+welcome | `</s>` | 1 | 0.20
+what | a | 1 | 1.00
+you | are | 1 | 1.00
 
-> ######The bigram counts and probabilities <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for the toy corpus
+<br>
+**The bigram counts and probabilities <br>for the toy corpus**
 
+]
 ]
 
 .right-column-2[
