@@ -270,8 +270,13 @@ Using corpus data for probabilities
 ```
 *<s>welcome home</s>
 *
-*<s>welcome back</s>**<s>welcome home</s>*
-*<s>you are a welcome sight</s>**<s>what a welcome</s>
+*<s>welcome back</s>
+*
+*<s>welcome home</s>
+*
+*<s>you are a welcome sight</s>
+*
+*<s>what a welcome</s>
 
 ```
 .center[
@@ -381,7 +386,7 @@ He &nbsp; |to &nbsp; |reporters &nbsp; |introduced &nbsp; |main &nbsp; |content
 .left-column-2[
 .smaller[
 w<sub>n−1</sub> | w<sub>n</sub> | count&nbsp;&nbsp; | probability
-:--|:--|:--:|:--:
+:--|--|:--:|:--:
 `<s>` | welcome&nbsp;&nbsp; | 3 | 0.60
 `<s>` | what | 1 | 0.20
 `<s>` | you | 1 | 0.20
@@ -397,9 +402,10 @@ welcome | `</s>` | 1 | 0.20
 what | a | 1 | 1.00
 you | are | 1 | 1.00
 
-<br>
+<br
+>
 **The bigram counts and probabilities <br>for the toy corpus**
-
+]
 ]
 ]
 
