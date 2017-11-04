@@ -720,21 +720,20 @@ Parse tree:
 
 **1. Review**
 
-+ J+M 4 - pages 1-8
-+ J+M 9 - pages 1-6
-+ Practical 4
-+ Mathematical foundations
++ J+M 10: pages 1-16
++ J+M 11: pages 1-21
 
-**2. Practice**
+Question:
+<br>
+How might POS features be used in information extraction, informational retrieval, automatic summarization, speech synthesis and recognition, or other NLP applications you can think of?
 
-Build a toy corpus of your own and:
+**2. Read and Practice**
 
-+ Write out the equation for trigram probability estimation. Then write out all the non-zero trigram probabilities for a sentence in your corpus.
-
-+ Calculate the probability of the sentences in your corpus.
+Categorizing and Tagging Words: http://www.nltk.org/book/ch05.html
 
 ---
+
 class: center, middle
 ##Next session
 
-Part-Of-Speech Tagging and Syntactic Parsing
+Syntactic Parsing
