@@ -15,14 +15,19 @@ class: center, middle
 
 **Probabilities of bigrams**
 
-`\(P(w_n|w_{n−1})=\frac{C(w_{n-1}w_n)}{\sum_wC(w_{n-1}w)}=\frac{C(w_{n-1}w_n)}{C(w_{n-1})} \)`
+\\(P(w\_n|w\_{n-1}) = \frac{C(w\_{n-1} w\_n)}{\sum\_w C(w\_{n-1}w)}=\frac{C(w\_{n-1}w\_n)}{C(w\_{n-1})} \\)
 
 **Probabilities of sequences**<br>
-`\begin{align*}
-P(w_1^n) &= P(w_1)P(w_2|w_1)P(w_3|w_1^2)...P(w_n|w_1^{n-1})\\
-          &= \prod_{k=1}^nP(w_k|w_1^{k−1})\\
-          &\approx \prod_{k=1}^nP(w_k|w_{k−1})
-\end{align*}`
+
+\\(
+\footnotesize
+\begin{aligned}
+P(w\_1^n) & = P(w\_1) P(w\_2|w\_1) P(w\_3|w\_1^2) \cdots P(w\_n|w\_1^{n-1}) \\\
+& = \prod\_{k=1}^n P(w\_k|w\_1^{k-1})  \\\
+& \approx \prod\_{k=1}^n P(w\_k|w\_{k-1})
+\end{aligned}
+\\)
+
 ]
 
 .right-column-4[
@@ -58,14 +63,21 @@ you | are | 1 | 1.00
 
 **Probabilities of trigrams**
 
-`\(P(w_n|w_{n−2}w_{n−1})=\frac{C(w_{n-2}w_{n-1}w_n)}{C(w_{n-2}w_{n-1})} \)`
+\\(
+P(w\_n | w\_{n-2} w\_{n-1}) =
+\frac{C(w\_{n-2}w\_{n-1}w\_n)}{C(w\_{n-2}w\_{n-1})}
+\\)
 
 **Probabilities of sequences**<br>
-`\begin{align*}
-P(w_1^n) &= P(w_1)P(w_2|w_1)P(w_3|w_1^2)...P(w_n|w_1^{n-1})\\
-          &= \prod_{k=1}^nP(w_k|w_1^{k−1})\\
-          &\approx \prod_{k=1}^nP(w_k|w_{k−2}w_{k−1})
-\end{align*}`
+
+\\(
+\footnotesize
+\begin{aligned}
+P(w\_1^n) & = P(w\_1)P(w\_2|w\_1)P(w\_3|w\_1^2) \cdots P(w\_n|w\_1^{n-1}) \\\
+& = \prod\_{k=1}^n P(w\_k|w\_1^{k-1}) \\\
+& \approx \prod\_{k=1}^n P(w\_k|w\_{k-1}w\_{k-2})
+\end{aligned}
+\\)
 ]
 
 .right-column-4[
@@ -127,15 +139,16 @@ are | so | lovely | 1 | 1
 
   How well does the trained model predict the test set?
 
-  + Division of the data set
+  Division of the data set
+
 ---
 
 ## The astonishing durability of POS through two millennia
 
 Terminology: parts-of-speech, word classes, syntactic categories, ...
 
- &nbsp;|&nbsp;
- -|-
+&nbsp;|&nbsp;
+-|-
 <img src="images/Dionysius_Thrax_Grammar.jpg" height=360>&nbsp;&nbsp;&nbsp; | <video width="480" height="360" controls src="images/conjunction_junction.mp4" type="video/mp4"</video>
 
 ---
@@ -274,7 +287,7 @@ else eliminate ADV tag
 
 .left-column-2[
 ## HMM POS tagging: a decoding task
-Given as <font color="red">input</font> an HMM `\(\lambda = (A, B)\)` <br>and a sequence of observations `\(O = o_1o_2...o_T\)`, <font color="red">find</font> the most probable sequence of states `\(Q = q_1q_2q_3...q_T\)`.
+Given as <font color="red">input</font> an HMM \\(\lambda = (A, B)\\) <br>and a sequence of observations \\(O = o_1o_2 \cdots o_T\\), <font color="red">find</font> the most probable sequence of states \\(Q = q_1q_2q_3 \cdots q_T\\).
 
 <br>
 <img src="images/hmm.png" width=600>
@@ -283,11 +296,16 @@ Given as <font color="red">input</font> an HMM `\(\lambda = (A, B)\)` <br>and a 
 .right-column-4[
 <br><br>
 .smaller[
-<font color="red">`\(Q = \{q_1, q_2, ...q_N\}\)` </font>: a set of _N_ **states**
-<font color="red">`\(A = \{a_{ij}\}\)` </font>: a **transition probability matrix** A, each `\(a_{ij}\)` representing the probability of moving from state _i_ to state _j_, s.t. `\(\sum_{j=1}^n a_{ij} = 1 ∀i\)`<br>
-<font color="red">`\(O = o_1o_2 ...o_T\)` </font>: a sequence of _T_ **observations**, each one drawn from a vocabulary `\(V = v_1,v_2,...,v_V\)`<br>
-<font color="red">`\(B = \{b_i(o_t)\}\)`</font>: an **observation probability matrix**, each expressing the probability of an observation `\(o_t\)` being generated from a state _i_<br>
-<font color="red">`\(q_0\)`, `\(q_F\)` </font>: a **start state** and an **end (final) state**, together with transition probabilities `\(\{a_{01},a_{02}...a_{0n}\}\)` out of the start state and `\(\{a_{1F},a_{2F}...a_{nF}\}\)` into the end state `\(q_0\)`, `\(q_F\)`
+<font color="red">\\(Q = \\{q\_1, q\_2, \cdots q\_N\\}\\) </font>: a set of _N_ **states**
+
+
+<font color="red">\\(A = \\{a\_{ij}\\}\\) </font>: a **transition probability matrix** A, each \\(a\_{ij}\\) representing the probability of moving from state _i_ to state _j_, s.t. \\(\sum\_{j=1}^n a\_{ij} = 1, \forall i \\)
+
+<font color="red">\\(O = o\_1o\_2 \cdots o\_T\\) </font>: a sequence of _T_ **observations**, each one drawn from a vocabulary \\(V = v\_1,v\_2 \cdots v\_V\\)<br>
+
+<font color="red">\\(B = \\{b\_i(o\_t)\\}\\)</font>: an **observation probability matrix**, each expressing the probability of an observation \\(o\_t\\) being generated from a state _i_<br>
+
+<font color="red">\\(q\_0\\), \\(q\_F\\) </font>: a **start state** and an **end (final) state**, together with transition probabilities \\(\\{a\_{01},a\_{02} \cdots a\_{0n}\\}\\) out of the start state and \\(\\{a\_{1F},a\_{2F} \cdots a\_{nF}\\}\\) into the end state \\(q\_0\\), \\(q\_F\\)
 ]
 ]
 
@@ -296,20 +314,22 @@ Given as <font color="red">input</font> an HMM `\(\lambda = (A, B)\)` <br>and a 
 .left-column-4[
 ## Bayes' theorem
 
-Property A = {F,M}<br>
+Property A = {F,M}
+
 Property B = {FL,CS}
 
-`\(P(M) = \frac{5}{10} = 0.5\)`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; `\(P(F) = \frac{5}{10} = 0.5\)`
+\\(
+\footnotesize P(M) = \frac{5}{10} = 0.5 \quad P(F) = \frac{5}{10} = 0.5\\)
 
-`\(P(CS) = \frac{4}{10} = 0.4\)`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; `\(P(FL) = \frac{6}{10} = 0.6\)`
+\\(\footnotesize P(CS) = \frac{4}{10} = 0.4  \quad  P(FL) = \frac{6}{10} = 0.6\\)
 
-`\(P(CS|M) = \frac{3}{5} = 0.6\)`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; `\(P(FL|M) = \frac{2}{5} = 0.4\)`
+\\(\footnotesize P(CS|M) = \frac{3}{5} = 0.6  \quad  P(FL|M) = \frac{2}{5} = 0.4\\)
 
-`\(P(CS|F) = \frac{1}{5} = 0.2\)`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; `\(P(FL|F) = \frac{4}{5} = 0.8\)`
+\\(\footnotesize P(CS|F) = \frac{1}{5} = 0.2  \quad  P(FL|F) = \frac{4}{5} = 0.8\\)
 
-`\(P(M|CS) = \frac{3}{4} = 0.75\)`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; `\(P(F|CS) = \frac{1}{4} = 0.25\)`
+\\(\footnotesize P(M|CS) = \frac{3}{4} = 0.75 \quad  P(F|CS) = \frac{1}{4} = 0.25\\)
 
-`\(P(M|FL) = \frac{2}{6} = 0.33\)`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; `\(P(F|FL) = \frac{4}{6} = 0.66\)`
+\\(\footnotesize P(M|FL) = \frac{2}{6} = 0.33  \quad  P(F|FL) = \frac{4}{6} = 0.66 \\)
 
 ]
 
@@ -342,12 +362,13 @@ a theorem describing how the conditional probability of each of a set of possibl
 .left-column-2[
 ## Bayes' theorem
 
-Property A = {F,M}<br>
+Property A = {F,M}
+
 Property B = {FL,CS}
 
 The interaction between probabilities of the two properties.
 
-`\[P(A|B) = \frac{P(B|A)P(A)}{P(B)}\]`
+\\[P(A|B) = \frac{P(B|A)P(A)}{P(B)}\\]
 
 Applying Bayes’ theorem to POS tagging:
 
@@ -382,31 +403,43 @@ F | FL
 
 ## The basic equation of HMM tagging
 
-The most probable tag sequence given the observation sequence of n words `\(w_1^n\)`:
+The most probable tag sequence given the observation sequence of n words \\(w\_1^n\\):
 
-`\(\hat{t}_1^n = \underset{t_1^n}{\operatorname{argmax}}P(t_1^n|w_1^n)\)`
+\\(\hat{t}\_1^n = \underset{t\_1^n}{\text{argmax}}P(t\_1^n|w\_1^n)\\)
 
-`\(\hat{t}_1^n = \underset{t_1^n}{\operatorname{argmax}}\frac{P(w_1^n|t_1^n)P(t_1^n)}{P(w_1^n)}\)` &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; `\(\Lleftarrow\)` using the Bayes’ rule
+\\(\hat{t}\_1^n\\) means 'the estimate of the sequence of n tags'
 
-`\(\hat{t}_1^n = \underset{t_1^n}{\operatorname{argmax}}P(w_1^n|t_1^n)P(t_1^n)\)` &nbsp;&nbsp;&nbsp; `\(\Lleftarrow\)` dropping the denominator `\(P(w_1^n)\)`
-
-`\(P(w_1^n|t_1^n)\approx\prod_{i=1}^nP(w_i|t_i)\)` &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; `\(P(w_i|t_i) = \frac{\text{Frequency of } w_i \text{ tagged as } t_i \text{ in the training corpus}}{\text{Frequency of } t_i \text{ in the training corpus}}\)`
-
-`\(P(t_1^n)\approx\prod_{i=1}^nP(t_i|t_{i-1})\)` &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; `\(P(t_i|t_{i-1}) = \frac{\text{Frequency of } t_i \text{ after }t_{i-1} \text{ in the training corpus}}{\text{Frequency of } t_{i-1} \text{ in the training corpus}}\)`
+\\(\underset{x}{\text{argmax}}P(x)\\) means 'the x such that P(x) is maximized'
 
 ---
 
 ## The basic equation of HMM tagging
 
-The most probable tag sequence given the observation sequence of n words `\(w_1^n\)`:
+The most probable tag sequence given the observation sequence of n words \\(w\_1^n\\):
 
-`$$\hat{t}_1^n = \underset{t_1^n}{\operatorname{argmax}}P(w_1^n|t_1^n)P(t_1^n)\approx\prod_{i=1}^nP(w_i|t_i)P(t_i|t_{i-1})$$`
+\\(\hat{t}\_1^n = \underset{t\_1^n}{\text{argmax}}P(t\_1^n|w\_1^n)\\)
+
+\\(\hat{t}\_1^n = \underset{t\_1^n}{\text{argmax}}\frac{P(w\_1^n|t\_1^n)P(t\_1^n)}{P(w\_1^n)} \quad \Lleftarrow\\) using the Bayes’ rule
+
+\\(\hat{t}\_1^n = \underset{t\_1^n}{\text{argmax}}P(w\_1^n|t\_1^n)P(t\_1^n) \quad \Lleftarrow\\) dropping the denominator \\(P(w\_1^n)\\)
+
+\\(P(w\_1^n|t\_1^n) \approx \prod\_{i=1}^n P(w\_i|t\_i) \quad P(w\_i|t\_i) = \frac{\text{Frequency of } w\_i \text{ tagged as } t\_i \text{ in the training corpus}}{\text{Frequency of } t\_i \text{ in the training corpus}}\\)
+
+\\(P(t\_1^n) \approx \prod\_{i=1}^n P(t\_i|t\_{i-1}) \qquad P(t\_i|t\_{i-1}) = \frac{\text{Frequency of } t\_i \text{ after }t\_{i-1} \text{ in the training corpus}}{\text{Frequency of } t\_{i-1} \text{ in the training corpus}}\\)
+
+---
+
+## The basic equation of HMM tagging
+
+The most probable tag sequence given the observation sequence of n words \\(w\_1^n\\):
+
+$$\hat{t}\_1^n = \underset{t\_1^n}{\text{argmax}}P(w\_1^n|t\_1^n)P(t\_1^n)\approx\prod\_{i=1}^nP(w\_i|t\_i)P(t\_i|t\_{i-1})$$
 
 <br>
 
-`$$P(w_i|t_i) = \frac{\text{Frequency of } w_i \text{ tagged as } t_i \text{ in the training corpus}}{\text{Frequency of } t_i \text{ in the training corpus}}$$`
+$$P(w\_i|t\_i) = \frac{\text{Frequency of } w\_i \text{ tagged as } t\_i \text{ in the training corpus}}{\text{Frequency of } t\_i \text{ in the training corpus}}$$
 
-`$$P(t_i|t_{i-1}) = \frac{\text{Frequency of } t_i \text{ after }t_{i-1} \text{ in the training corpus}}{\text{Frequency of } t_{i-1} \text{ in the training corpus}}$$`
+$$P(t\_i|t\_{i-1}) = \frac{\text{Frequency of } t\_i \text{ after }t\_{i-1} \text{ in the training corpus}}{\text{Frequency of } t\_{i-1} \text{ in the training corpus}}$$
 
 ---
 
@@ -494,12 +527,14 @@ _C → !_
 
 <img src="images/baa_fsa.png" width=550>
 
-`\begin{align*}
-Q &= \{q_0,q_1,q_2,q_3,q_4\}\\
-Σ &= \{b,a,!\}\\
-q_0 &= q_0\\
-F &= \{q_4\}
-\end{align*}`
+$$
+\begin{aligned}
+Q &= \\{q\_0,q\_1,q\_2,q\_3,q\_4\\}\\\
+Σ &= \\{b,a,!\\}\\\
+q\_0 &= q\_0\\\
+F &= \\{q\_4\\}
+\end{aligned}
+$$
 
 ]
 
@@ -562,12 +597,14 @@ _C → !_
 
 <img src="images/baa_fsa_rg.png" width=550>
 
-`\begin{align*}
-Q &= \{S,A,B,C,q_4\}\\
-Σ &= \{b,a,!\}\\
-q_0 &= S\\
-F &= \{q_4\}
-\end{align*}`
+$$
+\begin{aligned}
+Q &= \\{S,A,B,C,q\_4\\}\\\
+Σ &= \\{b,a,!\\}\\\
+q\_0 &= S\\\
+F &= \\{q\_4\\}
+\end{aligned}
+$$
 
 ]
 
@@ -732,7 +769,6 @@ How might POS features be used in information extraction, informational retrieva
 Categorizing and Tagging Words: http://www.nltk.org/book/ch05.html
 
 ---
-
 class: center, middle
 ##Next session
 
