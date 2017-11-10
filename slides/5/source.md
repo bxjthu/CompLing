@@ -120,7 +120,7 @@ are | so | lovely | 1 | 1
 
 + know how to describe a language using a regular grammar;
 
-+ know how to describe a language using a context free grammar.
++ know how to describe a language using a context-free grammar.
 
 ---
 ## Evaluating the performance of a model
@@ -433,7 +433,7 @@ The most probable tag sequence given the observation sequence of n words \\(w\_1
 
 The most probable tag sequence given the observation sequence of n words \\(w\_1^n\\):
 
-$$\hat{t}\_1^n = \underset{t\_1^n}{\text{argmax}}P(w\_1^n|t\_1^n)P(t\_1^n)\approx\prod\_{i=1}^nP(w\_i|t\_i)P(t\_i|t\_{i-1})$$
+$$\hat{t}\_1^n = \underset{t\_1^n}{\text{argmax}}P(w\_1^n|t\_1^n)P(t\_1^n)\approx\underset{t\_1^n}{\text{argmax}}\prod\_{i=1}^nP(w\_i|t\_i)P(t\_i|t\_{i-1})$$
 
 <br>
 
@@ -478,7 +478,7 @@ Maximum entropy Markov models
 <br>
   + Models of syntax and grammar
     > + Regular grammars
-    > + Context free grammars
+    > + Context-free grammars
     > + ...
 
 ---
@@ -662,7 +662,7 @@ _C → !_
 
 ---
 
-## Context free grammars for natural language
+## Context-free grammars for natural language
 
 + Less restrictive and hence more powerful
 
@@ -680,7 +680,7 @@ _C → !_
 
 ---
 
-## Context free grammars: the formal definition
+## Context-free grammars: the formal definition
 
 _S_: a designated start symbol;
 
@@ -694,7 +694,7 @@ _R_: a set of rewrite rules of the form _A → β_<br>
 
 ---
 .left-column-2[
-## Context free grammars: an example
+## Context-free grammars: an example
 
 E.g. I prefer a morning flight
 
@@ -713,7 +713,7 @@ Parse tree:
 ---
 
 .left-column-2[
-## Context free grammars: an example
+## Context-free grammars: an example
 
 <img src="images/cfg.png" width=480>
 
@@ -750,7 +750,7 @@ Parse tree:
 
 + know how to describe a language using a regular grammar;
 
-+ know how to describe a language using a context free grammar.
++ know how to describe a language using a context-free grammar.
 
 ---
 ##Assignment
