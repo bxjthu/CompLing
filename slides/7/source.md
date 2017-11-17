@@ -493,21 +493,6 @@ The Universal Dependencies project (Nivre et al., 2016)<br>
   ...
 
 ---
-## Practice
-
-+ http://nlp.stanford.edu:8080/parser/
-  Try to get accustomed to seeing syntax trees written as bracketed structures.
-
-+ Python: parse tree drawing
-
-  ```
-  >>> from nltk.tree import Tree
-  >>> from nltk.draw.tree import TreeView
-  >>> t = Tree.fromstring('(S (NP this tree) (VP (V is) (AdjP pretty)))')
-  >>> TreeView(t)
-  ```
-
----
 
 ## At the end of this session you will
 
