@@ -514,22 +514,22 @@ The Universal Dependencies project (Nivre et al., 2016)<br>
 
 ##Assignment
 
-???
 **1. Review**
 
-+ [J+M 13](https://bxjthu.github.io/CompLing/readings/6_J+M_13.pdf)
-+ [J+M[3rd] 12](https://bxjthu.github.io/CompLing/readings/6_J+M[3rd]_12.pdf): pages 1-9
-
-Exercise: .smaller[Using the set of terminals {can, fish, rivers, pools, December, Scotland, it, they, in} and non-terminals {NP, VP, PP, V, P, S} with starting symbol S, design a CFG in Chomsky Normal Form capable of generating the following sentences _they can fish, they fish, they fish in rivers, they fish in rivers in December_. Give a formal definition of your CFG and discuss any weaknesses of it in terms of over/under-production.]
++ [J+M[3rd] 13](https://bxjthu.github.io/CompLing/readings/7_J+M[3rd]_13.pdf)
++ [J+M[3rd] 14](https://bxjthu.github.io/CompLing/readings/7_J+M[3rd]_14.pdf)
 
 **2. Practice**
 
-+ Download Stanford Parser to parse sentences and draw parse trees.  .smaller[([README](https://bxjthu.github.io/CompLing/slides/prac/stnlp_parser.py))]
++ Learn to build your own CFG, PCFG, and DG to describe the structure of a limited set of sentences.
++ Learn to use your grammars, together with the nltk parsers, to analyze sentences and automatically build their syntax trees.
 
-+ Finish Exercise - Practical 6 and submit your codes at 网络学堂. .smaller[(DDL: Dec. 10)]
+Reference:<br>
+http://www.nltk.org/book/ch08.html <br>
+https://www.cs.bgu.ac.il/~elhadad/nlp16/NLTK-PCFG.html
 
 ---
 class: center, middle
 ## Next session
 
-Statistical Parsing and Dependency Parsing
+Features and Unification, Language and Complexity
