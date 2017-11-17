@@ -47,6 +47,23 @@ for tree in parser.parse(sent):
 TreeView(tree)
 
 ###############################
+# Accessing treebanks
+###############################
+
+>>> from nltk.corpus import treebank
+>>> t = treebank.parsed_sents('wsj_0001.mrg')[0]
+>>> print(t)
+
+# Or
+
+import nltk
+print(nltk.corpus.treebank.parsed_sents('wsj_0001.mrg')[0])
+
+#And
+
+nltk.corpus.sinica_treebank.parsed_sents()[3450].draw()
+
+###############################
 # Constructing and manipulating PCFG
 ###############################
 
