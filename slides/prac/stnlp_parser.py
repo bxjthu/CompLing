@@ -5,8 +5,8 @@ from nltk.parse.stanford import StanfordParser
 import os
 
 # set environment variables to the path to your Stanford Parser
-os.environ['STANFORD_PARSER'] = '/Users/yeyuxiao/StanfordNLP/stanford-parser-full-2017-06-09/stanford-parser.jar'
-os.environ['STANFORD_MODELS'] = '/Users/yeyuxiao/StanfordNLP/stanford-parser-full-2017-06-09/stanford-parser-3.8.0-models.jar'
+os.environ['STANFORD_PARSER'] = '/Users/baixiaojing/StanfordNLP/stanford-parser-full-2017-06-09/stanford-parser.jar'
+os.environ['STANFORD_MODELS'] = '/Users/baixiaojing/StanfordNLP/stanford-parser-full-2017-06-09/stanford-parser-3.8.0-models.jar'
 
 # choose the model for your parser
 eng_parser = StanfordParser(model_path=u'edu/stanford/nlp/models/lexparser/englishPCFG.ser.gz')
