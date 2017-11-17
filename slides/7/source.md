@@ -388,7 +388,7 @@ $NP_{object} \to PRP$
 
   E.g. _Workers dumped sacks into a bin._
 
-  **Solution: Lexicaling the rules**
+  **Solution: Lexicalizing the rules**
 
   $VP \to VBD \enspace  NP \enspace  PP$
 
