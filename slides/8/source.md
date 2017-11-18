@@ -14,7 +14,31 @@ Evaluation
 
 ---
 
+## Complexity: an overloaded term
 
+It may refer to:
+
++ the computational ‘expense’ of an algorithm;
+
++ the generative power of a grammar; or
+
++ the human processing difficulty of a sentence.
+
+---
+
+## Chomsky hierarchy
+
++ A theoretical tool to compare the expressive power or complexity of formal mechanisms
+
++ A theoretical tool to better understand human parsing: What makes individual constructions or sentences hard to understand?
+
+**Generative power**
+
++ One grammar is of greater generative power than another if it can define a language that the other cannot define.
+
++ The set of languages describable by grammars of greater power subsumes the set of languages describable by grammars of lesser power.
+
+---
 ## Recap
 
 Exercise: Using the set of <font color="red">terminals {can, fish, rivers, pools, December, Scotland, it, they, in}</font> and <font color="red">non-terminals {NP, VP, PP, V, P, S}</font> with <font color="red">starting symbol S</font>:
