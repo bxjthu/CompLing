@@ -1,6 +1,6 @@
 class: center, middle
 # Computational Linguistics<br>
-## 7. Statistical Parsing and Dependency Parsing
+## 8. Features and Unification, Language and Complexity
 
 ** Xiaojing Bai **
 
@@ -9,6 +9,12 @@ class: center, middle
 ** https://bxjthu.github.io/CompLing **
 
 ---
+
+Evaluation
+
+---
+
+
 ## Recap
 
 Exercise: Using the set of <font color="red">terminals {can, fish, rivers, pools, December, Scotland, it, they, in}</font> and <font color="red">non-terminals {NP, VP, PP, V, P, S}</font> with <font color="red">starting symbol S</font>:
@@ -524,12 +530,10 @@ The Universal Dependencies project (Nivre et al., 2016)<br>
 + Learn to build your own CFG, PCFG, and DG to describe the structure of a limited set of sentences.
 + Learn to use your grammars, together with the nltk parsers, to analyze sentences and automatically build their syntax trees.
 
-.smaller[
 Reference:<br>
-http://www.nltk.org/howto/parse.html<br>
 http://www.nltk.org/book/ch08.html <br>
 https://www.cs.bgu.ac.il/~elhadad/nlp16/NLTK-PCFG.html
-]
+
 ---
 class: center, middle
 ## Next session
