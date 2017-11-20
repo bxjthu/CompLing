@@ -26,9 +26,181 @@ It may refer to:
 
 ---
 
+## The complexity of algorithms
+
+Comparing the efficiency of algorithms: how will they behave in the worst case?
+
+Two particular measures:
+
+1. the amount of <font color="red">time</font> it takes for the algorithm to run to completion;
+
+2. the amount of <font color="red">space</font> (computer memory) it will take to hold the instructions that are waiting to be executed while the algorithm is running.
+
+---
+
+## The time complexity of algorithms
+
+Scenario 1: How many items are on my 11.11 shopping list?
+
+.left-column-1[
+
+```
+*  + 旺仔大礼包
+*  + Thermos保温杯
+*  + 森田面膜
+*  + 欧莱雅卸妆水
+*  + 沃隆每日坚果
+*  + 良品铺子猪肉脯
+```
+]
+.right-column-1[
+.smaller[
+
+<br>
+> **The counting algorithm**
+
+> + Start with a count of zero item;
+
+> + While there are items left to count:
+
+>   + Point to the next item on the list; [0.25s for each]
+
+>   + Increase the count by 1. [0.25s for each]
+
+> **The time cost of the algorithm**: $0.5n$ seconds
+]
+]
+---
+
+## The time complexity of algorithms
+
+Scenario 2: How many items are on the following two shopping lists?
+
+.left-column-1[
+
+```
+*  + 旺仔大礼包
+*  + Thermos保温杯
+*  + 森田面膜
+*  + 欧莱雅卸妆水
+*  + 沃隆每日坚果
+*  + 良品铺子猪肉脯
+```
+
+```
+*  + MacBook VGA转接头
+*  + 中国哲学简史
+*  + 旺仔大礼包
+*  + 沙宣洗护套装
+*  + 云南白药牙膏
+*  + 良品铺子猪肉脯
+```
+]
+.right-column-1[
+.smaller[
+
+<br>
+> **The condensing algorithm**
+
+> + Start with a count of 6 items;
+
+> + While there are items left my friend's list:
+
+>   + Point to the next item on my friend's list; [0.25s for each]
+
+>   + Compare the current item on my friend's list to all the items on my original list; if no match is found, then add the current item to my list and increase the count by 1. [0.5s for each]
+
+> **The time cost of the algorithm**: $0.25n + 0.5n^2$ seconds
+]
+]
+
+---
+
+## The time complexity of algorithms
+
+Big O notation of time complexity (or asymptotic complexity)
+
+In computer science, big O notation is used to classify algorithms according to how their running time or space requirements grow as the input size grows.
+
++ The counting algorithm: a time complexity of $O(n)$
+
++ The condensing algorithm: a time complexity of $O(n^2)$
+
+.smaller[
+Notes: The time cost of an algorithm is usually a complicated formula. We are only interested in the most significant term when stating its order, which means the term involving the highest exponent of $n$.
+]
+
++ An algorithm with a time complexity of $O(c^n)$, where $c$ is a constant, is said to be intractable.
+
+---
+
+.left-column-2[
+## Recap: An example
+
+.smaller[
+E.g. Janet will back the bill
+]
+<img src="images/tagging.png" width=450>
+
+.smaller[
+Janet/NNP&nbsp;&nbsp; will/MD&nbsp;&nbsp; back/VB&nbsp;&nbsp; the/DT&nbsp;&nbsp; bill/NN
+]
+]
+
+.right-column-2[
+**Viterbi algorithm**
+
++ Andrew Viterbi, 1967
+
++ A dynamic programming algorithm
+
++ Maximize the probabilities
+
++ Find the most likely sequence of tags
+
++ Algorithm: exponential complexity
+
+  With a tagset of N tags, for a sequence of M words, there are, in the worse case, <font color="red"> $N^M$ </font> possible paths.
+
++ Efficiency: <font color="red"> $N^M$ </font> vs. <font color="red"> $N^2 \times M$ </font>
+
+]
+---
+
+## The space complexity of algorithms
+
+The stack memory: Stacks in computing architectures are regions of memory where data is added or removed in a last-in-first-out (LIFO) manner.
+.left-column-4[
+Named after the plate-stacking devices
+
++ Pushing: placing an item on the stack
++ Popping: removing an item off the stack
+
+The counting/condensing algorithm:
+
++ a space complexity of $O(1)$ .smaller[stack depth = 1]
++ a space complexity of $O(n)$ .smaller[stack depth = n]
+
+]
+
+.right-column-4[
+<img src="images/stack.png" width=350>
+]
+---
+
+## The complexity of a grammar
+
++ The complexity of the most efficient algorithm to decide whether a string belongs to a regular language is $O(n)$, where $n$ is the length of the string.
+
+<img src="images/baa_fsa.png" width=550>
+
++ The complexity of many algorithms to decide whether a string belongs to a context-free language is $O(n^a)$, where $a$ is a whole number. The algorithms are therefore tractable.
+
+---
+
 ## Chomsky hierarchy
 
-+ A theoretical tool to compare the expressive power or complexity of formal mechanisms
++ A theoretical tool to compare the generative power or complexity of formal mechanisms
 
 + A theoretical tool to better understand human parsing: What makes individual constructions or sentences hard to understand?
 
@@ -36,9 +208,50 @@ It may refer to:
 
 + One grammar is of greater generative power than another if it can define a language that the other cannot define.
 
-+ The set of languages describable by grammars of greater power subsumes the set of languages describable by grammars of lesser power.
++ The set of languages describable by grammars of greater power <font color="red">subsumes</font> the set of languages describable by grammars of lesser power.
 
 ---
+
+## Chomsky hierarchy
+
+<img src="images/chomsky_hierachy.png" width=800>
+
+---
+
+## Chomsky hierarchy
+
+.smaller[
+Type &nbsp;&nbsp;&nbsp;&nbsp;| Language | Rule | Complexity | Automaton
+-|:-|:-|:- |:-
+0| Recursively Enumerable &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| $ \alpha \to \beta $ (where $ \alpha \not = \epsilon$) | Intractable | Turing machine
+1| Context-Sensitive | $ \alpha A \beta \to \alpha \gamma \beta $ (where $ \gamma \not = \epsilon$) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | $ O(c^n) $, intractable &nbsp;&nbsp;&nbsp;&nbsp;| Linear-bounded
+-| Mildly Context-Sensitive |
+2| Context-Free | $ A \to \gamma $ | $ O(n^a) $ | Push down
+3| Regular | $ A \to xB $ and $ A \to x $ | $ O(n) $ | 	Finite state
+
+
+.left-column-2[
+**Meaning of symbols:**<br>
+$x$: terminal<br>
+$A$ and $B$: non-terminal<br>
+$\alpha$ and $\beta$: terminal, non-terminal, or empty<br>
+$\gamma$: terminal or non-terminal
+]
+.right-column-2[
+<img src="images/chomsky_hierachy.png" width=500>
+
+]
+]
+
+---
+
+Is some part of natural language representable by a certain class of grammars?
+Which type of rules can be used to write computational grammars for this part of natural language?
+Which type of automata can be used to process the rules?
+Where does a language keeps its complexity?
+
+---
+
 ## Recap
 
 Exercise: Using the set of <font color="red">terminals {can, fish, rivers, pools, December, Scotland, it, they, in}</font> and <font color="red">non-terminals {NP, VP, PP, V, P, S}</font> with <font color="red">starting symbol S</font>:
