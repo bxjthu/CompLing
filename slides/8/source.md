@@ -1133,7 +1133,7 @@ $\gamma$: terminal or non-terminal
 + Which type of automata can be used to process the rules?
 
 + Where does a language keeps its complexity?
-]
+
 
 ---
 
