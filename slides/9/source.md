@@ -12,17 +12,42 @@ class: center, middle
 
 ## At the end of this session you will
 
-+ know about feature structures and their representations;
+---
+.left-column-2[
+## Recap: grammar formalisms
 
-+ know how to unify feature structures and know when unification will fail;
++ Constituent-based language models
++ Dependency-based language models
 
-+ know how to integrate feature structures into a context free grammar and understand the benefits of doing so;
 
-+ know about the overloaded term ‘complexity’;
++ Constraint-based language models
 
-+ understand that algorithms may be classified by their time and space complexity;
+  A more fine-grained way of representing and placing constraints on grammatical categories
+]
 
-+ know that formal grammars can be more or less complex as defined by their generative power.
+.right-column-4[
+<br><br>
+Natural languages have an extensive range of grammatical constructions which are hard to handle with the simple methods described in 8. In order to gain <font color="red">more flexibility</font>, we change our treatment of grammatical categories like S, NP and V. In place of <font color="red">atomic labels</font>, we decompose them into structures like dictionaries, where features can take on <font color="red">a range of values</font>.
+]
+
+---
+
+## Recap: feature structures in the grammar
+
+Augmenting the ordinary CFGs rules with attachments that specify feature structures for the constituents of the rules, along with appropriate unification operations that express <font color="red">constraints</font> on those constituents.
+
+.smaller[
+|  |  
+:--|:--|:--
+$\beta_0$ | $\to$ | $\beta_1 ... \beta_n$
+| |_{set of constraints}_
+&nbsp; | |
+| |< $\beta_i$ feature path > = <font color="red">atomic value</font>
+| |< $\beta_i$ feature path > = <font color="red">< $\beta_j$ feature path ></font>
+&nbsp; | |
+S | $\to$ | NP VP
+| |< NP NUMBER > = < VP NUMBER >
+]
 
 ---
 .left-column-3[
@@ -280,19 +305,6 @@ V | $\to$ | {can, fish}
 ]
 ]
 
----
-
-## Grammar formalisms
-
-+ Constituent-based language models
-+ Dependency-based language models
-
-
-+ Constraint-based language models
-
-  A more fine-grained way of <br>
-  representing and placing constraints <br>
-  on grammatical categories
 
 ---
 
@@ -803,24 +815,6 @@ $
 
 Fails!
 
----
-
-## Feature structures in the grammar
-
-Augmenting the ordinary CFGs rules with attachments that specify feature structures for the constituents of the rules, along with appropriate unification operations that express <font color="red">constraints</font> on those constituents.
-
-.smaller[
-|  |  
-:--|:--|:--
-$\beta_0$ | $\to$ | $\beta_1 ... \beta_n$
-| |_{set of constraints}_
-&nbsp; | |
-| |< $\beta_i$ feature path > = atomic value
-| |< $\beta_i$ feature path > = < $\beta_j$ feature path >
-&nbsp; | |
-S | $\to$ | NP VP
-| |< NP NUMBER > = < VP NUMBER >
-]
 
 ---
 ## Application: agreement
@@ -1105,7 +1099,7 @@ Type &nbsp;&nbsp;&nbsp;&nbsp;| Language | Rule | Complexity | Automaton
 0| Recursively Enumerable &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| $ \alpha \to \beta $ (where $ \alpha \not = \epsilon$) | Intractable | Turing machine
 1| Context-Sensitive | $ \alpha A \beta \to \alpha \gamma \beta $ (where $ \gamma \not = \epsilon$) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | $ O(c^n) $, intractable &nbsp;&nbsp;&nbsp;&nbsp;| Linear-bounded
 -| Mildly Context-Sensitive |
-2| Context-Free | $ A \to \gamma $ | $ O(n^a) $, polynomial | Push down
+2| Context-Free | $ A \to \gamma $ | $ O(n^a) $, polynomial | Push downs s
 3| Regular | $ A \to xB $ and $ A \to x $ | $ O(n) $, linear | 	Finite state
 
 
@@ -1167,11 +1161,11 @@ $\gamma$: terminal or non-terminal
 
 **2. Practice**
 
-+ Learn to expand the CFG you built last week to accommodate feature structures. A sample for the feature-based grammar can be found here: http://www.nltk.org/book/pylisting/code_feat0cfg.py
++ Learn to expand the CFG you built last week to accommodate feature structures. Find a sample for the feature-based grammar here: http://www.nltk.org/book/pylisting/code_feat0cfg.py
 
-+ Learn to use your grammar, together a chart parser, to analyze sentences. Sample codes can be found here: http://www.nltk.org/book/pylisting/code_featurecharttrace.py)
++ Learn to use your grammar, together a chart parser (http://www.nltk.org/book/pylisting/code_feat0cfg.py), to analyze sentences.
 
-More detailed instructions are available at http://www.nltk.org/book/ch09.html
+More detailed instructions can be found at http://www.nltk.org/book/ch09.html 
 
 ---
 class: center, middle
