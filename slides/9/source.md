@@ -1,16 +1,12 @@
 class: center, middle
 # Computational Linguistics<br>
-## 8. Features and Unification, Language and Complexity
+## 9. Meaning Representation and Vector Semantics
 
 ** Xiaojing Bai **
 
 ** Tsinghua University **
 
 ** https://bxjthu.github.io/CompLing **
-
----
-
-## At the end of this session you will
 
 ---
 .left-column-2[
@@ -20,7 +16,7 @@ class: center, middle
 + Dependency-based language models
 
 
-+ Constraint-based language models
++ <font color="red">Constraint-based language models</font>
 
   A more fine-grained way of representing and placing constraints on grammatical categories
 ]
@@ -50,385 +46,10 @@ S | $\to$ | NP VP
 ]
 
 ---
-.left-column-3[
-## Problems with CFGs
-]
 
-.right-column-3[
-<br><br>
-.smaller[
-|  |  
-:--|:--|:--
-S | $\to$ | NP VP
-NP | $\to$ | N PP
-NP | $\to$ | N
-PP | $\to$ | P NP
-VP | $\to$ | VP PP
-VP | $\to$ | V VP
-VP | $\to$ | V NP
-VP | $\to$ | V
-N | $\to$ | {it, fish, rivers, pools,
- |  | December, Scotland, they}
-P | $\to$ | {in}
-V | $\to$ | {can, fish}
-]
-]
+## Recap: reentrancy and reentrant structures
 
----
-.left-column-3[
-
-## Problems with CFGs
-
-**Agreement**
-.smaller[
-_they fish rivers_
-
-? _it fish rivers_
-]
-
-**Sub-categorization**
-.smaller[
-_they can can it_
-
-? _they fish fish it_
-]
-
-**Long distance dependency**
-.smaller[
-_which dress did you say [ ] looks better with those shoes_
-
-_what gluten-free products does that new company sell [ ]_
-
-? _what gluten free products does that new company sell cake_
-]
-]
-
-.right-column-3[
-<br><br>
-.smaller[
-|  |  
-:--|:--|:--
-S | $\to$ | NP VP
-NP | $\to$ | N PP
-NP | $\to$ | N
-PP | $\to$ | P NP
-VP | $\to$ | VP PP
-VP | $\to$ | V VP
-VP | $\to$ | V NP
-VP | $\to$ | V
-N | $\to$ | {it, fish, rivers, pools,
- |  | December, Scotland, they}
-P | $\to$ | {in}
-V | $\to$ | {can, fish}
-]
-]
-
----
-
-## How to solve these problems?
-.left-column-2[
-.smaller[
-|  |  
-:--|:--|:--
-S | $\to$ | NP VP
-VP | $\to$ | V NP
-NP | $\to$ | N
-V | $\to$ | {can, fish}
-N | $\to$ | {it, fish, rivers, pools, I, you,
- |  | December, Scotland, they}
-]
-]
-
----
-
-## How to solve these problems?
-.left-column-2[
-.smaller[
-|  |  
-:--|:--|:--
-<font color="red">S</font> | <font color="red">$\to$</font> | <font color="red">NP VP</font>
-VP | $\to$ | V NP
-NP | $\to$ | N
-V | $\to$ | {can, fish}
-N | $\to$ | {it, fish, rivers, pools, I, you,
- |  | December, Scotland, they}
-]
-]
-
-.right-column-2[
-.smaller[
-|  |  
-:--|:--|:--
-S | $\to$ | NP$\_{1st2ndsing}$ VP$\_{1st2ndsing}$
-S | $\to$ | NP$\_{3rdsing}$ VP$\_{3rdsing}$
-S | $\to$ | NP$\_{plural}$ VP$\_{plural}$
-]
-]
-
----
-
-## How to solve these problems?
-.left-column-2[
-.smaller[
-|  |  
-:--|:--|:--
-S | $\to$ | NP VP
-<font color="red">VP</font> | <font color="red">$\to$</font> | <font color="red">V NP</font>
-NP | $\to$ | N
-V | $\to$ | {can, fish}
-N | $\to$ | {it, fish, rivers, pools, I, you,
- |  | December, Scotland, they}
-]
-]
-
-.right-column-2[
-.smaller[
-|  |  
-:--|:--|:--
-VP$\_{1st2ndsing}$ | $\to$ | V$\_{1st2ndsing}$ NP$\_{1st2ndsing}$
-VP$\_{1st2ndsing}$ | $\to$ | V$\_{1st2ndsing}$ NP$\_{3rdsing}$
-VP$\_{1st2ndsing}$ | $\to$ | V$\_{1st2ndsing}$ NP$\_{plural}$
- &nbsp;|  |  
-VP$\_{3rdsing}$ | $\to$ | V$\_{3rdsing}$ NP$\_{1st2ndsing}$
-VP$\_{3rdsing}$ | $\to$ | V$\_{3rdsing}$ NP$\_{3rdsing}$
-VP$\_{3rdsing}$ | $\to$ | V$\_{3rdsing}$ NP$\_{plural}$
- &nbsp;|  |  
-VP$\_{plural}$ | $\to$ | V$\_{plural}$ NP$\_{1st2ndsing}$
-VP$\_{plural}$ | $\to$ | V$\_{plural}$ NP$\_{3rdsing}$
-VP$\_{plural}$ | $\to$ | V$\_{plural}$ NP$\_{plural}$
-]
-]
-
----
-
-## How to solve these problems?
-.left-column-2[
-.smaller[
-|  |  
-:--|:--|:--
-S | $\to$ | NP VP
-VP | $\to$ | V NP
-<font color="red">NP</font> | <font color="red">$\to$</font> | <font color="red">N</font>
-V | $\to$ | {can, fish}
-N | $\to$ | {it, fish, rivers, pools, I, you,
- |  | December, Scotland, they}
-]
-]
-
-.right-column-2[
-.smaller[
-|  |  
-:--|:--|:--
-NP$\_{1st2ndsing}$ | $\to$ | N$\_{1st2ndsing}$
-NP$\_{3rdsing}$ | $\to$ | N$\_{3rdsing}$
-NP$\_{plural}$ | $\to$ | N$\_{plural}$
-]
-]
-
----
-
-## How to solve these problems?
-.left-column-2[
-.smaller[
-|  |  
-:--|:--|:--
-S | $\to$ | NP VP
-VP | $\to$ | V NP
-NP| $\to$ | N
-<font color="red">V</font>  | <font color="red">$\to$</font>  | <font color="red">{can, fish}</font>
-<font color="red">N</font>  | <font color="red">$\to$</font>  | <font color="red">{it, fish, rivers, pools, I, you, </font>
- |  | <font color="red">December, Scotland, they}<font color="red"></font>
-]
-]
-
-.right-column-2[
-.smaller[
-|  |  
-:--|:--|:--
-N$\_{1st2ndsing}$ | $\to$ | {I, you}
-N$\_{3rdsing}$ | $\to$ | {it, December, Scotland}
-N$\_{plural}$ | $\to$ | {fish, rivers, pools, they}
- &nbsp;|  |  
-V$\_{1st2ndsing}$ | $\to$ | {fish, can}
-V$\_{3rdsing}$ | $\to$ | {fishes, cans, can}
-V$\_{plural}$ | $\to$ | {fish, can}
-
-]
-]
-
----
-.left-column-3[
-
-## Problems with CFGs
-
-**Agreement**
-.smaller[
-_they fish rivers_
-
-? _it fish rivers_
-]
-
-**Sub-categorization**
-.smaller[
-_they can can it_
-
-? _they fish fish it_
-]
-
-**Long distance dependency**
-.smaller[
-_which dress did you say [ ] looks better with those shoes_
-
-_what gluten-free products does that new company sell [ ]_
-
-? _what gluten free products does that new company sell cake_
-]
-]
-
-.right-column-3[
-<br><br>
-.smaller[
-|  |  
-:--|:--|:--
-S | $\to$ | NP VP
-NP | $\to$ | N PP
-NP | $\to$ | N
-PP | $\to$ | P NP
-VP | $\to$ | VP PP
-VP | $\to$ | V VP
-VP | $\to$ | V NP
-VP | $\to$ | V
-N | $\to$ | {it, fish, rivers, pools,
- |  | December, Scotland, they}
-P | $\to$ | {in}
-V | $\to$ | {can, fish}
-]
-]
-
-
----
-
-## A feature structure represented by an attribute-value matrix
-
-.smaller[
-
-$
-\left[
-\begin{array}{ll}
-\textrm{FEATURE}_1 & value_1 \\\
-\textrm{FEATURE}_2 & value_2 \\\
-... & ... \\\
-\textrm{FEATURE}_n & value_n
-\end{array}
-\right]
-$
-
-<br><br>
-$
-\left[
-\begin{array}{ll}
-\textrm{CAT} & NP \\\
-\textrm{NUMBER} & sing \\\
-\textrm{PERSON} & 3rd
-\end{array}
-\right]
-$
-
-<br>
-$
-\left[
-\begin{array}{ll}
-\textrm{CAT} & NP \\\
-\textrm{AGREEMENT} & \left[ \begin{array}{ll}
-\textrm{NUMBER} & sing \\\
-\textrm{PERSON} & 3rd
-\end{array}
-\right]
-\end{array}
-\right]
-$
-
-]
-
----
-
-## A feature structure represented by a directed acyclic graph
-
-.left-column-2[
-
-+ Features as labeled edges
-
-+ Values as nodes
-
-+ Feature path
-
-  A sequence of features through<br> a feature structure leading to a particular value
-
-.smaller[
-> The < AGREEMENT NUMBER > path
-
-> The < AGREEMENT PERSON > path
-]  
-]
-.right-column-2[
-
-<br>
-<img src="images/directed_graph_1.png" width=400>
-
-.smaller[
-<br>
-$
-\left[
-\begin{array}{ll}
-\textrm{CAT} & NP \\\
-\textrm{AGREEMENT} & \left[ \begin{array}{ll}
-\textrm{NUMBER} & sing \\\
-\textrm{PERSON} & 3rd
-\end{array}
-\right]
-\end{array}
-\right]
-$
-]
-]
----
-
-## Reentrancy and reentrant structures
-
-Reentrancy: A feature structure occurs more than once in an enclosing feature structure, i.e. there are two or more feature paths of reaching the same node in the directed acyclic graph.
-
-.left-column-2[
-+ Non-reentrant
-.smaller[
-$
-\left[
-\begin{array}{ll}
-\textrm{FEATURE}_1 & a \\\
-\textrm{FEATURE}_2 & a
-\end{array}
-\right]
-$
-]
-
-+ Reentrant
-.smaller[
-$
-\left[
-\begin{array}{ll}
-\textrm{FEATURE}_1 & [1]a \\\
-\textrm{FEATURE}_2 & [1]
-\end{array}
-\right]
-$
-]
-]
-.right-column-2[
-<img src="images/directed_graph_3.png" width=250>
-]
----
-
-## Reentrancy and reentrant structures
-
+.left-column-1[
 .smaller[
 $
 \left[
@@ -458,700 +79,744 @@ $
 ]
 
 <br>
-<img src="images/directed_graph_2.png" width=450>
+<img src="images/directed_graph_2.png" width=400>
+]
 
----
-## Unification of feature structures
-
-+ A merger of the original two structures into one larger structure
-
-+ A union of all the information stored in each of the original structures
-
-+ Compatibility
-
-.smaller[
-
-$
-\left[
-\begin{array}{ll}
-\textrm{NUMBER} & sing
-\end{array}
-\right]
-\sqcup
-\left[
-\begin{array}{ll}
-\textrm{NUMBER} & sing
-\end{array}
-\right]
-=
-\left[
-\begin{array}{ll}
-\textrm{NUMBER} & sing
-\end{array}
-\right]
-$
-
-$
-\left[
-\begin{array}{ll}
-\textrm{NUMBER} & sing
-\end{array}
-\right]
-\sqcup
-\left[
-\begin{array}{ll}
-\textrm{NUMBER} & plural
-\end{array}
-\right]
-Fails!
-$
-
-$
-\left[
-\begin{array}{ll}
-\textrm{NUMBER} & sing
-\end{array}
-\right]
-\sqcup
-\left[
-\begin{array}{ll}
-\textrm{NUMBER} & [\\,]
-\end{array}
-\right]
-=
-\left[
-\begin{array}{ll}
-\textrm{NUMBER} & sing
-\end{array}
-\right]
-$
-
-$
-\left[
-\begin{array}{ll}
-\textrm{NUMBER} & sing
-\end{array}
-\right]
-\sqcup
-\left[
-\begin{array}{ll}
-\textrm{PERSON} & 3rd
-\end{array}
-\right]
-=
-\left[
-\begin{array}{ll}
-\textrm{NUMBER} & sing \\\
-\textrm{PERSON} & 3rd
-\end{array}
-\right]
-$
+.right-column-3[
+Reentrancy: A feature structure occurs <font color="red">more than once</font> in an enclosing feature structure, i.e. there are <font color="red">two or more</font> feature paths of reaching the same node in the directed acyclic graph.
 ]
 
 ---
 
-## Unification of reentrant feature structures
-
-.smaller[
-$
-\left[
-\begin{array}{ll}
-\textrm{AGREEMENT} & [1]
-\left[
-\begin{array}{ll}
-\textrm{NUMBER} & sing \\\
-\textrm{PERSON} & 3rd
-\end{array}
-\right] \\\ \[3ex]
-\textrm{SUBJECT} &
-\left[
-\begin{array}{ll}
-\textrm{AGREEMENT} & [1]
-\end{array}
-\right]
-\end{array}
-\right]
-$
-
-<br>
-$
-\sqcup
-\left[
-\begin{array}{ll}
-\textrm{SUBJECT} &
-\left[
-\begin{array}{ll}
-\textrm{AGREEMENT} &
-\left[
-\begin{array}{ll}
-\textrm{PERSON} & 3rd \\\
-\textrm{NUMBER} & sing
-\end{array}
-\right]
-\end{array}
-\right]
-\end{array}
-\right]
-$
-
-<br>
-$
-=
-\left[
-\begin{array}{ll}
-\textrm{AGREEMENT} & [1]
-\left[
-\begin{array}{ll}
-\textrm{NUMBER} & sing \\\
-\textrm{PERSON} & 3rd
-\end{array}
-\right] \\\ \[3ex]
-\textrm{SUBJECT} &
-\left[
-\begin{array}{ll}
-\textrm{AGREEMENT} & [1]
-\end{array}
-\right]
-\end{array}
-\right]
-$
-]
-
----
-
-## Unification of reentrant feature structures
-
-.smaller[
-$
-\left[
-\begin{array}{ll}
-\textrm{AGREEMENT} & [1]\\\
-\textrm{SUBJECT} &
-\left[
-\begin{array}{ll}
-\textrm{AGREEMENT} & [1]
-\end{array}
-\right]
-\end{array}
-\right]
-$
-
-<br>
-$
-\sqcup
-\left[
-\begin{array}{ll}
-\textrm{SUBJECT} &
-\left[
-\begin{array}{ll}
-\textrm{AGREEMENT} &
-\left[
-\begin{array}{ll}
-\textrm{PERSON} & 3rd \\\
-\textrm{NUMBER} & sing
-\end{array}
-\right]
-\end{array}
-\right]
-\end{array}
-\right]
-$
-
-<br>
-$
-=
-\left[
-\begin{array}{ll}
-\textrm{AGREEMENT} & [1]\\\
-\textrm{SUBJECT} &
-\left[
-\begin{array}{ll}
-\textrm{AGREEMENT} & [1]
-\left[
-\begin{array}{ll}
-\textrm{PERSON} & 3rd \\\
-\textrm{NUMBER} & sing
-\end{array}
-\right]
-\end{array}
-\right]
-\end{array}
-\right]
-$
-]
-
----
-
-## Unification of non-reentrant feature structures
-
-.smaller[
-
-$
-\left[
-\begin{array}{ll}
-\textrm{AGREEMENT} &
-\left[
-\begin{array}{ll}
-\textrm{NUMBER} & sing
-\end{array}
-\right] \\\ \[3ex]
-\textrm{SUBJECT} &
-\left[
-\begin{array}{ll}
-\textrm{AGREEMENT} &
-\left[
-\begin{array}{ll}
-\textrm{NUMBER} & sing
-\end{array}
-\right]
-\end{array}
-\right]
-\end{array}
-\right]
-$
-
-<br>
-$
-\sqcup
-\left[
-\begin{array}{ll}
-\textrm{SUBJECT} &
-\left[
-\begin{array}{ll}
-\textrm{AGREEMENT} &
-\left[
-\begin{array}{ll}
-\textrm{PERSON} & 3rd \\\
-\textrm{NUMBER} & sing
-\end{array}
-\right]
-\end{array}
-\right]
-\end{array}
-\right]
-$
-
-<br>
-$
-=
-\left[
-\begin{array}{ll}
-\textrm{AGREEMENT} &
-\left[
-\begin{array}{ll}
-\textrm{NUMBER} & sing
-\end{array}
-\right] \\\ \[3ex]
-\textrm{SUBJECT} &
-\left[
-\begin{array}{ll}
-\textrm{AGREEMENT} &
-\left[
-\begin{array}{ll}
-\textrm{PERSON} & 3rd \\\
-\textrm{NUMBER} & sing
-\end{array}
-\right]
-\end{array}
-\right]
-\end{array}
-\right]
-$
-]
-
----
-
-## Failed unification of feature structures
-
-.smaller[
-$
-\left[
-\begin{array}{ll}
-\textrm{AGREEMENT} & [1]
-\left[
-\begin{array}{ll}
-\textrm{NUMBER} & sing \\\
-\textrm{PERSON} & 3rd
-\end{array}
-\right] \\\ \[3ex]
-\textrm{SUBJECT} &
-\left[
-\begin{array}{ll}
-\textrm{AGREEMENT} & [1]
-\end{array}
-\right]
-\end{array}
-\right]
-$
-
-<br>
-$
-\sqcup
-\left[
-\begin{array}{ll}
-\textrm{AGREEMENT} &
-\left[
-\begin{array}{ll}
-\textrm{NUMBER} & sing \\\
-\textrm{PERSON} & 3rd
-\end{array}
-\right] \\\ \[3ex]
-\textrm{SUBJECT} &
-\left[
-\begin{array}{ll}
-\textrm{AGREEMENT} &
-\left[
-\begin{array}{ll}
-\textrm{NUMBER} & plural \\\
-\textrm{PERSON} & 3rd
-\end{array}
-\right]
-\end{array}
-\right]
-\end{array}
-\right]
-$
-]
-
-Fails!
-
-
----
-## Application: agreement
-
-.smaller[
-[1] _This flight serves breakfast._<br>
-[2] _Does this flight serve breakfast?_<br>
-[3] _Do these flights serve breakfast?_
-
-.left-column-2[
-|  |  
-:--|:--|:--
-S | $\to$ | NP VP
-| |< NP AGREEMENT > = < VP AGREEMENT >
-&nbsp; | |
-NP | $\to$ | Det Nominal
-| |< Det AGREEMENT > = < Nominal AGREEMENT >
-| |< NP AGREEMENT > = < Nominal AGREEMENT >
-&nbsp; | |
-Aux | $\to$ | do
-| |< Aux AGREEMENT NUMBER > = _plural_
-| |< Aux AGREEMENT PERSON > = _3rd_
-]
-.right-column-2[
-|  |  
-:--|:--|:--
-S | $\to$ | Aux NP VP
-| |< Aux AGREEMENT > = < NP AGREEMENT >
-&nbsp; | |
-&nbsp; | |
-&nbsp; | |
-&nbsp; | |
-&nbsp; | |
-Aux | $\to$ | does
-| |< Aux AGREEMENT NUMBER > = _sing_
-| |< Aux AGREEMENT PERSON > = _3rd_
-]
-]
-
----
-## Application: head features
-
-.smaller[
-|  |  
-:--|:--|:--
-VP | $\to$ | Verb NP
-| |< VP AGREEMENT > = < Verb AGREEMENT >
-VP | $\to$ | Verb NP
-| |< VP HEAD > = < Verb HEAD >
-NP | $\to$ | Det Nominal
-| |< Det AGREEMENT > = < Nominal AGREEMENT >
-| |< NP AGREEMENT > = < Nominal AGREEMENT >
-NP | $\to$ | Det Nominal
-| |< Det HEAD AGREEMENT > = < Nominal HEAD AGREEMENT >
-| |< NP HEAD > = < Nominal HEAD >
-Nominal | $\to$ | Noun
-| |< Nominal AGREEMENT > = < Noun AGREEMENT >
-Nominal | $\to$ | Noun
-| |< Nominal HEAD > = < Noun HEAD >
-Noun | $\to$ | _flights_
-| |< Noun HEAD AGREEMENT NUMBER > = _plural_
-]
-
----
-## Application: subcategorization
-
-## Application: long-distance dependencies
-
-## Building Feature Based Grammars
-http://www.nltk.org/book/ch09.html
----
-
-## Complexity: an overloaded term
-
-It may refer to:
-
-+ the computational ‘expense’ of an algorithm;
-
-+ the generative power of a grammar; or
-
-+ the human processing difficulty of a sentence.
-
----
-
-## The complexity of algorithms
-
-Comparing the efficiency of algorithms: how will they behave in the worst case?
-
-Two particular measures:
-
-1. the amount of <font color="red">time</font> it takes for the algorithm to run to completion;
-
-2. the amount of <font color="red">space</font> (computer memory) it will take to hold the instructions that are waiting to be executed while the algorithm is running.
-
----
-
-## The time complexity of algorithms
-
-Scenario 1: How many items are on my 11.11 shopping list?
+## Recap: reentrancy and reentrant structures
 
 .left-column-1[
-
-```
-*  + 旺仔大礼包
-*  + Thermos保温杯
-*  + 森田面膜
-*  + 欧莱雅卸妆水
-*  + 沃隆每日坚果
-*  + 良品铺子猪肉脯
-```
+<img src="images/dag03.png" width=500>
 ]
-.right-column-1[
+
+.right-column-3[
+Reentrancy: A feature structure occurs <font color="red">more than once</font> in an enclosing feature structure, i.e. there are <font color="red">two or more</font> feature paths of reaching the same node in the directed acyclic graph.
+]
+
+---
+
+## Recap: unification of reentrant feature structures
+
 .smaller[
+$
+\textrm{FS1:}
+\left[
+\begin{array}{ll}
+\textrm{NAME} & Lee\\\
+\textrm{ADDRESS} &
+\left[
+\begin{array}{ll}
+\textrm{NUMBER} & 74 \\\
+\textrm{STREET} & Rue Pascal
+\end{array}
+\right] \\\ \[3ex]
+\textrm{SPOUSE} &
+\left[
+\begin{array}{ll}
+\textrm{NAME} & Kim \\\
+\textrm{ADDRESS} &
+\left[
+\begin{array}{ll}
+\textrm{NUMBER} & 74 \\\
+\textrm{STREET} & Rue Pascal
+\end{array}
+\right]
+\end{array}
+\right]
+\end{array}
+\right]
+$
+
+$
+\textrm{FS2:}
+\left[
+\begin{array}{ll}
+\textrm{NAME} & Lee\\\
+\textrm{ADDRESS} & [1]
+\left[
+\begin{array}{ll}
+\textrm{NUMBER} & 74 \\\
+\textrm{STREET} & Rue Pascal
+\end{array}
+\right] \\\ \[3ex]
+\textrm{SPOUSE} &
+\left[
+\begin{array}{ll}
+\textrm{NAME} & Kim \\\
+\textrm{ADDRESS} & [1]
+\end{array}
+\right]
+\end{array}
+\right]
+$
 
 <br>
-> **The counting algorithm**
-
-> + Start with a count of zero item;
-
-> + While there are items left to count:
-
->   + Point to the next item on the list; [0.25s for each]
-
->   + Increase the count by 1. [0.25s for each]
-
-> **The time cost of the algorithm**: $0.5n$ seconds
+$
+\textrm{FS3:}
+\left[
+\begin{array}{ll}
+\textrm{SPOUSE} &
+\left[
+\begin{array}{ll}
+\textrm{ADDRESS} &
+\left[
+\begin{array}{ll}
+\textrm{CITY} & Paris
+\end{array}
+\right]
+\end{array}
+\right]
+\end{array}
+\right]
+$
 ]
-]
+
 ---
 
-## The time complexity of algorithms
+## Recap: unification of reentrant feature structures
 
-Scenario 2: How many items are on the following two shopping lists?
-
-.left-column-1[
-
-```
-*  + 旺仔大礼包
-*  + Thermos保温杯
-*  + 森田面膜
-*  + 欧莱雅卸妆水
-*  + 沃隆每日坚果
-*  + 良品铺子猪肉脯
-```
-
-```
-*  + MacBook VGA转接头
-*  + 中国哲学简史
-*  + 旺仔大礼包
-*  + 沙宣洗护套装
-*  + 云南白药牙膏
-*  + 良品铺子猪肉脯
-```
-]
-.right-column-1[
 .smaller[
+$
+\textrm{FS1:}
+\left[
+\begin{array}{ll}
+\textrm{NAME} & Lee\\\
+\textrm{ADDRESS} &
+\left[
+\begin{array}{ll}
+\textrm{NUMBER} & 74 \\\
+\textrm{STREET} & Rue Pascal
+\end{array}
+\right] \\\ \[3ex]
+\textrm{SPOUSE} &
+\left[
+\begin{array}{ll}
+\textrm{NAME} & Kim \\\
+\textrm{ADDRESS} &
+\left[
+\begin{array}{ll}
+\textrm{NUMBER} & 74 \\\
+\textrm{STREET} & Rue Pascal
+\end{array}
+\right]
+\end{array}
+\right]
+\end{array}
+\right]
+$
 
 <br>
-> **The condensing algorithm**
+$
+\sqcup
+\textrm{FS3:}
+\left[
+\begin{array}{ll}
+\textrm{SPOUSE} &
+\left[
+\begin{array}{ll}
+\textrm{ADDRESS} &
+\left[
+\begin{array}{ll}
+\textrm{CITY} & Paris
+\end{array}
+\right]
+\end{array}
+\right]
+\end{array}
+\right]
+$
 
-> + Start with a count of 6 items;
-
-> + While there are items left my friend's list:
-
->   + Point to the next item on my friend's list; [0.25s for each]
-
->   + Compare the current item on my friend's list to all the items on my original list; if no match is found, then add the current item to my list and increase the count by 1. [0.5s for each]
-
-> **The time cost of the algorithm**: $0.25n + 0.5n^2$ seconds
 ]
-]
+
+```
+*>>> fs1 = nltk.FeatStruct("""[NAME=Lee,
+*...                           ADDRESS=[NUMBER=74,
+*...                                    STREET='rue Pascal'],
+*...                           SPOUSE= [NAME=Kim,
+*...                                    ADDRESS=[NUMBER=74,
+*...                                             STREET='rue Pascal']]]""")
+*>>> print(fs1)
+```
+
+```
+*>>> fs3 = nltk.FeatStruct("[SPOUSE = [ADDRESS = [CITY = Paris]]]")
+*>>> print(fs3.unify(fs1))
+```
 
 ---
 
-## The time complexity of algorithms
-
-Big O notation of time complexity (or asymptotic complexity)
-
-In computer science, big O notation is used to classify algorithms according to how their running time or space requirements grow as the input size grows.
-
-+ The counting algorithm: a time complexity of $O(n)$
-
-+ The condensing algorithm: a time complexity of $O(n^2)$
+## Recap: unification of reentrant feature structures
 
 .smaller[
-Notes: The time cost of an algorithm is usually a complicated formula. We are only interested in the most significant term when stating its order, which means the term involving the highest exponent of $n$.
+$
+\textrm{FS2:}
+\left[
+\begin{array}{ll}
+\textrm{NAME} & Lee\\\
+\textrm{ADDRESS} & [1]
+\left[
+\begin{array}{ll}
+\textrm{NUMBER} & 74 \\\
+\textrm{STREET} & Rue Pascal
+\end{array}
+\right] \\\ \[3ex]
+\textrm{SPOUSE} &
+\left[
+\begin{array}{ll}
+\textrm{NAME} & Kim \\\
+\textrm{ADDRESS} & [1]
+\end{array}
+\right]
+\end{array}
+\right]
+$
+
+<br>
+$
+\sqcup
+\textrm{FS3:}
+\left[
+\begin{array}{ll}
+\textrm{SPOUSE} &
+\left[
+\begin{array}{ll}
+\textrm{ADDRESS} &
+\left[
+\begin{array}{ll}
+\textrm{CITY} & Paris
+\end{array}
+\right]
+\end{array}
+\right]
+\end{array}
+\right]
+$
+
 ]
 
-+ An algorithm with a time complexity of $O(c^n)$, where $c$ is a constant, is said to be intractable.
+```
+*>>> fs2 = nltk.FeatStruct("""[NAME=Lee,
+*...                           ADDRESS=(1)[NUMBER=74,
+*...                                    STREET='rue Pascal'],
+*...                           SPOUSE= [NAME=Kim,
+*...                                    ADDRESS->(1)]]""")
+*>>> print(fs2)
+```
+
+```
+*>>> fs3 = nltk.FeatStruct("[SPOUSE = [ADDRESS = [CITY = Paris]]]")
+*>>> print(fs3.unify(fs2))
+```
 
 ---
+## Recap: applications
 
-.left-column-2[
-## Recap: An example
++ Agreement
 
-.smaller[
-E.g. Janet will back the bill
-]
-<img src="images/tagging.png" width=450>
++ Head features
 
-.smaller[
-Janet/NNP&nbsp;&nbsp; will/MD&nbsp;&nbsp; back/VB&nbsp;&nbsp; the/DT&nbsp;&nbsp; bill/NN
-]
-]
++ Subcategorization
 
-.right-column-2[
-**Viterbi algorithm**
-
-+ Andrew Viterbi, 1967
-
-+ A dynamic programming algorithm
-
-+ Maximize the probabilities
-
-+ Find the most likely sequence of tags
-
-+ Algorithm: exponential complexity
-
-  With a tagset of N tags, for a sequence of M words, there are, in the worse case, <font color="red"> $N^M$ </font> possible paths.
-
-+ Efficiency: <font color="red"> $N^M$ </font> vs. <font color="red"> $N^2 \times M$ </font>
-
-]
----
-
-## The space complexity of algorithms
-
-The stack memory: Stacks in computing architectures are regions of memory where data is added or removed in a last-in-first-out (LIFO) manner.
-.left-column-4[
-Named after the plate-stacking devices
-
-+ Pushing: placing an item on the stack
-+ Popping: removing an item off the stack
-
-The counting/condensing algorithm:
-
-+ a space complexity of $O(1)$ .smaller[stack depth = 1]
-+ a space complexity of $O(n)$ .smaller[stack depth = n]
-
-]
-
-.right-column-4[
-<img src="images/stack.png" width=350>
-]
----
-
-## The complexity of a grammar
-
-+ The complexity of the most efficient algorithm to decide whether a string belongs to a regular language is $O(n)$, where $n$ is the length of the string.
-
-<img src="images/baa_fsa.png" width=550>
-
-+ The complexity of many algorithms to decide whether a string belongs to a context-free language is $O(n^a)$, where $a$ is a whole number. The algorithms are therefore tractable.
-
----
-
-## Chomsky hierarchy
-
-+ A theoretical tool to compare the generative power or complexity of formal mechanisms
-
-+ A theoretical tool to better understand human parsing: What makes individual constructions or sentences hard to understand?
-
-**Generative power**
-
-+ One grammar is of greater generative power than another if it can define a language that the other cannot define.
-
-+ The set of languages describable by grammars of greater power <font color="red">subsumes</font> the set of languages describable by grammars of lesser power.
-
----
-
-## Chomsky hierarchy
-
-<img src="images/chomsky_hierachy.png" width=800>
-
----
-
-## Chomsky hierarchy
-
-.smaller[
-Type &nbsp;&nbsp;&nbsp;&nbsp;| Language | Rule | Complexity | Automaton
--|:-|:-|:- |:-
-0| Recursively Enumerable &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| $ \alpha \to \beta $ (where $ \alpha \not = \epsilon$) | Intractable | Turing machine
-1| Context-Sensitive | $ \alpha A \beta \to \alpha \gamma \beta $ (where $ \gamma \not = \epsilon$) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | $ O(c^n) $, intractable &nbsp;&nbsp;&nbsp;&nbsp;| Linear-bounded
--| Mildly Context-Sensitive |
-2| Context-Free | $ A \to \gamma $ | $ O(n^a) $, polynomial | Push downs s
-3| Regular | $ A \to xB $ and $ A \to x $ | $ O(n) $, linear | 	Finite state
-
-
-.left-column-2[
-**Meaning of symbols:**<br>
-$x$: terminal<br>
-$A$ and $B$: non-terminal<br>
-$\alpha$ and $\beta$: terminal, non-terminal, or empty<br>
-$\gamma$: terminal or non-terminal
-]
-.right-column-2[
-<img src="images/chomsky_hierachy.png" width=500>
-
-]
-]
-
----
-
-## Chomsky hierarchy
-
-+ Is some part of natural language representable by a certain class of grammars?
-
-+ Which type of rules can be used to write computational grammars for this part of natural language?
-
-+ Which type of automata can be used to process the rules?
-
-+ Where does a language keeps its complexity?
-
-
----
-
-## Chomsky hierarchy
-<img src="images/chomsky_hierachy_nl.png" width=800>
++ Long-distance dependencies
 
 ---
 
 ## At the end of this session you will
 
-+ know about feature structures and their representations;
++ understand why we need to represent meaning
 
-+ know how to unify feature structures and know when unification will fail;
++ understand what meaning representations should do for us
 
-+ know how to integrate feature structures into a context free grammar and understand the benefits of doing so;
++ know about how a meaning representation models the particular state of affairs in the world
 
-+ know about the overloaded term ‘complexity’;
++ know about how first-order logic represents meaning
 
-+ understand that algorithms may be classified by their time and space complexity;
++ know about how syntax-driven semantic analysis works
 
-+ know that formal grammars can be more or less complex as defined by their generative power.
++ know how the meaning of a word can be represented in different ways
+
++ know how to represent the meaning of a word as a vector and compute its positive pointwise mutual information
 
 ---
 
+## The representation of meaning
+
++ Basic assumption<br><br>
+The meaning of linguistic expressions <font color="red">can</font> be captured in <font color="red">formal</font> structures
+
+.left-column-1[
++ Representations
+
+  + <font color="grey">Phonological</font>
+  + <font color="grey">Morphological</font>
+  + <font color="grey">Syntactic</font>
+  + Semantic
+]
+
+.right-column-1[
+
+<video width="640" height="288" controls src="images/hal-2.mp4" type="video/mp4"</video>
+]
+
+---
+## Why do we need to represent meaning?
+
+  + To bridge the gap between linguistic inputs and the non-linguistic knowledge of the world
+
+  + The frameworks we have studied so far can not facilitate this kind of semantic processing
+
+** Aims of computational semantics**
+
++ Find techniques to associate semantic representations with expressions of natural language automatically
+
++ Use semantic representations of natural language expressions to draw inferences automatically
+
+---
+## Why do we need to represent meaning?
+
++ Applications
+
+  Information retrieval, information extraction, machine translation, dialogue systems, question answering, ...
+
++ Sample cases in question answering
+
+  **Scenario 1: Hi Siri!**
+---
+
+<img src="images/siri_1.png" width=320>
+<img src="images/siri_2.png" width=320>
+<img src="images/siri_3.png" width=320>
+
+---
+
+<img src="images/siri_4.png" width=320>
+<img src="images/siri_5.png" width=320>
+<img src="images/siri_6.png" width=320>
+
+---
+
+**Scenario 2: Hi Zijing!**
+
+A computer system accepts spoken language queries from tourists and construct appropriate responses by using a knowledge base of relevant domain knowledge.
+
+Query 1: Does Zijing serve vegetarian food?
+
+Query 2: I’d like to find a restaurant where I can get vegetarian food.
+
+Query 3: I wanna eat someplace that’s close to Tsinghua.
+
+Query 4: Does Zijing have vegetarian dishes?
+
+Query 5: Do they have vegetarian food at Zijing?
+
+Query 6: Are vegetarian dishes served at Zijing?
+
+Query 7: Does Zijing serve vegetarian fare?
+
+---
+## Computational desiderata for meaning Representations
+
++ What should meaning representations do for us?
+
+---
+
+## Computational desiderata for meaning Representations
+
+(1) Does Maharani serve vegetarian food?<br>
+
+(2) I wanna eat someplace that’s close to ICSI.<br>
+(3) I want to eat Italian food.<br>
+
+(4) Does Maharani have vegetarian dishes?<br>
+(5) Do they have vegetarian food at Maharani?<br>
+(6) Are vegetarian dishes served at Maharani?<br>
+(7) Does Maharani serve vegetarian fare?<br>
+
+(8) Maharani serves vegetarian dishes.<br>
+(9) Vegetarian dishes are served by Maharani.<br>
+
+(10) Can vegetarians eat at Maharani?<br>
+(11) I’d like to find a restaurant where I can get vegetarian food.
+
+---
+
+## Computational desiderata for meaning Representations
+
++ What should meaning representations do for us?
+
+  + Verifiability
+
+  + Unambiguous representations
+
+  + Canonical form
+
+  + Inference and variables
+
+  + Expressiveness
+
+???
+alternative syntactic analyses often have meanings that are, if not identical, at least systematically related to one another
+a commonsense connection between what vegetarians eat and what vegetarian restaurants serve
+this request does not make reference to any particular restaurant
+
+---
+
+## A meaning representation as a model
+
+A model is a formal construct that stands for the particular state of affairs in the world in a <font color="red">systematic</font> and hence simple and powerful way.
+
++ Elements in a model .smaller[and their denotations]
+  + Objects: .smaller[elements of the domain]
+  + Properties of objects: .smaller[sets of elements of the domain]
+  + Relations among objects: .smaller[sets of tuples of elements of the domain]
+
++ Denotation of a meaning representation: the interpretation
+
++ Vocabularies of a meaning representation
+  + Non-logical: an open-ended set .smaller[of names of objects, properties, and relations]
+  + Logical: a closed set .smaller[of symbols, operators, quantifiers, links, etc.]
+
+---
+
+## A sample model of the restaurant world
+
+<img src="images/restaurant_model.png" width=900>
+
+---
+
+## Truth-conditional semantics
+
++ Determining the truth of a complex expression from the meanings of its <font color="red">parts</font> and the meaning of an <font color="red">operator</font> by essentially consulting a truth-table.
+
++ Modeling the objects, properties, and relations out in the external world by <font color="red">the knowledge base</font>
+
++ Complications: conjunctions, equality, quantified variables and negations
+
+> (1) Katie likes the Rio <font color="red">and</font> Matthew likes the Med.<br>
+(2) Katie <font color="red">and</font> Caroline like the same restaurants.<br>
+(3) Franco likes <font color="red">noisy, expensive</font> restaurants. <br>
+(4) <font color="red">Not</font> everybody likes Frasca.
+
+---
+
+.left-column-4[
+## First-order logic
+
+<img src="images/fol.png" width=550>
+]
+
+.right-column-4[
+<br>
+Zijing<br>
+$\textit{Zijing}$
+
+the location of Zijing
+$\textit{LocationOf(Zijing)}$
+
+the location of restaurants
+$\textit{LocationOf(x)}$
+
+Zijing serves vegetarian food.
+$\textit{Serves(Zijing,VegetarianFood)}$
+
+Zijing is a restaurant.
+$\textit{Restaurant(Zijing)}$
+
+]
+
+---
+
+## First-order logic
+
+I only have $5 and I don’t have a lot of time.
+
+$\textit{Have(Speaker,\textdollar5)} \land \lnot \textit{Have(Speaker,LotOfTime)}$
+
+<br><br>
+a restaurant that serves hot-pot near Tsinghua
+
+$\exists \textit{xRestaurant(x)}$ <br>
+$\land \textit{Serves(x,HotPot)}$ <br>
+$\land \textit{Near((LocationOf(x),LocationOf(Tsinghua))}$
+
+---
+
+## Syntax-driven semantic Analysis
+
+<img src="images/syntax_driven_semantic_analysis.png" width=800>
+
+<img src="images/parse_tree.png" width=700>
+
+---
+
+## CFG rules with semantic attachments
+
+A $\to a_1...a_n \qquad \\{f(a_1.sem,...a_n.sem)\\}$
+
+.left-column-4[
+
+<font color="red">Qingfen reopned.</font>
+
+ProperNoun $\to$ Qingfen  $\quad \\{Qingfen\\} $
+
+NP $\to$ ProperNoun $\quad \\{ProperNoun.sem\\}$
+
+VP $\to$ Verb $\quad \\{Verb.sem\\}$
+
+Verb $\to$ reopned $\quad \\{ \lambda x.Reopned(x)\\}$
+
+S $\to$ NP VP $\quad \\{ VP.sem(NP.sem)\\}$
+
+]
+
+.right-column-4[
+
+<br><br><br>
+> $\lambda x.Reopned(x)(Qingfen)$
+
+> $Reopened(Qingfen)$
+]
+
+---
+.left-column-3[
+## A closer look: representing the meaning of a word
+
++ **Dictionary entries**
+
+  Johnson, Andrew (1808–1875), American Democratic statesman, 17th president of the US 1865–1869.
+
+  Nixon, Richard (1913–1994), American Republican statesman, 37th president of the US 1969–1974.
+]
+
+.right-column-3[
+<br><br><br><br><br>
+.center[<img src="images/oxford.png" width=200>]
+]
+---
+.left-column-3[
+## A closer look: representing the meaning of a word
+
++ **Feature structures**
+
+> .smaller[
+$
+\left[
+\begin{array}{ll}
+\textrm{WORD} & Johnson\\\
+\textrm{DEMOCRAT} & Yes \\\
+\textrm{FORMER GOVERNOR} & No \\\
+\textrm{FORMER VP} & Yes \\\
+\textrm{...} & ...
+\end{array}
+\right]
+$
+
+$
+\left[
+\begin{array}{ll}
+\textrm{WORD} & Nixon\\\
+\textrm{DEMOCRAT} & No \\\
+\textrm{FORMER GOVERNOR} & No \\\
+\textrm{FORMER VP} & Yes \\\
+\textrm{...} & ...
+\end{array}
+\right]
+$
+]
+]
+
+.right-column-3[
+<br><br><br><br><br>
+.smaller[
+Johnson, Andrew (1808–1875), American Democratic statesman, 17th president of the US 1865–1869.
+
+Nixon, Richard (1913–1994), American Republican statesman, 37th president of the US 1969–1974.
+]
+]
+
+---
+
+## A closer look: representing the meaning of a word
+
++ **Relational databases**
+
+  <img src="images/relational_database.png" width=900>
+
+.right[[Also see: A database of Chinese adverbs](https://bxjthu.github.io/CompLing/readings/chinese_adverbs_sample.xls)]
+
+---
+
+## A closer look: representing the meaning of a word
+
++ Two words have first-order co-occurrence (i.e. syntagmatic association) if they are typically nearby each other.
+
+  Thus _write_ is a first-order associate of _book_ or _poem_.
+
++ Two words have second-order co-occurrence (i.e. paradigmatic association) if they have similar neighbors.
+
+  Thus _write_ is a second-order associate of _say_ or _remark_.
+
+---
+
+## A closer look: representing the meaning of a word
+
++ Syntagmatic association
+
++ Paradigmatic association
+
+<img src="images/adverb.png" width=1000>
+
+---
+## Representing the meaning of a word as a vector
+
+** Basic assumption: **
+<br>
+The meaning of a word is defined by how often it occurs near other words.
+
+> On the one hand, _bank_ co-occurs with words and expression such as _money, notes, loan, account, investment, clerk, official, manager, robbery, vaults, working in a, its actions, First National, of England_, and so forth. On the other hand, we find _bank_ co-occurring with _river, swim, boat, east_ (and of course _West_ and _South_, which have acquired special meanings of their own), _on top of the, and of the Rhine_. (Hanks 1987, p. 127)
+
+<br>
+“You shall know a word by the <font color="red">company</font> it keeps!”
+
+.smaller[
+Firth, J. R. (1957). A synopsis of linguistic theory 1930–1955. In $\textit{Studies in Linguistic Analysis}$. <br>Philological Society. Reprinted in Palmer, F. (ed.) 1968. Selected Papers of J. R. Firth. Longman, Harlow.
+]
+
+---
+## Documents as vectors
+
+<img src="images/vector_doc.png" width=800>
+
++ Vector: a list or array of numbers
+
++ A vector space: a collection of vectors
+
++ A term-document matrix: the occurrence of four words in four plays
+
++ A dimension (row): the number of times a word  occurs
+
+---
+## Documents as vectors
+
+<img src="images/battle_fool.png" width=700>
+
+.smaller[A two-dimension spatial visualization of the document vectors for four Shakespeare plays
+
++ The comedies have high values for the _fool_ dimension and low values for the _battle_ dimension.
+
++ Similar documents had similar vectors, because similar documents tend to have similar words.
+]
+
+---
+
+## Words as vectors
+
+<img src="images/vector_word_doc.png" width=800>
+
++ Vector: a list or array of numbers
+
++ A vector space: a collection of vectors
+
++ The term-document matrix represents the meaning of words by the documents it tends to occur in
+
++ Similar words have similar vectors because they tend to occur in similar documents.
+
+---
+
+## Words as vectors
+
+<img src="images/vector_word.png" width=800>
+
++ The word-word matrix: the number of times the row (target) word and the column (context) word co-occur in the same document.
+
++ The window
+
+<img src="images/window.png" width=900>
+
+---
+.left-column-2[
+## Words as vectors
+
+<img src="images/result_data.png" width=500>
+
+.smaller[A two-dimension spatial visualization of word vectors for _digital_ and _information_, showing just two of the dimensions, corresponding to the words _data_ and _result_.]
+]
+.right-column-4[
+<br>
+** Size of the window ** <br>
+used to collect counts
+
++ Varied based on the goals of the representation
+
++ Generally between 1 and 8 words on each side of the target word
+
++ In general, the shorter the window, the more syntactic the representations; the longer the window, the more semantic the relations.
+]
+
+---
+## Measure of the association between words
+
++ Simple frequency isn’t the best measure!
+
+  Words that are frequent but not informative or discriminative: _the, it, they_
+
++ Positive Pointwise Mutual	Information	(PPMI)
+
+$$ I(x,y) = \log_2 \frac{P(x,y)}{P(x)P(y)}  \qquad  PMI(w,c) = \log_2 \frac{P(w,c)}{P(w)P(c)} $$
+
+<br>
+$$ PPMI(w,c) = max (\log_2 \frac{P(w,c)}{P(w)P(c)} ,0)$$
+---
+
+## Other representations of meanings
+
++ **Trees**
+
+  > <img src="images/semantic_tree.png" width=800>
+  <br>
+.right[[PKU semantic tree](http://ccl.pku.edu.cn/doubtfire/Semantics/973_Beida/index.htm)]
+
+---
+## Other representations of meanings
+
++ **Synsets**
+
+  > {教师, 教书匠, 教书先生, 老师}<br>
+  {母亲, 妈妈, 娘亲}<br>
+  {mother, female parent}<br>
+  {mother, fuss, overprotect}<br>
+  {father, male parent, begetter}<br>
+  {beget, get, engender, father, mother, sire, generate, bring forth}
+  <br><br>
+.right[[WordNet](http://wordnetweb.princeton.edu/perl/webwn)]
+
+---
+
+## At the end of this session you will
+
++ understand why we need to represent meaning
+
++ understand what meaning representations should do for us
+
++ know about how a meaning representation models the particular state of affairs in the world
+
++ know about how first-order logic represents meaning
+
++ know about how syntax-driven semantic analysis works
+
++ know how the meaning of a word can be represented in different ways
+
++ know how to represent the meaning of a word as a vector and compute its positive pointwise mutual information
+
+
+
+---
+???
 ##Assignment
 
 **1. Review**
@@ -1165,7 +830,7 @@ $\gamma$: terminal or non-terminal
 
 + Learn to use your grammar, together a chart parser (http://www.nltk.org/book/pylisting/code_feat0cfg.py), to analyze sentences.
 
-More detailed instructions can be found at http://www.nltk.org/book/ch09.html 
+More detailed instructions can be found at http://www.nltk.org/book/ch09.html
 
 ---
 class: center, middle
