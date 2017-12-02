@@ -560,7 +560,7 @@ A $\to a_1...a_n \qquad \\{f(a_1.sem,...a_n.sem)\\}$
 
 .left-column-4[
 
-<font color="red">Qingfen reopned.</font>
+<font color="red">Qingfen reopened.</font>
 
 ProperNoun $\to$ Qingfen  $\quad \\{Qingfen\\} $
 
@@ -568,7 +568,7 @@ NP $\to$ ProperNoun $\quad \\{ProperNoun.sem\\}$
 
 VP $\to$ Verb $\quad \\{Verb.sem\\}$
 
-Verb $\to$ reopned $\quad \\{ \lambda x.Reopned(x)\\}$
+Verb $\to$ reopened $\quad \\{ \lambda x.Reopened(x)\\}$
 
 S $\to$ NP VP $\quad \\{ VP.sem(NP.sem)\\}$
 
@@ -577,7 +577,7 @@ S $\to$ NP VP $\quad \\{ VP.sem(NP.sem)\\}$
 .right-column-4[
 
 <br><br><br>
-> $\lambda x.Reopned(x)(Qingfen)$
+> $\lambda x.Reopened(x)(Qingfen)$
 
 > $Reopened(Qingfen)$
 ]
