@@ -322,7 +322,7 @@ $
 
 + Subcategorization
 
-+ [Long-distance dependencies]((https://bxjthu.github.io/CompLing/readings/long_distance_dependencies_ysc.zip)
++ [Long-distance dependencies](https://bxjthu.github.io/CompLing/readings/long_distance_dependencies_ysc.zip)
 
 ---
 
