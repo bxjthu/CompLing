@@ -322,7 +322,7 @@ $
 
 + Subcategorization
 
-+ Long-distance dependencies
++ [Long-distance dependencies]((https://bxjthu.github.io/CompLing/readings/long_distance_dependencies_ysc.zip))
 
 ---
 
@@ -827,7 +827,7 @@ $$ PPMI(w,c) = max (\log_2 \frac{P(w,c)}{P(w)P(c)} ,0)$$
 
 + Exercises in [J+M_17](https://bxjthu.github.io/CompLing/readings/9_J+M_17.pdf), [J+M_18](https://bxjthu.github.io/CompLing/readings/9_J+M_18.pdf), [J+M[3rd]_15](https://bxjthu.github.io/CompLing/readings/9_J+M[3rd]_15.pdf)
 
-+ Finish Exercise - Practical 6 and submit your codes at 网络学堂.
++ Finish Exercise - Practical 6 and submit your codes at 网络学堂. (DDL: Dec. 13)
 
 ---
 class: center, middle
