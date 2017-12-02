@@ -360,7 +360,7 @@ The meaning of linguistic expressions <font color="red">can</font> be captured i
 
 .right-column-1[
 
-<video width="640" height="288" controls src="images/hal-2.mp4" type="video/mp4"</video>
+<video width="640" controls src="images/hal-2.mp4" type="video/mp4"</video>
 ]
 
 ---
@@ -655,11 +655,11 @@ Nixon, Richard (1913–1994), American Republican statesman, 37th president of t
 
 + Two words have first-order co-occurrence (i.e. syntagmatic association) if they are typically nearby each other.
 
-  Thus _write_ is a first-order associate of _book_ or _poem_.
+  Thus <font color="red">_write_</font> is a first-order associate of <font color="red">_book_</font> or <font color="red">_poem_</font>.
 
 + Two words have second-order co-occurrence (i.e. paradigmatic association) if they have similar neighbors.
 
-  Thus _write_ is a second-order associate of _say_ or _remark_.
+  Thus <font color="red">_write_</font> is a second-order associate of <font color="red">_say_</font> or <font color="red">_remark_</font>.
 
 ---
 
@@ -678,7 +678,7 @@ Nixon, Richard (1913–1994), American Republican statesman, 37th president of t
 <br>
 The meaning of a word is defined by how often it occurs near other words.
 
-> On the one hand, _bank_ co-occurs with words and expression such as _money, notes, loan, account, investment, clerk, official, manager, robbery, vaults, working in a, its actions, First National, of England_, and so forth. On the other hand, we find _bank_ co-occurring with _river, swim, boat, east_ (and of course _West_ and _South_, which have acquired special meanings of their own), _on top of the, and of the Rhine_. (Hanks 1987, p. 127)
+> On the one hand, <font color="red">_bank_</font> co-occurs with words and expression such as <font color="red">_money</font>, <font color="red">notes</font>, <font color="red">loan</font>, <font color="red">account</font>, <font color="red">investment</font>, <font color="red">clerk</font>, <font color="red">official</font>, <font color="red">manager</font>, <font color="red">robbery</font>, <font color="red">vaults</font>, <font color="red">working in a</font>, <font color="red">its actions</font>, <font color="red">First National</font>, <font color="red">of England_</font>, and so forth. On the other hand, we find <font color="red">_bank_</font> co-occurring with <font color="red">_river</font>, <font color="red">swim</font>, <font color="red">boat</font>, <font color="red">east_</font> (and of course <font color="red">_West_</font> and <font color="red">_South_</font>, which have acquired special meanings of their own), <font color="red">_on top of the_</font>, and </font><font color="red">_of the Rhine_</font>. (Hanks 1987, p. 127)
 
 <br>
 “You shall know a word by the <font color="red">company</font> it keeps!”
@@ -813,27 +813,26 @@ $$ PPMI(w,c) = max (\log_2 \frac{P(w,c)}{P(w)P(c)} ,0)$$
 
 + know how to represent the meaning of a word as a vector and compute its positive pointwise mutual information
 
-
-
 ---
-???
+
 ##Assignment
 
-**1. Review**
+** 1. Review **
 
-+ [J+M 15](https://bxjthu.github.io/CompLing/readings/8_J+M_15.pdf)
-+ [J+M 16](https://bxjthu.github.io/CompLing/readings/8_J+M_16.pdf)
++ [J+M_17](https://bxjthu.github.io/CompLing/readings/9_J+M_17.pdf)
++ [J+M_18](https://bxjthu.github.io/CompLing/readings/9_J+M_18.pdf)
++ [J+M[3rd]_15](https://bxjthu.github.io/CompLing/readings/9_J+M[3rd]_15.pdf)
 
-**2. Practice**
+** 2. Practice **
 
-+ Learn to expand the CFG you built last week to accommodate feature structures. Find a sample for the feature-based grammar here: http://www.nltk.org/book/pylisting/code_feat0cfg.py
++ Exercises in [J+M_17](https://bxjthu.github.io/CompLing/readings/9_J+M_17.pdf), [J+M_18](https://bxjthu.github.io/CompLing/readings/9_J+M_18.pdf), [J+M[3rd]_15](https://bxjthu.github.io/CompLing/readings/9_J+M[3rd]_15.pdf)
 
-+ Learn to use your grammar, together a chart parser (http://www.nltk.org/book/pylisting/code_feat0cfg.py), to analyze sentences.
-
-More detailed instructions can be found at http://www.nltk.org/book/ch09.html
++ Finish Exercise - Practical 6 and submit your codes at 网络学堂.
 
 ---
 class: center, middle
 ## Next session
 
-Meaning Representation and Vector Semantics
+Word Sense Disambiguation
+
+and Semantic Role Labeling
