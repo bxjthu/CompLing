@@ -165,15 +165,15 @@ individually separate and distinct
 
 + Senses coincidentally sharing an orthographic form but not related
 
-+ Related terms:
++ Related terms
 
-  + Homonym: e.g. bank ("financial institution") vs. bank ("sloping mound")
+  + Homonym: .smaller[e.g. bank ("financial institution") vs. bank ("sloping mound")]
 
   + Homonymy
 
-  + Homograph: bank; bat("club for hitting a ball") vs. bat ("nocturnal flying animal")
+  + Homograph: .smaller[e.g. bank; bat("club for hitting a ball") vs. bat ("nocturnal flying animal")]
 
-  + Homophone: write vs. right; piece vs. peace
+  + Homophone: .smaller[e.g. write vs. right; piece vs. peace]
 
 + Related problems for NLP
 
@@ -183,11 +183,11 @@ individually separate and distinct
 
 + Senses semantically related
 
-+ Related terms:
++ Related terms
 
-  + Polysemy
+  + Polysemy: .smaller[e.g. bank, school, university, hospital]
 
-  + Metonymy
+  + Metonymy: .smaller[e.g. the White House, Jane Austen, Plums]
 
 ---
 
@@ -211,7 +211,7 @@ Examples from _American Heritage Dictionary_ (Morris, 1985)
 :--|:--|:--
 **right** &nbsp;&nbsp;&nbsp;|_adj._ &nbsp;&nbsp;&nbsp;|located nearer the right hand esp. being on the right when facing the same direction as the observer
 &nbsp;|  |  
-**left** &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|_adj._ &nbsp;&nbsp;&nbsp;|located nearer the right hand esp. being on the right when facing the same direction as the observer
+**left** |_adj._ |located nearer to this side of the body than the right
 &nbsp;|  |  
 **red** &nbsp;&nbsp;&nbsp;|_n._ |the color of blood or a ruby
 &nbsp;|  |  
@@ -317,13 +317,13 @@ The COMPUTEOVERLAP function returns the number of words in common between two se
 .right-column-4[
 <br><br>
 .smaller[
-_The bank can guarantee deposits will eventually cover future tuition costs because it invests in adjustable-rate mortgage securities._
+_The <font color="red">bank</font> can guarantee <font color="red">deposits</font> will eventually cover future tuition costs because it invests in adjustable-rate <font color="red">mortgage</font> securities._
 
 bank1
 
-Gloss: a financial institution that accepts deposits and channels the money into lending activities
+Gloss: a financial institution that accepts <font color="red">deposits</font> and channels the money into lending activities
 
-Examples: _“he cashed a check at the bank”, “that bank holds the mortgage on my home”_
+Examples: _“he cashed a check at the bank”, “that bank holds the <font color="red">mortgage</font> on my home”_
 
 bank2
 
@@ -343,14 +343,15 @@ Examples: _“they pulled the canoe up on the bank”, “he sat on the bank of 
 
   Choosing the sense whose dictionary gloss or definition shares the most words with the dictionary glosses or definitions of the target word’s neighborhood
 
+.smaller[
 |  |  
 :--|:--|:--
-pine | 1 | kinds of evergreen tree with needle-shaped leaves
+pine | 1 | kinds of <font color="red">evergreen tree</font> with needle-shaped leaves
 | 2 | waste away through sorrow or illness
-cone | 1 | solid body whichn arrows to apoint
+cone | 1 | solid body which narrows to a point
 | 2 | something of this shape whether solid or hollow
-| 3 | fruit of certain evergreen trees
-
+| 3 | fruit of certain <font color="red">evergreen trees</font>
+]
 ---
 
 ## Two Python implementations of the Lesk algorithms
@@ -362,19 +363,22 @@ https://github.com/alvations/pywsd
 <br>
 
 ```
+*
 * >>> wn.synset('car.n.01').definition()
 * 'a motor vehicle with four wheels; usually propelled by an internal combustion engine'
-* >>>
+*
 * >>> wn.synset('car.n.01').examples()
 * ['he needs a car to get to work']
+*
 ```
 
 ---
 
 ## Word Similarity
 
+.smaller[
 _They didn’t have <font color="red">newspapers</font>, <font color="red">books</font> and even <font color="red">cell phones</font> to transmit their viewpoints like we do._
-
+]
 + A fundamental task for semantic models is to predict how similar two words’ meanings are
 
 + Applications: query expansion, learning sentiment lexicons, paraphrasing...
@@ -425,16 +429,15 @@ $$ PPMI(w,c) = max (\log_2 \frac{P(w,c)}{P(w)P(c)} ,0)$$
 
 ##Assignment
 
-???
 ** 1. Review **
 
-+ [J+M_17](https://bxjthu.github.io/CompLing/readings/9_J+M_17.pdf)
-+ [J+M_18](https://bxjthu.github.io/CompLing/readings/9_J+M_18.pdf)
-+ [J+M[3rd]_15](https://bxjthu.github.io/CompLing/readings/9_J+M[3rd]_15.pdf)
++ [J+M[3rd]_17](https://bxjthu.github.io/CompLing/readings/10_J+M[3rd]_17.pdf)
+
++ [Related projects of Wordnet](https://wordnet.princeton.edu/wordnet/related-projects/)
 
 ** 2. Practice **
 
-+ Exercises in [J+M_17](https://bxjthu.github.io/CompLing/readings/9_J+M_17.pdf), [J+M_18](https://bxjthu.github.io/CompLing/readings/9_J+M_18.pdf), [J+M[3rd]_15](https://bxjthu.github.io/CompLing/readings/9_J+M[3rd]_15.pdf)
++ [Wordnet with NLTK](http://www.nltk.org/book/ch02.html#wordnet)
 
 + Finish Exercise - Practical 6 and submit your codes at 网络学堂. (DDL: Dec. 13)
 
