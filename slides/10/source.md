@@ -374,7 +374,7 @@ https://github.com/alvations/pywsd
 
 ---
 
-## Word Similarity
+## Word similarity
 
 .smaller[
 _They didn’t have <font color="red">newspapers</font>, <font color="red">books</font> and even <font color="red">cell phones</font> to transmit their viewpoints like we do._
