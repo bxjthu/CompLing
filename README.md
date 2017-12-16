@@ -14,7 +14,7 @@ Readings:
 
 + [Natural Language Processing with Python](http://www.nltk.org/book/) by Steven Bird, Ewan Klein, and Edward Loper
 
-+ [How to Think Like a Computer Scientist](https://runestone.academy/runestone/static/thinkcspy/index.html)
++ [How to Think Like a Computer Scientist](https://runestone.academy/runestone/static/thinkcspy/index.html) by the Runestone Interactive Project
 
 ## Schedule
 
