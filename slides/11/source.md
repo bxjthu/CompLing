@@ -706,21 +706,18 @@ Chomsky (1981)
 
 ##Assignment
 
-???
 ** 1. Review **
 
-+ [J+M[3rd]_17](https://bxjthu.github.io/CompLing/readings/10_J+M[3rd]_17.pdf)
++ [J+M[3rd]_22](https://bxjthu.github.io/CompLing/readings/11_J+M[3rd]_22.pdf)
 
-+ [Related projects of Wordnet](https://wordnet.princeton.edu/wordnet/related-projects/)
++ [J+M_21](https://bxjthu.github.io/CompLing/readings/11_J+M_21.pdf)
 
-** 2. Practice **
+** 2. Review **
 
-+ [Wordnet with NLTK](http://www.nltk.org/book/ch02.html#wordnet)
-
-+ Finish Exercise - Practical 6 and submit your codes at 网络学堂. (DDL: Dec. 13)
++ [Exercise - Practical 6 solution](https://bxjthu.github.io/CompLing/slides/prac/ngram_sol.py)
 
 ---
 class: center, middle
 ## Next session
 
-Semantic Role Labeling and Computational Discourse
+NLP Applications - 1
