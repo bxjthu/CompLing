@@ -720,4 +720,4 @@ Chomsky (1981)
 class: center, middle
 ## Next session
 
-NLP Applications - 1
+Online language resources: <br>advances, applications, and challenges
