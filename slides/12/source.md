@@ -1,6 +1,6 @@
 class: center, middle
 # Computational Linguistics<br>
-## 11. Semantic Role Labeling <br>and Computational Discourse
+## 12. Online Language Resources: <br>Advances, Applications, and Challenges
 
 ** Xiaojing Bai **
 
@@ -10,592 +10,61 @@ class: center, middle
 
 ---
 
-## Recap: Word similarity
+## Recap
 
-+ A fundamental task for semantic models is to predict how similar two words’ meanings are
++ Word similarity
 
-+ Applications: query expansion, learning sentiment lexicons, paraphrasing...
++ Evaluation in NLP
 
-+ [WordNet::Similarity](http://maraca.d.umn.edu/cgi-bin/similarity/similarity.cgi)
++ Semantic roles and semantic role labelling
 
-  "We observe that humans find it extremely easy to say if two words are related and if one word is more related to a given word than another. For example, if we come across two words -- 'car' and 'bicycle', we know they are related as both are means of transport. Also, we easily observe that 'bicycle' is more related to 'car' than 'fork' is. But is there some way to assign a <font color="red">quantitative value</font> to this <font color="red">relatedness</font>?"
++ Coherence, coherence relations and entity-based coherence
 
----
-
-## Word similarity vs. word relatedness
-
-Mug, cup, coffee, croissant
-
-<img src="images/mug.png" height=200>
-<img src="images/cup.png" height=150>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<img src="images/croissant_coffee.jpg" height=250>
-
-+ Word similarity - a subcase of word relatedness
-
-+ Not distinguished in the following measuring algorithms
++ Automatic coherence assignment and reference resolution
 
 ---
 
-## Algorithms to measure word similarity
+## Semantic role labelling
 
-+ Distributional algorithms
++ The task: automatically find the semantic roles of each argument of each predicate in a sentence
 
-+ Thesaurus-based algorithms
++ Current approaches: supervised machine learning
 
-  + Goal: To measure the distance between two senses in a thesaurus like WordNet or [MeSH](https://www.nlm.nih.gov/mesh/)
+  + FrameNet and PropBank resources
+      + What counts as a predicate?
+      + What roles are involved?
+      + Training + test sets
 
-  + The hypernym/hyponym .smaller[(is-a or subsumption)] hierarchy .smaller[(noun-noun, verb-verb)]
+> .smaller[
+|  |  |  |
+:--|:--|:--|:--|:--
+[You] |can’t &nbsp; &nbsp; &nbsp; |[blame] |[the program] &nbsp; &nbsp; &nbsp; |[for being unable to identify it]
+COGNIZER &nbsp; &nbsp; &nbsp; | |TARGET &nbsp; &nbsp; &nbsp; |EVALUEE |REASON
 
----
+|  |  |  
+:--|:--|:--|:--
+[The San Francisco Examiner] &nbsp; &nbsp; &nbsp;|issued |[a special edition] &nbsp; &nbsp; &nbsp;|[yesterday]
+ARG0 |TARGET &nbsp; &nbsp; &nbsp;|ARG1 |ARGM-TMP
 
-## Algorithms to measure word similarity: thesaurus-based
-
-+ The simplest algorithm: path-length based similarity
-
-.left-column-4[
-$pathlen(c_1,c_2)$ = .smaller[1 + the number of edges in the shortest path in the thesaurus graph between the sense nodes $c_1$ and $c_2$]
-
-$sim_{path}(c_1,c_2) = \frac{1}{pathlen(c_1,c_2)}$
-
-$wordsim(w_1,w_2) = \underset{c_1 \in senses(w_1) \atop c_2 \in senses(w_2)}{\text{max}} sim(c_1,c_2)$
-]
-
-.right-column-4[
-<img src="images/path_length.png" width=450>
 ]
 
 ---
 
-## Algorithms to measure word similarity: thesaurus-based
+## Semantic role labelling
 
-+ The implicit assumption of the basic path-length algorithm
++ A simplified semantic role labeling algorithm
 
-  Each link in the network represents a uniform distance.
+  <img src="images/semantic_role_labeling.png" height=200>
 
-  .left-column-2[
-  But some links .smaller[(e.g., deep in the WordNet hierarchy)] often seem to represent an intuitively narrow distance, while other links .smaller[(e.g., higher up in the WordNet hierarchy)] represent an intuitively wider distance.
-  ]
-  .right-column-2[
-  <img src="images/path_length.png" width=450>
-  ]
+  + Features
+  + Further issues
 
----
-
-## Algorithms to measure word similarity: thesaurus-based
-
-+ More fine-grained metrics, e.g., information-content similarity
-
-  + Associating probabilities with concepts in the taxonomy
-  + Avoiding the unreliability of edge distances
-
-.left-column-2[
-$P(c) = \frac{\sum_{w \in words(c)} count(w)}{N}$
-
-.smaller[
-$P(c)$: the probability of encountering an instance of concept c in the corpus;
-
-$words(c)$: the set of words subsumed by concept $c$;
-
-$N$: the total number of words in the corpus that are also present in the thesaurus.
-]
-
-.smaller[
-.right[[WordNet::Similarity](http://maraca.d.umn.edu/cgi-bin/similarity/similarity.cgi)]]
-]
-.right-column-4[
-<img src="images/augmented_hierarchy.png" width=450>
-]
+???
+While there are a large number of algorithms, many of them use some version of the steps in this algorithm.
 
 ---
 
-## Evaluating thesaurus-based similarity
-
-+ NLP evaluation
-
-  "As the engineering branch of computational linguistics, natural language processing is concerned with the creation of artifacts that accomplish tasks. The operative question in evaluating an NLP algorithm or system is therefore the extent to which it produces the results for which it was designed. " (Resnik & Lin, 2010)
-
-+ Evaluation metrics for thesaurus-based similarity: correlation coefficient
-
-  + Human-labeled datasets
-  + TOEFL dataset
-  + Contextual dataset
-  + End-applications
-
----
-
-## Word similarity vs. word relatedness
-
-Mug, cup, coffee, croissant
-
-<img src="images/mug.png" height=200>
-<img src="images/cup.png" height=150>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<img src="images/croissant_coffee.jpg" height=250>
-
-+ Word similarity - a subcase of word relatedness
-
-+ Not distinguished in the following measuring algorithms
-
----
-
-## Measure of the association between words
-
-+ Simple frequency isn’t the best measure!
-
-  Words that are frequent but not informative or discriminative: _the, it, they_
-
-+ Positive Pointwise Mutual	Information	(PPMI)
-
-$$ I(x,y) = \log_2 \frac{P(x,y)}{P(x)P(y)}  \qquad  PMI(w,c) = \log_2 \frac{P(w,c)}{P(w)P(c)} $$
-
-<br>
-$$ PPMI(w,c) = max (\log_2 \frac{P(w,c)}{P(w)P(c)} ,0)$$
-
----
-
-## Semantic role labeling
-
-+ Applications: question answering, dialogue systems, machine translation, etc.
-
-+ Grammatical function vs. semantic role
-
-  + Grammatical function: subject, object, prepositional complement, ...
-  + Semantic role: agent, patient, theme, goal, ...
-  + Argument alternations
-  .smaller[
-  Mary broke the window.<br>
-  The window broke.<br>
-  The window was broken (by Mary).]
-  + Syntactic annotation (of grammatical functions)
-
-      Identifying only surface subjects <br>
-      Disregarding differences in semantic roles
----
-
-## Commonly used thematic roles
-
-<img src="images/thematic_role_1.png" height=240><img src="images/thematic_role_2.png" height=240>
-
-+ One of the oldest linguistic models by Panini (7th-4th centuries BCE)
-
-+ Modern formulation by Fillmore (1968) and Gruber (1965)
-
----
-
-## Alternative semantic role models
-
-+ Define generalized semantic roles that abstract over the specific thematic roles
-
-+ Define semantic roles that are specific to a particular verb or a particular group of semantically related verbs or nouns
-
-+ Two commonly used lexical resources
-
-  + PropBank
-
-  + FrameNet
-
----
-
-## The Proposition Bank (PropBank)
-
-+ Sentences annotated with semantic roles
-
-+ Semantic roles defined with respect to individual verb senses
-
-+ Semantic roles numbered rather than named, e.g. Arg0, Arg1, Arg2, etc.
-
-  + Arg0: the PROTO-AGENT
-  + Arg1: the PROTO-PATIENT
-  + Arg2: the benefactive, instrument, attribute, or end state
-  + Arg3: the start point, benefactive, instrument, or attribute
-  + Arg4: the end point
-
-  [John]$ \scriptscriptstyle{ARG0} $ broke [the window]$ \scriptscriptstyle{ARG1} $
-
-  [The window]$ \scriptscriptstyle{ARG1}$ broke
-
----
-
-## PropBank: functional tags for modifiers
-.left-column-2[
-+ LOC: location
-+ EXT: extent
-+ CAU: cause
-+ TMP: time
-+ MNR: manner
-+ DIR: direction
-+ PNC: purpose
-+ ADV: general-purpose
-+ NEG: negation marker
-+ MOD: modal verb
-]
-.right-column-2[
-_Mr. Bush met him privately, in the White House, on Thursday._
-
-REL: _met_<br>
-ARG0: _Mr. Bush_<br>
-ARG1: _him_<br>
-ARGM-MNR: _privately_<br>
-ARGM-LOC: _in the White House_<br>
-ARGM-TMP: _on Thursday_
-]
-
-.smaller[
-.right[https://propbank.github.io/
-]]
----
-
-## PropBank: creation
-
-+ Extraction of all Penn Treebank II sentences for a given verb
-
-+ Automatic tagging of semantic roles
-
-+ Manual correction by annotators
-
-+ Adjudication of tagging disagreements
-
-<br>
-Food for your thought:
-
-How would PropBank be used?
-
----
-
-## FrameNet
-
-A highly detailed lexicon of English predicates based on Frame Semantics
-
-+ The basic assumption of Frame Semantics (Fillmore et al., 2002): Each word in a given meaning evokes a particular frame and possibly profiles some element or aspect of that frame.
-
-+ Semantic frames are schematic representations of situations involving various participants, props, and other conceptual roles.
-
-+ Frames are annotated for events, states, and relations
-
-+ Frames connected to each other by frame-to-frame relations
-
----
-
-## FrameNet: important terms
-
-+ Frame Elements (FEs)
-
-  + The participants, props, and roles of a frame
-  + Including agents, inanimate objects, and elements of the setting
-  + Corresponding roughly to syntactic dependents (arguments and adjuncts)
-
-+ Lexical Units (LUs)
-
-  A pairing of a lemma and frame - i.e. a "word" taken in one of its senses, e.g. the verb _tie_ in the _Attaching_ frame
-
----
-
-## FrameNet: important terms
-
-+ Valence: the particular kinds of constituents, in terms of semantic roles, grammatical functions, and phrase types, with which a word combines in a grammatical sentence
-
-  + Semantic valence: the frame that underlies the meaning of a word, and the number and kinds of entities that participate in the situation instantiating the frame
-
-  + Syntactic valence: the number and type of syntactic constituents that are dependent on, or in construction with a word
-
-.smaller[
-.right[
-https://framenet.icsi.berkeley.edu/]]
-
----
-## Computational discourse
-
-Previously: language phenomena operating at the word or sentence level
-
-+ Discourse tasks
-
-  + Discourse Segmentation
-
-  + Reference Resolution (esp. anaphora resolution)
-
-+ A discourse: a coherent structured group of sentences
-
----
-## Coherence
-
-+ A property of well-written texts
-
-+ Ensuring that sentences in the texts are meaningfully related
-
-  + Thematic organization
-  + Temporal organization
-  + ...
-  + NOT a random juxtaposition
-
-+ Making texts easier to read and understand
-
-+ Two aspects of coherence
-
-  + Coherence relations
-  + Entity-based coherence
-
----
-
-## Coherence relations
-
-John hid Bill’s car keys. He was drunk.
-
-John hid Bill’s car keys. He likes spinach.
-
----
-
-## Entity-based coherence
-
-a. John went to his favorite music store to buy a piano.<br>
-b. He had frequented the store for many years.<br>
-c. He was excited that he could finally buy a piano.<br>
-d. He arrived just as the store was closing for the day.
-
-a. John went to his favorite music store to buy a piano.<br>
-b. It was a store John had frequented for many years.<br>
-c. He was excited that he could finally buy a piano.<br>
-d. It was closing just as John arrived.
-
----
-
-## Coherence relations between sentences
-
-The Tin Woodman was caught in the rain. His joints rusted.
-
-John hid Bill’s car keys. He was drunk.
-
-The Scarecrow wanted some brains. The Tin Woodman wanted a heart.
-
-Dorothy was from Kansas. She lived in the midst of the great Kansas prairies.
-
-Dorothy picked up the oil-can. She oiled the Tin Woodman’s joints.
-
----
-
-## Coherence relations between sentences: Hobbs (1979)
-
-+ Result: Infer that the state or event asserted by S0 causes or could cause the state or event asserted by S1.
-
-+ Explanation: Infer that the state or event asserted by S1 causes or could cause the state
-or event asserted by S0.
-
-+ Parallel: Infer p(a1,a2,...) from the assertion of S0 and p(b1,b2,...) from the assertion of S1, where ai and bi are similar, for all i.
-
-+ Elaboration: Infer the same proposition P from the assertions of S0 and S1.
-
-+ Occasion: A change of state can be inferred from the assertion of S0, whose final state can be inferred from S1, or a change of state can be inferred from the assertion of S1, whose initial state can be inferred from S0.
-
----
-
-## Coherence relations in a discourse
-
-John went to the bank to deposit his paycheck. (S1)
-
-He then took a train to Bill’s car dealership. (S2)
-
-He needed to buy a car. (S3)
-
-The company he works for now isn’t near any public transportation. (S4)
-
-He also wanted to talk to Bill about their softball league. (S5)
-
----
-
-## Coherence relations between sentences: RST
-
-+ Rhetorical Structure Theory (RST)
-
-+ A model of text organization for text generation (Mann & Thompson, 1987)
-
-+ A set of 23 rhetorical relations held between spans of text within a discourse
-
-  + The nucleus: the unit that is more central to the writer’s purpose and interpretable independently
-
-  + The satellite: the unit that is less central and generally only interpretable with respect to the nucleus
-
-  E.g., The _Evidence_ relation: a satellite presents evidence for the proposition or situation expressed in the nucleus.
-
-  _Kevin must be here. His car is parked outside._
-
----
-
-## RST: an example
-
-<img src="images/lactose-small.gif" height=300>
-
-.smaller[
-.right[
-http://www.sfu.ca/rst/01intro/intro.html
-
-http://123.56.88.210/demo/depannotate/
-]
-]
----
-
-## Automatic coherence assignment
-
-+ Assigning a relation between two sentences
-
-+ Extracting a tree or graph representing an entire discourse
-
-+ Discourse parsing
-
-+ A shallow cue-phrase-based algorithm for coherence extraction
-
-  1. Identify the cue phrases or discourse markers in a text;
-
-  2. Segment the text into discourse segments, using cue phrases;
-
-  3. Classify the relationship between each consecutive discourse segment, using cue phrases.
-
----
-
-## Reference resolution
-
-.smaller[<font color="red">Victoria Chen</font>, <font color="red">Chief Financial Officer of Megabucks Banking Corp</font> since 2004, saw <font color="red">her</font> pay jump 20%, to $1.3 million, as <font color="red">the 37-year-old</font> also became <font color="red">the Denver-based financial-services company’s president</font>. It has been ten years since <font color="red">she</font> came to Megabucks from rival Lotsabucks.]
-
-+ The task: What entity is being talked about by each NP?
-
-+ Reference: the use of linguistic expressions to denote an entity or individual
-
-+ Referring expression: a linguistic expression used to perform reference
-
-+ Referent: the entity that is referred to
-
----
-## Referring expressions
-
-+ Indefinite noun phrases: introduce new entities into the discourse <br>
-  e.g. a pair of stove-lids
-
-+ Definite noun phrases: refer to entities that are uniquely identifiable <br>
-  e.g. the room
-
-+ (Personal) pronouns: refer to entities with a high degree of salience <br>
-  e.g. she, them
-
-+ Demonstrative pronouns: refer to entities and events <br>
-  e.g. this (room), (I had not expected) that
-
-+ Proper nouns: evoke uniquely identifiable known entity <br>
-  e.g. Beijing, Tsinghua
----
-
-## Coreference vs. anaphora
-
-.smaller[<font color="red">Victoria Chen</font>, <font color="red">Chief Financial Officer of Megabucks Banking Corp</font> since 2004, saw <font color="red">her</font> pay jump 20%, to $1.3 million, as <font color="red">the 37-year-old</font> also became <font color="red">the Denver-based financial-services company’s president</font>. It has been ten years since <font color="red">she</font> came to Megabucks from rival Lotsabucks.]
-
-+ Anaphora: reference to an entity previously introduced into the discourse
-
-  + Antecedent: an earlier word, phrase, or clause to which another word (especially a following relative pronoun) refers back
-  + Anaphor: a word or phrase that refers back to an earlier word or phrase
-
-+ Cataphora: the phenomenon where the anaphor precedes the antecedent <br>
-  .smaller[e.g. After his class, John will play football.]
-
-+ Coreference: reference to an entity by two or more referring expressions
-
-  + Coreference chain: a set of coreferring expressions that corefer
-
----
-
-## Reference resolution
-
-+ Reference resolution: to determine what entities are referred to by which linguistic expressions
-
-  + Anaphora resolution: to find an antecedent for each anaphor (typically, third person pronoun)
-
-  + Coreference resolution: to find the referring expressions that refer to the same entity
-
----
-
-## Pronominal anaphora resolution: the task
-
-+ The input
-  + A single pronoun (he, him, she, her, it, and sometimes they/them)
-  + The previous context
-
-+ The Output
-  + The antecedent of the pronoun in this context
-
-+ Constraints on possible referents
-  + Hard constraints
-  + Soft constraints
-
----
-
-## Pronominal anaphora resolution: hard constraints
-
-+ Number agreement: singular, plural
-
-+ Person agreement: first, second, third
-
-+ Gender agreement: masculine, feminine, non-personal
-
-+ Binding theory constraints
-
-Note: A complete statement of the constraints requires reference to semantic and other factors, and cannot be stated purely in terms of syntactic configuration.
-
----
-
-## Pronominal anaphora resolution: binding theory constraints
-
-Chomsky (1981)
-
-+ Principle A: Reflexives must have local antecedents<br>
-
-  .smaller[(1) **John$_i$** washed **himself$_i$**.  (2) **John$_i$** asked Mary to wash **himself$_i$**.]
-
-+ Principle B: Personal pronouns must not have local antecedents<br>
-
-  .smaller[(1) **John$_i$** asked Mary to wash **him$_i$**.  (2) **John$_i$** washed **him$_i$**.]
-
-+ Principle C: An R-expression must not have an antecedent that c-commands it <br>
-
-  .smaller[**John$_i$** saw **John$_i$**.]
-
----
-
-## Pronominal anaphora resolution: soft constraints
-
-+ Selectional restrictions: Verbs impose semantic constraints on the kind of concepts that are allowed to be their arguments
-
-  .smaller[John parked his car in the garage after driving it around for hours.]
-
-+ Recency: Entities introduced in recent utterances are more likely to be referred to by a pronoun than entities introduced in utterances further back.
-
-  .smaller[The doctor found an old map in the captain’s chest. Jim found an even older map hidden on the shelf. It described an island.]
-
----
-
-## Pronominal anaphora resolution: soft constraints
-
-+ Grammatical role: Entities introduced in subject position tend to get topicalised and are more likely to be referred to by a pronoun than entities in object positions.
-
-  .smaller[Jim Hawkins went to the bar with Billy Bones. He called for a glass of rum.]
-
-+ Repeated mention: Entities that have already been referred to frequently are more likely to be pronominalised than those that have not.
-
-  .smaller[Billy Bones had been thinking about a glass of rum ever since the pirate ship docked. He hobbled over to the Old Parrot bar. Jim Hawkins went with him. He called for a glass of rum.]
-
----
-
-## Pronominal anaphora resolution: soft constraints
-
-+ Parallelism: Pronouns are more likely to refer to those entities that do not violate syntactically parallel constructions.
-
-  .smaller[Long John Silver went with Jim to the Old Parrot. Billy Bones went with him to the Old Anchor Inn.]
-
-+ Verb semantics: Certain verbs appear to place a semantically-oriented emphasis on one of their argument positions, which can have the effect of biasing the manner in which subsequent pronouns are interpreted.
-
-  .smaller[John telephoned Bill. He had lost the laptop.
-
-  John criticised Bill. He had lost the laptop.]
-
----
-
-## Pronominal anaphora resolution: three algorithms
+## Recap: Pronominal anaphora resolution
 
 + Many factors influence pronominal anaphora resolution.
 
@@ -604,40 +73,491 @@ Chomsky (1981)
 + No pronoun resolution algorithm successfully accounts for all these factors.
 
 + Three algorithms
+
   + Purely syntax-based (Hobbs, 1978)
   + Centering (Grosz et al., 1995)
   + Supervised ML
 
 ---
 
-## Discourse segmentation
+## Pronominal anaphora resolution: the Hobbs algorithm
 
-Separating a document into a linear sequence of subtopics
++ The baseline for pronominal anaphora
 
-Global or high-level structure of a text or discourse
++ A syntactic parser
 
-conventional structures
++ A morphological gender and number checker
 
-Academic articles
++ Intuition
 
-A newspaper story
+    Start with the target pronoun and walk up the parse tree to the root S. For each NP or S node that it finds, it does a breadth-first left-to-right search of the node’s children to the left of the target. As each candidate noun phrase is proposed, it is checked for gender, number, and person agreement with the pronoun. If no referent is found, the algorithm performs the same breadth-first search on preceding sentences.
 
-A spoken patient report
+???
+The constraints and preferences on pronominalization
+
+---
+## Pronominal anaphora resolution: more examples
+.plarger[
+
+_“For art has to leave reality, <font color="red">it</font> has to raise <font color="red">itself</font> bodily above necessity and neediness; for art is the daughter of freedom, and <font color="red">it</font> requires <font color="red">its</font> prescriptions and rules to be furnished by the necessity of spirits and not by that of matter.”_
+]
+
+---
+## Pronominal anaphora resolution: more examples
+.plarger[
+_"High-quality education requires great investment, only when parents are affluent can their children learn what they desire without worrying that they will dry up their parents’ wallet. Material wealth can provide not only good foundation for the children to fulfill their dreams but also make it easier to access to their talents and skills. On the rather abstract side, money can buy their children the way to experience art, literature and music, increase their passion and taste on these areas. Perhaps it is not what they will write on their application letter to universities, but it will be marked on their way of speaking and moving."_
+]
+
+---
+## Pronominal anaphora resolution: more examples
+.plarger[
+_"High-quality education requires great investment, only when parents are affluent can <font color="red">their</font> children learn what <font color="red">they</font> desire without worrying that <font color="red">they</font> will dry up <font color="red">their</font> parents’ wallet. Material wealth can provide not only good foundation for the children to fulfill <font color="red">their</font> dreams but also make it easier to access to <font color="red">their</font> talents and skills. On the rather abstract side, money can buy <font color="red">their</font> children the way to experience art, literature and music, increase <font color="red">their</font> passion and taste on these areas. Perhaps it is not what <font color="red">they</font> will write on <font color="red">their</font> application letter to universities, but it will be marked on <font color="red">their</font> way of speaking and moving."_
+]
+
 ---
 
 ## At the end of this session you will
 
-+ know about how to measure word similarity
++ know more about the language resources online, including corpora, knowledge bases, and the related search engines
 
-+ understand the importance of evaluation in NLP
++ know more about the possible applications of language resources in linguistic research
 
-+ know about how semantic roles are modeled
++ know more about challenges for the future development of language resources
 
-+ know about the tasks of computational Discourse
++ probably start to consider the construction and application of your language resources
 
-+ understand what coherence means and how to describe coherence relations
+---
 
-+ know about automatic coherence assignment and reference resolution
+## Overview
+
++ Dramatic development of the Internet and computer technology
+
++ New waves of AI and NLP brought by the rapid progress of mobile web, social media, and machine learning
+
++ Large amounts of language resources available in the past three decades
+
++ Unprecedentedly prevailing use of language resources
+
+  + NLP
+  + Linguistic research
+  + Language teaching<br><br>
+  + In academia, industry, and government
+
+---
+
+## Paradigms of linguistic research
+
++ The late 1950s: the beginning of the Chomskyan revolution
+.smaller[(Chomsky, 1957)]
+
++ The shift of the goal .smaller[(research interest)] and methodology in linguistic research
+
+  + The structuralist and functional paradigm
+      + Linguistic performance and how linguistic units are actually used
+      + Relying on the concrete “examples” of language use
+
+  + The Chomskyan paradigm
+      + Linguistic competence and how language is generated
+      + Focusing on the possible “counterexamples” of language use<br>
+
+---
+
+## The Chomskyan paradigm
+
++ Counterexamples: sentences that people never use or rarely use in communication, which is most typically showcased in the following sentences (Chomsky, 1957):
+
+  .smaller[
+_a. Colorless green ideas sleep furiously. <br>
+b. * Furiously sleep ideas green colorless._]
+
++ The goal of linguistic research: to explore how grammar is built inside the human brain so that grammatical and meaningful sentences can be produced while ungrammatical or meaningless ones be avoided
+
+---
+## Chomsky's argument against the adequacy of corpora
+
++ _Syntactic Structures_ (Chomsky, 1957)
+
+  .smaller[“...there appears to be no particular relation between order of approximation and grammaticalness...”]
+
+  .smaller[“...probabilistic models give no particular insight into some of the basic problems of syntactic structure...”]
+
++ Interview (Jozsef Andor, 2004)
+
+ .smaller[“Corpus linguistics doesn’t mean anything. It’s like saying suppose a physicist decides, suppose physics and chemistry decide that instead of relying on experiments, what they’re going to do is take videotapes of things happening in the world and they’ll collect huge videotapes of everything that’s happening and from that maybe they’ll come up with some generalizations or insights. Well, you know, sciences don’t do this.”]
+
+---
+
+## Other moderate expressions of doubt
+
+For example, from the mainstream of theoretical linguistics:
+
+Newmeyer (2003), in response to the usage-based models, questions the relevance of corpus-derived statistical information to the nature of the grammar of an individual speaker.
+
+However, he points out that corpora can be extremely valuable for revealing “broad typological features of language that any theory of language variation, use, and change has to address”.
+
+---
+
+## Corpus-related resources
+
++ Web portals as repositories and distribution points for corpora
+  + [LDC](https://www.ldc.upenn.edu/)
+  + [Chinese LDC](http://www.chineseldc.org/)
+
++ Online search engines equipped with big corpora
+  + [Word Sketch Engine](https://www.sketchengine.co.uk/)
+  + [WebCorp Search Engine](http://www.webcorp.org.uk/live/index.jsp)
+  + [CCL Corpus Search Engine](http://ccl.pku.edu.cn:8080/ccl_corpus/) (PKU)
+  + [BCC Corpus Search Engine](http://bcc.blcu.edu.cn/) (BLCU)
+
++ Smaller corpora for special purposes
+  + [UCLA Written Chinese Corpus](http://www.lancaster.ac.uk/fass/projects/corpus/UCLA/default.htm)
+  + [Hong Kong Bilingual Child Language Corpus](http://www.cuhk.edu.hk/lin/home/bilingual.htm) (CUHK)
+
+---
+
+## Knowledge bases
+
++ Knowledge bases for academia and the information industry
+
+  + The Grammatical Knowledge-base of Contemporary Chinese (PKU)
+
+  + The Chinese Semantic Dictionary (PKU)
+
+  + The Chinese Concept Dictionary (PKU)
+
+  + [The Chinese Wordnet](http://cwn.ling.sinica.edu.tw/) (Sinica)
+
+  + [The Bilingual Ontological Wordnet](http://bow.ling.sinica.edu.tw/intro/bow_ebg_cont.html) (Sinica)
+
+  + [HowNet](http://www.keenage.com/html/e_index.html) (Zhendong Dong)
+
+  + [The Emotion Ontology](http://ir.dlut.edu.cn/EmotionOntologyDownload) (Dalian University of Technology)
+
+---
+
+## Knowledge bases
+
++ Online lexicons, dictionaries, mobile applications available to the public
+
+  + [Souwen Jiezi](http://words.sinica.edu.tw/) (Taiwan)
+  + [Tradict.net for Translators](http://www.tradict.net/lang_guoyu.php) (Taiwan)
+  + [Han Dian](http://www.zdic.net/) (mainland China)    
+
++ Web portals or websites of the world’s languages
+
+  + [The Association for Linguistic Typology](http://www.linguistic-typology.org/resources.html)
+  + [The World Atlas of Language Structures Online](http://wals.info/)
+  + [The UPSID](http://phoible.org/) (UCLA Phonological Segment Inventory Database)
+  + [The P-base of sound patterns](http://aix1.uottawa.ca/~jmielke/pbase/) (University of Ottawa)
+
+???
+for the special purposes of cross-linguistic comparison, theoretical linguistic research, typological studies, etc.,
+
+---
+
+## Early corpora
+
++ Manual work
++ Small collections of sample texts
++ Used for counting the frequencies of characters and words
+
+## Corpora today
+
++ Large quantities of multimedia data
++ Accessibility vs. open collaboration
++ Size
++ Variety
+  + Different annotations
+  + Different types of data
+
+.right[冯志伟 (2006).《应用语言学中的语料库》导读.北京: 世界图书出版公司.]
+
+---
+## Extremely big linguistic data
+
++ [Google Ngram](https://books.google.com/ngrams) (Wiki: [Google Ngram Viewer](https://en.wikipedia.org/wiki/Google_Ngram_Viewer))
+
++ [Chinese Web 5-gram Version 1](https://catalog.ldc.upenn.edu/LDC2010T06)
+
+---
+
+## Applications of Chinese language resources
+
++ Using corpora in the study of synonyms
+
++ Using treebanks in the analysis of syntactic ambiguities
+
++ Using language resources in contrastive and typological analysis
+
++ Using corpora in sociolinguistic analysis
+
+---
+
+## Using corpora in the study of synonyms
+
+Tao, H. (2000). <font color="red">Adverbs of absolute time and assertiveness in vernacular Chinese: a corpus-based study</font>. _Journal of the Chinese Language Teachers Association_, 35(2), 53-74.
++ A 500,000-character corpus of vernacular texts
++ More precise details about the distinctions
+
+(1) 从来, 向来, 一向
+(2) 根本, 本来, 全然
+(3) 一直, 始终
+
+真的，我当时<font color="red">根本</font>没想过会有今天这种事儿。<br>
+银行有律师，靠我可打不赢官司，我<font color="red">从来</font>不打官司。<br>
+一九四二年回国后，我<font color="red">一直</font>在东北。<br>
+“她这是胡说，她<font color="red">始终</font>不明白，‘按能承包’也得分地。……”她丈夫说。
+
+---
+
+## Using corpora in the study of synonyms
+
+Huang, C. R., Kilgarriff, A., Wu, Y., Chiu, C. M., Smith, S., Rychly, P., ... & Chen, K. J. (2005). <font color="red">Chinese Sketch Engine and the extraction of grammatical collocations</font>. In _Proceedings of the Fourth SIGHAN Workshop on Chinese Language Processing_, pp. 48-55.
+
++ Measure the pattern and the salience of collocations, by using statistics like Mutual Information which indicates the mutual dependence between random variables.
+
+.right[
+[Statistics used in Sketch Engine](https://www.sketchengine.co.uk/documentation/statistics-used-in-sketch-engine/)
+]
+
+---
+
+## Using corpora in the study of synonyms
+
+Hong, J. F., & Huang, C. R. (2006). <font color="red">Using Chinese Gigaword Corpus and Chinese Word Sketch in linguistic Research</font>. In _PACLIC_.
+
++ Use the collocating relations to present the difference between two synonymous verbs 吃 and 喝, based on the Chinese GigaWord Corpus of 1.1 billion Chinese characters.
+
+Hong, J. F. (2014). <font color="red">Chinese Near-Synonym Study Based on the Chinese Gigaword Corpus and the Chinese Learner Corpus</font>. In _Workshop on Chinese Lexical Semantics_, pp. 329-340.
+
++ Use a learner corpus of 300 million Chinese characters to investigate the usage errors of 方便 and 便利, which are compared with the proper usages of native speakers to show the different distributions of the synonyms.
+
+---
+
+## Using treebanks in the analysis of syntactic ambiguities
+
+(1) v-n-de-n: 咬死了猎人的狗, 发现敌人的哨兵, 怀疑张三的老师<br>
+(2) pp-vp-vp: 被政府邀请参加庆典, 被警察抓住罚款
+
+---
+
+## Using treebanks in the analysis of syntactic ambiguities
+
+(1) v-n-de-n: 咬死了猎人的狗, 发现敌人的哨兵, 怀疑张三的老师 (explicit ambiguity)<br>
+(2) pp-vp-vp: 被政府邀请参加庆典, 被警察抓住罚款 (implicit ambiguity)
+
+<img src="images/ambiguity.png" height=250>
+
+---
+
+## Using treebanks in the analysis of syntactic ambiguities
+
+Use treebanks to extract Context Free Grammar rules (e.g. vp $\to$ pp vp, vp $\to$ vp vp) for a systematical investigation into the possibility of linguistic ambiguity.
+
+<img src="images/treebank_ambiguity.png" height=250>
+
+.smaller[**Compare:** Zhan, W., Chang, B. & Yu, S. (1999). <font color="red">Analysis on types of phrase boundary ambiguity in contemporary Chinese</font>. _Journal of Chinese Information Processing_, 3: 9–17.]
+
+---
+
+## Using treebanks in the analysis of syntactic features
+
+Liu, H., Hudson, R., & Feng, Z. (2009). <font color="red">Using a Chinese treebank to measure dependency distance</font>. _Corpus Linguistics and Linguistic Theory_, 5(2), 161-174.
+
++ Use a dependency treebank to measure the dependency distance and dependency direction, hence the complexity, of Chinese.
+
+Jing, Y., & Liu, H. (2015). <font color="red">Mean Hierarchical Distance Augmenting Mean Dependency Distance</font>. In _DepLing_, pp. 161-170.
+
++ Measure the dependency distances across languages, using an English and Czech dependency treebank.
+
+---
+
+## Using language resources in contrastive and typological analysis
+
+Feng, S. (2015). <font color="red">Tone, Intonation and Sentence Final Particles in Chinese</font>. _Essays on Linguistics_, 51: 52–79. Beijing: The Commercial Press.
+
++ New arguments about the relation between tone, intonation and sentence final particles:
+
+(1) All tonal languages have sentence final particles. <br>
+(2) Non-tonal languages have no sentence final particle (with exceptions).<br>
+(3) More tones exist in a language with more sentence final particles.<br>
+(4) More sentence final particles exist in a language with fewer intonations.<br>
+(5) Tones in a language develop in parallel with its sentence final particles.
+
+---
+
+## Using language resources in contrastive and typological analysis
+
+WALS currently contains data from 2,679 languages and facts about 192 grammatical features, each feature having between 2 and 28 different values.
+
+Ye, S. (2016). <font color="red">Typological Correlations between Tones, Intonation and Particles: A Case Study of Polar Questions</font>. _Essays on Linguistics_, 53: 336-363. Beijing: The Commercial Press.
+
++ Argue against a salient typological correlation between tones and sentence final particles.
+
+Theoretical linguistic research tends to suggest and verify a hypothesis based on a small sample of language facts. With the increase of data for world’s languages, which are sophisticatedly annotated and easy to search, large-scale investigations cross languages will better support linguistic typology and enable deeper understanding of human languages.
+
+---
+
+## Using language resources in contrastive and typological analysis
+
+Bai, X. & Zhan, W. (2006) <font color="red">Constraints on “Bei”(passive) Sentence in Chinese For Machine Translation of English Passive Sentence</font>. _New Advances in Studies on Passive Sentences in Chinese, Huazhong Normal University Press_, pp.1 – 17.
+
++ They love to read and be read to.
+
+Ma, Q. (2011) <font color="red">The Investigation of Definite Expressions of Chinese "Zhe (This)" and "Na (That)" by Comparing Chinese with English</font>. Master Thesis of Peking University.
+
+---
+
+## Using corpora in sociolinguistic analysis
+
+[国家语言资源监测与研究中心](http://www.moe.gov.cn/s78/A19/A19_xglj/201309/t20130929_158028.html)
++ 平面媒体语言中心
++ 有声媒体语言中心
++ 网络媒体语言中心
++ 教育教材语言中心
++ 少数民族语言中心
++ 海外华语研究中心
+
+---
+
+## Using corpora in sociolinguistic analysis
+
++ Linguistic data as public resources
+
++ Big dynamic corpora
+  + Linguistic research and language teaching
+  + Facts about the actual use of Chinese and its dialects
+
++ Annual reports on Language in China 《[中国语言生活状况报告](http://www.moe.edu.cn/s78/A19/yxs_left/moe_813/s237/)》(2006 - )
+  + 5514 new words recorded in the past ten years<br>
+  互联网+, 阅兵蓝, 重要的事情说三遍, 微博, 中国梦, 微信, 正能量
+
++ Varieties of Chinese compared and contrasted
+  + [LIVAC corpus](http://www.livac.org) (City University of Hong Kong): texts from newspapers of 8 Chinese-spoken cities around the world
+
+---
+
+## Using corpora in sociolinguistic analysis
+
+Zhan, W. & Tao, H. (2016). <font color="red">A Corpus Approach to North American Chinese based on Written Media Texts</font>. _Global Chinese_, Vol.2, Issue.1, 51-72. De Gruyter Mouton.
+
++ A corpus of written texts (approximately 100 million Chinese characters) from North American
+
++ Words and their variations, together with the grammatical features
+
++ The influence of English and the trace of southern dialects of Chinese
+
++ An obvious tendency for Chinese and its varieties to converge
+
++ New usages in Chinese spread quickly around the globe by the new media
+
+---
+
+## Using corpora in sociolinguistic analysis
+
+[The GDELT Project](http://www.gdeltproject.org/): a global database of society
+
++ The Global Database of Events, Language, and Tone
++ Supported by Google Jigsaw
++ Over a quarter-billion event records in over 300 categories covering the entire world from 1979 to present
++ A massive network diagram connecting every person, organization, location, theme and emotion
++ Global Content Analysis Measures to assess emotional undercurrents and reaction in articles of 15 languages, including Chinese
++ From the on-going stories around the world to the study of human societal behavior and beliefs
+
+---
+
+## Rapid progress of Chinese language resources
+
++ Chinese language resources at LDC
+
+  + 109 text data sets
+
+  + 54 audio data sets
+
+  + 1 video data set<br><br>
+
+  + Text data .smaller[from newspapers, magazines, blogs, forums, newsgroups, etc.]
+
+  + Audio data .smaller[from telephone conversations, broadcast conversations, news broadcasts, etc.]
+
+---
+
+## Rapid progress of Chinese language resources
+
+<img src="images/ldc_chinese.png" height=400>
+
+LDC Chinese Language Resources: Annual Releases (1994-2016)
+
+---
+
+## Chinese language resources: some reflections
+
++ LDC data sets in 2016: 434 English data sets out of 787 data sets in total
+
++ More corpora (160 data sets) than knowledge bases or lexicons (4 data sets)
+
+  + Cost of constructing knowledge bases or lexicons (the human input of refined linguistic knowledge)
+  + Big corpora: automatic collection and processing vs. human input and expert knowledge
+  + More sophisticated annotations (particularly semantic annotations)
+
++ Quality of language resources and validity of their support for research
+  +  The embedded errors and the redundant data (e.g., [WebCorp](http://www.webcorp.org.uk/live/index.jsp))
+
+???
+Last but not least, while big corpora are much easier to compile today, the quality of these language resources is more likely to be overlooked. It is reported12, for example, that the Chinese data from Google Ngram between 1970 and 2000 is relatively more reliable than data from before 1940, with fewer OCR errors and hence smaller amount of noise for automatic counts.
+
+---
+
+## Chinese language resources: some reflections
+
++ The “low-hanging fruit” and the challenge to reach the higher
+
+  一直, 始终, 根本, 从来<br>
+  “Insufficient data” from [Word Sketch Difference](https://www.sketchengine.co.uk/quick-start-guide/word-sketch-difference-lesson-2/)
+
+  的<br>
+  No collocation found by [Word Sketch](https://www.sketchengine.co.uk/quick-start-guide/word-sketch-lesson-1/)<br>
+  (A simple query of the word through Sketch Search returns 99,838,775 hits.)
+
+  了 _le_<br>
+  Collocation for its homograph 了 _liao3_ are also retrieved.
+
+---
+
+## Chinese language resources: some reflections
+
++ The further exploiting these resources
+
+  刷系统, 刷微博, 刷街, 刷票, 刷人品
+
+  ②【动】用刷子清除或涂抹：~牙|~鞋|~锅|用石灰浆~墙。<br>
+  ③【动】除名；淘汰：他不守劳动纪律，让厂里给~了
+
+  Conceptual blending: By “blending” the semantic components of the verb itself and those of the nominals in the new contexts, the meanings of the new usages can be better distinguished.
+
+  刷墙: add a new layer to the wall<br>
+  刷系统: add the new usage to the mobile phone<br>
+  .smaller[Blending the semantic component of “adding something new” in the traditional scenario of the verb with the semantic component of “an electronic system with various features” in the new scenario of its collocate.]
+
+---
+
+## Chinese language resources: some reflections
+
+.plarger[
+There might be one day when NLP becomes fully mature and AI sufficiently powerful, so that language resources could turn into the magic lamp of Aladdin to help people in language-related tasks (such as foreign language learning and translation), telling them what it is and how to do it. As Chomsky argues, however, the point of science is to understand as much as we can about the nature of things, to answer “why”. Linguistic data and the related computer tools nowadays, while helping to sketch what language it and how it works, provide little sight into the question – why language is the way it is. In this sense, the future of the science of language lies in the combination of human insights and language resources. It is time to promote the connection between introspection-based theoretical analysis and data-driven statistical analysis, rather than arguing against the value and potential of one another.
+]
+
+---
+
+## At the end of this session you will
+
++ know more about the language resources online, including corpora, knowledge bases, and the related search engines
+
++ know more about the possible applications of language resources in linguistic research
+
++ know more about challenges for the future development of language resources
+
++ probably start to consider the construction and application of your language resources
 
 ---
 
@@ -660,4 +580,4 @@ A spoken patient report
 class: center, middle
 ## Next session
 
-Semantic Role Labeling and Computational Discourse
+NLP Applications
