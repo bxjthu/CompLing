@@ -32,4 +32,4 @@ Session | Slides | Readings | Extras
 10|[Word Sense Disambiguation and Semantic Similarity](https://bxjthu.github.io/CompLing/slides/10)<br><br>[Assignment 10](https://bxjthu.github.io/CompLing/slides/10/#29) |[J+M[3rd]_17](https://bxjthu.github.io/CompLing/readings/10_J+M[3rd]_17.pdf)|[Related projects of Wordnet](https://wordnet.princeton.edu/wordnet/related-projects/)
 11|[Semantic Role Labeling and Computational Discourse](https://bxjthu.github.io/CompLing/slides/11) <br><br> [Exercise - Practical 6 solution](https://bxjthu.github.io/CompLing/slides/prac/ngram_sol.py)<br><br>[Assignment 11](https://bxjthu.github.io/CompLing/slides/11/#47)| [J+M[3rd]_22](https://bxjthu.github.io/CompLing/readings/11_J+M[3rd]_22.pdf)<br> [J+M_21](https://bxjthu.github.io/CompLing/readings/11_J+M_21.pdf)|
 12|[Online Language Resources:
-Advances, Applications, and Challenges](https://bxjthu.github.io/CompLing/slides/12)||
+Advances, Applications, and Challenges](https://bxjthu.github.io/CompLing/slides/12) | | 
