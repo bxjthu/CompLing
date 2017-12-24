@@ -544,8 +544,9 @@ Last but not least, while big corpora are much easier to compile today, the qual
 ## Chinese language resources: some reflections
 
 .plarger[
+.smaller[
 There might be one day when NLP becomes fully mature and AI sufficiently powerful, so that language resources could turn into the magic lamp of Aladdin to help people in language-related tasks (such as foreign language learning and translation), telling them what it is and how to do it. As Chomsky argues, however, the point of science is to understand as much as we can about the nature of things, to answer “why”. Linguistic data and the related computer tools nowadays, while helping to sketch what language it and how it works, provide little sight into the question – why language is the way it is. In this sense, the future of the science of language lies in the combination of human insights and language resources. It is time to promote the connection between introspection-based theoretical analysis and data-driven statistical analysis, rather than arguing against the value and potential of one another.
-]
+]]
 
 ---
 
