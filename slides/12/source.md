@@ -563,18 +563,9 @@ There might be one day when NLP becomes fully mature and AI sufficiently powerfu
 
 ##Assignment
 
-???
-** 1. Review **
+Prepare a 3-minute introduction to one of the online language resources for NLP, together with the possible applications that interest you most.
 
-+ [J+M[3rd]_17](https://bxjthu.github.io/CompLing/readings/10_J+M[3rd]_17.pdf)
-
-+ [Related projects of Wordnet](https://wordnet.princeton.edu/wordnet/related-projects/)
-
-** 2. Practice **
-
-+ [Wordnet with NLTK](http://www.nltk.org/book/ch02.html#wordnet)
-
-+ Finish Exercise - Practical 6 and submit your codes at 网络学堂. (DDL: Dec. 13)
+To save time, please copy your slides to the desktop of the computer in our classroom before class.
 
 ---
 class: center, middle
