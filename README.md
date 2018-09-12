@@ -1,4 +1,4 @@
-# CompLing 2018
+# Fall 2018
 
 Course number: 40641533
 
