@@ -18,13 +18,13 @@ Question 2: [Play with algorithms]
 
 2-1: Read the algorithm in [the picture](images/algorithm_quit_job.jpeg) carefully, which is supposed to help when one wants to know whether he should quit his job. Is the algorithm properly designed?
 
-2-2: Design an algorithm likewise, which can detect whether a sentence in English uses the passive voice. (E.g. The book has been returned.)
+2-2: Design an algorithm likewise, which can detect whether a sentence in English uses the passive voice (e.g. _The book has been returned_).
 
 More on algorithms: [https://runestone.academy/runestone/static/thinkcspy/GeneralIntro/Algorithms.html](https://runestone.academy/runestone/static/thinkcspy/GeneralIntro/Algorithms.html)
 
-## Task 2: Install python, NLTK and PyCharm
+## Task 2: Install python, NLTK, and PyCharm
 
-Follow the instructions to get your pc ready for this course.
+Follow the instructions below to get your pc ready for this course.
 
 [Python and NLTK Installation](../readings/1/Python_NLTK_Install.pdf)
 
