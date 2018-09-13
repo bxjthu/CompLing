@@ -33,7 +33,7 @@ Follow the instructions below to get your pc ready for this course.
 
 Something you must know about Python:<br> [https://runestone.academy/runestone/static/thinkcspy/GeneralIntro/ThePythonProgrammingLanguage.html](https://runestone.academy/runestone/static/thinkcspy/GeneralIntro/ThePythonProgrammingLanguage.html)
 
-## Task 3 (optional): Getting started with Python and language processing
+## Task 3 (optional): Get started with Python and language processing
 
 Follow this link to try some preliminaries:<br>
 [http://www.nltk.org/book/ch01.html](http://www.nltk.org/book/ch01.html)
