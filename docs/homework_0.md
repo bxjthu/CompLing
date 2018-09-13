@@ -27,6 +27,7 @@ More on algorithms: [https://runestone.academy/runestone/static/thinkcspy/Genera
 Follow the instructions to get your pc ready for this course.
 
 [Python and NLTK Installation](../readings/1/Python_NLTK_Install.pdf)
+
 PyCharm Installation and Getting Started
 
 Something you must know about Python: [https://runestone.academy/runestone/static/thinkcspy/GeneralIntro/ThePythonProgrammingLanguage.html](https://runestone.academy/runestone/static/thinkcspy/GeneralIntro/ThePythonProgrammingLanguage.html)
