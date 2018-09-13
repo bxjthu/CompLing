@@ -8,7 +8,7 @@ A detailed description of this course will be given next Wednesday when we meet 
 
 Please get yourself fully prepared by completing the following tasks before class. Hopefully, when dealing with all them, you may see whether this course is your cup of tea, in the sense of what you are supposed to do and what you may learn.
 
-## Task 1: Read [J+M_1](../readings/1/J+M_1.pdf)<br>
+## Task 1: Read [J+M_1](../readings/1/J+M_1.pdf)
 (There will be weekly required readings and in-class quizzes to test your understanding of the readings.)
 
 Question 1: [A sample question for the quizzes of this course]
