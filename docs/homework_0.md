@@ -16,7 +16,7 @@ With an electronic application in your daily life, which has the ability to proc
 
 Question 2: [Play with algorithms]
 
-2-1: Read the algorithm in the picture carefully, which is supposed to help when one wants to know whether he should quit his job. Is the algorithm properly designed?
+2-1: Read the algorithm in [the picture](images/algorithm_quit_job.jpeg) carefully, which is supposed to help when one wants to know whether he should quit his job. Is the algorithm properly designed?
 
 2-2: Design an algorithm likewise, which can detect whether a sentence in English uses the passive voice. (E.g. The book has been returned.)
 
