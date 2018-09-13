@@ -20,10 +20,10 @@ Question 2: [Play with algorithms]
 
 2-2: Design an algorithm likewise, which can detect whether a sentence in English uses the passive voice. (E.g. The book has been returned.)
 
-More on algorithms: https://runestone.academy/runestone/static/thinkcspy/GeneralIntro/Algorithms.html
+More on algorithms: [https://runestone.academy/runestone/static/thinkcspy/GeneralIntro/Algorithms.html](https://runestone.academy/runestone/static/thinkcspy/GeneralIntro/Algorithms.html)
 
 ## Task 2: Install python, NLTK and PyCharm
 
 Follow the instructions to get your pc ready for this course.
 
-Something you must know about Python: https://runestone.academy/runestone/static/thinkcspy/GeneralIntro/ThePythonProgrammingLanguage.html
+Something you must know about Python: [https://runestone.academy/runestone/static/thinkcspy/GeneralIntro/ThePythonProgrammingLanguage.html](https://runestone.academy/runestone/static/thinkcspy/GeneralIntro/ThePythonProgrammingLanguage.html)
