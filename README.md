@@ -16,6 +16,8 @@ Readings:
 
 + [How to Think Like a Computer Scientist](https://runestone.academy/runestone/static/thinkcspy/index.html) by the Runestone Interactive Project
 
+[Homework 0](https://bxjthu.github.io/CompLing/docs/homework_0)
+
 ## Schedule
 
 Session | Slides | Required Readings | Extras
