@@ -18,7 +18,7 @@ Readings:
 
 ## Schedule
 
-Session | Slides | Readings | Extras
+Session | Slides | Required Readings | Extras
 ------- | ------ | -------- | -----
 1 | Introduction |  |
 2 | Text Normalization, Finite State Automata and Regular Expressions |  |
