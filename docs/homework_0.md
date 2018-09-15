@@ -29,7 +29,7 @@ Follow the instructions below to get your pc ready for this course.
 
 1) [Python and NLTK Installation](../readings/1/Python_NLTK_Install.pdf)
 
-2) PyCharm Installation and Getting Started
+2) [PyCharm Installation and Getting Started](../readings/1/PyCharm_Intro.pdf)
 
 Something you must know about Python:<br> [https://runestone.academy/runestone/static/thinkcspy/GeneralIntro/ThePythonProgrammingLanguage.html](https://runestone.academy/runestone/static/thinkcspy/GeneralIntro/ThePythonProgrammingLanguage.html)
 
