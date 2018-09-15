@@ -31,6 +31,8 @@ Follow the instructions below to get your pc ready for this course.
 
 2) [PyCharm Installation and Getting Started](../readings/1/PyCharm_Intro.pdf)
 
+Many thanks to Yuxiao and Qing for preparing these instructions.
+
 Something you must know about Python:<br> [https://runestone.academy/runestone/static/thinkcspy/GeneralIntro/ThePythonProgrammingLanguage.html](https://runestone.academy/runestone/static/thinkcspy/GeneralIntro/ThePythonProgrammingLanguage.html)
 
 ## Task 3 (optional): Get started with Python and language processing
