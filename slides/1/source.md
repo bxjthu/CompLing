@@ -121,7 +121,7 @@ Suggested readings:
 
 + Models and algorithms<br><br>
 
-<font color="red">Required reading: J+M 2nd, Chapter 1 Introduction</font>
+Required reading: [J+M_1](https://bxjthu.github.io/CompLing/readings/1/J+M_1.pdf)
 
 ---
 ## Some brief history - a sketch
@@ -248,7 +248,11 @@ e.g. _I made her duck._
 
 Suggested reading:
 
-.smaller[俞士汶等 (2003).《现代汉语语法信息词典详解》. 北京: 清华大学出版社.]
+.smaller[
+俞士汶等 (2003).《现代汉语语法信息词典详解》. 北京: 清华大学出版社.
+
+詹卫东: [现代汉语歧义现象举例](https://bxjthu.github.io/CompLing/readings/1/ambiguity_examples.pdf)
+]
 ---
 ##Models and algorithms
 ###How do NLP systems work?
