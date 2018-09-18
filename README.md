@@ -9,7 +9,7 @@ Teaching Assistants: Qing Lv, Yibin Shu
 [Q&A Platform](https://piazza.com/tsinghua.edu.cn/fall2018/40641533)
 
 ## Overview
-This course provides an introduction to computational linguistics, covering the fundamental models of linguistic phenomena at the levels of morphology, syntax, semantics and pragmatics. Students will learn how these models are implemented, evaluated and applied to real-world natural language processing (NLP) tasks, together with some entry-level but practical skills in NLP with Python.
+This course provides an introduction to computational linguistics, covering the fundamental models of linguistic phenomena at the levels of morphology, syntax, semantics and pragmatics. Students will learn how these models are implemented, evaluated, and applied to real-world natural language processing (NLP) tasks, together with some entry-level but practical skills in NLP with Python.
 
 ## Aims
 + To introduce the fundamental language models, their strengths and weaknesses. 
@@ -28,7 +28,7 @@ There will be 14 lectures in total, each followed by a practical session during 
 + Quizzes (20%): in-class quizzes about the required readings
 + Homework (25%): post-class tasks concerning the lectures, practicals, and readings
 + Final exam (20%): close-book exam covering the topics of the course
-+ Term project (30%): a research proposal (e.g. a theoretical or applied study of language from a computational perspective and supported by CL tools or resources, an improvement of a CL algorithm o-r an NLP application, etc.) and the preliminary implementation of the proposal
++ Term project (30%): a research proposal (e.g. a theoretical or applied study of language from a computational perspective and supported by CL tools or resources, an improvement of a CL algorithm or an NLP application, etc.) and the preliminary implementation of the proposal
 
 ## Readings
 + [Speech and Language Processing - An Introduction to Natural Language Processing, Computational Linguistics, and Speech Recognition](http://web.stanford.edu/~jurafsky/slp3/) by Daniel Jurafsky and James. H. Martin
