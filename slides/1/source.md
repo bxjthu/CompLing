@@ -305,7 +305,7 @@ Question 2:
 .left-column-2[
 ##Algorithms
 ###Post-class practice (optional)
-Write code to implement this algorithm, which can identify sentence in English that use the passive voice.
+Write code to implement this algorithm, which can identify sentences in English that use the passive voice.
 
 <br>
 .smaller[
