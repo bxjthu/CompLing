@@ -44,7 +44,7 @@ Try [Homework 0](docs/homework_0) to see whether this course is your cup of tea,
 
 Session | Slides | Required Readings | Extras
 ------- | ------ | -------- | -----
-1 | Introduction |  |
+1 | [Introduction](slides/1/) | [J+M_1](readings/1/J+M_1.pdf) |
 2 | Text Normalization, Finite State Automata and Regular Expressions |  |
 3 | Finite State Transducers and Morphological Parsing |  |
 4 | N-grams and Hidden Markov Models  |  |
