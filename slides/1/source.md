@@ -156,19 +156,21 @@ Suggested readings:
 + 1966 The (in)famous ALPAC report 
 
 ---
-##Knowledge in natural language processing
 .left-column-3[
+##Knowledge in natural language processing
+
 Mankind ﬁnds a mysterious, obviously artiﬁcial, monolith buried on the moon and, with the intelligent computer HAL, sets off on a quest... <br><br>
 
 _Dave Bowman: Open the pod bay doors, HAL. _
 
-_HAL: I’m sorry Dave, I’m afraid I can’t do that. _<br><br><br>
+_HAL: I’m sorry Dave, I’m afraid I can’t do that. _<br><br>
 
-Stanley Kubrick and Arthur C. Clarke:<br>
-screenplay of _2001: A Space Odyssey_
+.smaller[Stanley Kubrick and Arthur C. Clarke:<br>
+_2001: A Space Odyssey_]
 ]
 
 .right-column-3[
+<br><br>
 <img src="images/2001.png" width=300>
 ]
 ---
@@ -234,7 +236,7 @@ e.g. _I made her duck._
 
 ---
 ##Complexity of language
-###Difficulties in Chinese information processing .smaller[中文信息系处理]
+###Difficulties in Chinese information processing .smaller[中文信息处理]
 
 Suggested reading:
 
@@ -305,7 +307,7 @@ Question 2:
 .left-column-2[
 ##Algorithms
 ###Post-class practice (optional)
-Write code to implement this algorithm, which can identify sentences in English that use the passive voice.
+Write code to implement this algorithm, which can identify sentence in English that use the passive voice.
 
 <br>
 .smaller[
@@ -377,7 +379,7 @@ Based on _Alan Turing: The Enigma by Andrew Hodges_ ]]
 
 + Read: [J+M_2](https://bxjthu.github.io/CompLing/readings/2/J+M_2.pdf)
 
-+ Read and practice: http://www.nltk.org/book/ch01.html
++ Read and practice: http://www.nltk.org/book/ch01.htmlz
 
 ---
 class: center, middle
