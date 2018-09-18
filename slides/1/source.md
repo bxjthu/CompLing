@@ -299,9 +299,7 @@ Question 2:
 .left-column-2[
 ##Algorithms
 ###Post-class practice (optional)
-Write code to implement this algorithm, which can identify sentence in English that use the passive voice.
-
-<br>
+Write code to implement this algorithm, which can detect whether a sentence in English uses the passive voice.<br>
 .smaller[
 _An_: a set of the past participles of irregular verbs
 
