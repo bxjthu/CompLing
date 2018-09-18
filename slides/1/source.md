@@ -17,6 +17,10 @@ class: center, middle
 ##That the powerful play goes on,
 ##and you may contribute a verse.</font>
 ##What will your verse be?<br><br><br>
+
+.smaller[
+[A collection of readings on AI](http://ccl.pku.edu.cn/doubtfire/NLP/AI/index.htm)
+]
 ---
 ## At the end of this session you will
 + understand what computational linguistic is in the general sense;
