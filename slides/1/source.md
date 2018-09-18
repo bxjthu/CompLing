@@ -365,7 +365,7 @@ Based on _Alan Turing: The Enigma by Andrew Hodges_ ]]
 + learn basic data types and sequence operations in Python.
 
 ---
-##Assignment
+##Homework
 
 + Review: [J+M_1](https://bxjthu.github.io/CompLing/readings/1/J+M_1.pdf) (Quiz 1 on Sept. 26, 2018)
 
