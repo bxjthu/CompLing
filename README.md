@@ -1,25 +1,46 @@
-# Fall 2018
+# Autumn 2018
 
 Course number: 40641533
 
 Instructor: Xiaojing Bai
 
-Teaching Assistants: Yibin Shu, Qing Lv
+Teaching Assistants: Qing Lv, Yibin Shu
 
 [Q&A Platform](https://piazza.com/tsinghua.edu.cn/fall2018/40641533)
 
-Readings:
+## Overview
+This course provides an introduction to computational linguistics, covering the fundamental models of linguistic phenomena at the levels of morphology, syntax, semantics and pragmatics. Students will learn how these models are implemented, evaluated and applied to real-world natural language processing (NLP) tasks, together with some entry-level but practical skills in NLP with Python.
 
+## Aims
++ To introduce the fundamental language models, their strengths and weaknesses. 
++ To introduce some current and potential NLP applications.
++ To develop an understanding of how linguistics can support research in NLP.
++ To develop an understanding of how computational perspectives and tools can support research in both theoretical and applied linguistics. 
+
+## Prerequisite
+This is an entry-level course accessible to undergraduate students in linguistics. No background in computational linguistics or computer science is required; mathematical essentials are expected; and a burning interest in linguistics and programming are highly appreciated.
+
+## Teaching
+There will be 14 lectures in total, each followed by a practical session during which students can have a go with some language tools on their own computers.
+
+## Grading
++ Participation (5%): showing up for class, demonstrating preparedness, contributing to class discussions
++ Quizzes (20%): in-class quizzes about the required readings
++ Homework (25%): post-class tasks concerning the lectures, practicals, and readings
++ Final exam (20%): close-book exam covering the topics of the course
++ Term project (30%): a research proposal (e.g. a theoretical or applied study of language from a computational perspective and supported by CL tools or resources, an improvement of a CL algorithm o-r an NLP application, etc.) and the preliminary implementation of the proposal
+
+## Readings
 + [Speech and Language Processing - An Introduction to Natural Language Processing, Computational Linguistics, and Speech Recognition](http://web.stanford.edu/~jurafsky/slp3/) by Daniel Jurafsky and James. H. Martin
 
 + [Natural Language Processing with Python](http://www.nltk.org/book/) by Steven Bird, Ewan Klein, and Edward Loper
 
 + [How to Think Like a Computer Scientist](https://runestone.academy/runestone/static/thinkcspy/index.html) by the Runestone Interactive Project
 
-[Homework 0](https://bxjthu.github.io/CompLing/docs/homework_0)
+## Homework 0
+Try [Homework 0](/docs/homework_0) to see whether this course is your cup of tea, in the sense of what you are supposed to do and what you may learn.
 
 ## Schedule
-
 Session | Slides | Required Readings | Extras
 ------- | ------ | -------- | -----
 1 | Introduction |  |
@@ -34,4 +55,5 @@ Session | Slides | Required Readings | Extras
 10 | Word Sense Disambiguation and Semantic Similarity |  |
 11 | Semantic Role Labeling and Computational Discourse  |  |
 12 | Online Language Resources: Advances, Applications, and Challenges  |  |
-13 | NLP Applications |  |
+13 | NLP Applications -1 |  |
+14 | NLP Applications -2 |  |

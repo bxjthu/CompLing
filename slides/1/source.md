@@ -60,36 +60,15 @@ For more information: https://www.aclweb.org/
 ## What is _Computational Linguistics?_
 Computational linguistics is the scientific study of <font color="red">language</font> from a computational perspective.
 
-Computational linguists are interested in providing <font color="red">computational models</font> of various kinds of linguistic
+Computational linguists are interested in providing <font color="red">computational models</font> of various kinds of linguistic phenomena. These models may be <font color="red">"knowledge-based"</font> ("hand-crafted") or <font color="red">"data-driven"</font> ("statistical" or "empirical").
 
-phenomena. These models may be <font color="red">"knowledge-based"</font> ("hand-crafted") or <font color="red">"data-driven"</font> ("statistical" or
+Work in computational linguistics is in some cases motivated from a scientific perspective in that one is trying to provide <font color="red">a computational explanation for a particular linguistic or psycholinguistic phenomenon</font>; and in other cases the motivation may be more purely technological in that one wants to provide <font color="red">a working component of a speech or natural language system</font>.
 
-"empirical"). <br><br>
-
-Work in computational linguistics is in some cases motivated from a scientific perspective in that one is
-
-trying to provide <font color="red">a computational explanation for a particular linguistic or psycholinguistic phenomenon</font>;
-
-and in other cases the motivation may be more purely technological in that one wants to provide <font color="red">a working
-
-component of a speech or natural language system</font>.
 ---
 ## What is _Computational Linguistics?_
-Indeed, the work of computational linguists is incorporated into many <font color="red">working systems</font> today, including
+Indeed, the work of computational linguists is incorporated into many <font color="red">working systems</font> today, including speech recognition systems, text-to-speech synthesizers, automated voice response systems, web search engines, text editors, language instruction materials, to name just a few.
 
-speech recognition systems, text-to-speech synthesizers, automated voice response systems, web search
-
-engines, text editors, language instruction materials, to name just a few.<br><br><br>
-
-> _“Linguistics has <font color="red">a hundred-year history</font> as a scientific discipline, and computational linguistics has_
-
-> _ <font color="red">a fifty-year history</font> as a part of computer science. But it is only in <font color="red">the last decade or so</font> that language_
-
-> _ understanding has emerged as an industry reaching millions of people, with information retrieval and_
-
-> _machine translation available on the Internet, and speech recognition becoming popular on desktop_
-
-> _computers."_
+> _“Linguistics has <font color="red">a hundred-year history</font> as a scientific discipline, and computational linguistics has <font color="red">a fifty-year history</font> as a part of computer science. But it is only in <font color="red">the last decade or so</font> that language understanding has emerged as an industry reaching millions of people, with information retrieval and machine translation available on the Internet, and speech recognition becoming popular on desktop computers."_
 
 .right[Peter Norvig and Stuart Russell. _Foreword_. J+M 2nd]
 ---
@@ -103,6 +82,7 @@ _the performance of the speech recognizer goes up.”</p>_
 
 Suggested readings:
 
+.smaller[
 + Church, K. (2011). A pendulum swung too far. _Linguistic Issues in Language Technology_, 6(5), 1-27.
 
 + Wintner, S. (2009). What science underlies natural language engineering?. _Computational Linguistics_, 35(4), 641-644.
@@ -110,6 +90,7 @@ Suggested readings:
 + 宗成庆 (2008).《统计自然语言处理》. 北京: 清华大学出版社.
 
 + 冯志伟 (2008). 序言.《统计自然语言处理》 (宗成庆著). 北京: 清华大学出版社.
+]
 ---
 ## About this course
 
