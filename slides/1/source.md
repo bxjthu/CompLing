@@ -228,22 +228,6 @@ e.g. _I made her duck._
 
 ---
 ##Complexity of language
-###Resolving ambiguity at different levels
-e.g. _I made her duck._
-
-+ I cooked waterfowl for her.
-
-+ I cooked waterfowl belonging to her.
-
-+ I created the (plaster?) duck she owns.
-
-+ I caused her to quickly lower her head or body.
-
-+ I waved my magic wand and turned her into undifferentiated waterfowl. <br><br>
-
-
----
-##Complexity of language
 ###Difficulties in Chinese information processing .smaller[中文信息处理]
 
 Suggested reading:
