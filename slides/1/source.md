@@ -275,7 +275,7 @@ Question 2:
 
 1) Read the algorithm in [the picture](https://bxjthu.github.io/CompLing/docs/images/algorithm_quit_job.jpeg) carefully, which is supposed to help when one wants to know whether he should quit his job. Is the algorithm properly designed?
 
-2) Design an algorithm likewise, which can detect whether a sentence in English uses the passive voice (_e.g. The book has been returned_).
+2) Design an algorithm likewise, which can identify sentences in English that use the passive voice (_e.g. The book has been returned_).
 ---
 .left-column-2[
 ##Algorithms
@@ -299,7 +299,9 @@ Question 2:
 .left-column-2[
 ##Algorithms
 ###Post-class practice (optional)
-Write code to implement this algorithm, which can detect whether a sentence in English uses the passive voice.<br>
+Write code to implement this algorithm, which can identify sentences in English that use the passive voice.
+
+<br>
 .smaller[
 _An_: a set of the past participles of irregular verbs
 
