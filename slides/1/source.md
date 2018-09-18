@@ -200,6 +200,14 @@ Question 1: With an electronic application in your daily life, which has the abi
 + **Discourse**: knowledge about linguistic units larger than a single utterance
 
 ---
+##Knowledge in natural language processing
+<video width="1000" controls src="images/hal-1.mp4" type="video/mp4"</video>
+
+---
+##Knowledge in natural language processing
+<video width="1000" controls src="images/hal-2.mp4" type="video/mp4"</video>
+
+---
 ##Complexity of language
 ###Resolving ambiguity at different levels
 e.g. _I made her duck._
@@ -293,11 +301,7 @@ Question 2:
 ##Algorithms
 + An algorithm is a series of mathematical <font color="red">steps</font>, especially in a computer program, which will give you the answer to a particular kind of problem or question.
 
-+ Important algorithms
-
-  + state space search algorithms
-
-  + machine learning algorithms
++ Important algorithms: state space search algorithms, machine learning algorithms
 ]
 .right-column-2[
 <div style="text-align:center"><img src="images/algorithm.png" width=500></div>
