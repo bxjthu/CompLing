@@ -19,7 +19,7 @@ Question 2: [Play with algorithms]
 
 1) Read the algorithm in [the picture](images/algorithm_quit_job.jpeg) carefully, which is supposed to help when one wants to know whether he should quit his job. Is the algorithm properly designed?
 
-2) Design an algorithm likewise, which can identify sentences in English that use the passive voice (e.g. _The book has been returned_).
+2) Design an algorithm likewise, which can identify English sentences that use the passive voice (e.g. _The book has been returned_).
 
 More on algorithms:<br> [https://runestone.academy/runestone/static/thinkcspy/GeneralIntro/Algorithms.html](https://runestone.academy/runestone/static/thinkcspy/GeneralIntro/Algorithms.html)
 
