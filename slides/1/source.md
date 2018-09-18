@@ -375,7 +375,7 @@ Based on _Alan Turing: The Enigma by Andrew Hodges_ ]]
 
 + Read: [J+M_2](https://bxjthu.github.io/CompLing/readings/2/J+M_2.pdf)
 
-+ Read and practice: http://www.nltk.org/book/ch01.htmlz
++ Read and practice: http://www.nltk.org/book/ch01.html
 
 ---
 class: center, middle
