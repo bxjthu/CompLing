@@ -230,10 +230,10 @@ e.g. _I made her duck._
 ##Complexity of language
 ###Difficulties in Chinese information processing .smaller[中文信息处理]
 
-Suggested reading:
+Suggested readings:
 
 .smaller[
-俞士汶等 (2003).《现代汉语语法信息词典详解》. 北京: 清华大学出版社.
+俞士汶等: [汉语自动分析的特殊困难与对策](https://bxjthu.github.io/CompLing/readings/1/俞士汶_汉语自动分析的特殊困难与对策.pdf)
 
 詹卫东: [现代汉语歧义现象举例](https://bxjthu.github.io/CompLing/readings/1/ambiguity_examples.pdf)
 ]
