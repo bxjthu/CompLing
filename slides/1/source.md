@@ -19,13 +19,15 @@ class: center, middle
 ##What will your verse be?<br><br><br>
 ---
 ## At the end of this session you will
-+   understand what computational linguistic is in the general sense;
++ understand what computational linguistic is in the general sense;
 
-+   understand what this course is for and what it focuses on;
++ understand what this course is for and what it focuses on;
 
-+   have some preliminary but important ideas about computational linguistic;
++ have some preliminary but important ideas about computational linguistic;
 
-+   get started with Python and learn basic data types and sequence operations in Python.
++ get started with Python, NLTK, and PyCharm;
+
++ learn basic data types and sequence operations in Python.
 ---
 class: center, middle
 ##Giving computers the ability
@@ -119,10 +121,10 @@ Suggested readings:
 
 + Models and algorithms<br><br>
 
-<font color="red">Suggested reading: J+M 2nd, Chapter 1 Introduction</font>
+<font color="red">Required reading: J+M 2nd, Chapter 1 Introduction</font>
 
 ---
-## Some brief history
+## Some brief history - a sketch
 + 1940s – 1950s: foundational insights
 
 + 1957 – 1970: the two camps
@@ -134,9 +136,9 @@ Suggested readings:
 + 1994 – 1999: the field comes together
 
 + 2000 – 2008: the rise of machine learning
+
 ---
-## Some brief history
-###Some old events
+## Some brief history - old events
 + 1949 Warren Weaver’s memorandum
 
 + 1950 Turing Test
@@ -156,18 +158,13 @@ Suggested readings:
 ---
 ##Knowledge in natural language processing
 .left-column-3[
-Mankind ﬁnds a mysterious, obviously artiﬁcial, monolith
-
-buried on the moon and, with the intelligent computer HAL,
-
-sets off on a quest...<br><br><br><br>
+Mankind ﬁnds a mysterious, obviously artiﬁcial, monolith buried on the moon and, with the intelligent computer HAL, sets off on a quest... <br><br>
 
 _Dave Bowman: Open the pod bay doors, HAL. _
 
-_HAL: I’m sorry Dave, I’m afraid I can’t do that. _
+_HAL: I’m sorry Dave, I’m afraid I can’t do that. _<br><br><br>
 
-Stanley Kubrick and Arthur C. Clarke, 
-
+Stanley Kubrick and Arthur C. Clarke:<br>
 screenplay of _2001: A Space Odyssey_
 ]
 
@@ -177,6 +174,12 @@ screenplay of _2001: A Space Odyssey_
 ---
 ##Knowledge in natural language processing
 ###What would HAL need to know about language?
+
+---
+##Knowledge in natural language processing
+###Homework 0: Task 1
+
+Question 1: With an electronic application in your daily life, which has the ability to process human language, analyze what it would need to know about language to perform the particular NLP task(s)?
 
 ---
 ##Knowledge in natural language processing
@@ -228,71 +231,65 @@ e.g. _I made her duck._
 
 + I waved my magic wand and turned her into undifferentiated waterfowl. <br><br>
 
-**Difficulties in Chinese information processing** 中文信息系处理
 
-Suggested reading: 俞士汶等 (2003).《现代汉语语法信息词典详解》. 北京: 清华大学出版社.
+---
+##Complexity of language
+###Difficulties in Chinese information processing .smaller[中文信息系处理]
+
+Suggested reading:
+
+.smaller[俞士汶等 (2003).《现代汉语语法信息词典详解》. 北京: 清华大学出版社.]
 ---
 ##Models and algorithms
-###How NLP systems work?
-<br><br>
+###How do NLP systems work?
 
-<p align="center"><img src="images/NLP.JPG" width=600></p>
+<p align="center"><img src="images/NLP.JPG" width=900></p>
 ---
-##Models and algorithms
-+ Model
+##Models
 
-  + A model of an **object** is a physical representation that shows what it looks like or how it works. The model is often smaller than the object it represents.
++ A model of an **object** is a physical representation that shows what it looks like or how it works. The model is often smaller than the object it represents.
 
-  + A model of a **system or process** is a theoretical description that can help you understand how the system or process works, or how it might work. 
++ A model of a **system or process** is a theoretical description that can help you understand how the system or process works, or how it might work. 
 
 + Language model: a <font color="red">formal</font> description of linguistic knowledge
 
-+ Important models
-  + state machines
-
-  + rule systems
-
-  + logic
-
-  + probabilistic models
-
-  + vector-space models
++ Important models: state machines, rule systems, logic, probabilistic models, vector-space models
 
 ---
-##Models and algorithms
-<br><br><br>
+##Models - rule systems
 <img src="images/grammar_model_1.png" width=320>
 <img src="images/grammar_model_2.png" width=320>
 <img src="images/grammar_model_3.png" width=320>
 ---
-##Models and algorithms
+##Models - rule systems and probabilistic models
 .left-column-1[
-<br><br>
 <img src="images/grammar_model_1.png" width=320>
 ]
 .right-column-1[
-<img src="images/grammar_model_4.png" width=500><br><br>
+<img src="images/grammar_model_4.png" width=500>
 <img src="images/grammar_model_5.png" width=700>
 ]
 ---
-##Models and algorithms
-.left-column-2[
-+ Algorithm
+##Algorithms
+###Homework 0: Task 1
 
-  + An algorithm is a series of mathematical <font color="red">steps</font>, especially in a computer program, which will give you the answer to a particular kind of problem or question.
+Question 2:
 
-+ Important algorithms
+1) Read the algorithm in [the picture](https://bxjthu.github.io/CompLing/docs/images/algorithm_quit_job.jpeg) carefully, which is supposed to help when one wants to know whether he should quit his job. Is the algorithm properly designed?
 
-  + state space search algorithms
-
-  + machine learning algorithms
-]
+2) Design an algorithm likewise, which can detect whether a sentence in English uses the passive voice (_e.g. The book has been returned_).
 ---
-##Models and algorithms
 .left-column-2[
-+ Algorithm
+##Algorithms
+]
+.right-column-2[
+<div style="text-align:center"><img src="images/algorithm.png" width=500></div>
+]
 
-  + An algorithm is a series of mathematical <font color="red">steps</font>, especially in a computer program, which will give you the answer to a particular kind of problem or question.
+---
+.left-column-2[
+##Algorithms
++ An algorithm is a series of mathematical <font color="red">steps</font>, especially in a computer program, which will give you the answer to a particular kind of problem or question.
 
 + Important algorithms
 
@@ -301,23 +298,39 @@ Suggested reading: 俞士汶等 (2003).《现代汉语语法信息词典详解�
   + machine learning algorithms
 ]
 .right-column-2[
-<div style="text-align:center"><img src="images/algorithm.png" width=420></div>
+<div style="text-align:center"><img src="images/algorithm.png" width=500></div>
+]
+
+---
+.left-column-2[
+##Algorithms
+###Post-class practice (optional)
+Write code to implement this algorithm, which can identify sentence in English that use the passive voice.
+
+<br>
+.smaller[
+_An_: a set of the past participles of irregular verbs
+
+_Bn_: a set of words that end with "ed" but are not the past participles of regular verbs
+]
+]
+.right-column-2[
+<div style="text-align:center"><img src="images/algorithm.png" width=500></div>
 ]
 
 ---
 ##The Turing Test
-By Alan Turing in 1950
 
 .left-column-3[
 <img src="images/turing_1.png" width=550>
 ]
 .right-column-3[
-<br><br><br><br><br>
 <img src="images/turing_2.png" width=300>
+<br><br><br>By Alan Turing in 1950
 ]
 ---
 ##The Turing Test
-.left-column-3[
+
 We may hope that machines will eventually compete with men in all purely
 intellectual fields. But which are the best ones to start with? Even this is a
 difficult decision. Many people think that a very abstract activity, like the
@@ -335,37 +348,37 @@ needs to be done. ** <br> <br>
 Turing, A. M. (1950). Computing machinery <br>
 and intelligence. _Mind_, 59(236), 433-460.
 ]
-]
-.right-column-3[
-<div style="text-align:center"><img src="images/imitation_game.jpg" width=250></div>
-]
+
+---
+.left-column-2[
+<img src="images/imitation_game.jpg" width=400>]
+.right-column-2[
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+.smaller[
+Directed by Morten Tyldum <br>
+Written by Graham Moore <br>
+Based on _Alan Turing: The Enigma by Andrew Hodges_ ]]
 ---
 ## At the end of this session you will
-+   understand what computational linguistic is in the general sense; <br><br>
++ understand what computational linguistic is in the general sense;
 
-+   understand what this course is for and what it focuses on; <br><br>
++ understand what this course is for and what it focuses on;
 
-+   have some preliminary but important ideas about computational linguistic; <br><br>
++ have some preliminary but important ideas about computational linguistic;
 
-+   get started with Python and learn basic data types and sequence operations in Python.
++ get started with Python, NLTK, and PyCharm;
+
++ learn basic data types and sequence operations in Python.
+
 ---
 ##Assignment
 
-** 1. Readings **
++ Review: [J+M_1](https://bxjthu.github.io/CompLing/readings/1/J+M_1.pdf) (Quiz 1 on Sept. 26, 2018)
 
-1b: J+M 1; What Science Underlies Natural Language Engineering; 《现代汉语语法信息词典详解》中文信息处理的困难;  《统计自然语言处理》序言; 《统计自然语言处理》基本方法
++ Read: [J+M_2](https://bxjthu.github.io/CompLing/readings/2/J+M_2.pdf)
 
-** 2. Question **
++ Read and practice: http://www.nltk.org/book/ch01.htmlz
 
-With an electronic application in your daily life, which has the ability to process human language, analyze what  it would need to know about language to perform the particular NLP task(s)? You may refer to the analysis in J+M_1.1 as an example.
-
-** 3. Read and practice **
-
-3.1 http://www.nltk.org/book/ch01.html
-
-3.2 Try to solve these problems using Python: a) create a list containing three names of you friends, and assign it to a variable called MyFriend; b) make items in MyFriend ordered alphabetically; c) reverse MyFriend.
-
-You are soooo allowed to search the internet. <br>Getting help from online sources is a crucial skill for programmers.
 ---
 class: center, middle
 ##Next session
