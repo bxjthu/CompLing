@@ -92,7 +92,7 @@ Suggested readings:
 + 冯志伟 (2008). 序言.《统计自然语言处理》 (宗成庆著). 北京: 清华大学出版社.
 ]
 ---
-## [About this course](../../README)
+## [About this course](https://bxjthu.github.io/CompLing/)
 
 + Overview
 
