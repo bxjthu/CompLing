@@ -44,7 +44,7 @@ Try [Homework 0](docs/homework_0) to see whether this course is your cup of tea,
 
 Session | Slides | Required Readings | Extras
 ------- | ------ | -------- | -----
-1 | [Introduction](slides/1/) | [J+M_1](readings/1/J+M_1.pdf) |[Kenneth Church: A Pendulum Swung Too Far](readings/1/Pendulum_Swung_Too_Far.pdf)<br>[Shuly Wintner: What Science Underlies Natural Language Engineering](readings/1/What_Science_Underlies_Natural_Language_Engineering.pdf)<br>[冯志伟:《统计自然语言处理》序言](readings/1/冯志伟_统计自然语言处理_序言.pdf)<br>[宗成庆:统计自然语言处理的基本方法](readings/1/宗成庆_统计自然语言处理_基本方法.pdf)
+1 | [Introduction](slides/1/) | [J+M_1](readings/1/J+M_1.pdf) |[Kenneth Church: A Pendulum Swung Too Far](readings/1/Pendulum_Swung_Too_Far.pdf)<br>[Shuly Wintner: What Science Underlies Natural Language Engineering](readings/1/What_Science_Underlies_Natural_Language_Engineering.pdf)<br>[冯志伟:《统计自然语言处理》序言](readings/1/冯志伟_统计自然语言处理_序言.pdf)<br>[宗成庆:自然语言处理的基本方法](readings/1/宗成庆_自然语言处理的基本方法.pdf)
 2 | Text Normalization, Finite State Automata and Regular Expressions |  |
 3 | Finite State Transducers and Morphological Parsing |  |
 4 | N-grams and Hidden Markov Models  |  |
