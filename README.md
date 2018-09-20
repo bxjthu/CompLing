@@ -40,6 +40,9 @@ There will be 14 lectures in total, each followed by a practical session during 
 ## Homework 0
 Try [Homework 0](docs/homework_0) to see whether this course is your cup of tea, in the sense of what you are supposed to do and what you may learn.
 
+## Quizzes
+Click [here](docs/quizzes) to see the schedule for in-class quizzes and the readings to be covered respectively.
+
 ## Schedule
 
 Session | Slides | Required Readings | Extras
