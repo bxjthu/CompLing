@@ -752,7 +752,11 @@ fox^s → _fox + N + PL_
 
 + Read: [J+M_2](https://bxjthu.github.io/CompLing/readings/1/J+M_2.pdf) (2.1, 2.5)
 
-+ Read and practice: http://www.nltk.org/book/ch01.html, http://www.nltk.org/book/ch02.html, http://www.nltk.org/book/ch03.html
++ Read and practice:
+
+  + http://www.nltk.org/book/ch01.html
+  + http://www.nltk.org/book/ch02.html
+  + http://www.nltk.org/book/ch03.html
 
 ---
 class: center, middle
