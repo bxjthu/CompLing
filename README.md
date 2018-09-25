@@ -48,7 +48,7 @@ Click [here](docs/quizzes) to see the schedule for in-class quizzes and the read
 Session | Slides | Required Readings | Extras
 ------- | ------ | -------- | -----
 1 | [Introduction](slides/1/) <br> [Practical 1](slides/1/prac1_Python_intro.pdf) <br> [Homework](slides/1/#37) | [J+M_1](readings/1/J+M_1.pdf)|[Kenneth Church: A Pendulum Swung Too Far](readings/1/Pendulum_Swung_Too_Far.pdf)<br>[Shuly Wintner: What Science Underlies Natural Language Engineering](readings/1/What_Science_Underlies_Natural_Language_Engineering.pdf)<br>[冯志伟:《统计自然语言处理》序言](readings/1/冯志伟_统计自然语言处理_序言.pdf)<br>[宗成庆:自然语言处理的基本方法](readings/1/宗成庆_自然语言处理的基本方法.pdf)
-2 | [Text Normalization, Finite State Transducers, and Morphological Parsing](slides/2/) | [J+M_2](readings/2/J+M_2.pdf) (2.2, 2.3, 2.4)<br> [J+M_second_edition_2](readings/2/J+M_second_edition_2.pdf)(2.2) |[Julia Hirschberg1 and Christopher D. Manning: Advances in Natural Language Processing](readings/2/advances_nlp_2015.pdf)
+2 | [Text Normalization, Finite State Transducers, and Morphological Parsing](slides/2/) | [J+M_2](readings/2/J+M_2.pdf) (2.2, 2.3, 2.4)<br> [J+M_second_edition_2](readings/2/J+M_second_edition_2.pdf)(2.2) |[Julia Hirschberg and Christopher D. Manning: Advances in Natural Language Processing](readings/2/advances_nlp_2015.pdf)
 3 | Regular Expressions and Edit Distance |  |
 4 | N-grams and Hidden Markov Models  |  |
 5 | Part-Of-Speech Tagging and Formal Grammars |  |
