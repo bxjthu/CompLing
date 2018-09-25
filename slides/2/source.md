@@ -13,7 +13,7 @@ class: center, middle
 
 + learn that corpora are important linguistic data for NLP;
 
-+ know the basic tasks in NLP;
++ know the basic tasks in text processing;
 
 + understand what are finite state automata and finite state transducers;
 
@@ -734,7 +734,7 @@ fox^s → _fox + N + PL_
 
 + learn that corpora are important linguistic data for NLP;
 
-+ know the basic tasks in NLP;
++ know the basic tasks in text processing;
 
 + understand what are finite state automata and finite state transducers;
 
