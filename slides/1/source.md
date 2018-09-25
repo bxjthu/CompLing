@@ -381,6 +381,6 @@ Based on _Alan Turing: The Enigma by Andrew Hodges_ ]]
 class: center, middle
 ##Next session
 
-Regular Expressions, Text Normalization,
+Text Normalization, Finite State Transducers,
 
-and Finite State Transducers
+and Morphological Parsing
