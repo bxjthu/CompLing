@@ -27,7 +27,7 @@ Over the past 20 years, computational linguistics has grown into both an excitin
 
 .right[Hirschberg, J., & Manning, C. D. (2015).
 
-**Advances in natural language processing**. _Science_, 349(6245), 261-266.
+**[Advances in natural language processing](../readings/2/advances_nlp_2015.pdf)**. _Science_, 349(6245), 261-266.
 
 [<img src="images/LDClogo.png">](https://www.ldc.upenn.edu/)]
 
