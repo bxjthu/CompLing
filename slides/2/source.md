@@ -754,7 +754,9 @@ fox^s → _fox + N + PL_
   + [J+M_2](https://bxjthu.github.io/CompLing/readings/2/J+M_2.pdf) (2.2, 2.3, 2.4)
   + [J+M_second_edition_2](https://bxjthu.github.io/CompLing/readings/2/J+M_second_edition_2.pdf)(2.2)
 
-+ Read: [J+M_2](https://bxjthu.github.io/CompLing/readings/1/J+M_2.pdf) (2.1, 2.5)
++ Read:
+  + [J+M_2](https://bxjthu.github.io/CompLing/readings/1/J+M_2.pdf) (2.1, 2.5)
+  + [J+M_second_edition_3](https://bxjthu.github.io/CompLing/readings/2/J+M_second_edition_3.pdf)(3.1)
 
 + Read and practice:
 
