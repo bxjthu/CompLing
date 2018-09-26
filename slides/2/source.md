@@ -194,7 +194,7 @@ Read: Word Segmentation in Chinese: the MaxMatch algorithm (J+M_2)
 .smaller[
 E.g. _Lebensversicherungsgesellschaftsangestellter  ‘life insurance company employee’_
 ]
-+ **Japanese**: multiple	alphabets	intermingled Katakana
++ **Japanese**: multiple alphabets	intermingled
 
 > <img src="images/japanese.png" width=600>
 
