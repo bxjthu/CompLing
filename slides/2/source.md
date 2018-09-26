@@ -90,6 +90,8 @@ class: center, middle
 
 + Text vs. speech
 
++ Punctuations
+
 + Lemma vs. wordform
 
 + Word type vs. word token
