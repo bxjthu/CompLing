@@ -752,11 +752,11 @@ fox^s → _fox + N + PL_
 + Review: (Quiz 2 on Oct. 10, 2018)
 
   + [J+M_2](https://bxjthu.github.io/CompLing/readings/2/J+M_2.pdf) (2.2, 2.3, 2.4)
-  + [J+M_second_edition_2](https://bxjthu.github.io/CompLing/readings/2/J+M_second_edition_2.pdf)(2.2)
+  + [J+M_second_edition_2](https://bxjthu.github.io/CompLing/readings/2/J+M_second_edition_2.pdf) (2.2)
 
 + Read:
   + [J+M_2](https://bxjthu.github.io/CompLing/readings/1/J+M_2.pdf) (2.1, 2.5)
-  + [J+M_second_edition_3](https://bxjthu.github.io/CompLing/readings/2/J+M_second_edition_3.pdf)(3.1)
+  + [J+M_second_edition_3](https://bxjthu.github.io/CompLing/readings/2/J+M_second_edition_3.pdf) (3.1)
 
 + Read and practice:
 
