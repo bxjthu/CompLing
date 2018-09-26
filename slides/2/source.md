@@ -173,7 +173,7 @@ Penn Treebank tokenization standard
 
 <img src="images/tokenization.png" width=800>
 
-<br><br><br>
+<br>
 .smaller[Tokenization in NLTK]
 ```
 >>> help(word_tokenize)
