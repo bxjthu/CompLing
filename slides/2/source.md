@@ -169,6 +169,8 @@ keeps hyphenated words together, and separates out all punctuation:
 ---
 ##Tokenization: What counts as a _word_ ? (word boundary)
 
+Penn Treebank tokenization standard
+
 <img src="images/tokenization.png" width=800>
 
 <br><br><br>
