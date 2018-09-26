@@ -511,7 +511,7 @@ More to be learned in Lecture 3 ...]
 .left-column-2[
 
 _Q_: a finite set of _N_ **states**
->_{q<sub>0</sub>, q<sub>1</sub>, q<sub>2</sub>, ... q<sub>N-1</sub>}_
+>_{q<sub>0,</sub> q<sub>1,</sub> q<sub>2,</sub> ... q<sub>N-1</sub>}_
 
 _Σ_: a finite **input alphabet** of symbols
 
