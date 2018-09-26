@@ -188,7 +188,7 @@ Penn Treebank tokenization standard
 .smaller[
 E.g. _计算语言学课程是三个学时  &#8594;   计算语言学 课程 是 三 个 学时_ <br>
 
-Read:Word Segmentation in Chinese: the MaxMatch algorithm (J+M_2)
+Read: Word Segmentation in Chinese: the MaxMatch algorithm (J+M_2)
 ]
 + **German**: noun compounds not segmented
 .smaller[
