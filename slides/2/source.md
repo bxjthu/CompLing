@@ -464,6 +464,8 @@ A pseudo-code example
 
 <img src="images/fsa_algorithm.png" width=600>
 
+???
+Pseudocode is an informal high-level description of the operating principle of a computer program or other algorithm.
 ---
 ##Yet another formal description of the sheep talk
 
@@ -515,7 +517,7 @@ _Q_: a finite set of _N_ **states**
 
 _Σ_: a finite **input alphabet** of symbols
 
-_∆_: a finite **output alphabet** of symbols
+<font color="red">_∆_</font>: a finite **output alphabet** of symbols
 
 _q<sub>0</sub>_: the **start state**
 
@@ -526,7 +528,7 @@ _F_: the set of **final states**, _F_ &#8838; _Q_
 
 _δ(q, i)_: the **transition function**. Given a state _q_ &#8712; _Q_ and an input symbol _i_  &#8712; _Σ_, _δ(q, i)_ returns a set of new states, each state _q'_ &#8712; _Q_.
 
-_σ(q, i)_: the **output function**. Given a state _q_ &#8712; _Q_ and an input symbol _i_  &#8712; _Σ_, _σ(q, i)_ returns a set of output symbols, each symbol _o_ &#8712; _∆_ .
+<font color="red">_σ(q, i)_</font>: the **output function**. Given a state _q_ &#8712; _Q_ and an input symbol _i_  &#8712; _Σ_, _σ(q, i)_ returns a set of output symbols, each symbol _o_ &#8712; _∆_ .
 ]
 
 <img src="images/baa_fst.png" width=500>
