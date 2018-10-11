@@ -84,6 +84,9 @@ _"Like the Eliza of Pygmalion fame, it can be made to appear even more civilized
  ]
 
 ???
+
+Eliza Doolittle is a fictional character from London who appears in the play Pygmalion (George Bernard Shaw, 1912) and the musical version of that play, My Fair Lady.
+
 Pygmalion |pɪɡˈmeɪlɪən| is a play by George Bernard Shaw, named after a Greek mythological figure.
 
 In ancient Greek mythology, Pygmalion fell in love with one of his sculptures, which then came to life.  
