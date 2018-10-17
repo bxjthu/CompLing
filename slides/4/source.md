@@ -332,7 +332,7 @@ you | are | 1 | 1.00
 ---
 ##N-grams and their dependence on their training sets
 
-<img src="images/ngram_training.png" width=800>
+<img src="images/ngram_training.png" width=850>
 
 ---
 ##N-grams for Machine translation
@@ -491,7 +491,7 @@ Colorless green ideas sleep furiously is a sentence composed by Noam Chomsky in 
 + work better with REs in structured programs.
 
 ---
-##Assignment
+##Homework
 
 + Review (Quiz 4 on Oct. 24, 2018)
 
