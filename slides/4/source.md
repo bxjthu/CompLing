@@ -127,7 +127,7 @@ class: center, middle
 
 + know that hidden Markov models can help parsing on different levels;<br>
 
-+ get a clearer picture of the fundamentals in python.
++ work better with REs in structured programs.
 
 ---
 .left-column-2[
@@ -488,7 +488,7 @@ Colorless green ideas sleep furiously is a sentence composed by Noam Chomsky in 
 
 + know that hidden Markov models can help parsing on different levels;<br>
 
-+ get a clearer picture of the fundamentals in python.
++ work better with REs in structured programs.
 
 ---
 ##Assignment
