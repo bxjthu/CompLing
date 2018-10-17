@@ -290,7 +290,7 @@ Alternatively, try .\*af{1,2}g.{0,1}k.*
 + Review:
 
   + [J+M_2](https://bxjthu.github.io/CompLing/readings/2/J+M_2.pdf)
-  + [J+M_second_edition_2](https://bxjthu.github.io/CompLing/readings/2/J+M_second_edition_2.pdf)
+  + [J+M_second_edition_2](https://bxjthu.github.io/CompLing/readings/2/J+M_second_edition_2.pdf) (2.2)
   + [J+M_second_edition_3](https://bxjthu.github.io/CompLing/readings/2/J+M_second_edition_3.pdf) (3.1-3.7)
 
 ???

@@ -9,6 +9,12 @@ class: center, middle
 ** https://bxjthu.github.io/CompLing **
 
 ---
+
+##Recap: Chomsky hierarchy
+
+<img src="images/chomsky_hierachy_nl.png" width=800>
+
+---
 ##Recap: FSA vs. FST
 
 Recognizer (acceptor) vs. generator
@@ -22,7 +28,8 @@ A recognizer takes a string as input and <font color="red">outputs</font> _accep
 > <img src="images/baa_fst.png" width=450>
 ]
 
----
+???
+
 ##Recap: FSA for English numbers 1-999
 
 Updating ...<br>
@@ -54,31 +61,6 @@ _σ(q, i)_: the **output function**. Given a state _q_ &#8712; _Q_ and an input 
 
 <img src="images/baa_fst.png" width=500>
 
-
----
-##Recap: a formal definition of FST
-
-.left-column-1[
-
-_Q={q<sub>0</sub>, q<sub>1</sub>, q<sub>2</sub>, q<sub>3</sub>, q<sub>4</sub>}_
-
-_Σ= {b,a,!}_
-
-_∆= {b,o,!}_
-
-_q<sub>0</sub>=q<sub>0</sub>_
-
-_F= {q4}_
-]
-
-.right-column-1[
-<img src="images/fst_tb1.png" width=340>
-<img src="images/fst_tb2.png" width=340>
-
-
-.center[<img src="images/baa_fst.png" width=550>]
-]
-
 ---
 ##Recap: morphological parsing
 .left-column-2[
@@ -93,54 +75,44 @@ _F= {q4}_
 ]
 
 ---
-.left-column-2[
 ##Recap: questions
 
-+ What might be the difficulties of morphological parsing in Chinese?
+Difficulties of normalization and morphological parsing in Chinese?
 
-<br><br><br>
+这个门的<font color="red">把手</font>坏了好几天了。<br>
+你<font color="red">把手</font>抬高一点儿。
 
-+ How might morphological parsing work for the NLP applications in our daily life? Any example?
-]
+人身上哪怕有一点小<font color="red">病痛</font>，都会影响到工作学习。<br>
+这种<font color="red">病痛</font>起来真要人命。
+
+报名选手持本人学生证，于比赛当日指定时段到达赛场。<br>
+把“手持”改成“携带”？
+---
+##Recap: questions
+
+Difficulties of normalization and morphological parsing in Chinese?
+
++ Ambiguities
++ Unknown words
++ What is a WORD?
 
 ---
-.left-column-2[
 ##Recap: questions
 
-+ What might be the difficulties of morphological parsing in Chinese?
+How might morphological parsing work for us?
 
- + Ambiguities
- + Unknown words
- + What is a WORD?
+<img src="images/CCP_Congress_18th_WordCloud.jpg" width=400> <img src="images/CCP_Congress_19th_WordCloud.jpg" width=400>
 
-+ How might morphological parsing work for the NLP applications in our daily life? Any example?
-]
-
----
-.left-column-2[
-##Recap: questions
-
-+ What might be the difficulties of morphological parsing in Chinese?
-
- + Ambiguities
- + Unknown words
- + What is a WORD?
-
-+ How might morphological parsing work for the NLP applications in our daily life? Any example?
-]
-
-.right-column-2[
-.center[
-<br>
-<img src="images/CCP_Congress_18th_WordCloud.jpg" width=300>
-
-<img src="images/CCP_Congress_19th_WordCloud.jpg" width=300>
-]
-]
+.right[.smaller[[A Computational Linguistic Analysis of Party Congress Reports](images/Analysis_Party_Congress_Reports.pdf) by Li Yimeng]]
 ---
 
 class: center, middle
 <img src="images/word.png" width=600>
+
+---
+
+class: center, middle
+##We will have a quiz next ...
 
 ---
 ##At the end of this session you will
@@ -153,7 +125,7 @@ class: center, middle
 
 + learn the difference between Markov models and hidden Markov models;<br>
 
-+ know hidden Markov models can help parsing on different levels;<br>
++ know that hidden Markov models can help parsing on different levels;<br>
 
 + get a clearer picture of the fundamentals in python.
 
@@ -353,6 +325,16 @@ you | are | 1 | 1.00
 ]
 
 ---
+##The increasing power of higher-order n-grams
+
+<img src="images/ngram_order.png" width=1000>
+
+---
+##N-grams and their dependence on their training sets
+
+<img src="images/ngram_training.png" width=800>
+
+---
 ##N-grams for Machine translation
 
 .left[
@@ -367,6 +349,14 @@ He &nbsp; |to &nbsp; |reporters &nbsp; |introduced &nbsp; |main &nbsp; |content
 
 3. he briefed reporters on the main contents of the statement
 
+---
+## Advanced issues and further readings
+
++ J+M_3.2: Evaluating Language Models (required)
+
++ J+M_3.3: Generalizations and Zeros (required)
+
++ J+M_3.3: Smoothing (optional)
 ---
 
 ##The Markov model or the Markov chain
@@ -447,6 +437,17 @@ Used to compute a probability for a sequence of NOT observable events
 ]
 
 ---
+## HMM: a probabilistic sequence model
+
+Given a sequence of units (words, letters, morphemes, sentences, whatever), <br>
+a HMM assigns a label or class to each unit in the sequence, <br>
+thus mapping a sequence of observations to a sequence of labels.
+
+_colorless green ideas sleep furiously_
+
+<img src="images/hmm.png" width=700>
+
+---
 ##HMM and Part-Of-Speech (POS) tagging
 
 <img src="images/hmm.png" width=800> <br>
@@ -475,17 +476,6 @@ Colorless green ideas sleep furiously is a sentence composed by Noam Chomsky in 
 <font color="red">`\(q_0\)`, `\(q_F\)` </font>: a **start state** and an **end (final) state**, together with transition probabilities `\(\{a_{01},a_{02}...a_{0n}\}\)` out of the start state and `\(\{a_{1F},a_{2F}...a_{nF}\}\)` into the end state `\(q_0\)`, `\(q_F\)`
 
 ---
-## HMM: a probabilistic sequence model
-
-Given a sequence of units (words, letters, morphemes, sentences, whatever), <br>
-a HMM assigns a label or class to each unit in the sequence, <br>
-thus mapping a sequence of observations to a sequence of labels.
-
-_colorless green ideas sleep furiously_
-
-<img src="images/hmm.png" width=700>
-
----
 ##At the end of this session you will
 
 + understand how n-grams can model a language;<br>
@@ -496,28 +486,24 @@ _colorless green ideas sleep furiously_
 
 + learn the difference between Markov models and hidden Markov models;<br>
 
-+ know hidden Markov models can help parsing on different levels;<br>
++ know that hidden Markov models can help parsing on different levels;<br>
 
 + get a clearer picture of the fundamentals in python.
 
 ---
 ##Assignment
 
-**1. Review**
++ Review
 
-+ J+M 4 - pages 1-8
-+ J+M 9 - pages 1-6
-+ Practical 4
-+ Mathematical foundations
+  + [J+M_3](https://bxjthu.github.io/CompLing/readings/4/J+M_3.pdf) (3.1-3.3)
+  + [J+M_2](https://bxjthu.github.io/CompLing/readings/2/J+M_2.pdf)
+  + [J+M_second_edition_3](https://bxjthu.github.io/CompLing/readings/2/J+M_second_edition_3.pdf) (3.1)]
 
-**2. Practice**
++ Read
 
-Build a toy corpus of your own and:
+  + [Mathematical foundations](https://bxjthu.github.io/CompLing/readings/4/pre_math_manning_schutze.pdf)
+  + [J+M_8](https://bxjthu.github.io/CompLing/readings/5/J+M_8.pdf) (8.1-8.4)
 
-+ Write out the equation for trigram probability estimation. Then write out all the non-zero trigram probabilities for a sentence in your corpus.
-+ Calculate the probability of the sentences in your corpus.
-
-Bring your special findings, if any, to the class!
 ---
 class: center, middle
 ##Next session
