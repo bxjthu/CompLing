@@ -493,7 +493,7 @@ Colorless green ideas sleep furiously is a sentence composed by Noam Chomsky in 
 ---
 ##Assignment
 
-+ Review
++ Review (Quiz 4 on Oct. 24, 2018)
 
   + [J+M_3](https://bxjthu.github.io/CompLing/readings/4/J+M_3.pdf) (3.1-3.3)
   + [J+M_2](https://bxjthu.github.io/CompLing/readings/2/J+M_2.pdf)
