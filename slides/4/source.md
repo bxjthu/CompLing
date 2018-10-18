@@ -392,10 +392,9 @@ welcome | `</s>` | 1 | 0.20
 what | a | 1 | 1.00
 you | are | 1 | 1.00
 
-<br
->
+<br>
 **The bigram counts and probabilities <br>for the toy corpus**
-]
+
 ]
 ]
 
