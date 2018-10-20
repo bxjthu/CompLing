@@ -503,6 +503,10 @@ Colorless green ideas sleep furiously is a sentence composed by Noam Chomsky in 
   + [Mathematical foundations](https://bxjthu.github.io/CompLing/readings/4/pre_math_manning_schutze.pdf)
   + [J+M_8](https://bxjthu.github.io/CompLing/readings/5/J+M_8.pdf) (8.1-8.4)
 
++ Read and practice
+
+  + [n-gram.py](n_gram.py) by Qing Lyu
+
 ---
 class: center, middle
 ##Next session
