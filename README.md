@@ -62,9 +62,10 @@ Session | Slides | Required Readings | Extras
 13 | NLP Applications -1 |  |
 14 | NLP Applications -2 |  |
 
+#
 
 # Autumn 2017
 
 Teaching Assistant: Yuxiao Ye
 
-<img src="CL_2017.jpeg" width=350>
+<img src="CL_2017.png" width=350>
