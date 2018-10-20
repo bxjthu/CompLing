@@ -69,4 +69,4 @@ Session | Slides | Required Readings | Extras
 
 Teaching Assistant: Yuxiao Ye
 
-![CL_2017](CL_2017.png =326*244)
+![](CL_2017.png =326*244)
