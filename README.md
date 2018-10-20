@@ -61,3 +61,10 @@ Session | Slides | Required Readings | Extras
 12 | Online Language Resources: Advances, Applications, and Challenges  |  |
 13 | NLP Applications -1 |  |
 14 | NLP Applications -2 |  |
+
+
+# Autumn 2017
+
+Teaching Assistant: Yuxiao Ye
+
+<img src="CL_2017.jpeg" width=350>
