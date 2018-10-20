@@ -65,6 +65,7 @@ Session | Slides | Required Readings | Extras
 
 # WE
 
-## Autumn 2017 .smaller[Teaching Assistant: Yuxiao Ye]
+**Autumn 2017**<br>
+Teaching Assistant: Yuxiao Ye
 
 ![](CL_2017.png){:height="244" width="326"}
