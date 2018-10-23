@@ -220,6 +220,16 @@ class: center, middle
 + n-gram
 
 ---
+## Conditional probability
+Conditional probability is the probability of event A given that the occurrence of event B, written as `\(P(A|B)\)`.
+
+## Joint probability
+Joint probability is the probability of two events in conjunction, i.e. the probability of both events together, written as `\(P(A∩B) \)` or `\(P(A,B)\)`.
+
+If A and B are independent, i.e. knowing the outcome of A does not change the probability of B, or `\(P(B|A) = P(B)\)`, then `\(P(A∩B) = P(A)P(B)\)`.
+
+If A and B are not independent, e.g. knowing the outcome of A does change the probability of B, or `\(P(B|A) \neq P(B)\)`, then `\(P(A∩B) = P(A)P(B|A)\)`.
+---
 
 .left-column-2[
 ##N-grams as a model of language
