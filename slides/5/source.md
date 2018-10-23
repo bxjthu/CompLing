@@ -286,7 +286,7 @@ Terminology: parts-of-speech, word classes, syntactic categories, ...
   + Automatic summarization
   + Speech synthesis and recognition
 
-Review: English and Chinese Word Classes
+Review: [English](https://bxjthu.github.io/CompLing/readings/5/J+M_8.pdf) and [Chinese](https://bxjthu.github.io/CompLing/readings/5/现代汉语_北大现代汉语教研室.pdf) Word Classes
 
 ---
 
