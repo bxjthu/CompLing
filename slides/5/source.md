@@ -453,8 +453,7 @@ Property B = {FL,CS}
 .right-column-4[
 
 Example: <br>
-.smaller[
-Consider a group of 10 students taking this course: some are male (M) and others female (F); some are enrolled in the Computer Science department (CS) and others in the Foreign Languages department (FL).]
+Consider a group of 10 students taking this course: some are male (M) and others female (F); some are enrolled in the Computer Science department (CS) and others in the Foreign Languages department (FL).
 
 .smaller[
 Gender&nbsp;&nbsp; | Dept.
@@ -600,20 +599,17 @@ Maximum entropy Markov models
 + work better with REs in structured programs and handle file i/o well.
 
 ---
-##Assignment
+##Homework
 
-**1. Review**
++ Review
 
-+ J+M 10: pages 1-16
-+ J+M 11: pages 1-21
+  + [J+M_8](https://bxjthu.github.io/CompLing/readings/5/J+M_8.pdf) (8.1 - 8.4; 8.7)
 
-Question:
-<br>
-How might POS features be used in information extraction, informational retrieval, automatic summarization, speech synthesis and recognition, or other NLP applications you can think of?
+  Question: How might POS features be used in information extraction, informational retrieval, automatic summarization, speech synthesis and recognition, or other NLP applications you can think of?
 
-**2. Read and Practice**
++ Read and Practice
 
-Categorizing and Tagging Words: http://www.nltk.org/book/ch05.html
+  + http://www.nltk.org/book/ch05.html
 
 ---
 class: center, middle
