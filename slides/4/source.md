@@ -1,6 +1,7 @@
 class: center, middle
-# Computational Linguistics<br>
-##4. N-grams and Hidden Markov Models
+# Computational Linguistics
+
+##4. N-gram Language Models
 
 ** Xiaojing Bai **
 
@@ -123,11 +124,7 @@ class: center, middle
 
 + understand how n-grams may help to develop NLP applications;<br>
 
-+ learn the difference between Markov models and hidden Markov models;<br>
-
-+ know that hidden Markov models can help parsing on different levels;<br>
-
-+ work better with REs in structured programs.
++ learn how to build n-gram models with Python.
 
 ---
 .left-column-2[
@@ -221,14 +218,14 @@ class: center, middle
 
 ---
 ## Conditional probability
-Conditional probability is the probability of event A given that the occurrence of event B, written as `\(P(A|B)\)`.
+Conditional probability is the probability of event A given that the occurrence of event B, written as $P(A|B)$.
 
 ## Joint probability
-Joint probability is the probability of two events in conjunction, i.e. the probability of both events together, written as `\(P(A∩B) \)` or `\(P(A,B)\)`.
+Joint probability is the probability of two events in conjunction, i.e. the probability of both events together, written as $P(A \cap B)$ or $P(A,B)$.
 
-If A and B are independent, i.e. knowing the outcome of A does not change the probability of B, or `\(P(B|A) = P(B)\)`, then `\(P(A∩B) = P(A)P(B)\)`.
+If A and B are independent, i.e. knowing the outcome of A does not change the probability of B, or $P(B|A) = P(B)$, then $P(A \cap B) = P(A)P(B)$.
 
-If A and B are not independent, e.g. knowing the outcome of A does change the probability of B, or `\(P(B|A) \neq P(B)\)`, then `\(P(A∩B) = P(A)P(B|A)\)`.
+If A and B are not independent, e.g. knowing the outcome of A does change the probability of B, or $P(B|A) \neq P(B)$, then $P(A \cap B) = P(A)P(B|A)$.
 ---
 
 .left-column-2[
@@ -296,16 +293,28 @@ you | are | 1 | 1.00
 .left-column-2[
 ##Probabilities of bigrams
 
-`\(P(w_n|w_{n−1})=\frac{C(w_{n-1}w_n)}{\sum_wC(w_{n-1}w)}=\frac{C(w_{n-1}w_n)}{C(w_{n-1})} \)`
+\\(
+P(w\_n | w\_{n-1}) =
+\frac{C(w\_{n-1}w\_n)}{\sum\_{w}C(w\_{n-1}w)} =
+\frac{C(w\_{n-1}w\_n)}{C(w\_{n-1})}
+\\)
 
 ##Probabilities of sequences
 
-`\(P(w_1^n)\approx\prod_{k=1}^nP(w_k|w_{k−1})\)`
+\\(
+P(w\_1^n)
+\approx \prod\_{k=1}^n P(w\_k|w\_{k-1})
+\\)
 
 Why approximately equal to?<br><br>
 
-`\(P(w_1^n)= P(w_1)P(w_2|w_1)P(w_3|w_1^2)...P(w_n|w_1^{n-1})\)`
-> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`\(=\prod_{k=1}^nP(w_k|w_1^{k−1})\)`
+\\(
+\footnotesize
+\begin{aligned}
+P(w\_1^n) & = P(w\_1)P(w\_2|w\_1)P(w\_3|w\_1^2) \cdots P(w\_n|w\_1^{n-1}) \\\
+& = \prod\_{k=1}^n P(w\_k|w\_1^{k-1})
+\end{aligned}
+\\)
 ]
 
 .right-column-4[
@@ -367,122 +376,6 @@ He &nbsp; |to &nbsp; |reporters &nbsp; |introduced &nbsp; |main &nbsp; |content
 + J+M_3.3: Generalizations and Zeros (required)
 
 + J+M_3.3: Smoothing (optional)
----
-
-##The Markov model or the Markov chain
-
-+ The Markov assumption
-
- + the probability of a word depends only on the previous word<br><br>`\(P(q_i|q_1...q_{i-1}) = P(q_i|q_{i-1})\)`
-
-+ An extension of an FSA: a special case of a weighted FSA
- + the weights being the probabilities
- + the input sequence uniquely determining the states to go through
-
-+ Useful for assigning probabilities to unambiguous sequences
-
----
-##The Markov model or the Markov chain
-.left-column-2[
-.smaller[
-w<sub>n−1</sub> | w<sub>n</sub> | count&nbsp;&nbsp; | probability
-:--|--|:--:|:--:
-`<s>` | welcome&nbsp;&nbsp; | 3 | 0.60
-`<s>` | what | 1 | 0.20
-`<s>` | you | 1 | 0.20
-a | welcome | 2 | 1.00
-are | a | 1 | 1.00
-back | `</s>` | 1 | 1.00
-home | `</s>` | 2 | 1.00
-sight | `</s>` | 1 | 1.00
-welcome&nbsp;&nbsp; | home | 2 | 0.40
-welcome | back | 1 | 0.20
-welcome | sight | 1 | 0.20
-welcome | `</s>` | 1 | 0.20
-what | a | 1 | 1.00
-you | are | 1 | 1.00
-
-<br>
-**The bigram counts and probabilities <br>for the toy corpus**
-
-]
-]
-
-.right-column-2[
-<img src="images/ngram_automaton.png" width=350>
-> ######Part of the Markov chain for the toy corpus
-]
-
----
-##The Markov model or the Markov chain
-.left-column-2[
-<font color="red">`\(Q = \{q_1,q_2, ...q_N\}\)` </font><br> A set of _N_ **states**
-<br>
-<font color="red">`\(A = \{a_{ij}\}\)` </font><br> A **transition probability matrix** A, each `\(a_{ij}\)` representing the probability of moving from state _i_ to state _j_, s.t. `\(\sum_{j=1}^n a_{ij} = 1 ∀i\)`
-<br>
-<font color="red">`\(q_0\)`, `\(q_F\)` </font><br> A **start state** and an **end (final) state**, together with transition probabilities `\(\{a_{01},a_{02}...a_{0n}\}\)` out of the start state and `\(\{a_{1F},a_{2F}...a_{nF}\}\)` into the end state `\(q_0\)`, `\(q_F\)`
-]
-
-.right-column-2[
-<img src="images/markov_automaton.png" width=550>
-]
----
-.left-column-2[
-
-##A Markov model
-Used to compute a probability for a sequence of observable events
-
-##A hidden Markov model (HMM)
-Used to compute a probability for a sequence of NOT observable events
-
-######Example: Jason's ice cream climatology data
-
-<img src="images/hot.png" height =100>&nbsp;&nbsp;
-<img src="images/ice_cream.png" height=100>&nbsp;&nbsp;
-<img src="images/cold.png" height =100>
-]
-.right-column-2[
-<img src="images/jason.png" width=450>
-]
-
----
-## HMM: a probabilistic sequence model
-
-Given a sequence of units (words, letters, morphemes, sentences, whatever), <br>
-a HMM assigns a label or class to each unit in the sequence, <br>
-thus mapping a sequence of observations to a sequence of labels.
-
-_colorless green ideas sleep furiously_
-
-<img src="images/hmm.png" width=700>
-
----
-##HMM and Part-Of-Speech (POS) tagging
-
-<img src="images/hmm.png" width=800> <br>
-
-The sequence of words observed:
-<table border="0" width="100%">
-    <tr>
-      <td align="center" style="color:#ffffff" bgcolor="#33FFFF">colorless</td>
-      <td align="center" style="color:#ffffff" bgcolor="#CC0000">green</td>
-      <td align="center" style="color:#ffffff" bgcolor="#FFCC99">ideas</td>
-      <td align="center" style="color:#ffffff" bgcolor="#006600">sleep</td>
-      <td align="center" style="color:#ffffff" bgcolor="#00FF00">furiously</td>
-    </tr>
-</table>
-
-???
-Colorless green ideas sleep furiously is a sentence composed by Noam Chomsky in his 1957 book Syntactic Structures as an example of a sentence that is grammatically correct, but semantically nonsensical.
-
----
-##The hidden Markov model
-
-<font color="red">`\(Q = \{q_1, q_2, ...q_N\}\)` </font>: a set of _N_ **states**
-<font color="red">`\(A = \{a_{ij}\}\)` </font>: a **transition probability matrix** A, each `\(a_{ij}\)` representing the probability of moving from state _i_ to state _j_, s.t. `\(\sum_{j=1}^n a_{ij} = 1 ∀i\)`<br>
-<font color="red">`\(O = o_1o_2 ...o_T\)` </font>: a sequence of _T_ **observations**, each one drawn from a vocabulary `\(V = v_1,v_2,...,v_V\)`<br>
-<font color="red">`\(B = \{b_i(o_t)\}\)`</font>: an **observation probability matrix**, each expressing the probability of an observation `\(o_t\)` being generated from a state _i_<br>
-<font color="red">`\(q_0\)`, `\(q_F\)` </font>: a **start state** and an **end (final) state**, together with transition probabilities `\(\{a_{01},a_{02}...a_{0n}\}\)` out of the start state and `\(\{a_{1F},a_{2F}...a_{nF}\}\)` into the end state `\(q_0\)`, `\(q_F\)`
 
 ---
 ##At the end of this session you will
@@ -493,11 +386,7 @@ Colorless green ideas sleep furiously is a sentence composed by Noam Chomsky in 
 
 + understand how n-grams may help to develop NLP applications;<br>
 
-+ learn the difference between Markov models and hidden Markov models;<br>
-
-+ know that hidden Markov models can help parsing on different levels;<br>
-
-+ work better with REs in structured programs.
++ learn how to build n-gram models with Python.
 
 ---
 ##Homework
@@ -521,4 +410,4 @@ Colorless green ideas sleep furiously is a sentence composed by Noam Chomsky in 
 class: center, middle
 ##Next session
 
-Part-Of-Speech Tagging and Syntactic Parsing
+Hidden Markov Models and Part-Of-Speech Tagging

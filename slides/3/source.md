@@ -306,4 +306,4 @@ Alternatively, try .\*af{1,2}g.{0,1}k.*
 class: center, middle
 ##Next session
 
-N-grams and Hidden Markov Models
+N-gram Language Models
