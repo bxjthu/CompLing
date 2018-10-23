@@ -10,25 +10,19 @@ class: center, middle
 ** https://bxjthu.github.io/CompLing **
 
 ---
+## Recap: conditional probability and Joint probability
+Conditional probability is the probability of event A given that the occurrence of event B, written as $P(A|B)$.
 
-## At the end of this session you will
+Joint probability is the probability of two events in conjunction, i.e. the probability of both events together, written as $P(A \cap B)$ or $P(A,B)$.
 
-+ learn the difference between Markov models and hidden Markov models;
+If A and B are independent, i.e. knowing the outcome of A does not change the probability of B, or $P(B|A) = P(B)$, then $P(A \cap B) = P(A)P(B)$.
 
-+ know that hidden Markov models can help parsing on different levels;
-
-+ understand the purposes of POS tagging;
-
-+ know what a tagset is and how tagsets vary;
-
-+ know a rule-based method and a probabilistic method of POS tagging;
-
-+ work better with REs in structured programs and handle file i/o well.
+If A and B are not independent, e.g. knowing the outcome of A does change the probability of B, or $P(B|A) \neq P(B)$, then $P(A \cap B) = P(A)P(B|A)$.
 
 ---
 
 .left-column-2[
-## Recap:
+## Recap
 
 **Probabilities of bigrams**
 
@@ -39,7 +33,7 @@ class: center, middle
 \\(
 \footnotesize
 \begin{aligned}
-P(w\_1^n) & = P(w\_1) P(w\_2|w\_1) P(w\_3|w\_1^2) \cdots P(w\_n|w\_1^{n-1}) \\\
+P(w\_1^n) & = P(w\_1) P(w\_2|w\_1) P(w\_3|w\_1^2) \ldots P(w\_n|w\_1^{n-1}) \\\
 & = \prod\_{k=1}^n P(w\_k|w\_1^{k-1})  \\\
 & \approx \prod\_{k=1}^n P(w\_k|w\_{k-1})
 \end{aligned}
@@ -76,7 +70,7 @@ you | are | 1 | 1.00
 ---
 
 .left-column-2[
-## Recap:
+## Recap
 
 **Probabilities of trigrams**
 
@@ -90,7 +84,7 @@ P(w\_n | w\_{n-2} w\_{n-1}) =
 \\(
 \footnotesize
 \begin{aligned}
-P(w\_1^n) & = P(w\_1)P(w\_2|w\_1)P(w\_3|w\_1^2) \cdots P(w\_n|w\_1^{n-1}) \\\
+P(w\_1^n) & = P(w\_1)P(w\_2|w\_1)P(w\_3|w\_1^2) \ldots P(w\_n|w\_1^{n-1}) \\\
 & = \prod\_{k=1}^n P(w\_k|w\_1^{k-1}) \\\
 & \approx \prod\_{k=1}^n P(w\_k|w\_{k-1}w\_{k-2})
 \end{aligned}
@@ -125,26 +119,148 @@ are | so | lovely | 1 | 1
 ]
 
 ---
-## Evaluating the performance of a model
+## Recap
+
++ Power of n-grams
+
++ Dependence of n-grams on their training sets
+
++ Evaluation of language models
+
++ N-grams in NLP applications
+
+???
+Evaluating the performance of a model
 
 + Extrinsic evaluation
-
 + Intrinsic evaluation
-
   + Training set
-
   + Development set
-
   + Test set
-
   How well does the trained model fit the test set?
-
   How well does the trained model predict the test set?
-
   Division of the data set
+---
+
+## At the end of this session you will
+
++ learn the difference between Markov models and hidden Markov models;
+
++ know that hidden Markov models can help parsing on different levels;
+
++ understand the purposes of POS tagging;
+
++ know what a tagset is and how tagsets vary;
+
++ know a rule-based method and a probabilistic method of POS tagging;
+
++ work better with REs in structured programs and handle file i/o well.
 
 ---
 
+##The Markov model or the Markov chain
+
++ The Markov assumption
+
+ + the probability of a word depends only on the previous word<br><br>$P(q\_i|q\_1...q\_{i-1}) = P(q\_i|q\_{i-1})$
+
++ An extension of an FSA: a special case of a weighted FSA
+ + the weights being the probabilities
+ + the input sequence uniquely determining the states to go through
+
++ Useful for assigning probabilities to unambiguous sequences
+
+---
+##The Markov model or the Markov chain
+.left-column-2[
+.smaller[
+w<sub>n−1</sub> | w<sub>n</sub> | count&nbsp;&nbsp; | probability
+:--|--|:--:|:--:
+`<s>` | welcome&nbsp;&nbsp; | 3 | 0.60
+`<s>` | what | 1 | 0.20
+`<s>` | you | 1 | 0.20
+a | welcome | 2 | 1.00
+are | a | 1 | 1.00
+back | `</s>` | 1 | 1.00
+home | `</s>` | 2 | 1.00
+sight | `</s>` | 1 | 1.00
+welcome&nbsp;&nbsp; | home | 2 | 0.40
+welcome | back | 1 | 0.20
+welcome | sight | 1 | 0.20
+welcome | `</s>` | 1 | 0.20
+what | a | 1 | 1.00
+you | are | 1 | 1.00
+
+<br>
+**The bigram counts and probabilities <br>for the toy corpus**
+
+]
+]
+
+.right-column-2[
+<img src="images/ngram_automaton.png" width=350>
+> ######Part of the Markov chain for the toy corpus
+]
+
+---
+##The Markov model or the Markov chain
+.left-column-2[
+<font color="red">$Q = \lbrace q\_1,q\_2, \ldots , q\_n \rbrace $ </font>: a set of _n_ **states**
+
+<font color="red">$A = \lbrack a\_{ij} \rbrack $ </font>: a **transition probability matrix** A, each $a\_{ij}$ representing the probability of moving from state _i_ to state _j_, s.t. $\sum\_{j=1}^n a\_{ij} = 1 \space \space \forall i$
+
+<font color="red">$\pi = \lbrace \pi\_1, \pi\_2, \ldots, \pi\_n \rbrace $ </font>: an **initial probability distribution** over states, each $\pi\_i$ representing the probability that the Markov chain will start in state _i_, s.t. $\sum\_{i=1}^n \pi\_i = 1$
+]
+
+.right-column-2[
+<img src="images/markov_automaton.png" width=550>
+]
+
+---
+.left-column-2[
+
+##A Markov model
+Used to compute a probability for a sequence of observable events
+
+##A hidden Markov model (HMM)
+Used to compute a probability for a sequence of NOT observable events
+
+######Example: Jason's ice cream climatology data
+
+<img src="images/hot.png" height =100>&nbsp;&nbsp;
+<img src="images/ice_cream.png" height=100>&nbsp;&nbsp;
+<img src="images/cold.png" height =100>
+]
+.right-column-2[
+<img src="images/jason.png" width=450>
+]
+
+---
+## HMM: a probabilistic sequence model
+
+Given a sequence of units (words, letters, morphemes, sentences, whatever), <br>
+a HMM assigns a label or class to each unit in the sequence, <br>
+thus mapping a sequence of observations to a sequence of labels.
+
+<img src="images/hmm.png" width=800>
+
+???
+Colorless green ideas sleep furiously is a sentence composed by Noam Chomsky in his 1957 book Syntactic Structures as an example of a sentence that is grammatically correct, but semantically nonsensical.
+
+---
+##The hidden Markov model
+
+<font color="red">$Q = \lbrace q\_1,q\_2, \ldots , q\_n \rbrace $ </font>: a set of _n_ **states**
+
+<font color="red">$A = \lbrack a\_{ij} \rbrack $ </font>: a **transition probability matrix** A, each $a\_{ij}$ representing the probability of moving from state _i_ to state _j_, s.t. $\sum\_{j=1}^n a\_{ij} = 1 \space \space \forall i$
+
+<font color="red">$O = o\_1 o\_2 \ldots o\_T$ </font>: a sequence of _T_ **observations**, each one drawn from a vocabulary $V = \lbrace v\_1,v\_2,\ldots,v_V \rbrace$
+
+<font color="red">$B = b\_i(o\_t)$</font>: an sequence of **observation probabilities**, each expressing the probability of an observation $o\_t$ being generated from a state _i_
+
+<font color="red">$\pi = \lbrace \pi\_1, \pi\_2, \ldots, \pi\_n \rbrace $ </font>: an **initial probability distribution** over states, each $\pi\_i$ representing the probability that the Markov chain will start in state _i_, s.t. $\sum\_{i=1}^n \pi\_i = 1$
+
+---
 ## The astonishing durability of POS through two millennia
 
 Terminology: parts-of-speech, word classes, syntactic categories, ...
@@ -289,7 +405,7 @@ else eliminate ADV tag
 
 .left-column-2[
 ## HMM POS tagging: a decoding task
-Given as <font color="red">input</font> an HMM \\(\lambda = (A, B)\\) <br>and a sequence of observations \\(O = o_1o_2 \cdots o_T\\), <font color="red">find</font> the most probable sequence of states \\(Q = q_1q_2q_3 \cdots q_T\\).
+Given as <font color="red">input</font> an HMM \\(\lambda = (A, B)\\) <br>and a sequence of observations \\(O = o_1o_2 \ldots o_T\\), <font color="red">find</font> the most probable sequence of states \\(Q = q_1q_2q_3 \ldots q_T\\).
 
 <br>
 <img src="images/hmm.png" width=600>
@@ -298,16 +414,15 @@ Given as <font color="red">input</font> an HMM \\(\lambda = (A, B)\\) <br>and a 
 .right-column-4[
 <br><br>
 .smaller[
-<font color="red">\\(Q = \\{q\_1, q\_2, \cdots q\_N\\}\\) </font>: a set of _N_ **states**
+<font color="red">$Q = \lbrace q\_1,q\_2, \ldots , q\_n \rbrace $ </font>: a set of _n_ **states**
 
+<font color="red">$A = \lbrack a\_{ij} \rbrack $ </font>: a **transition probability matrix** A, each $a\_{ij}$ representing the probability of moving from state _i_ to state _j_, s.t. $\sum\_{j=1}^n a\_{ij} = 1 \space \space \forall i$
 
-<font color="red">\\(A = \\{a\_{ij}\\}\\) </font>: a **transition probability matrix** A, each \\(a\_{ij}\\) representing the probability of moving from state _i_ to state _j_, s.t. \\(\sum\_{j=1}^n a\_{ij} = 1, \forall i \\)
+<font color="red">$O = o\_1 o\_2 \ldots o\_T$ </font>: a sequence of _T_ **observations**, each one drawn from a vocabulary $V = \lbrace v\_1,v\_2,\ldots,v_V \rbrace$
 
-<font color="red">\\(O = o\_1o\_2 \cdots o\_T\\) </font>: a sequence of _T_ **observations**, each one drawn from a vocabulary \\(V = v\_1,v\_2 \cdots v\_V\\)<br>
+<font color="red">$B = b\_i(o\_t)$</font>: an sequence of **observation probabilities**, each expressing the probability of an observation $o\_t$ being generated from a state _i_
 
-<font color="red">\\(B = \\{b\_i(o\_t)\\}\\)</font>: an **observation probability matrix**, each expressing the probability of an observation \\(o\_t\\) being generated from a state _i_<br>
-
-<font color="red">\\(q\_0\\), \\(q\_F\\) </font>: a **start state** and an **end (final) state**, together with transition probabilities \\(\\{a\_{01},a\_{02} \cdots a\_{0n}\\}\\) out of the start state and \\(\\{a\_{1F},a\_{2F} \cdots a\_{nF}\\}\\) into the end state \\(q\_0\\), \\(q\_F\\)
+<font color="red">$\pi = \lbrace \pi\_1, \pi\_2, \ldots, \pi\_n \rbrace $ </font>: an **initial probability distribution** over states, each $\pi\_i$ representing the probability that the Markov chain will start in state _i_, s.t. $\sum\_{i=1}^n \pi\_i = 1$
 ]
 ]
 
@@ -338,7 +453,8 @@ Property B = {FL,CS}
 .right-column-4[
 
 Example: <br>
-Consider a group of 10 students taking this course: some are male (M) and others female (F); some are enrolled in the Computer Science department (CS) and others in the Foreign Languages department (FL).
+.smaller[
+Consider a group of 10 students taking this course: some are male (M) and others female (F); some are enrolled in the Computer Science department (CS) and others in the Foreign Languages department (FL).]
 
 .smaller[
 Gender&nbsp;&nbsp; | Dept.
@@ -469,280 +585,11 @@ Maximum entropy Markov models
 
 ---
 
-## Syntax
-
-+ The way words are arranged together
-
-+ Syntactic notions
-  + Regular expressions: representing the sequences of words<br>
-  + N-grams: computing probabilities for the sequences of words<br>
-  + Parts-of-speech: acting as a kind of equivalence class for words<br>
-<br>
-  + Models of syntax and grammar
-    > + Regular grammars
-    > + Context-free grammars
-    > + ...
-
----
-
-## Representing an FSA as a grammar
-
-.left-column-2[
-Three equivalent ways of describing regular languages
-
-<img src="images/regular_languages.png" width=500>
-]
-
-.right-column-2[
-+ The Chomsky hierarchy
-
-+ Natural language and its complexity
-
-+ Formal models and formal languages
-
-+ Power of formal models: complexity of the phenomena they can describe
-]
-
----
-
-## A formal grammar for the sheep talk
-
-.left-column-2[
-
-starting symbol = _S_ <br>
-non-terminals = _{S, A, B, C}_ <br>
-terminals = _{b, a, !}_
-
-Rewrite rules or production rules
-
-_S → bA_<br>
-_A → aB_<br>
-_B → aC_<br>
-_C → aC_<br>
-_C → !_
-
-]
-
-.right-column-2[
-
-/baa+!/
-
-<img src="images/baa_fsa.png" width=550>
-
-$$
-\begin{aligned}
-Q &= \\{q\_0,q\_1,q\_2,q\_3,q\_4\\}\\\
-Σ &= \\{b,a,!\\}\\\
-q\_0 &= q\_0\\\
-F &= \\{q\_4\\}
-\end{aligned}
-$$
-
-]
-
----
-
-## Derivation of the sheep talk
-
-<img src="images/baa_rg.png" width=900>
-
----
-
-.left-column-2[
-
-## Derivation of the sheep talk
-
-starting symbol = _S_ <br>
-non-terminals = _{S, A, B, C}_ <br>
-terminals = _{b, a, !}_
-
-Rewrite rules or production rules
-
-_S → bA_<br>
-_A → aB_<br>
-_B → aC_<br>
-_C → aC_<br>
-_C → !_
-
-]
-
-.right-column-2[
-
-<br>
-<img src="images/baa_rgs.png" width=480>
-
-]
-
----
-
-## The grammar definition vs. the FSA definition
-
-.left-column-2[
-
-starting symbol = _S_ <br>
-non-terminals = _{S, A, B, C}_ <br>
-terminals = _{b, a, !}_
-
-Rewrite rules or production rules
-
-_S → bA_<br>
-_A → aB_<br>
-_B → aC_<br>
-_C → aC_<br>
-_C → !_
-
-]
-
-.right-column-2[
-
-/baa+!/
-
-<img src="images/baa_fsa_rg.png" width=550>
-
-$$
-\begin{aligned}
-Q &= \\{S,A,B,C,q\_4\\}\\\
-Σ &= \\{b,a,!\\}\\\
-q\_0 &= S\\\
-F &= \\{q\_4\\}
-\end{aligned}
-$$
-
-]
-
----
-
-## Rewrite rules of a regular grammar
-
-.left-column-2[
-Left-branching structures
-.left-column-1[
-_X → Ya_<br>
-_X → a_
-
-_S → A!_<br>
-_A → Ba_<br>
-_B → Ca_<br>
-_C → Ca_<br>
-_C → b_
-]
-.right-column-1[
-<img src="images/left_branching.png" width=180>
-]
-]
-.right-column-2[
-Right-branching structures
-.left-column-1[
-_X → aY_<br>
-_X → a_
-
-_S → bA_<br>
-_A → aB_<br>
-_B → aC_<br>
-_C → aC_<br>
-_C → !_
-]
-.right-column-1[
-<img src="images/right_branching.png" width=180>
-]
-]
----
-
-## Regular grammars for natural language: problems
-
-+ Redundancy
-
-+ Centre Embedding
-
-  E.g.
-
-  The students <font color="red">the police arrested</font> complained.
-
-  The luggage <font color="red">that the passengers checked</font> arrived.
-
-  The luggage <font color="red">that the passengers that the storm delayed checked</font> arrived.
-
----
-
-## Context-free grammars for natural language
-
-+ Less restrictive and hence more powerful
-
-+ Aka: phrase-structure grammars
-
-+ Equivalent to Backus-Naur Form (BNF)
-
-+ Backbone of many formal models of the syntax of natural language
-
-+ Applications
-  + syntactic parsing, semantic interpretation etc.
-  + grammar checking, semantic interpretation, dialogue understanding,  machine translation etc.
-
-+ Computationally tractable
-
----
-
-## Context-free grammars: the formal definition
-
-_S_: a designated start symbol;
-
-_Σ_: a set of terminal symbols;
-
-_N_: a set of non-terminal symbols;
-
-_R_: a set of rewrite rules of the form _A → β_<br>
-&nbsp;&nbsp;&nbsp;&nbsp;where _A_ is a non-terminal<br>
-&nbsp;&nbsp;&nbsp;&nbsp;and _β_ is a string of elements from the infinite set _(Σ ∪ N)*_.
-
----
-.left-column-2[
-## Context-free grammars: an example
-
-E.g. I prefer a morning flight
-
-Bracketed notation:
-
-[S [NP [Pro I]] [VP [V prefer] [NP [Det a] [Nom [N morning] [Nom [N flight]]]]]]
-]
-
-.right-column-4[
-<br>
-Parse tree:
-
-<img src="images/parse_tree.png" width=350>
-]
-
----
-
-.left-column-2[
-## Context-free grammars: an example
-
-<img src="images/cfg.png" width=480>
-
-]
-
-.right-column-4[
-<br>
-Parse tree:
-
-<img src="images/parse_tree.png" width=350>
-]
-
----
-
-## What are formal grammars used for?
-
-+ Generating sentences
-
-+ Recognizing grammatical and ungrammatical sentences
-
-+ Parsing sentences
-
----
-
 ##At the end of this session you will
 
-+ learn how to evaluate the performance of a language model;
++ learn the difference between Markov models and hidden Markov models;
+
++ know that hidden Markov models can help parsing on different levels;
 
 + understand the purposes of POS tagging;
 
@@ -750,9 +597,7 @@ Parse tree:
 
 + know a rule-based method and a probabilistic method of POS tagging;
 
-+ know how to describe a language using a regular grammar;
-
-+ know how to describe a language using a context-free grammar.
++ work better with REs in structured programs and handle file i/o well.
 
 ---
 ##Assignment
@@ -774,124 +619,4 @@ Categorizing and Tagging Words: http://www.nltk.org/book/ch05.html
 class: center, middle
 ##Next session
 
-Syntactic Parsing
-
-
-
-
----
-
-##The Markov model or the Markov chain
-
-+ The Markov assumption
-
- + the probability of a word depends only on the previous word<br><br>`\(P(q_i|q_1...q_{i-1}) = P(q_i|q_{i-1})\)`
-
-+ An extension of an FSA: a special case of a weighted FSA
- + the weights being the probabilities
- + the input sequence uniquely determining the states to go through
-
-+ Useful for assigning probabilities to unambiguous sequences
-
----
-##The Markov model or the Markov chain
-.left-column-2[
-.smaller[
-w<sub>n−1</sub> | w<sub>n</sub> | count&nbsp;&nbsp; | probability
-:--|--|:--:|:--:
-`<s>` | welcome&nbsp;&nbsp; | 3 | 0.60
-`<s>` | what | 1 | 0.20
-`<s>` | you | 1 | 0.20
-a | welcome | 2 | 1.00
-are | a | 1 | 1.00
-back | `</s>` | 1 | 1.00
-home | `</s>` | 2 | 1.00
-sight | `</s>` | 1 | 1.00
-welcome&nbsp;&nbsp; | home | 2 | 0.40
-welcome | back | 1 | 0.20
-welcome | sight | 1 | 0.20
-welcome | `</s>` | 1 | 0.20
-what | a | 1 | 1.00
-you | are | 1 | 1.00
-
-<br>
-**The bigram counts and probabilities <br>for the toy corpus**
-
-]
-]
-
-.right-column-2[
-<img src="images/ngram_automaton.png" width=350>
-> ######Part of the Markov chain for the toy corpus
-]
-
----
-##The Markov model or the Markov chain
-.left-column-2[
-<font color="red">`\(Q = \{q_1,q_2, ...q_N\}\)` </font><br> A set of _N_ **states**
-<br>
-<font color="red">`\(A = \{a_{ij}\}\)` </font><br> A **transition probability matrix** A, each `\(a_{ij}\)` representing the probability of moving from state _i_ to state _j_, s.t. `\(\sum_{j=1}^n a_{ij} = 1 ∀i\)`
-<br>
-<font color="red">`\(q_0\)`, `\(q_F\)` </font><br> A **start state** and an **end (final) state**, together with transition probabilities `\(\{a_{01},a_{02}...a_{0n}\}\)` out of the start state and `\(\{a_{1F},a_{2F}...a_{nF}\}\)` into the end state `\(q_0\)`, `\(q_F\)`
-]
-
-.right-column-2[
-<img src="images/markov_automaton.png" width=550>
-]
----
-.left-column-2[
-
-##A Markov model
-Used to compute a probability for a sequence of observable events
-
-##A hidden Markov model (HMM)
-Used to compute a probability for a sequence of NOT observable events
-
-######Example: Jason's ice cream climatology data
-
-<img src="images/hot.png" height =100>&nbsp;&nbsp;
-<img src="images/ice_cream.png" height=100>&nbsp;&nbsp;
-<img src="images/cold.png" height =100>
-]
-.right-column-2[
-<img src="images/jason.png" width=450>
-]
-
----
-## HMM: a probabilistic sequence model
-
-Given a sequence of units (words, letters, morphemes, sentences, whatever), <br>
-a HMM assigns a label or class to each unit in the sequence, <br>
-thus mapping a sequence of observations to a sequence of labels.
-
-_colorless green ideas sleep furiously_
-
-<img src="images/hmm.png" width=700>
-
----
-##HMM and Part-Of-Speech (POS) tagging
-
-<img src="images/hmm.png" width=800> <br>
-
-The sequence of words observed:
-<table border="0" width="100%">
-    <tr>
-      <td align="center" style="color:#ffffff" bgcolor="#33FFFF">colorless</td>
-      <td align="center" style="color:#ffffff" bgcolor="#CC0000">green</td>
-      <td align="center" style="color:#ffffff" bgcolor="#FFCC99">ideas</td>
-      <td align="center" style="color:#ffffff" bgcolor="#006600">sleep</td>
-      <td align="center" style="color:#ffffff" bgcolor="#00FF00">furiously</td>
-    </tr>
-</table>
-
-???
-Colorless green ideas sleep furiously is a sentence composed by Noam Chomsky in his 1957 book Syntactic Structures as an example of a sentence that is grammatically correct, but semantically nonsensical.
-
----
-##The hidden Markov model
-
-<font color="red">`\(Q = \{q_1, q_2, ...q_N\}\)` </font>: a set of _N_ **states**
-<font color="red">`\(A = \{a_{ij}\}\)` </font>: a **transition probability matrix** A, each `\(a_{ij}\)` representing the probability of moving from state _i_ to state _j_, s.t. `\(\sum_{j=1}^n a_{ij} = 1 ∀i\)`<br>
-<font color="red">`\(O = o_1o_2 ...o_T\)` </font>: a sequence of _T_ **observations**, each one drawn from a vocabulary `\(V = v_1,v_2,...,v_V\)`<br>
-<font color="red">`\(B = \{b_i(o_t)\}\)`</font>: an **observation probability matrix**, each expressing the probability of an observation `\(o_t\)` being generated from a state _i_<br>
-<font color="red">`\(q_0\)`, `\(q_F\)` </font>: a **start state** and an **end (final) state**, together with transition probabilities `\(\{a_{01},a_{02}...a_{0n}\}\)` out of the start state and `\(\{a_{1F},a_{2F}...a_{nF}\}\)` into the end state `\(q_0\)`, `\(q_F\)`
+Formal Grammars and Syntactic Parsing

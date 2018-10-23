@@ -337,6 +337,279 @@ E.g. The man who will visit us prefers a morning flight
 
 + <font color="red">Parsing sentences</font>
 
+
+---
+
+## Syntax
+
++ The way words are arranged together
+
++ Syntactic notions
+  + Regular expressions: representing the sequences of words<br>
+  + N-grams: computing probabilities for the sequences of words<br>
+  + Parts-of-speech: acting as a kind of equivalence class for words<br>
+<br>
+  + Models of syntax and grammar
+    > + Regular grammars
+    > + Context-free grammars
+    > + ...
+
+---
+
+## Representing an FSA as a grammar
+
+.left-column-2[
+Three equivalent ways of describing regular languages
+
+<img src="images/regular_languages.png" width=500>
+]
+
+.right-column-2[
++ The Chomsky hierarchy
+
++ Natural language and its complexity
+
++ Formal models and formal languages
+
++ Power of formal models: complexity of the phenomena they can describe
+]
+
+---
+
+## A formal grammar for the sheep talk
+
+.left-column-2[
+
+starting symbol = _S_ <br>
+non-terminals = _{S, A, B, C}_ <br>
+terminals = _{b, a, !}_
+
+Rewrite rules or production rules
+
+_S → bA_<br>
+_A → aB_<br>
+_B → aC_<br>
+_C → aC_<br>
+_C → !_
+
+]
+
+.right-column-2[
+
+/baa+!/
+
+<img src="images/baa_fsa.png" width=550>
+
+$$
+\begin{aligned}
+Q &= \\{q\_0,q\_1,q\_2,q\_3,q\_4\\}\\\
+Σ &= \\{b,a,!\\}\\\
+q\_0 &= q\_0\\\
+F &= \\{q\_4\\}
+\end{aligned}
+$$
+
+]
+
+---
+
+## Derivation of the sheep talk
+
+<img src="images/baa_rg.png" width=900>
+
+---
+
+.left-column-2[
+
+## Derivation of the sheep talk
+
+starting symbol = _S_ <br>
+non-terminals = _{S, A, B, C}_ <br>
+terminals = _{b, a, !}_
+
+Rewrite rules or production rules
+
+_S → bA_<br>
+_A → aB_<br>
+_B → aC_<br>
+_C → aC_<br>
+_C → !_
+
+]
+
+.right-column-2[
+
+<br>
+<img src="images/baa_rgs.png" width=480>
+
+]
+
+---
+
+## The grammar definition vs. the FSA definition
+
+.left-column-2[
+
+starting symbol = _S_ <br>
+non-terminals = _{S, A, B, C}_ <br>
+terminals = _{b, a, !}_
+
+Rewrite rules or production rules
+
+_S → bA_<br>
+_A → aB_<br>
+_B → aC_<br>
+_C → aC_<br>
+_C → !_
+
+]
+
+.right-column-2[
+
+/baa+!/
+
+<img src="images/baa_fsa_rg.png" width=550>
+
+$$
+\begin{aligned}
+Q &= \\{S,A,B,C,q\_4\\}\\\
+Σ &= \\{b,a,!\\}\\\
+q\_0 &= S\\\
+F &= \\{q\_4\\}
+\end{aligned}
+$$
+
+]
+
+---
+
+## Rewrite rules of a regular grammar
+
+.left-column-2[
+Left-branching structures
+.left-column-1[
+_X → Ya_<br>
+_X → a_
+
+_S → A!_<br>
+_A → Ba_<br>
+_B → Ca_<br>
+_C → Ca_<br>
+_C → b_
+]
+.right-column-1[
+<img src="images/left_branching.png" width=180>
+]
+]
+.right-column-2[
+Right-branching structures
+.left-column-1[
+_X → aY_<br>
+_X → a_
+
+_S → bA_<br>
+_A → aB_<br>
+_B → aC_<br>
+_C → aC_<br>
+_C → !_
+]
+.right-column-1[
+<img src="images/right_branching.png" width=180>
+]
+]
+---
+
+## Regular grammars for natural language: problems
+
++ Redundancy
+
++ Centre Embedding
+
+  E.g.
+
+  The students <font color="red">the police arrested</font> complained.
+
+  The luggage <font color="red">that the passengers checked</font> arrived.
+
+  The luggage <font color="red">that the passengers that the storm delayed checked</font> arrived.
+
+---
+
+## Context-free grammars for natural language
+
++ Less restrictive and hence more powerful
+
++ Aka: phrase-structure grammars
+
++ Equivalent to Backus-Naur Form (BNF)
+
++ Backbone of many formal models of the syntax of natural language
+
++ Applications
+  + syntactic parsing, semantic interpretation etc.
+  + grammar checking, semantic interpretation, dialogue understanding,  machine translation etc.
+
++ Computationally tractable
+
+---
+
+## Context-free grammars: the formal definition
+
+_S_: a designated start symbol;
+
+_Σ_: a set of terminal symbols;
+
+_N_: a set of non-terminal symbols;
+
+_R_: a set of rewrite rules of the form _A → β_<br>
+&nbsp;&nbsp;&nbsp;&nbsp;where _A_ is a non-terminal<br>
+&nbsp;&nbsp;&nbsp;&nbsp;and _β_ is a string of elements from the infinite set _(Σ ∪ N)*_.
+
+---
+.left-column-2[
+## Context-free grammars: an example
+
+E.g. I prefer a morning flight
+
+Bracketed notation:
+
+[S [NP [Pro I]] [VP [V prefer] [NP [Det a] [Nom [N morning] [Nom [N flight]]]]]]
+]
+
+.right-column-4[
+<br>
+Parse tree:
+
+<img src="images/parse_tree.png" width=350>
+]
+
+---
+
+.left-column-2[
+## Context-free grammars: an example
+
+<img src="images/cfg.png" width=480>
+
+]
+
+.right-column-4[
+<br>
+Parse tree:
+
+<img src="images/parse_tree.png" width=350>
+]
+
+---
+
+## What are formal grammars used for?
+
++ Generating sentences
+
++ Recognizing grammatical and ungrammatical sentences
+
++ Parsing sentences
+
+
 ---
 
 ##At the end of this session you will
