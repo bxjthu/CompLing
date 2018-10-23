@@ -601,7 +601,7 @@ Maximum entropy Markov models
 ---
 ##Homework
 
-+ Review
++ Read/review (Quiz 5 on Oct. 31, 2018)
 
   + [J+M_8](https://bxjthu.github.io/CompLing/readings/5/J+M_8.pdf) (8.1 - 8.4; 8.7)
 
