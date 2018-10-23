@@ -10,7 +10,7 @@ class: center, middle
 ** https://bxjthu.github.io/CompLing **
 
 ---
-## Recap: conditional probability and Joint probability
+## Recap: conditional probability and joint probability
 Conditional probability is the probability of event A given that the occurrence of event B, written as $P(A|B)$.
 
 Joint probability is the probability of two events in conjunction, i.e. the probability of both events together, written as $P(A \cap B)$ or $P(A,B)$.
