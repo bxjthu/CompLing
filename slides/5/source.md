@@ -572,6 +572,8 @@ E.g. Janet will back the bill
 .smaller[
 Janet/NNP&nbsp;&nbsp; will/MD&nbsp;&nbsp; back/VB&nbsp;&nbsp; the/DT&nbsp;&nbsp; bill/NN
 ]
+<br>
+Read: [The Viterbi algorithm](https://bxjthu.github.io/CompLing/readings/5/J+M_8.pdf)
 ]
 
 .right-column-2[
