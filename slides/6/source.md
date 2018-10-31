@@ -676,7 +676,7 @@ The bottom-up algorithm
 
 ---
 
-## Analyzing sentence structure with NLTK
+## Practical 6: analyzing sentence structure with NLTK
 
 http://www.nltk.org/book/ch08.html
 
