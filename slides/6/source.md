@@ -49,7 +49,7 @@ The most probable tag sequence given the observation sequence of n words \\(w\_1
 
 $$\hat{t}\_1^n = \underset{t\_1^n}{\text{argmax}}P(w\_1^n|t\_1^n)P(t\_1^n)\approx\underset{t\_1^n}{\text{argmax}}\prod\_{i=1}^nP(w\_i|t\_i)P(t\_i|t\_{i-1})$$
 
-<br>
+<font color="red">Two simplifying assumptions and the estimates</font>
 
 $$P(w\_i|t\_i) = \frac{\text{Frequency of } w\_i \text{ tagged as } t\_i \text{ in the training corpus}}{\text{Frequency of } t\_i \text{ in the training corpus}}$$
 
@@ -57,8 +57,26 @@ $$P(t\_i|t\_{i-1}) = \frac{\text{Frequency of } t\_i \text{ after }t\_{i-1} \tex
 
 ---
 
+## At the end of this session you will
+
++ understand the rationale behind dynamic programming;
+
++ know how the Viterbi algorithm works for POS tagging;
+
++ know how to describe a language using regular and context-free grammars;
+
++ know how top-down parsing and bottom-up parsing work;
+
++ understand the strengths and weaknesses of these two parsing algorithms;
+
++ understand how language models and parsing algorithms work together;
+
++ learn to analyze sentence structure with NLTK.
+
+---
+
 .left-column-2[
-## Recap: An example
+## POS tagging: an example
 
 .smaller[
 E.g. Janet will back the bill
@@ -71,7 +89,11 @@ Janet/NNP&nbsp;&nbsp; will/MD&nbsp;&nbsp; back/VB&nbsp;&nbsp; the/DT&nbsp;&nbsp;
 ]
 
 .right-column-2[
-<br><br><br>
+The HMM defined by two tables<br>
+.smaller[
++ Transition probabilities between pos tags
+
++ Likelihoods of words given tags]
 <img src="images/hmm_example.png" width=550>
 ]
 
@@ -82,7 +104,7 @@ Maximum entropy Markov models
 ---
 
 .left-column-3[
-## Recap: Models and algorithms
+## Models and algorithms
 ### How NLP systems work?
 
 <img src="images/NLP.png" width=700>
@@ -96,21 +118,7 @@ Maximum entropy Markov models
 ]
 ---
 
-.left-column-2[
-## Recap: An example
-
-.smaller[
-E.g. Janet will back the bill
-]
-<img src="images/tagging.png" width=450>
-
-.smaller[
-Janet/NNP&nbsp;&nbsp; will/MD&nbsp;&nbsp; back/VB&nbsp;&nbsp; the/DT&nbsp;&nbsp; bill/NN
-]
-]
-
-.right-column-2[
-**Viterbi algorithm**
+## Viterbi algorithm
 
 + Andrew Viterbi, 1967
 
@@ -122,11 +130,9 @@ Janet/NNP&nbsp;&nbsp; will/MD&nbsp;&nbsp; back/VB&nbsp;&nbsp; the/DT&nbsp;&nbsp;
 
 + Algorithm: exponential complexity
 
-  With a tagset of N tags, for a sequence of M words, there are, in the worse case, \\(N^M\\) possible paths.
+  With a tagset of N tags, for a sequence of M words, <br><br>there are, in the worse case, \\(N^M\\) possible paths.
 
 + Efficiency: \\(N^M\\) vs. \\(N^2 \times M\\)
-
-]
 
 ---
 
@@ -134,13 +140,13 @@ Janet/NNP&nbsp;&nbsp; will/MD&nbsp;&nbsp; back/VB&nbsp;&nbsp; the/DT&nbsp;&nbsp;
 
 Aka: dynamic optimization
 
-+ Solving a complex problem by breaking it down into a collection of simpler subproblems
++ Solve a complex problem by breaking it down into a collection of simpler subproblems
 
-+ Solving each of those subproblems just once and storing their solutions
++ Solve each of those subproblems just once and store their solutions
 
-+ Looking up the previously computed solution the next time the same subproblem occurs
++ Look up the previously computed solution the next time the same subproblem occurs
 
-+ Thereby saving computation time at the expense of a hopefully modest expenditure in storage space
++ Thereby save computation time at the expense of a hopefully modest expenditure in storage space
 
 Memoization: storing solutions to subproblems instead of recomputing them
 
@@ -214,129 +220,6 @@ Efficiency: \\(N^M\\) vs. \\(N^2 \times M\\)
 + Each cell keeps the probability of the best path so far and a pointer to the previous cell along that path.
 
 ]
-
----
-
-## Recap: Rewrite rules of a regular grammar
-
-.left-column-2[
-Left-branching structures
-.left-column-1[
-_X → Ya_<br>
-_X → a_
-
-_S → A!_<br>
-_A → Ba_<br>
-_B → Ca_<br>
-_C → Ca_<br>
-_C → b_
-]
-.right-column-1[
-<img src="images/left_branching.png" width=180>
-]
-]
-.right-column-2[
-Right-branching structures
-.left-column-1[
-_X → aY_<br>
-_X → a_
-
-_S → bA_<br>
-_A → aB_<br>
-_B → aC_<br>
-_C → aC_<br>
-_C → !_
-]
-.right-column-1[
-<img src="images/right_branching.png" width=180>
-]
-]
-
----
-
-## Recap: Rewrite rules of a regular grammar
-
-**Strong equivalence** vs. **weak equivalence**
-
-+ Two grammars are **strongly equivalent** if they generate the same set of strings <font color="red">and</font> if they assign the same phrase structure to each sentence (allowing merely for renaming of the non-terminal symbols).
-
-+ Two grammars are **weakly equivalent** if they generate the same set of strings <font color="red">but</font> do not assign the same phrase structure to each sentence.
-
----
-
-## Recap: Using a regular grammar to model natural language
-
-Weaknesses
-
-+ Redundancy
-
-+ Centre Embedding
-
-  E.g.
-
-  The students <font color="red">the police arrested</font> complained.<br>
-  The luggage <font color="red">that the passengers checked</font> arrived.<br>
-  The luggage <font color="red">that the passengers that the storm delayed checked</font> arrived.
-
-<br>
-Left/Right-branching vs. binary branching
-
----
-
-## Recap: A formal definition of context-free grammars
-
-_S_: a designated start symbol;
-
-_Σ_: a set of terminal symbols;
-
-_N_: a set of non-terminal symbols;
-
-_R_: a set of rewrite rules of the form <font color="red">_A → β_</font><br>
-&nbsp;&nbsp;&nbsp;&nbsp;where _A_ is a non-terminal<br>
-&nbsp;&nbsp;&nbsp;&nbsp;and _β_ is a string of elements from the infinite set _(Σ ∪ N)*_.
-
-Or most commonly written as **Chomsky Normal Form** (CNF):
-
-<font color="red">_A → BC_</font>, or, <font color="red">_A → a_</font>, where, _A, B, C ∈ N_, and, _a ∈ Σ_.
-
----
-
-.left-column-2[
-## Recap: An example
-
-<img src="images/cfg.png" width=480>
-
-]
-
-.right-column-4[
-<br>
-Parse tree:
-
-<img src="images/parse_tree.png" width=350>
-]
-
----
-
-## Recap: An example
-
-E.g. The man who will visit us prefers a morning flight
-
-<img src="images/CFG_tree.png" width=700>
-
-
-???
-(S (NP (NP (DT The) (NN man)) (SBAR (WHNP (WP who))(S (VP (MD will)(VP (VB visit)(NP (PRP us)))))))(VP (VBZ prefers)(NP (DT a) (NN morning) (NN flight))))
-
----
-
-## Recap: What are formal grammars used for?
-
-+ Generating sentences
-
-+ Recognizing grammatical and ungrammatical sentences
-
-+ <font color="red">Parsing sentences</font>
-
 
 ---
 
@@ -446,43 +329,6 @@ _C → !_
 
 ---
 
-## The grammar definition vs. the FSA definition
-
-.left-column-2[
-
-starting symbol = _S_ <br>
-non-terminals = _{S, A, B, C}_ <br>
-terminals = _{b, a, !}_
-
-Rewrite rules or production rules
-
-_S → bA_<br>
-_A → aB_<br>
-_B → aC_<br>
-_C → aC_<br>
-_C → !_
-
-]
-
-.right-column-2[
-
-/baa+!/
-
-<img src="images/baa_fsa_rg.png" width=550>
-
-$$
-\begin{aligned}
-Q &= \\{S,A,B,C,q\_4\\}\\\
-Σ &= \\{b,a,!\\}\\\
-q\_0 &= S\\\
-F &= \\{q\_4\\}
-\end{aligned}
-$$
-
-]
-
----
-
 ## Rewrite rules of a regular grammar
 
 .left-column-2[
@@ -517,6 +363,18 @@ _C → !_
 <img src="images/right_branching.png" width=180>
 ]
 ]
+
+---
+
+## Rewrite rules of a regular grammar
+
+**Strong equivalence** vs. **weak equivalence**
+
++ Two grammars are **strongly equivalent** if they generate the same set of strings <font color="red">and</font> if they assign the same phrase structure to each sentence (allowing merely for renaming of the non-terminal symbols).
+
++ Two grammars are **weakly equivalent** if they generate the same set of strings <font color="red">but</font> do not assign the same phrase structure to each sentence.
+
+
 ---
 
 ## Regular grammars for natural language: problems
@@ -565,6 +423,10 @@ _R_: a set of rewrite rules of the form _A → β_<br>
 &nbsp;&nbsp;&nbsp;&nbsp;where _A_ is a non-terminal<br>
 &nbsp;&nbsp;&nbsp;&nbsp;and _β_ is a string of elements from the infinite set _(Σ ∪ N)*_.
 
+Or most commonly written as **Chomsky Normal Form** (CNF):
+
+<font color="red">_A → BC_</font>, or, <font color="red">_A → a_</font>, where, _A, B, C ∈ N_, and, _a ∈ Σ_.
+
 ---
 .left-column-2[
 ## Context-free grammars: an example
@@ -601,28 +463,25 @@ Parse tree:
 
 ---
 
+## Context-free grammars: another example
+
+E.g. The man who will visit us prefers a morning flight
+
+<img src="images/CFG_tree.png" width=700>
+
+
+???
+(S (NP (NP (DT The) (NN man)) (SBAR (WHNP (WP who))(S (VP (MD will)(VP (VB visit)(NP (PRP us)))))))(VP (VBZ prefers)(NP (DT a) (NN morning) (NN flight))))
+
+---
+
 ## What are formal grammars used for?
 
 + Generating sentences
 
 + Recognizing grammatical and ungrammatical sentences
 
-+ Parsing sentences
-
-
----
-
-##At the end of this session you will
-
-+ understand the rationale behind dynamic programming;
-
-+ know how the Viterbi algorithm works for POS tagging;
-
-+ know how top-down parsing and bottom-up parsing work;
-
-+ understand the strengths and weaknesses of top-down and bottom-up parsing algorithms;
-
-+ understand how language models and parsing algorithms work together in syntactic parsing.
++ <font color="red">Parsing sentences</font>
 
 ---
 
@@ -816,19 +675,24 @@ The bottom-up algorithm
   ...
 
 ---
-## Practice
 
-+ http://nlp.stanford.edu:8080/parser/
-  Try to get accustomed to seeing syntax trees written as bracketed structures.
+## Analyzing sentence structure with NLTK
 
-+ Python: parse tree drawing
+http://www.nltk.org/book/ch08.html
 
-  ```
-  >>> from nltk.tree import Tree
-  >>> from nltk.draw.tree import TreeView
-  >>> t = Tree.fromstring('(S (NP this tree) (VP (V is) (AdjP pretty)))')
-  >>> TreeView(t)
-  ```
++ Define a simple grammar to parse a simple sentence
+
++ Play with the recursive descent parser application
+
++ Parse with CFG (RecursiveDescentParser, ShiftReduceParser)
+
++ Write your own grammars in a text file
+
++ Draw a parse tree
+
++ Develop a grammar by using the Treebank corpus
+
++ Use [the Stanford Parser](https://nlp.stanford.edu/software/lex-parser.shtml) to parse sentences and draw trees
 
 ---
 
@@ -838,28 +702,35 @@ The bottom-up algorithm
 
 + know how the Viterbi algorithm works for POS tagging;
 
++ know how to describe a language using regular and context-free grammars;
+
 + know how top-down parsing and bottom-up parsing work;
 
-+ understand the strengths and weaknesses of top-down and bottom-up parsing algorithms;
++ understand the strengths and weaknesses of these two parsing algorithms;
 
-+ understand how language models and parsing algorithms work together in syntactic parsing.
++ understand how language models and parsing algorithms work together;
+
++ learn to analyze sentence structure with NLTK.
 
 ---
 
-##Assignment
+##Homework
 
-**1. Review**
 
-+ [J+M 13](https://bxjthu.github.io/CompLing/readings/6_J+M_13.pdf)
-+ [J+M[3rd] 12](https://bxjthu.github.io/CompLing/readings/6_J+M[3rd]_12.pdf): pages 1-9
++ Read/Review (Quiz 5 on Nov. 7, 2018)
 
-Exercise: .smaller[Using the set of terminals {can, fish, rivers, pools, December, Scotland, it, they, in} and non-terminals {NP, VP, PP, V, P, S} with starting symbol S, design a CFG in Chomsky Normal Form capable of generating the following sentences _they can fish, they fish, they fish in rivers, they fish in rivers in December_. Give a formal definition of your CFG and discuss any weaknesses of it in terms of over/under-production.]
+  + [J+M_8](https://bxjthu.github.io/CompLing/readings/5/J+M_8.pdf) (8.1-8.4; 8.7)
+  + [J+M_10](https://bxjthu.github.io/CompLing/readings/6/J+M_10.pdf)
 
-**2. Practice**
++ Read
 
-+ Download Stanford Parser to parse sentences and draw parse trees.  .smaller[([README](https://bxjthu.github.io/CompLing/slides/prac/stnlp_parser.py))]
+  + [J+M 11](https://bxjthu.github.io/CompLing/readings/6/J+M_11.pdf)
 
-+ Finish Exercise - Practical 6 and submit your codes at 网络学堂. .smaller[(DDL: Dec. 10)]
++ Practice
+
+  + http://www.nltk.org/book/ch08.html
+
++ Practical 5 assignment - submit your codes on GradeScope .smaller[(DDL: Nov. 5)]
 
 ---
 class: center, middle
