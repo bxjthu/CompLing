@@ -1102,19 +1102,19 @@ The counting/condensing algorithm:
 .smaller[
 Type &nbsp;&nbsp;&nbsp;&nbsp;| Language | Rule | Complexity | Automaton
 -|:-|:-|:- |:-
-0| Recursively Enumerable &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| $ \alpha \to \beta $ (where $ \alpha \not = \epsilon$) | Intractable | Turing machine
-1| Context-Sensitive | $ \alpha A \beta \to \alpha \gamma \beta $ (where $ \gamma \not = \epsilon$) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | $ O(c^n) $, intractable &nbsp;&nbsp;&nbsp;&nbsp;| Linear-bounded
+0| Recursively Enumerable &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| \\( \alpha \to \beta \\) (where \\( \alpha \not = \epsilon\\)) | Intractable | Turing machine
+1| Context-Sensitive | \\( \alpha A \beta \to \alpha \gamma \beta \\) (where \\( \gamma \not = \epsilon\\)) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | \\( O(c^n) \\), intractable &nbsp;&nbsp;&nbsp;&nbsp;| Linear-bounded
 -| Mildly Context-Sensitive |
-2| Context-Free | $ A \to \gamma $ | $ O(n^a) $, polynomial | Push down
-3| Regular | $ A \to xB $ and $ A \to x $ | $ O(n) $, linear | 	Finite state
+2| Context-Free | \\( A \to \gamma \\) | \\( O(n^a) \\), polynomial | Push down
+3| Regular | \\( A \to xB \\) and \\( A \to x \\) | \\( O(n) \\), linear | 	Finite state
 
 
 .left-column-2[
 **Meaning of symbols:**<br>
-$x$: terminal<br>
-$A$ and $B$: non-terminal<br>
-$\alpha$ and $\beta$: terminal, non-terminal, or empty<br>
-$\gamma$: terminal or non-terminal
+\\(x\\): terminal<br>
+\\(A\\) and \\(B\\): non-terminal<br>
+\\(\alpha\\) and \\(\beta\\): terminal, non-terminal, or empty<br>
+\\(\gamma\\): terminal or non-terminal
 ]
 .right-column-2[
 <img src="images/chomsky_hierachy.png" width=500>

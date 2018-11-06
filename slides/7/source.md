@@ -9,18 +9,6 @@ class: center, middle
 ** https://bxjthu.github.io/CompLing **
 
 ---
-## Recap
-
-Exercise: Using the set of <font color="red">terminals {can, fish, rivers, pools, December, Scotland, it, they, in}</font> and <font color="red">non-terminals {NP, VP, PP, V, P, S}</font> with <font color="red">starting symbol S</font>:
-
-+ Design a <font color="red">CFG</font> in <font color="red">Chomsky Normal Form</font> capable of generating the following sentences:
-  _they can fish, they fish, they fish in rivers, they fish in rivers in December_.
-
-+ Give a <font color="red">formal definition</font> of your CFG.
-
-+ Discuss any weaknesses of it in terms of <font color="red">over/under-production</font>.
-
----
 
 ## Recap: A formal definition of context-free grammars
 
@@ -38,6 +26,24 @@ Or most commonly written as **Chomsky Normal Form** (CNF):
 
 <font color="red">_A → BC_</font>, or, <font color="red">_A → a_</font>, where, _A, B, C ∈ N_, and, _a ∈ Σ_.
 
+???
+It is sometimes useful to have a normal form for grammars, in which each of the productions takes a particular form. For example, a context-free grammar is in Chomsky normal form (CNF) (Chomsky, 1963) if it is ε-free and if in addition each production is either of the form A → B C or A → a. That is, the right-hand side of each rule either has two non-terminal symbols or one terminal symbol. Chomsky normal form grammars are binary branching, that is they have binary trees
+---
+## Recap exercise
+
+Using the set of <font color="red">terminals {can, fish, rivers, pools, December, Scotland, it, they, in}</font> and <font color="red">non-terminals {NP, VP, PP, V, P, S}</font> with <font color="red">starting symbol S</font>:
+
++ Design a <font color="red">CFG</font> in <font color="red">Chomsky Normal Form</font> capable of generating the following sentences:
+  _they can fish, they fish, they fish in rivers, they fish in rivers in December_.
+
++ Give a <font color="red">formal definition</font> of your CFG.
+
++ Discuss any weaknesses of it in terms of <font color="red">over/under-production</font>.
+
+<br>
+.right[
+[Sample codes](cfg_generate.py)
+]
 ---
 
 ## At the end of this session you will
@@ -50,12 +56,11 @@ Or most commonly written as **Chomsky Normal Form** (CNF):
 
 + understand how treebanks present syntactic knowledge implicitly;
 
-+ know about the problems with probabilistic context-free grammars and the possible solutions;
++ know about the problems with PCFGs and the possible solutions;
 
-+ understand the difference between constituent-based language models and dependency-based language models
++ know how to describe a language using a dependency grammar;
 
-+ know how to describe a language using a dependency grammar.
-
++ learn more about parsing and generating sentences with Python.
 
 ---
 
@@ -77,11 +82,10 @@ One way to avoid discovery is to make the changes during vacation.
   + the syntactic parse of the preceding sentence prefix
   + the morphological structure of the word
 
-$\maltese$ Voluntary research task
-
-Scott and Shillcock (2003)<br>
-Hale (2001), Levy (2008)<br>
-Moscoso del Prado Martin et al. (2004)
+  \\(\Rrightarrow\\) Voluntary research task:
+  + Scott and Shillcock (2003)<br>
+  + Hale (2001), Levy (2008)<br>
+  + Moscoso del Prado Martin et al. (2004)
 
 ???
 Using an eye-tracker to monitor the gaze of participants reading sentences
@@ -181,10 +185,10 @@ E.g. _The student forgot the solution was in the back of the book._
 > _N_: a set of non-terminal symbols;<br>
 > _S_: a designated start symbol;<br>
 > _Σ_: a set of terminal symbols;<br>
-> _R_: a set of rewrite rules of the form <font color="red">$A \rightarrow β \enspace [p]$</font><br>
+> _R_: a set of rewrite rules of the form <font color="red">\\(A \rightarrow β \enspace [p]\\)</font><br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;where _A_ is a non-terminal,<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_β_ is a string of elements from the infinite set _(Σ ∪ N)*_,<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_p_ is a number between 0 and 1 expressing _P(β|A)_, .smaller[$\sum_{β}P(A \rightarrow β) = 1$]
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_p_ is a number between 0 and 1 expressing _P(β|A)_
 
 ???
 All the possible expansions of a non-terminal probabilities must be 1.
@@ -217,26 +221,41 @@ These probabilities were made up for pedagogical purposes and are not based on a
 .left-column-2[
 ## PCFGs for disambiguation
 
-+ Disambiguation algorithm
+Disambiguation algorithm
 
-> Selecting the parse with <br>
-the highest PCFG probability
+Select the parse with the highest <br> PCFG probability
 
-<br>
-E.g. _Book the dinner flight_
+\\(
+\footnotesize
+\hat{T}(S) = \underset{S=\text{yield}(T)}{\text{argmax}}P(T|S) = \underset{S=\text{yield}(T)}{\text{argmax}}P(T)
+\\)
 
-$P(T|S) = \prod\_{i=1}^nP(RHS\_i|LHS\_{i})$
+\\(
+\footnotesize
+P(T|S) = \frac{P(T,S)}{P(S)} = P(T,S)
+\\)
 
-$P(T|S) = P(T)P(S|T) = P(T)$
+\\(
+\footnotesize
+P(T,S) = P(T)P(S|T) = P(T)
+\\)
 
-<br>
-+ Formalization of this algorithm
+\\(
+\footnotesize
+P(T) = \prod\_{i=1}^nP(RHS\_i|LHS\_i)
+\\)
+
+Rule i:
+\\(
+\footnotesize
+LHS\_{i}\rightarrow RHS\_i|
+\\)
 ]
-
 .right-column-2[
+.right[
 <img src="images/pcfg.png" width=520>
 <img src="images/ambiguity_tree.png" width=450>
-
+]
 ]
 
 ---
@@ -321,9 +340,9 @@ The function illustrates how PCFGs can be constructed and manipulated.
 
   CFG independence assumption
 
-  $NP \to DT \quad NN \quad 0.28$
+  \\(NP \to DT \quad NN \quad 0.28\\)
 
-  $NP \to PRP \quad 0.25$
+  \\(NP \to PRP \quad 0.25\\)
 
 &nbsp;&nbsp;&nbsp;&nbsp;| |Pronoun &nbsp;&nbsp; |Non-pronoun
 -|-|-|-
@@ -359,9 +378,9 @@ The function illustrates how PCFGs can be constructed and manipulated.
 
   CFG independence assumption
 
-  $NP \to DT \quad NN \quad 0.28$
+  \\(NP \to DT \quad NN \quad 0.28\\)
 
-  $NP \to PRP \quad 0.25$
+  \\(NP \to PRP \quad 0.25\\)
 
 &nbsp;&nbsp;&nbsp;&nbsp;| |Pronoun &nbsp;&nbsp; |Non-pronoun
 -|-|-|-
@@ -373,9 +392,9 @@ The function illustrates how PCFGs can be constructed and manipulated.
 **Solution:<br>
 Splitting non-terminals**
 
-$NP_{subject} \to PRP$
+\\(NP_{subject} \to PRP\\)
 
-$NP_{object} \to PRP$
+\\(NP_{object} \to PRP\\)
 
 <img src="images/parent_annotation.png" width=280>
 ]
@@ -390,11 +409,11 @@ $NP_{object} \to PRP$
 
   **Solution: Lexicalizing the rules**
 
-  $VP \to VBD \enspace  NP \enspace  PP$
+  \\(VP \to VBD \enspace  NP \enspace  PP\\)
 
-  $VP\_{(dumped)} \to VBD\_{(dumped)} \enspace NP\_{\(sacks\)} \enspace PP\_{\(into\)}$
+  \\(VP\_{(dumped)} \to VBD\_{(dumped)} \enspace NP\_{\(sacks\)} \enspace PP\_{\(into\)}\\)
 
-  $VP\_{(dumped,VBD)} \to VBD\_{(dumped,VBD)} \enspace NP\_{\(sacks,NNS\)} \enspace PP\_{\(into,P\)}$
+  \\(VP\_{(dumped,VBD)} \to VBD\_{(dumped,VBD)} \enspace NP\_{\(sacks,NNS\)} \enspace PP\_{\(into,P\)}\\)
 
   <br>
   Lexicalized grammar, head tag
@@ -437,7 +456,10 @@ Arrows point from <font color="red">heads</font> to their <font color="red">depe
 Labels indicate the <font color="red">grammatical functions</font> of the dependents.
 
 ---
+## Dependency-based parsing vs. constituent-based parsing
 
+<img src="images/dependency_constituency.png" width=750>
+---
 ## Dependency relations
 
 <img src="images/dependency_relation.png" width=750>
@@ -504,30 +526,29 @@ The Universal Dependencies project (Nivre et al., 2016)<br>
 
 + understand how treebanks present syntactic knowledge implicitly;
 
-+ know about the problems with probabilistic context-free grammars and the possible solutions;
++ know about the problems with PCFGs and the possible solutions;
 
-+ understand the difference between constituent-based language models and dependency-based language models
++ know how to describe a language using a dependency grammar;
 
-+ know how to describe a language using a dependency grammar.
-
++ learn more about parsing and generating sentences with Python.
 ---
 
-##Assignment
+##Homework
 
-**1. Review**
++ Read/Review (Quiz 6 on Nov. 14, 2018)
 
-+ [J+M[3rd] 13](https://bxjthu.github.io/CompLing/readings/7_J+M[3rd]_13.pdf)
-+ [J+M[3rd] 14](https://bxjthu.github.io/CompLing/readings/7_J+M[3rd]_14.pdf)
+  + [J+M 11](https://bxjthu.github.io/CompLing/readings/6/J+M_11.pdf)
+  + [J+M_12](https://bxjthu.github.io/CompLing/readings/7/J+M_12.pdf) (excluding 12.7)
+  + [J+M_13](https://bxjthu.github.io/CompLing/readings/7/J+M_13.pdf) (13.1)
 
-**2. Practice**
++ Practice
 
-+ Learn to build your own CFG, PCFG, and DG to describe the structure of a limited set of sentences.
-+ Learn to use your grammars, together with the nltk parsers, to analyze sentences and automatically build their syntax trees.
+  + http://www.nltk.org/book/ch08.html
 
 .smaller[
-Reference:<br>
+References:<br>
 http://www.nltk.org/howto/parse.html<br>
-http://www.nltk.org/book/ch08.html <br>
+http://www.nltk.org/howto/generate.html<br>
 https://www.cs.bgu.ac.il/~elhadad/nlp16/NLTK-PCFG.html
 ]
 ---
