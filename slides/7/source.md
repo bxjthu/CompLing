@@ -63,14 +63,16 @@ Using the set of <font color="red">terminals {can, fish, rivers, pools, December
 + learn more about parsing and generating sentences with Python.
 
 ---
+class: center, middle
+
+One way to avoid discovery is to make the changes during vacation.
+
+---
 
 class: center, middle
 
 One way to avoid confusion is to make the changes during vacation.
----
-class: center, middle
 
-One way to avoid discovery is to make the changes during vacation.
 ---
 
 ## When humans are “processing” sentences ...
