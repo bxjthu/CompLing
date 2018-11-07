@@ -250,7 +250,7 @@ P(T) = \prod\_{i=1}^nP(RHS\_i|LHS\_i)
 Rule i:
 \\(
 \footnotesize
-LHS\_{i}\rightarrow RHS\_i|
+LHS\_{i}\rightarrow RHS\_i
 \\)
 ]
 .right-column-2[
