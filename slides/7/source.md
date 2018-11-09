@@ -541,7 +541,6 @@ The Universal Dependencies project (Nivre et al., 2016)<br>
 
   + [J+M 11](https://bxjthu.github.io/CompLing/readings/6/J+M_11.pdf)
   + [J+M_12](https://bxjthu.github.io/CompLing/readings/7/J+M_12.pdf) (excluding 12.7)
-  + [J+M_13](https://bxjthu.github.io/CompLing/readings/7/J+M_13.pdf) (13.1)
 
 + Practice
 
