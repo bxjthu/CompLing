@@ -1156,6 +1156,7 @@ Type &nbsp;&nbsp;&nbsp;&nbsp;| Language | Rule | Complexity | Automaton
 
 + know that formal grammars can be more or less complex as defined by their generative power.
 
+
 ---
 
 ##Assignment

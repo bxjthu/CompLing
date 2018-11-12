@@ -533,6 +533,22 @@ The Universal Dependencies project (Nivre et al., 2016)<br>
 + know how to describe a language using a dependency grammar;
 
 + learn more about parsing and generating sentences with Python.
+
+---
+##Teamwork
+
++ Given: a test set of English sentences
+
++ Task: determine if the sentences use the passive voice
+  + y: passive voice found
+  + n: passive voice not found
+
++ Submission on GradeScope .smaller[(DDL: Dec. 2)]
+  + Code and linguistic data used for this task
+  + Written report (including but not limited to methodology, algorithm, linguistic data, difficulties, error analysis, etc.)
+
++ Oral presentation based on the written report .smaller[(Dec. 5)]
+
 ---
 
 ##Homework
