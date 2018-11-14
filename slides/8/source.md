@@ -1196,7 +1196,7 @@ Type &nbsp;&nbsp;&nbsp;&nbsp;| Language | Rule | Complexity | Automaton
 
 + Use the Stanford Parser to parse sentences and draw trees [[sample code](stnlp_parser.py)]
 
-+ Building Feature Based Grammarsstnlp_parser.py
++ Building Feature Based Grammars
 
   + Subcategorization [[sample code](subcategorization_zsx.zip)]
 
