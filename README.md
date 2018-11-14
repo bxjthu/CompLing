@@ -53,8 +53,8 @@ Session | Slides | Required Readings | Extras
 4 | [N-gram Language Models](slides/4) [[pdf](slides/4/4.pdf)] <br> [Practical 4](slides/4/prac4.pdf) <br> [Homework](slides/4/#34) | [J+M_3](readings/4/J+M_3.pdf)(3.1-3.3)<br> [Homework](slides/4/#34)|[Smoothing: J+M_3.4-3.5](readings/4/J+M_3.pdf)<br>[Mathematical foundations](readings/4/pre_math_manning_schutze.pdf)
 5 | [Hidden Markov Models and Part-Of-Speech Tagging](slides/5) [[pdf](slides/5/5.pdf)]<br> [Practical 5](slides/5/prac5.pdf)[[data download](slides/5/Lovers_on_Aran_messed.txt)][[example solutions](slides/5/prac5_example_sol.zip)]<br>[Homework](slides/5/#27)|[J+M_8](readings/5/J+M_8.pdf) (8.1-8.4; 8.7) |[现代汉语](readings/5/现代汉语_北大现代汉语教研室.pdf)<br>[The Penn - CU Chinese Treebank Project](https://verbs.colorado.edu/chinese/ctb.html)
 6 | [Formal Grammars and Syntactic Parsing](slides/6)[[pdf](slides/6/6.pdf)]<br>[Practical 6](slides/6/#40)<br>[Homework](slides/6/#42)| [J+M_10](readings/6/J+M_10.pdf)<br>[J+M_11](readings/6/J+M_11.pdf) |[CYK algorithm](http://ccl.pku.edu.cn/doubtfire/Course/Computational%20Linguistics/contents/CYK_parsing.pdf)
-7 | [Statistical Parsing and Dependency Parsing](slides/7)<br>[Practical 7](slides/7/#36)<br>[Homework](slides/7/#37) | [J+M_12](readings/7/J+M_12.pdf) (excluding 12.7) <br>[J+M_13](readings/7/J+M_13.pdf) (13.1)|
-8 | Features and Unification, Language and Complexity |  |
+7 | [Statistical Parsing and Dependency Parsing](slides/7)<br>[Practical 7](slides/7/#36)<br>[Homework](slides/7/#37) | [J+M_12](readings/7/J+M_12.pdf) (excluding 12.7) <br>[J+M_13](readings/7/J+M_13.pdf) (13.1)|[詹卫东:从计算机处理的角度看短语结构歧义](http://ccl.pku.edu.cn/doubtfire/Papers/1998_Different%20types%20of%20Chinese%20ambiguous%20structures.pdf)
+8 | [Features and Unification, Language and Complexity](slides/8) |  [J+M_second_edition_15](readings/8/J+M_second_edition_15.pdf) (Optional) <br> [J+M_second_edition_16](readings/8/J+M_second_edition_16.pdf) |
 9 | Meaning Representation and Vector Semantics |  |
 10 | Word Sense Disambiguation and Semantic Similarity |  |
 11 | Semantic Role Labeling and Computational Discourse  |  |

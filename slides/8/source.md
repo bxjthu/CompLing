@@ -34,18 +34,18 @@ class: center, middle
 .smaller[
 |  |  
 :--|:--|:--
-S | $\to$ | NP VP
-NP | $\to$ | N PP
-NP | $\to$ | N
-PP | $\to$ | P NP
-VP | $\to$ | VP PP
-VP | $\to$ | V VP
-VP | $\to$ | V NP
-VP | $\to$ | V
-N | $\to$ | {it, fish, rivers, pools,
+S | \\(\to\\) | NP VP
+NP | \\(\to\\) | N PP
+NP | \\(\to\\) | N
+PP | \\(\to\\) | P NP
+VP | \\(\to\\) | VP PP
+VP | \\(\to\\) | V VP
+VP | \\(\to\\) | V NP
+VP | \\(\to\\) | V
+N | \\(\to\\) | {it, fish, rivers, pools,
  |  | December, Scotland, they}
-P | $\to$ | {in}
-V | $\to$ | {can, fish}
+P | \\(\to\\) | {in}
+V | \\(\to\\) | {can, fish}
 ]
 ]
 
@@ -83,18 +83,18 @@ _what gluten-free products does that new company sell [ ]_
 .smaller[
 |  |  
 :--|:--|:--
-S | $\to$ | NP VP
-NP | $\to$ | N PP
-NP | $\to$ | N
-PP | $\to$ | P NP
-VP | $\to$ | VP PP
-VP | $\to$ | V VP
-VP | $\to$ | V NP
-VP | $\to$ | V
-N | $\to$ | {it, fish, rivers, pools,
+S | \\(\to\\) | NP VP
+NP | \\(\to\\) | N PP
+NP | \\(\to\\) | N
+PP | \\(\to\\) | P NP
+VP | \\(\to\\) | VP PP
+VP | \\(\to\\) | V VP
+VP | \\(\to\\) | V NP
+VP | \\(\to\\) | V
+N | \\(\to\\) | {it, fish, rivers, pools,
  |  | December, Scotland, they}
-P | $\to$ | {in}
-V | $\to$ | {can, fish}
+P | \\(\to\\) | {in}
+V | \\(\to\\) | {can, fish}
 ]
 ]
 
@@ -105,11 +105,11 @@ V | $\to$ | {can, fish}
 .smaller[
 |  |  
 :--|:--|:--
-S | $\to$ | NP VP
-VP | $\to$ | V NP
-NP | $\to$ | N
-V | $\to$ | {can, fish}
-N | $\to$ | {it, fish, rivers, pools, I, you,
+S | \\(\to\\) | NP VP
+VP | \\(\to\\) | V NP
+NP | \\(\to\\) | N
+V | \\(\to\\) | {can, fish}
+N | \\(\to\\) | {it, fish, rivers, pools, I, you,
  |  | December, Scotland, they}
 ]
 ]
@@ -121,11 +121,11 @@ N | $\to$ | {it, fish, rivers, pools, I, you,
 .smaller[
 |  |  
 :--|:--|:--
-<font color="red">S</font> | <font color="red">$\to$</font> | <font color="red">NP VP</font>
-VP | $\to$ | V NP
-NP | $\to$ | N
-V | $\to$ | {can, fish}
-N | $\to$ | {it, fish, rivers, pools, I, you,
+<font color="red">S</font> | <font color="red">\\(\to\\)</font> | <font color="red">NP VP</font>
+VP | \\(\to\\) | V NP
+NP | \\(\to\\) | N
+V | \\(\to\\) | {can, fish}
+N | \\(\to\\) | {it, fish, rivers, pools, I, you,
  |  | December, Scotland, they}
 ]
 ]
@@ -134,9 +134,9 @@ N | $\to$ | {it, fish, rivers, pools, I, you,
 .smaller[
 |  |  
 :--|:--|:--
-S | $\to$ | NP$\_{1st2ndsing}$ VP$\_{1st2ndsing}$
-S | $\to$ | NP$\_{3rdsing}$ VP$\_{3rdsing}$
-S | $\to$ | NP$\_{plural}$ VP$\_{plural}$
+S | \\(\to\\) | NP\\(\_{1st2ndsing}\\) VP\\(\_{1st2ndsing}\\)
+S | \\(\to\\) | NP\\(\_{3rdsing}\\) VP\\(\_{3rdsing}\\)
+S | \\(\to\\) | NP\\(\_{plural}\\) VP\\(\_{plural}\\)
 ]
 ]
 
@@ -147,11 +147,11 @@ S | $\to$ | NP$\_{plural}$ VP$\_{plural}$
 .smaller[
 |  |  
 :--|:--|:--
-S | $\to$ | NP VP
-<font color="red">VP</font> | <font color="red">$\to$</font> | <font color="red">V NP</font>
-NP | $\to$ | N
-V | $\to$ | {can, fish}
-N | $\to$ | {it, fish, rivers, pools, I, you,
+S | \\(\to\\) | NP VP
+<font color="red">VP</font> | <font color="red">\\(\to\\)</font> | <font color="red">V NP</font>
+NP | \\(\to\\) | N
+V | \\(\to\\) | {can, fish}
+N | \\(\to\\) | {it, fish, rivers, pools, I, you,
  |  | December, Scotland, they}
 ]
 ]
@@ -160,17 +160,17 @@ N | $\to$ | {it, fish, rivers, pools, I, you,
 .smaller[
 |  |  
 :--|:--|:--
-VP$\_{1st2ndsing}$ | $\to$ | V$\_{1st2ndsing}$ NP$\_{1st2ndsing}$
-VP$\_{1st2ndsing}$ | $\to$ | V$\_{1st2ndsing}$ NP$\_{3rdsing}$
-VP$\_{1st2ndsing}$ | $\to$ | V$\_{1st2ndsing}$ NP$\_{plural}$
+VP\\(\_{1st2ndsing}\\) | \\(\to\\) | V\\(\_{1st2ndsing}\\) NP\\(\_{1st2ndsing}\\)
+VP\\(\_{1st2ndsing}\\) | \\(\to\\) | V\\(\_{1st2ndsing}\\) NP\\(\_{3rdsing}\\)
+VP\\(\_{1st2ndsing}\\) | \\(\to\\) | V\\(\_{1st2ndsing}\\) NP\\(\_{plural}\\)
  &nbsp;|  |  
-VP$\_{3rdsing}$ | $\to$ | V$\_{3rdsing}$ NP$\_{1st2ndsing}$
-VP$\_{3rdsing}$ | $\to$ | V$\_{3rdsing}$ NP$\_{3rdsing}$
-VP$\_{3rdsing}$ | $\to$ | V$\_{3rdsing}$ NP$\_{plural}$
+VP\\(\_{3rdsing}\\) | \\(\to\\) | V\\(\_{3rdsing}\\) NP\\(\_{1st2ndsing}\\)
+VP\\(\_{3rdsing}\\) | \\(\to\\) | V\\(\_{3rdsing}\\) NP\\(\_{3rdsing}\\)
+VP\\(\_{3rdsing}\\) | \\(\to\\) | V\\(\_{3rdsing}\\) NP\\(\_{plural}\\)
  &nbsp;|  |  
-VP$\_{plural}$ | $\to$ | V$\_{plural}$ NP$\_{1st2ndsing}$
-VP$\_{plural}$ | $\to$ | V$\_{plural}$ NP$\_{3rdsing}$
-VP$\_{plural}$ | $\to$ | V$\_{plural}$ NP$\_{plural}$
+VP\\(\_{plural}\\) | \\(\to\\) | V\\(\_{plural}\\) NP\\(\_{1st2ndsing}\\)
+VP\\(\_{plural}\\) | \\(\to\\) | V\\(\_{plural}\\) NP\\(\_{3rdsing}\\)
+VP\\(\_{plural}\\) | \\(\to\\) | V\\(\_{plural}\\) NP\\(\_{plural}\\)
 ]
 ]
 
@@ -181,11 +181,11 @@ VP$\_{plural}$ | $\to$ | V$\_{plural}$ NP$\_{plural}$
 .smaller[
 |  |  
 :--|:--|:--
-S | $\to$ | NP VP
-VP | $\to$ | V NP
-<font color="red">NP</font> | <font color="red">$\to$</font> | <font color="red">N</font>
-V | $\to$ | {can, fish}
-N | $\to$ | {it, fish, rivers, pools, I, you,
+S | \\(\to\\) | NP VP
+VP | \\(\to\\) | V NP
+<font color="red">NP</font> | <font color="red">\\(\to\\)</font> | <font color="red">N</font>
+V | \\(\to\\) | {can, fish}
+N | \\(\to\\) | {it, fish, rivers, pools, I, you,
  |  | December, Scotland, they}
 ]
 ]
@@ -194,9 +194,9 @@ N | $\to$ | {it, fish, rivers, pools, I, you,
 .smaller[
 |  |  
 :--|:--|:--
-NP$\_{1st2ndsing}$ | $\to$ | N$\_{1st2ndsing}$
-NP$\_{3rdsing}$ | $\to$ | N$\_{3rdsing}$
-NP$\_{plural}$ | $\to$ | N$\_{plural}$
+NP\\(\_{1st2ndsing}\\) | \\(\to\\) | N\\(\_{1st2ndsing}\\)
+NP\\(\_{3rdsing}\\) | \\(\to\\) | N\\(\_{3rdsing}\\)
+NP\\(\_{plural}\\) | \\(\to\\) | N\\(\_{plural}\\)
 ]
 ]
 
@@ -207,11 +207,11 @@ NP$\_{plural}$ | $\to$ | N$\_{plural}$
 .smaller[
 |  |  
 :--|:--|:--
-S | $\to$ | NP VP
-VP | $\to$ | V NP
-NP| $\to$ | N
-<font color="red">V</font>  | <font color="red">$\to$</font>  | <font color="red">{can, fish}</font>
-<font color="red">N</font>  | <font color="red">$\to$</font>  | <font color="red">{it, fish, rivers, pools, I, you, </font>
+S | \\(\to\\) | NP VP
+VP | \\(\to\\) | V NP
+NP| \\(\to\\) | N
+<font color="red">V</font>  | <font color="red">\\(\to\\)</font>  | <font color="red">{can, fish}</font>
+<font color="red">N</font>  | <font color="red">\\(\to\\)</font>  | <font color="red">{it, fish, rivers, pools, I, you, </font>
  |  | <font color="red">December, Scotland, they}<font color="red"></font>
 ]
 ]
@@ -220,13 +220,13 @@ NP| $\to$ | N
 .smaller[
 |  |  
 :--|:--|:--
-N$\_{1st2ndsing}$ | $\to$ | {I, you}
-N$\_{3rdsing}$ | $\to$ | {it, December, Scotland}
-N$\_{plural}$ | $\to$ | {fish, rivers, pools, they}
+N\\(\_{1st2ndsing}\\) | \\(\to\\) | {I, you}
+N\\(\_{3rdsing}\\) | \\(\to\\) | {it, December, Scotland}
+N\\(\_{plural}\\) | \\(\to\\) | {fish, rivers, pools, they}
  &nbsp;|  |  
-V$\_{1st2ndsing}$ | $\to$ | {fish, can}
-V$\_{3rdsing}$ | $\to$ | {fishes, cans, can}
-V$\_{plural}$ | $\to$ | {fish, can}
+V\\(\_{1st2ndsing}\\) | \\(\to\\) | {fish, can}
+V\\(\_{3rdsing}\\) | \\(\to\\) | {fishes, cans, can}
+V\\(\_{plural}\\) | \\(\to\\) | {fish, can}
 
 ]
 ]
@@ -265,18 +265,18 @@ _what gluten-free products does that new company sell [ ]_
 .smaller[
 |  |  
 :--|:--|:--
-S | $\to$ | NP VP
-NP | $\to$ | N PP
-NP | $\to$ | N
-PP | $\to$ | P NP
-VP | $\to$ | VP PP
-VP | $\to$ | V VP
-VP | $\to$ | V NP
-VP | $\to$ | V
-N | $\to$ | {it, fish, rivers, pools,
+S | \\(\to\\) | NP VP
+NP | \\(\to\\) | N PP
+NP | \\(\to\\) | N
+PP | \\(\to\\) | P NP
+VP | \\(\to\\) | VP PP
+VP | \\(\to\\) | V VP
+VP | \\(\to\\) | V NP
+VP | \\(\to\\) | V
+N | \\(\to\\) | {it, fish, rivers, pools,
  |  | December, Scotland, they}
-P | $\to$ | {in}
-V | $\to$ | {can, fish}
+P | \\(\to\\) | {in}
+V | \\(\to\\) | {can, fish}
 ]
 ]
 
@@ -290,9 +290,7 @@ V | $\to$ | {can, fish}
 
 + Constraint-based language models
 
-  A more fine-grained way of <br>
-  representing and placing constraints <br>
-  on grammatical categories
+  A more fine-grained way of representing and placing constraints on grammatical categories
 
 ---
 
@@ -300,7 +298,7 @@ V | $\to$ | {can, fish}
 
 .smaller[
 
-$
+\\(
 \left[
 \begin{array}{ll}
 \textrm{FEATURE}_1 & value_1 \\\
@@ -309,10 +307,10 @@ $
 \textrm{FEATURE}_n & value_n
 \end{array}
 \right]
-$
+\\)
 
 <br><br>
-$
+\\(
 \left[
 \begin{array}{ll}
 \textrm{CAT} & NP \\\
@@ -320,10 +318,10 @@ $
 \textrm{PERSON} & 3rd
 \end{array}
 \right]
-$
+\\)
 
 <br>
-$
+\\(
 \left[
 \begin{array}{ll}
 \textrm{CAT} & NP \\\
@@ -334,7 +332,7 @@ $
 \right]
 \end{array}
 \right]
-$
+\\)
 
 ]
 
@@ -365,7 +363,7 @@ $
 
 .smaller[
 <br>
-$
+\\(
 \left[
 \begin{array}{ll}
 \textrm{CAT} & NP \\\
@@ -376,7 +374,7 @@ $
 \right]
 \end{array}
 \right]
-$
+\\)
 ]
 ]
 ---
@@ -388,26 +386,26 @@ Reentrancy: A feature structure occurs more than once in an enclosing feature st
 .left-column-2[
 + Non-reentrant
 .smaller[
-$
+\\(
 \left[
 \begin{array}{ll}
 \textrm{FEATURE}_1 & a \\\
 \textrm{FEATURE}_2 & a
 \end{array}
 \right]
-$
+\\)
 ]
 
 + Reentrant
 .smaller[
-$
+\\(
 \left[
 \begin{array}{ll}
 \textrm{FEATURE}_1 & [1]a \\\
 \textrm{FEATURE}_2 & [1]
 \end{array}
 \right]
-$
+\\)
 ]
 ]
 .right-column-2[
@@ -418,10 +416,10 @@ $
 ## Reentrancy and reentrant structures
 
 .smaller[
-$
+\\(
 \left[
 \begin{array}{ll}
-\textrm{CAT} & S \\\\[3ex]
+\textrm{CAT} & S \\\ \[3ex]
 \textrm{HEAD} &
 \left[
 \begin{array}{ll}
@@ -442,7 +440,7 @@ $
 \right]
 \end{array}
 \right]
-$
+\\)
 ]
 
 <br>
@@ -459,7 +457,7 @@ $
 
 .smaller[
 
-$
+\\(
 \left[
 \begin{array}{ll}
 \textrm{NUMBER} & sing
@@ -477,9 +475,9 @@ $
 \textrm{NUMBER} & sing
 \end{array}
 \right]
-$
+\\)
 
-$
+\\(
 \left[
 \begin{array}{ll}
 \textrm{NUMBER} & sing
@@ -492,9 +490,9 @@ $
 \end{array}
 \right]
 Fails!
-$
+\\)
 
-$
+\\(
 \left[
 \begin{array}{ll}
 \textrm{NUMBER} & sing
@@ -512,9 +510,9 @@ $
 \textrm{NUMBER} & sing
 \end{array}
 \right]
-$
+\\)
 
-$
+\\(
 \left[
 \begin{array}{ll}
 \textrm{NUMBER} & sing
@@ -533,36 +531,40 @@ $
 \textrm{PERSON} & 3rd
 \end{array}
 \right]
-$
+\\)
 ]
 
 ---
 
-## Unification of reentrant feature structures
+## Unification of feature structures
 
 .smaller[
-$
+\\(
 \left[
 \begin{array}{ll}
-\textrm{AGREEMENT} & [1]
+\textrm{AGREEMENT} &
 \left[
 \begin{array}{ll}
-\textrm{NUMBER} & sing \\\
-\textrm{PERSON} & 3rd
+\textrm{NUMBER} & sing
 \end{array}
 \right] \\\ \[3ex]
 \textrm{SUBJECT} &
 \left[
 \begin{array}{ll}
-\textrm{AGREEMENT} & [1]
+\textrm{AGREEMENT} &
+\left[
+\begin{array}{ll}
+\textrm{NUMBER} & sing
 \end{array}
 \right]
 \end{array}
 \right]
-$
+\end{array}
+\right]
+\\)
 
 <br>
-$
+\\(
 \sqcup
 \left[
 \begin{array}{ll}
@@ -580,10 +582,84 @@ $
 \right]
 \end{array}
 \right]
-$
+\\)
 
 <br>
-$
+\\(
+=
+\left[
+\begin{array}{ll}
+\textrm{AGREEMENT} &
+\left[
+\begin{array}{ll}
+\textrm{NUMBER} & sing
+\end{array}
+\right] \\\ \[3ex]
+\textrm{SUBJECT} &
+\left[
+\begin{array}{ll}
+\textrm{AGREEMENT} &
+\left[
+\begin{array}{ll}
+\textrm{PERSON} & 3rd \\\
+\textrm{NUMBER} & sing
+\end{array}
+\right]
+\end{array}
+\right]
+\end{array}
+\right]
+\\)
+]
+
+---
+
+## Unification of reentrant feature structures
+
+.smaller[
+\\(
+\left[
+\begin{array}{ll}
+\textrm{AGREEMENT} & [1]
+\left[
+\begin{array}{ll}
+\textrm{NUMBER} & sing \\\
+\textrm{PERSON} & 3rd
+\end{array}
+\right] \\\ \[3ex]
+\textrm{SUBJECT} &
+\left[
+\begin{array}{ll}
+\textrm{AGREEMENT} & [1]
+\end{array}
+\right]
+\end{array}
+\right]
+\\)
+
+<br>
+\\(
+\sqcup
+\left[
+\begin{array}{ll}
+\textrm{SUBJECT} &
+\left[
+\begin{array}{ll}
+\textrm{AGREEMENT} &
+\left[
+\begin{array}{ll}
+\textrm{PERSON} & 3rd \\\
+\textrm{NUMBER} & sing
+\end{array}
+\right]
+\end{array}
+\right]
+\end{array}
+\right]
+\\)
+
+<br>
+\\(
 =
 \left[
 \begin{array}{ll}
@@ -602,7 +678,7 @@ $
 \right]
 \end{array}
 \right]
-$
+\\)
 ]
 
 ---
@@ -610,7 +686,7 @@ $
 ## Unification of reentrant feature structures
 
 .smaller[
-$
+\\(
 \left[
 \begin{array}{ll}
 \textrm{AGREEMENT} & [1]\\\
@@ -622,10 +698,10 @@ $
 \right]
 \end{array}
 \right]
-$
+\\)
 
 <br>
-$
+\\(
 \sqcup
 \left[
 \begin{array}{ll}
@@ -643,10 +719,10 @@ $
 \right]
 \end{array}
 \right]
-$
+\\)
 
 <br>
-$
+\\(
 =
 \left[
 \begin{array}{ll}
@@ -665,94 +741,14 @@ $
 \right]
 \end{array}
 \right]
-$
+\\)
 ]
 
 ---
-
-## Unification of non-reentrant feature structures
-
-.smaller[
-
-$
-\left[
-\begin{array}{ll}
-\textrm{AGREEMENT} &
-\left[
-\begin{array}{ll}
-\textrm{NUMBER} & sing
-\end{array}
-\right] \\\ \[3ex]
-\textrm{SUBJECT} &
-\left[
-\begin{array}{ll}
-\textrm{AGREEMENT} &
-\left[
-\begin{array}{ll}
-\textrm{NUMBER} & sing
-\end{array}
-\right]
-\end{array}
-\right]
-\end{array}
-\right]
-$
-
-<br>
-$
-\sqcup
-\left[
-\begin{array}{ll}
-\textrm{SUBJECT} &
-\left[
-\begin{array}{ll}
-\textrm{AGREEMENT} &
-\left[
-\begin{array}{ll}
-\textrm{PERSON} & 3rd \\\
-\textrm{NUMBER} & sing
-\end{array}
-\right]
-\end{array}
-\right]
-\end{array}
-\right]
-$
-
-<br>
-$
-=
-\left[
-\begin{array}{ll}
-\textrm{AGREEMENT} &
-\left[
-\begin{array}{ll}
-\textrm{NUMBER} & sing
-\end{array}
-\right] \\\ \[3ex]
-\textrm{SUBJECT} &
-\left[
-\begin{array}{ll}
-\textrm{AGREEMENT} &
-\left[
-\begin{array}{ll}
-\textrm{PERSON} & 3rd \\\
-\textrm{NUMBER} & sing
-\end{array}
-\right]
-\end{array}
-\right]
-\end{array}
-\right]
-$
-]
-
----
-
 ## Failed unification of feature structures
 
 .smaller[
-$
+\\(
 \left[
 \begin{array}{ll}
 \textrm{AGREEMENT} & [1]
@@ -770,10 +766,10 @@ $
 \right]
 \end{array}
 \right]
-$
+\\)
 
 <br>
-$
+\\(
 \sqcup
 \left[
 \begin{array}{ll}
@@ -798,7 +794,7 @@ $
 \right]
 \end{array}
 \right]
-$
+\\)
 ]
 
 Fails!
@@ -812,14 +808,11 @@ Augmenting the ordinary CFGs rules with attachments that specify feature structu
 .smaller[
 |  |  
 :--|:--|:--
-$\beta_0$ | $\to$ | $\beta_1 ... \beta_n$
+\\(\beta\_0\\) | \\(\to\\) | \\(\beta\_1 ... \beta\_n\\)
 | |_{set of constraints}_
 &nbsp; | |
-| |< $\beta_i$ feature path > = atomic value
-| |< $\beta_i$ feature path > = < $\beta_j$ feature path >
-&nbsp; | |
-S | $\to$ | NP VP
-| |< NP NUMBER > = < VP NUMBER >
+| |< \\(\beta\_i\\) feature path > = atomic value
+| |< \\(\beta\_i\\) feature path > = < \\(\beta\_j\\) feature path >
 ]
 
 ---
@@ -833,64 +826,89 @@ S | $\to$ | NP VP
 .left-column-2[
 |  |  
 :--|:--|:--
-S | $\to$ | NP VP
+S | \\(\to\\) | NP VP
 | |< NP AGREEMENT > = < VP AGREEMENT >
 &nbsp; | |
-NP | $\to$ | Det Nominal
+NP | \\(\to\\) | Det Nominal
 | |< Det AGREEMENT > = < Nominal AGREEMENT >
 | |< NP AGREEMENT > = < Nominal AGREEMENT >
 &nbsp; | |
-Aux | $\to$ | do
+Aux | \\(\to\\) | do
 | |< Aux AGREEMENT NUMBER > = _plural_
 | |< Aux AGREEMENT PERSON > = _3rd_
 ]
 .right-column-2[
 |  |  
 :--|:--|:--
-S | $\to$ | Aux NP VP
+S | \\(\to\\) | Aux NP VP
 | |< Aux AGREEMENT > = < NP AGREEMENT >
 &nbsp; | |
 &nbsp; | |
 &nbsp; | |
 &nbsp; | |
 &nbsp; | |
-Aux | $\to$ | does
+Aux | \\(\to\\) | does
 | |< Aux AGREEMENT NUMBER > = _sing_
 | |< Aux AGREEMENT PERSON > = _3rd_
 ]
 ]
 
 ---
+
+.left-column-3[
 ## Application: head features
 
 .smaller[
 |  |  
 :--|:--|:--
-VP | $\to$ | Verb NP
+VP | \\(\to\\) | Verb NP
 | |< VP AGREEMENT > = < Verb AGREEMENT >
-VP | $\to$ | Verb NP
+VP | \\(\to\\) | Verb NP
 | |< VP HEAD > = < Verb HEAD >
-NP | $\to$ | Det Nominal
+NP | \\(\to\\) | Det Nominal
 | |< Det AGREEMENT > = < Nominal AGREEMENT >
 | |< NP AGREEMENT > = < Nominal AGREEMENT >
-NP | $\to$ | Det Nominal
+NP | \\(\to\\) | Det Nominal
 | |< Det HEAD AGREEMENT > = < Nominal HEAD AGREEMENT >
 | |< NP HEAD > = < Nominal HEAD >
-Nominal | $\to$ | Noun
+Nominal | \\(\to\\) | Noun
 | |< Nominal AGREEMENT > = < Noun AGREEMENT >
-Nominal | $\to$ | Noun
+Nominal | \\(\to\\) | Noun
 | |< Nominal HEAD > = < Noun HEAD >
-Noun | $\to$ | _flights_
+Noun | \\(\to\\) | _flights_
 | |< Noun HEAD AGREEMENT NUMBER > = _plural_
 ]
+]
+.right-column-3[
+<br><br><br><br>
+The features for most grammatical categories are copied from one of the children to the parent.
 
+The child that provides the features is called the head of the phrase, and the features copied are referred to as head features.
+]
 ---
-## Application: subcategorization
+## Applications
 
-## Application: long-distance dependencies
++ Agreement
 
-## Building Feature Based Grammars
++ Head features
+
++ Subcategorization
+
++ Long-distance dependencies
+
+???
+Building Feature Based Grammars
 http://www.nltk.org/book/ch09.html
+---
+.left-column-3[
+## Feature structures in language knowledge bases
+
+<img src="images/gkb.png" width=500>
+]
+.right-column-3[
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+[副词用法词典](副词用法词典_公开数据_20120117.xls)
+]
 ---
 
 ## Complexity: an overloaded term
@@ -946,7 +964,7 @@ Scenario 1: How many items are on my 11.11 shopping list?
 
 >   + Increase the count by 1. [0.25s for each]
 
-> **The time cost of the algorithm**: $0.5n$ seconds
+> **The time cost of the algorithm**: \\(0.5n\\) seconds
 ]
 ]
 ---
@@ -989,7 +1007,7 @@ Scenario 2: How many items are on the following two shopping lists?
 
 >   + Compare the current item on my friend's list to all the items on my original list; if no match is found, then add the current item to my list and increase the count by 1. [0.5s for each]
 
-> **The time cost of the algorithm**: $0.25n + 0.5n^2$ seconds
+> **The time cost of the algorithm**: \\((0.25 + 0.5n)*n\\) <br> or \\(0.25n + 0.5n^2\\) seconds
 ]
 ]
 
@@ -1001,18 +1019,35 @@ Big O notation of time complexity (or asymptotic complexity)
 
 In computer science, big O notation is used to classify algorithms according to how their running time or space requirements grow as the input size grows.
 
-+ The counting algorithm: a time complexity of $O(n)$
++ The counting algorithm: a time complexity of \\(O(n)\\)
 
-+ The condensing algorithm: a time complexity of $O(n^2)$
++ The condensing algorithm: a time complexity of \\(O(n^2)\\)
 
 .smaller[
-Notes: The time cost of an algorithm is usually a complicated formula. We are only interested in the most significant term when stating its order, which means the term involving the highest exponent of $n$.
+**Notes:** The time cost of an algorithm is usually a complicated formula. We are only interested in the most significant term when stating its order, which means the term involving the highest exponent of \\(n\\). For example, the time (or the number of steps) it takes to complete a problem of size n might be found to be \\(T(n) = 4n^2 \- 2n + 2\\). As \\(n\\) grows large, the \\(n^2\\) term will come to dominate, so that all other terms can be neglected. An algorithm with a time complexity of \\(O(c^n)\\), where \\(c\\) is a constant, is said to be intractable.
+
 ]
 
-+ An algorithm with a time complexity of $O(c^n)$, where $c$ is a constant, is said to be intractable.
+???
+The letter O is used because the growth rate of a function is also referred to as the order of the function.
 
 ---
 
+.left-column-1[
+## Big O notation
+
+.smaller[
+Graphs of functions commonly used in the analysis of algorithms, showing the number of operations \\(N\\) versus input size \\(n\\) for each function
+
+[More on Big O notation at wiki](https://en.wikipedia.org/wiki/Big_O_notation)]
+
+]
+.right-column-5[
+<br>
+<img src="images/Comparison_computational_complexity.svg" width=500>
+
+]
+---
 .left-column-2[
 ## Recap: An example
 
@@ -1039,9 +1074,9 @@ Janet/NNP&nbsp;&nbsp; will/MD&nbsp;&nbsp; back/VB&nbsp;&nbsp; the/DT&nbsp;&nbsp;
 
 + Algorithm: exponential complexity
 
-  With a tagset of N tags, for a sequence of M words, there are, in the worse case, <font color="red"> $N^M$ </font> possible paths.
+  With a tagset of N tags, for a sequence of M words, there are, in the worse case, <font color="red"> \\(N^M\\) </font> possible paths.
 
-+ Efficiency: <font color="red"> $N^M$ </font> vs. <font color="red"> $N^2 \times M$ </font>
++ Efficiency: <font color="red"> \\(N^M\\) </font> vs. <font color="red"> \\(N^2 \times M\\) </font>
 
 ]
 ---
@@ -1057,8 +1092,8 @@ Named after the plate-stacking devices
 
 The counting/condensing algorithm:
 
-+ a space complexity of $O(1)$ .smaller[stack depth = 1]
-+ a space complexity of $O(n)$ .smaller[stack depth = n]
++ a space complexity of \\(O(1)\\) .smaller[stack depth = 1]
++ a space complexity of \\(O(n)\\) .smaller[stack depth = n]
 
 ]
 
@@ -1069,11 +1104,11 @@ The counting/condensing algorithm:
 
 ## The complexity of a grammar
 
-+ The complexity of the most efficient algorithm to decide whether a string belongs to a regular language is $O(n)$, where $n$ is the length of the string.
++ The complexity of the most efficient algorithm to decide whether a string belongs to a regular language is \\(O(n)\\), where \\(n\\) is the length of the string.
 
 <img src="images/baa_fsa.png" width=550>
 
-+ The complexity of many algorithms to decide whether a string belongs to a context-free language is $O(n^a)$, where $a$ is a whole number. The algorithms are therefore tractable.
++ The complexity of many algorithms to decide whether a string belongs to a context-free language is \\(O(n^a)\\), where \\(a\\) is a whole number. The algorithms are therefore tractable.
 
 ---
 
@@ -1156,23 +1191,31 @@ Type &nbsp;&nbsp;&nbsp;&nbsp;| Language | Rule | Complexity | Automaton
 
 + know that formal grammars can be more or less complex as defined by their generative power.
 
+---
+## Practical 8
+
++ Use the Stanford Parser to parse sentences and draw trees [[sample code](stnlp_parser.py)]
+
++ Building Feature Based Grammarsstnlp_parser.py
+
+  + Subcategorization [[sample code](subcategorization_zsx.zip)]
+
+  + Long-distance dependencies [[sample code](long_distance_dependencies_ysc.zip)]
+
 
 ---
 
-##Assignment
+##Homework
 
-**1. Review**
++ Read/Review (Quiz 7 on Nov. 21, 2018)
 
-+ [J+M 15](https://bxjthu.github.io/CompLing/readings/8_J+M_15.pdf)
-+ [J+M 16](https://bxjthu.github.io/CompLing/readings/8_J+M_16.pdf)
+  + [J+M_13](https://bxjthu.github.io/CompLing/readings/7/J+M_13.pdf) (13.1)
+  + [J+M_second_edition_16](https://bxjthu.github.io/CompLing/readings/8/J+M_second_edition_16.pdf)
 
-**2. Practice**
++ Practice
 
-+ Learn to expand the CFG you built last week to accommodate feature structures. A sample for the feature-based grammar can be found here: http://www.nltk.org/book/pylisting/code_feat0cfg.py
-
-+ Learn to use your grammar, together a chart parser, to analyze sentences. Sample codes can be found here: http://www.nltk.org/book/pylisting/code_featurecharttrace.py)
-
-More detailed instructions are available at http://www.nltk.org/book/ch09.html
+  + Practical 8
+  + http://www.nltk.org/book/ch09.html
 
 ---
 class: center, middle
