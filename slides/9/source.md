@@ -351,13 +351,13 @@ Query 6: Are vegetarian dishes served at Zijing?
 Query 7: Does Zijing serve vegetarian fare?
 
 ---
-## Computational desiderata for meaning Representations
+## Computational desiderata for meaning representations
 
 + What should meaning representations do for us?
 
 ---
 
-## Computational desiderata for meaning Representations
+## Computational desiderata for meaning representations
 
 (1) Does Maharani serve vegetarian food?<br>
 
@@ -377,7 +377,7 @@ Query 7: Does Zijing serve vegetarian fare?
 
 ---
 
-## Computational desiderata for meaning Representations
+## Computational desiderata for meaning representations
 
 + What should meaning representations do for us?
 
@@ -619,7 +619,7 @@ Nixon, Richard (1913–1994), American Republican statesman, 37th president of t
 
 ---
 
-## A closer look: representing the meaning of a word
+## Representing the meaning of a word
 
 + Syntagmatic association
 
