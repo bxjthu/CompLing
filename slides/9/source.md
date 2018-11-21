@@ -35,13 +35,16 @@ Augmenting the ordinary CFGs rules with attachments that specify feature structu
 .smaller[
 |  |  
 :--|:--|:--
-$\beta_0$ | $\to$ | $\beta_1 ... \beta_n$
+\\(\beta_0\\) | \\(\to\\)| \\(\beta_1 ... \beta_n\\)
 | |_{set of constraints}_
 &nbsp; | |
-| |< $\beta_i$ feature path > = <font color="red">atomic value</font>
-| |< $\beta_i$ feature path > = <font color="red">< $\beta_j$ feature path ></font>
+| |< \\(\beta_i\\) feature path > = <font color="red">atomic value</font>
+| |< \\(\beta_i\\) feature path > = <font color="red">< \\(\beta_j\\) feature path ></font>
 &nbsp; | |
-S | $\to$ | NP VP
+Aux | \\(\to\\) | do
+| |< Aux AGREEMENT NUMBER > = _plural_
+| |< Aux AGREEMENT PERSON > = _3rd_
+S | \\(\to\\) | NP VP
 | |< NP NUMBER > = < VP NUMBER >
 ]
 
@@ -51,7 +54,7 @@ S | $\to$ | NP VP
 
 .left-column-1[
 .smaller[
-$
+$$
 \left[
 \begin{array}{ll}
 \textrm{CAT} & S \\\\[3ex]
@@ -75,7 +78,7 @@ $
 \right]
 \end{array}
 \right]
-$
+$$
 ]
 
 <br>
@@ -88,22 +91,10 @@ Reentrancy: A feature structure occurs <font color="red">more than once</font> i
 
 ---
 
-## Recap: reentrancy and reentrant structures
-
-.left-column-1[
-<img src="images/dag03.png" width=500>
-]
-
-.right-column-3[
-Reentrancy: A feature structure occurs <font color="red">more than once</font> in an enclosing feature structure, i.e. there are <font color="red">two or more</font> feature paths of reaching the same node in the directed acyclic graph.
-]
-
----
-
-## Recap: unification of reentrant feature structures
+## Recap: unification of feature structures
 
 .smaller[
-$
+\\(
 \textrm{FS1:}
 \left[
 \begin{array}{ll}
@@ -130,88 +121,10 @@ $
 \right]
 \end{array}
 \right]
-$
-
-$
-\textrm{FS2:}
-\left[
-\begin{array}{ll}
-\textrm{NAME} & Lee\\\
-\textrm{ADDRESS} & [1]
-\left[
-\begin{array}{ll}
-\textrm{NUMBER} & 74 \\\
-\textrm{STREET} & Rue Pascal
-\end{array}
-\right] \\\ \[3ex]
-\textrm{SPOUSE} &
-\left[
-\begin{array}{ll}
-\textrm{NAME} & Kim \\\
-\textrm{ADDRESS} & [1]
-\end{array}
-\right]
-\end{array}
-\right]
-$
+\\)
 
 <br>
-$
-\textrm{FS3:}
-\left[
-\begin{array}{ll}
-\textrm{SPOUSE} &
-\left[
-\begin{array}{ll}
-\textrm{ADDRESS} &
-\left[
-\begin{array}{ll}
-\textrm{CITY} & Paris
-\end{array}
-\right]
-\end{array}
-\right]
-\end{array}
-\right]
-$
-]
-
----
-
-## Recap: unification of reentrant feature structures
-
-.smaller[
-$
-\textrm{FS1:}
-\left[
-\begin{array}{ll}
-\textrm{NAME} & Lee\\\
-\textrm{ADDRESS} &
-\left[
-\begin{array}{ll}
-\textrm{NUMBER} & 74 \\\
-\textrm{STREET} & Rue Pascal
-\end{array}
-\right] \\\ \[3ex]
-\textrm{SPOUSE} &
-\left[
-\begin{array}{ll}
-\textrm{NAME} & Kim \\\
-\textrm{ADDRESS} &
-\left[
-\begin{array}{ll}
-\textrm{NUMBER} & 74 \\\
-\textrm{STREET} & Rue Pascal
-\end{array}
-\right]
-\end{array}
-\right]
-\end{array}
-\right]
-$
-
-<br>
-$
+\\(
 \sqcup
 \textrm{FS3:}
 \left[
@@ -229,7 +142,7 @@ $
 \right]
 \end{array}
 \right]
-$
+\\)
 
 ]
 
@@ -253,7 +166,7 @@ $
 ## Recap: unification of reentrant feature structures
 
 .smaller[
-$
+\\(
 \textrm{FS2:}
 \left[
 \begin{array}{ll}
@@ -274,10 +187,10 @@ $
 \right]
 \end{array}
 \right]
-$
+\\)
 
 <br>
-$
+\\(
 \sqcup
 \textrm{FS3:}
 \left[
@@ -295,7 +208,7 @@ $
 \right]
 \end{array}
 \right]
-$
+\\)
 
 ]
 
@@ -320,27 +233,25 @@ $
 
 + Head features
 
-+ [Subcategorization](https://bxjthu.github.io/CompLing/readings/subcategorization_zsx.zip)
++ Subcategorization
 
-+ [Long-distance dependencies](https://bxjthu.github.io/CompLing/readings/long_distance_dependencies_ysc.zip)
++ Long-distance dependencies
 
 ---
 
 ## At the end of this session you will
 
-+ understand why we need to represent meaning
++ know why meaning representations are needed and what they should do
 
-+ understand what meaning representations should do for us
++ know how a meaning representation models a particular state of affairs
 
-+ know about how a meaning representation models the particular state of affairs in the world
-
-+ know about how first-order logic represents meaning
++ know more about first-order logic as a meaning representation language
 
 + know about how syntax-driven semantic analysis works
 
 + know how the meaning of a word can be represented in different ways
 
-+ know how to represent the meaning of a word as a vector and compute its positive pointwise mutual information
++ know how to represent the meaning of a word as a vector
 
 ---
 
@@ -349,20 +260,41 @@ $
 + Basic assumption<br><br>
 The meaning of linguistic expressions <font color="red">can</font> be captured in <font color="red">formal</font> structures
 
-.left-column-1[
 + Representations
 
   + <font color="grey">Phonological</font>
   + <font color="grey">Morphological</font>
   + <font color="grey">Syntactic</font>
   + Semantic
+
+---
+
+.left-column-3[
+## Example meaning representations
+
+<img src="images/meaning_representations.png" width=600>
+]
+.right-column-3[
+
+.smaller[
++ Meaning representations
++ Linguistic inputs
++ The world
++ Our knowledge of the world
 ]
 
-.right-column-1[
+<br>
+First-Order Logic (FOL)
 
-<video width="640" controls src="images/hal-2.mp4" type="video/mp4"</video>
+<br>
+Directed graph
+
+<br>
+Abstract Meaning Representation (AMR)
+
+<br>
+Frame-Based / <br> Slot-Filler representation
 ]
-
 ---
 ## Why do we need to represent meaning?
 
@@ -513,19 +445,19 @@ A model is a formal construct that stands for the particular state of affairs in
 .right-column-4[
 <br>
 Zijing<br>
-$\textit{Zijing}$
+\\(\textit{Zijing}\\)
 
 the location of Zijing
-$\textit{LocationOf(Zijing)}$
+\\(\textit{LocationOf(Zijing)}\\)
 
 the location of restaurants
-$\textit{LocationOf(x)}$
+\\(\textit{LocationOf(x)}\\)
 
 Zijing serves vegetarian food.
-$\textit{Serves(Zijing,VegetarianFood)}$
+\\(\textit{Serves(Zijing,VegetarianFood)}\\)
 
 Zijing is a restaurant.
-$\textit{Restaurant(Zijing)}$
+\\(\textit{Restaurant(Zijing)}\\)
 
 ]
 
@@ -535,14 +467,14 @@ $\textit{Restaurant(Zijing)}$
 
 I only have $5 and I don’t have a lot of time.
 
-$\textit{Have(Speaker,\textdollar5)} \land \lnot \textit{Have(Speaker,LotOfTime)}$
+\\(\textit{Have(Speaker,\textdollar5)} \land \lnot \textit{Have(Speaker,LotOfTime)}\\)
 
 <br><br>
 a restaurant that serves hot-pot near Tsinghua
 
-$\exists \textit{xRestaurant(x)}$ <br>
-$\land \textit{Serves(x,HotPot)}$ <br>
-$\land \textit{Near((LocationOf(x),LocationOf(Tsinghua))}$
+\\(\exists \textit{xRestaurant(x)}\\) <br>
+\\(\land \textit{Serves(x,HotPot)}\\) <br>
+\\(\land \textit{Near((LocationOf(x),LocationOf(Tsinghua))}\\)
 
 ---
 
@@ -552,39 +484,38 @@ $\land \textit{Near((LocationOf(x),LocationOf(Tsinghua))}$
 
 <img src="images/parse_tree.png" width=700>
 
----
+???
+ CFG rules with semantic attachments
 
-## CFG rules with semantic attachments
-
-A $\to a_1...a_n \qquad \\{f(a_1.sem,...a_n.sem)\\}$
+A \\(\to a_1...a_n \qquad \\{f(a_1.sem,...a_n.sem)\\}\\)
 
 .left-column-4[
 
 <font color="red">Qingfen reopened.</font>
 
-ProperNoun $\to$ Qingfen  $\quad \\{Qingfen\\} $
+ProperNoun \\(\to\\) Qingfen  \\(\quad \\{Qingfen\\} \\)
 
-NP $\to$ ProperNoun $\quad \\{ProperNoun.sem\\}$
+NP \\(\to\\) ProperNoun \\(\quad \\{ProperNoun.sem\\}\\)
 
-VP $\to$ Verb $\quad \\{Verb.sem\\}$
+VP \\(\to\\) Verb \\(\quad \\{Verb.sem\\}\\)
 
-Verb $\to$ reopened $\quad \\{ \lambda x.Reopened(x)\\}$
+Verb \\(\to\\) reopened \\(\quad \\{ \lambda x.Reopened(x)\\}\\)
 
-S $\to$ NP VP $\quad \\{ VP.sem(NP.sem)\\}$
+S \\(\to\\) NP VP \\(\quad \\{ VP.sem(NP.sem)\\}\\)
 
 ]
 
 .right-column-4[
 
 <br><br><br>
-> $\lambda x.Reopened(x)(Qingfen)$
+> \\(\lambda x.Reopened(x)(Qingfen)\\)
 
-> $Reopened(Qingfen)$
+> \\(Reopened(Qingfen)\\)
 ]
 
 ---
 .left-column-3[
-## A closer look: representing the meaning of a word
+## Representing the meaning of a word
 
 + **Dictionary entries**
 
@@ -599,12 +530,12 @@ S $\to$ NP VP $\quad \\{ VP.sem(NP.sem)\\}$
 ]
 ---
 .left-column-3[
-## A closer look: representing the meaning of a word
+## Representing the meaning of a word
 
 + **Feature structures**
 
 > .smaller[
-$
+\\(
 \left[
 \begin{array}{ll}
 \textrm{WORD} & Johnson\\\
@@ -614,9 +545,9 @@ $
 \textrm{...} & ...
 \end{array}
 \right]
-$
+\\)
 
-$
+\\(
 \left[
 \begin{array}{ll}
 \textrm{WORD} & Nixon\\\
@@ -626,7 +557,7 @@ $
 \textrm{...} & ...
 \end{array}
 \right]
-$
+\\)
 ]
 ]
 
@@ -641,17 +572,42 @@ Nixon, Richard (1913–1994), American Republican statesman, 37th president of t
 
 ---
 
-## A closer look: representing the meaning of a word
+## Representing the meaning of a word
 
 + **Relational databases**
 
   <img src="images/relational_database.png" width=900>
 
-.right[[Also see: A database of Chinese adverbs](https://bxjthu.github.io/CompLing/readings/chinese_adverbs_sample.xls)]
+.right[[Also see: The database of Chinese adverbs](副词用法词典_公开数据_20120117.xls)]
 
 ---
 
-## A closer look: representing the meaning of a word
+## Representing the meaning of a word
+
++ **Semantic trees**
+
+  > <img src="images/semantic_tree.png" width=800>
+  <br>
+.right[[PKU semantic tree](http://ccl.pku.edu.cn/doubtfire/Semantics/973_Beida/index.htm)]
+
+---
+## Representing the meaning of a word
+
++ **Synsets**
+
+  > {教师, 教书匠, 教书先生, 老师}<br>
+  {母亲, 妈妈, 娘亲}<br>
+  {mother, female parent}<br>
+  {mother, fuss, overprotect}<br>
+  {father, male parent, begetter}<br>
+  {beget, get, engender, father, mother, sire, generate, bring forth}
+  <br><br>
+.right[[WordNet](http://wordnetweb.princeton.edu/perl/webwn)]
+
+
+---
+
+## Representing the meaning of a word
 
 + Two words have first-order co-occurrence (i.e. syntagmatic association) if they are typically nearby each other.
 
@@ -684,7 +640,7 @@ The meaning of a word is defined by how often it occurs near other words.
 “You shall know a word by the <font color="red">company</font> it keeps!”
 
 .smaller[
-Firth, J. R. (1957). A synopsis of linguistic theory 1930–1955. In $\textit{Studies in Linguistic Analysis}$. <br>Philological Society. Reprinted in Palmer, F. (ed.) 1968. Selected Papers of J. R. Firth. Longman, Harlow.
+Firth, J. R. (1957). A synopsis of linguistic theory 1930–1955. In \\(\textit{Studies in Linguistic Analysis}\\). <br>Philological Society. Reprinted in Palmer, F. (ed.) 1968. Selected Papers of J. R. Firth. Longman, Harlow.
 ]
 
 ---
@@ -758,7 +714,7 @@ used to collect counts
 + In general, the shorter the window, the more syntactic the representations; the longer the window, the more semantic the relations.
 ]
 
----
+???
 ## Measure of the association between words
 
 + Simple frequency isn’t the best measure!
@@ -771,68 +727,41 @@ $$ I(x,y) = \log_2 \frac{P(x,y)}{P(x)P(y)}  \qquad  PMI(w,c) = \log_2 \frac{P(w,
 
 <br>
 $$ PPMI(w,c) = max (\log_2 \frac{P(w,c)}{P(w)P(c)} ,0)$$
----
-
-## Other representations of meanings
-
-+ **Trees**
-
-  > <img src="images/semantic_tree.png" width=800>
-  <br>
-.right[[PKU semantic tree](http://ccl.pku.edu.cn/doubtfire/Semantics/973_Beida/index.htm)]
-
----
-## Other representations of meanings
-
-+ **Synsets**
-
-  > {教师, 教书匠, 教书先生, 老师}<br>
-  {母亲, 妈妈, 娘亲}<br>
-  {mother, female parent}<br>
-  {mother, fuss, overprotect}<br>
-  {father, male parent, begetter}<br>
-  {beget, get, engender, father, mother, sire, generate, bring forth}
-  <br><br>
-.right[[WordNet](http://wordnetweb.princeton.edu/perl/webwn)]
 
 ---
 
 ## At the end of this session you will
 
-+ understand why we need to represent meaning
++ know why meaning representations are needed and what they should do
 
-+ understand what meaning representations should do for us
++ know how a meaning representation models a particular state of affairs
 
-+ know about how a meaning representation models the particular state of affairs in the world
-
-+ know about how first-order logic represents meaning
++ know more about first-order logic as a meaning representation language
 
 + know about how syntax-driven semantic analysis works
 
 + know how the meaning of a word can be represented in different ways
 
-+ know how to represent the meaning of a word as a vector and compute its positive pointwise mutual information
++ know how to represent the meaning of a word as a vector
 
 ---
 
-##Assignment
+##Homework
 
-** 1. Review **
++ Read/Review (Quiz 8 on Nov. 28, 2018)
 
-+ [J+M_17](https://bxjthu.github.io/CompLing/readings/9_J+M_17.pdf)
-+ [J+M_18](https://bxjthu.github.io/CompLing/readings/9_J+M_18.pdf)
-+ [J+M[3rd]_15](https://bxjthu.github.io/CompLing/readings/9_J+M[3rd]_15.pdf)
+  + [J+M_14](https://bxjthu.github.io/CompLing/readings/9/J+M_14.pdf) (14.1-14.4)
+  + [J+M_6](https://bxjthu.github.io/CompLing/readings/9/J+M_6.pdf) (6.1-6.3)
 
-** 2. Practice **
++ Practice
 
-+ Exercises in [J+M_17](https://bxjthu.github.io/CompLing/readings/9_J+M_17.pdf), [J+M_18](https://bxjthu.github.io/CompLing/readings/9_J+M_18.pdf), [J+M[3rd]_15](https://bxjthu.github.io/CompLing/readings/9_J+M[3rd]_15.pdf)
-
-+ Finish Exercise - Practical 6 and submit your codes at 网络学堂. (DDL: Dec. 13)
+  + Practical 10
+  + http://www.nltk.org/book/ch10.html
 
 ---
 class: center, middle
 ## Next session
 
-Word Sense Disambiguation
+Semantic Similarity and
 
-and Semantic Role Labeling
+Word Sense Disambiguation
