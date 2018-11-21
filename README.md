@@ -55,7 +55,8 @@ Session | Slides | Required Readings | Extras
 6 | [Formal Grammars and Syntactic Parsing](slides/6)[[pdf](slides/6/6.pdf)]<br>[Practical 6](slides/6/#40)<br>[Homework](slides/6/#42)| [J+M_10](readings/6/J+M_10.pdf)<br>[J+M_11](readings/6/J+M_11.pdf) |[CYK algorithm](http://ccl.pku.edu.cn/doubtfire/Course/Computational%20Linguistics/contents/CYK_parsing.pdf)
 7 | [Statistical Parsing and Dependency Parsing](slides/7)<br>[Practical 7](slides/7/#36)<br>[Homework](slides/7/#37) | [J+M_12](readings/7/J+M_12.pdf) (excluding 12.7) <br>[J+M_13](readings/7/J+M_13.pdf) (13.1)|[詹卫东:从计算机处理的角度看短语结构歧义](http://ccl.pku.edu.cn/doubtfire/Papers/1998_Different%20types%20of%20Chinese%20ambiguous%20structures.pdf)
 8 | [Features and Unification, Language and Complexity](slides/8) <br>[Practical 8](slides/8/#41)<br>[Homework](slides/8/#42) |  [J+M_second_edition_15](readings/8/J+M_second_edition_15.pdf) (Optional) <br> [J+M_second_edition_16](readings/8/J+M_second_edition_16.pdf) |
-9 | [Meaning Representation and Vector Semantics](slides/9) |  |
+9 | [Meaning Representation and Vector Semantics](slides/9) | [J+M_14](readings/9/J+M_14.pdf) (14.1-14.4)
+<br> [J+M_6](readings/9/J+M_6.pdf) (6.1-6.3) |
 10 | Semantic Similarity and Word Sense Disambiguation |  |
 11 | Semantic Role Labeling and Computational Discourse  |  |
 12 | Online Language Resources: Advances, Applications, and Challenges  |  |
