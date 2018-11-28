@@ -4,9 +4,9 @@
     <title>CompLing@THU</title>
     <meta charset="utf-8">
     <style>
-      @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
-      @import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
-      @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+      @import url(https://fonts.lug.ustc.edu.cn/css?family=Yanone+Kaffeesatz);
+      @import url(https://fonts.lug.ustc.edu.cn/css?family=Droid+Serif:400,700,400italic);
+      @import url(https://fonts.lug.ustc.edu.cn/css?family=Ubuntu+Mono:400,700,400italic);
 
       body { font-family: 'Droid Serif'; }
       h1, h2, h3 {
@@ -70,7 +70,20 @@
         margin-top: 0em;
         text-align: left;
       }
+      @page {
+        size: 1210px 681px;
+        margin: 0;
+      }
 
+      @media print {
+        .remark-slide-scaler {
+          width: 100% !important;
+          height: 100% !important;
+          transform: scale(1) !important;
+          top: 0 !important;
+          left: 0 !important;
+        }
+      }
     </style>
   </head>
   <body>
@@ -87,13 +100,7 @@
 
     <script>
       var renderMath = function() {
-        renderMathInElement(document.body, {delimiters: [
-	  {left: "$$", right:"$$", display:true},
-	  {left: "$", right:"$", display:false},
-	  {left: "\\[", right:"\\]", display:true},
-	  {left: "\\(", right:"\\)", display:false},
-	], ignoredTags: ["script", "noscript", "style", "textarea", "pre"]
-	});
+        renderMathInElement(document.body);
       }
 
       var slideshow = remark.create({

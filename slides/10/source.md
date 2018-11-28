@@ -1,6 +1,6 @@
 class: center, middle
 # Computational Linguistics<br>
-## 10. Word Sense Disambiguation <br> and Semantic Similarity
+## 10. Semantic Similarity and <br>Word Sense Disambiguation
 
 ** Xiaojing Bai **
 
@@ -35,18 +35,17 @@ Turing side-stepped the question of somehow examining the internal states of a c
 
 ## Recap: meaning representation
 
-+ First-order logic as a meaning representation language
-  + Basic elements
-  + Variables and quantifiers
-  + Lambda notation
-  + The semantics of FOL
-  + Event and state representations
+First-order logic as a meaning representation language
++ Basic elements
++ Variables and quantifiers
++ Lambda notation
++ The semantics of FOL
++ Event and state representations
 
 Some notes: Broadly speaking, logic-based approaches to natural language semantics focus on those aspects of natural language which guide our judgments of <font color="red">consistency</font> and <font color="red">inconsistency</font>. The syntax of a logical language is designed to make these features formally explicit. As a result, determining properties like consistency can often be reduced to symbolic manipulation, that is, to a task that can be carried out by a computer.
 
----
-
-## Recap: meaning representation
+???
+Recap: meaning representation
 
 + First-order logic as a meaning representation language
 
@@ -61,6 +60,32 @@ More on
 
 ---
 
+## Recap: representing the meaning of a word
+
++ Dictionary entries
+
++ Feature structures
+
++ Relational databases
+
++ Trees
+
++ Synsets
+
++ Vectors
+
+---
+
+## Recap: representing the meaning of a word
+
++ Lexical semantics<br>
+  Different aspects of word meaning: word senses, word similarity and relatedness, lexical fields and frames, connotation, etc.
+
++ Vector semantics<br>
+  Learning computational representations of the meaning of words directly from their distributions in text
+
+---
+
 ## Recap: vectors as meaning representations
 
 What's the difference?
@@ -68,6 +93,15 @@ What's the difference?
 <img src="images/vector_doc.png" width=700>
 <img src="images/vector_word_doc.png" width=700>
 <img src="images/vector_word.png" width=700>
+
+???
+Document vector (column vector): represent the meaning of a document by the words it tends to contain
+Word vector (row vector): represent the meaning of a word by the documents it tends to occur in
+
+term-document matrix vs. term-term matrix
+the row (target) word
+the column (context) word
+
 ---
 
 ## Recap: vectors as meaning representations
@@ -82,31 +116,16 @@ What's the difference?
 > <img src="images/result_data.png" width=400>
 ]
 
----
-
-## Recap: representing the meaning of a word
-
-+ Dictionary entries
-
-+ Feature structures
-
-+ Relational databases
-
-+ Vectors
-
-+ Trees
-
-+ Synsets
-
+???
+The spatial visualization of document vectors
+The spatial visualization of word vectors
 ---
 
 ## At the end of this session you will
 
-+ understand what are word senses
++ know about how word similarity can be measured
 
-+ understand what are the possible relations between the senses of a word
-
-+ understand what are the possible relations between senses
++ understand what are word senses and the possible relations between them
 
 + know about how word senses are defined in WordNet
 
@@ -114,7 +133,80 @@ What's the difference?
 
 + know about the types of algorithms for WSD
 
-+ know about the goal and applications of computing word similarity
+---
+## Cosine for measuring word similarity
+
++ Word similarity as vector similarity
+
++ Vector similarity as the cosine of the angle between the vectors: \\(\cos(\vec{v},\vec{w})\\)
+
+  <img src="images/result_data.png" width=400>
+---
+## Cosine for measuring word similarity
+
+\\(\text{dot-product}(\vec{v},\vec{w})=\vec{v}\cdot\vec{w}\\)
+
++ Algebraic definition: \\(\vec{v}\cdot\vec{w}=\sum_{i=1}^Nv_iw_i=v_1w_1+v_2w_2+...+v_Nw_N\\)
+
++ Geometric definition: \\(\vec{v}\cdot\vec{w}=|\vec{v}||\vec{w}|\cos\theta\\)
+
+  <img src="images/cosine.png" width=500>
+
+???
+Equivalence of the definitions
+$$\cos(\vec{v},\vec{w})=\frac{\vec{v}\cdot\vec{w}}{|\vec{v}||\vec{w}|}=\frac{\sum_{i=1}^Nv_iw_i}{\sqrt{\sum_{i=1}^Nv_i^2}}$$
+\\(\frac{2}{\sqrt{\sum_{i=1}^Nv_i^2}\sqrt{\sum_{i=1}^Nv_i^2}}\\)
+---
+.left-column-3[
+## Cosine for measuring similarity: an example
+
+<img src="images/cosine_example_1.png" width=400>
+
+$$\cos(\text{apricot,information})=\frac{2+0+0}{\sqrt{4+0+0}\sqrt{1+36+1}}=\frac{2}{2\sqrt{38}}=.16$$
+
+<br>
+$$\cos(\text{digital,information})=\frac{0+6+2}{\sqrt{0+1+4}\sqrt{1+36+1}}=\frac{8}{\sqrt{38}\sqrt{5}}=.58$$
+
+]
+.right-column-3[
+<img src="images/cosine.png" width=350>
+]
+
+---
+## Food for your thought
+
+Is the simple frequency of co-occurrence the best measure of association between words?
+
+Are word vectors based on raw frequencies informative and discriminative enough to represent word meaning?
+
+---
+## The rationale behind the tf-idf vector model
+
+<img src="images/non-tf-idf.png" width=800>
+
+<img src="images/tf-idf.png" width=800>
+
+The tf-idf weighting of the value for word _t_ in document _d_:
+
+\\(w_{t,d} \\) = term frequency × inverse document frequency
+
+---
+## PPMI: measure of the association between words
+
++ Simple frequency isn’t the best measure!
+
+  Words that are frequent but not informative or discriminative: _the, it, they_
+
++ Positive Pointwise Mutual	Information	(PPMI)
+
+  How much more are the two words co-occurring in our corpus than we would have a priori expected them to appear by chance?
+
+$$ PMI(w,c) = \log_2 \frac{P(w,c)}{P(w)P(c)} $$
+
+$$ PPMI(w,c) = max (\log_2 \frac{P(w,c)}{P(w)P(c)} ,0)$$
+
+???
+在概率论中，如果x和y无关，p(x,y)=p(x)p(y)；如果x和y越相关，p(x,y)和p(x)p(y)的比就越大。
 
 ---
 
@@ -177,6 +269,12 @@ individually separate and distinct
 
 + Related problems for NLP
 
+???
+homonym | ˈhɒmənɪm |: each of two or more words having the same spelling or pronunciation but different meanings and origins
+the relation between the senses is one of homonymy
+When two senses are related semantically, we call the relationship between them polysemy rather than homonymy.
+Metonymy is the use of one aspect of a concept or entity to refer to other aspects of the entity, or to the entity itself.
+This particular subtype of polysemy relation is often called metonymy.  
 ---
 
 ## Relations between the senses of a word
@@ -198,6 +296,8 @@ individually separate and distinct
 + Antonymy
 
 + Hypernymy
+
++ Hyponymy
 
 + Meronymy
 
@@ -228,7 +328,7 @@ Examples from _American Heritage Dictionary_ (Morris, 1985)
 
 + Representing a concept in logical terms vs. represents a concept as a list of the word senses that can be used to express the concept
 
-+ WordNet 3.0
++ WordNet 3.1
 
 ---
 ## Noun relations in WordNet
@@ -374,7 +474,7 @@ https://github.com/alvations/pywsd
 
 ---
 
-## Word similarity
+## Measuring word similarity with WordNet
 
 .smaller[
 _They didn’t have <font color="red">newspapers</font>, <font color="red">books</font> and even <font color="red">cell phones</font> to transmit their viewpoints like we do._
@@ -393,28 +493,11 @@ _They didn’t have <font color="red">newspapers</font>, <font color="red">books
 
 ---
 
-## Measure of the association between words
-
-+ Simple frequency isn’t the best measure!
-
-  Words that are frequent but not informative or discriminative: _the, it, they_
-
-+ Positive Pointwise Mutual	Information	(PPMI)
-
-$$ I(x,y) = \log_2 \frac{P(x,y)}{P(x)P(y)}  \qquad  PMI(w,c) = \log_2 \frac{P(w,c)}{P(w)P(c)} $$
-
-<br>
-$$ PPMI(w,c) = max (\log_2 \frac{P(w,c)}{P(w)P(c)} ,0)$$
-
----
-
 ## At the end of this session you will
 
-+ understand what are word senses
++ know about how word similarity can be measured
 
-+ understand what are the possible relations between the senses of a word
-
-+ understand what are the possible relations between senses
++ understand what are word senses and the possible relations between them
 
 + know about how word senses are defined in WordNet
 
@@ -422,24 +505,19 @@ $$ PPMI(w,c) = max (\log_2 \frac{P(w,c)}{P(w)P(c)} ,0)$$
 
 + know about the types of algorithms for WSD
 
-+ know about the goal and applications of computing word similarity
-
 
 ---
 
-##Assignment
+##Homework
 
-** 1. Review **
++ Read/Review
 
-+ [J+M[3rd]_17](https://bxjthu.github.io/CompLing/readings/10_J+M[3rd]_17.pdf)
+  + [J+M_6](https://bxjthu.github.io/CompLing/readings/9/J+M_6.pdf) (6.1-6.7)
+  + [J+M_C](https://bxjthu.github.io/CompLing/readings/10/J+M_C.pdf)
 
-+ [Related projects of Wordnet](https://wordnet.princeton.edu/wordnet/related-projects/)
++ Practice
 
-** 2. Practice **
-
-+ [Wordnet with NLTK](http://www.nltk.org/book/ch02.html#wordnet)
-
-+ Finish Exercise - Practical 6 and submit your codes at 网络学堂. (DDL: Dec. 13)
+  + http://www.nltk.org/book/ch02.html#wordnet
 
 ---
 class: center, middle
