@@ -346,15 +346,34 @@ Examples from _American Heritage Dictionary_ (Morris, 1985)
 
 + [WordNet online](http://wordnetweb.princeton.edu/perl/webwn)
 
-+ [Database statistics](http://wordnet.princeton.edu/wordnet/man/wnstats.7WN.html)
++ [Database statistics](https://wordnet.princeton.edu/documentation/wnstats7wn)
 
-+ [A glossary of WordNet terms](https://wordnet.princeton.edu/wordnet/man/wngloss.7WN.html)
++ [A glossary of WordNet terms](https://wordnet.princeton.edu/documentation/wngloss7wn)
 
 + [Five Papers on WordNet](http://wordnetcode.princeton.edu/5papers.pdf)
 
-+ [FAQ for linguists](https://wordnet.princeton.edu/wordnet/frequently-asked-questions/for-linguists/)
++ [Frequently Asked Questions](https://wordnet.princeton.edu/frequently-asked-questions)
 
 + [Wordnet with NLTK](http://www.nltk.org/book/ch02.html#wordnet)
+
+---
+
+## Measuring word similarity with WordNet
+
+.smaller[
+_They didn’t have <font color="red">newspapers</font>, <font color="red">books</font> and even <font color="red">cell phones</font> to transmit their viewpoints like we do._
+]
++ A fundamental task for semantic models is to predict how similar two words’ meanings are
+
++ Applications: query expansion, learning sentiment lexicons, paraphrasing...
+
++ Thesaurus methods
+
++ Goal: measure how close the two target words are within the hierarchy
+
++ [WordNet::Similarity](http://maraca.d.umn.edu/cgi-bin/similarity/similarity.cgi)
+
++ [Computing semantic similarity with NLTK](http://www.nltk.org/book/ch02.html#wordnet)
 
 ---
 
@@ -471,25 +490,6 @@ https://github.com/alvations/pywsd
 * ['he needs a car to get to work']
 *
 ```
-
----
-
-## Measuring word similarity with WordNet
-
-.smaller[
-_They didn’t have <font color="red">newspapers</font>, <font color="red">books</font> and even <font color="red">cell phones</font> to transmit their viewpoints like we do._
-]
-+ A fundamental task for semantic models is to predict how similar two words’ meanings are
-
-+ Applications: query expansion, learning sentiment lexicons, paraphrasing...
-
-+ Thesaurus methods
-
-+ Goal: measure how close the two target words are within the hierarchy
-
-+ [WordNet::Similarity](http://maraca.d.umn.edu/cgi-bin/similarity/similarity.cgi)
-
-+ [Computing semantic similarity with NLTK](http://www.nltk.org/book/ch02.html#wordnet)
 
 ---
 
