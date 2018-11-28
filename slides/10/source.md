@@ -127,9 +127,9 @@ The spatial visualization of word vectors
 
 + understand what are word senses and the possible relations between them
 
-+ know about how word senses are defined in WordNet
++ understand how word senses are defined in WordNet
 
-+ know about the goal and applications of WSD
++ understand the goal and applications of WSD
 
 + know about the types of algorithms for WSD
 
@@ -499,9 +499,9 @@ _They didn’t have <font color="red">newspapers</font>, <font color="red">books
 
 + understand what are word senses and the possible relations between them
 
-+ know about how word senses are defined in WordNet
++ understand how word senses are defined in WordNet
 
-+ know about the goal and applications of WSD
++ understand the goal and applications of WSD
 
 + know about the types of algorithms for WSD
 
