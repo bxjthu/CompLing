@@ -153,6 +153,14 @@ The spatial visualization of word vectors
   <img src="images/cosine.png" width=500>
 
 ???
+$$\sqrt{\sum\limits_{i=1}^{N}v_i^2}$$
+
+$$\sqrt{\sum_{i=1}^{N}{v_i}^2} \sqrt{\sum_{i=1}^{N}{v_i}^2}$$
+
+\\(\frac{2}{\sqrt{\sum_{i=1}^Nv_i^2}\sqrt{\sum_{i=1}^Nv_i^2}}\\)
+
+  $$\cos(\vec{v},\vec{w})=\frac{\vec{v}\cdot\vec{w}}{|\vec{v}||\vec{w}|}=\frac{\sum_{i=1}^Nv_iw_i}{\sum_{i=1}^Nx}$$
+
 Equivalence of the definitions
 $$\cos(\vec{v},\vec{w})=\frac{\vec{v}\cdot\vec{w}}{|\vec{v}||\vec{w}|}=\frac{\sum_{i=1}^Nv_iw_i}{\sqrt{\sum_{i=1}^Nv_i^2}}$$
 \\(\frac{2}{\sqrt{\sum_{i=1}^Nv_i^2}\sqrt{\sum_{i=1}^Nv_i^2}}\\)
