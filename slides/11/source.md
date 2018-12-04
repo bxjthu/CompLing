@@ -172,7 +172,7 @@ Introduce an online language resource for NLP, together with the possible applic
 
 - [ ] Week 17: Term project milestone 3 [methodology]
 
-- [ ] Week 18: Term project milestone 4 [final-sub]
+- [ ] Week 18: Term project milestone 4 [final submission]
 
 ---
 
