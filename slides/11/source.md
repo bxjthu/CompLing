@@ -1,6 +1,6 @@
 class: center, middle
 # Computational Linguistics<br>
-## 11. WordNet
+## 11. More on WordNet
 
 ** Xiaojing Bai **
 
