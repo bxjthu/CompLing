@@ -12,7 +12,7 @@ class: center, middle
 
 ## More on WordNet
 
-+ What it is?
++ What is it?
 
 + How does it look like?
 
@@ -160,19 +160,19 @@ Introduce an online language resource for NLP, together with the possible applic
 
 ## Important events for the remaining weeks
 
-- [x] Week 12: Teamwork presentation
+\\(\surd\\) Week 12: Teamwork presentation
 
-- [ ] Week 13: Quiz 9
+\\(\Box\\) Week 13: Quiz 9
 
-- [ ] Week 14: Term project milestone 1 [idea(s)]
+\\(\Box\\) Week 14: Term project milestone 1 [idea(s)]
 
-- [ ] Week 15: Term project milestone 2 [literature review]
+\\(\Box\\) Week 15: Term project milestone 2 [literature review]
 
-- [ ] Week 16: Final exam
+\\(\Box\\) Week 16: Final exam
 
-- [ ] Week 17: Term project milestone 3 [methodology]
+\\(\Box\\) Week 17: Term project milestone 3 [methodology]
 
-- [ ] Week 18: Term project milestone 4 [final submission]
+\\(\Box\\) Week 18: Term project milestone 4 [final submission]
 
 ---
 
