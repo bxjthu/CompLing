@@ -147,10 +147,16 @@ $$\text{sim}_\text{{Resnik}}(c_1,c_2) = - \log P(\text{LCS}(c_1,c_2))$$
 <img src="images/augmented_hierarchy.png" width=450>
 ]
 
-???
-The logarithm of x to base b is denoted as logb (x) (or, without parentheses, as logb x, or even without explicit base as log x, when no confusion is possible).
-Logarithms can be used to simplify calculations, as the addition and subtraction of logarithms is equivalent to multiplication and division, though the use of printed tables of logarithms for this has declined with the spread of electronic calculators.
+---
+## Logarithms
 
++ Logarithms can be used to simplify calculations, as the addition and subtraction of logarithms is equivalent to multiplication and division, though the use of printed tables of logarithms for this has declined with the spread of electronic calculators... The base of a common logarithm is 10, and that of a natural logarithm is the number e (2.71828 …) .smaller[(Source: Oxford dictionary)]
+
++ The logarithm of x to base b is denoted as logb (x) (or, without parentheses, as logb x, or even without explicit base as log x, when no confusion is possible). .smaller[(Source: Wiki)]
+
++ 在l(x)的定义中，log对数操作既可以以2为底，也可以以e为底，但它们没有本质区别，只差一个固定的倍数。当讨论信息编码的时候，采用以2为底比较方便，这时候I(x)的单位是bit；而讨论机器学习的时候，以e为底比较方便。.smaller[http://zhangtielei.com/posts/blog-deep-learning-foundation.html]
+
+???
 $$\text{sim}_\text{{Resnik}}(c_1,c_2) = - \log P(\text{LCS}(c_1,c_2))$$
 
 $$\text{sim}_\text{{Lin}}(c_1,c_2) = \frac{2 \times \log P(\text{LCS}(c_1,c_2))}{\log P(c_1) + \log P(c_2)}$$
