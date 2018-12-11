@@ -259,7 +259,7 @@ $$ PPMI(w,c) = max (\log_2 \frac{P(w,c)}{P(w)P(c)} ,0)$$
 .smaller[
   We know the answers for a small number of examples, and can gain more examples from the data by finding similar cases and inferring the answers they should have through bootstrapping.
 ]
-+ Unsupervised
++ [Unsupervised](Unsupervised_WSD.pdf)
 .smaller[
   We start with no known answers, and no predefined senses. The set of “senses” is created automatically from the instances of each word in the training set.
 ]
