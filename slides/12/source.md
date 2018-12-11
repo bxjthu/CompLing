@@ -225,6 +225,13 @@ Introduce an online language resource for NLP, together with the possible applic
 
 ---
 
+## Practical 12
+
++ Chinese Object-Oriented Lexicon (introduced by Zheng Hua)
+
++ ESODA (introduced by Liu Yipeng)
+
+---
 ##Homework
 
 + Read/Review
