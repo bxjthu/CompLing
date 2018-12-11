@@ -1,0 +1,84 @@
+﻿{
+	"root": [
+		{
+			"parent": -1,
+			"text": "ROOT",
+			"relation": "null"
+		},
+		{
+			"parent": 2,
+			"text": "The goal of sentence and document modeling is to accurately represent the meaning of sentences and documents for various Natural Language Processing tasks.\r",
+			"relation": "background"
+		},
+		{
+			"parent": 0,
+			"text": "In this work, we present Dependency Sensitive Convolutional Neural Networks (DSCNN) \r",
+			"relation": "ROOT"
+		},
+		{
+			"parent": 2,
+			"text": "as a general purpose classification system for both sentences and documents.\r",
+			"relation": "elab-addition"
+		},
+		{
+			"parent": 2,
+			"text": "DSCNN hierarchically builds textual representations \r",
+			"relation": "elab-aspect"
+		},
+		{
+			"parent": 4,
+			"text": "by processing pretrained word embeddings via Long Short-Term Memory networks \r",
+			"relation": "manner-means"
+		},
+		{
+			"parent": 4,
+			"text": "and subsequently extracting features with convolution operators.\r",
+			"relation": "joint"
+		},
+		{
+			"parent": 8,
+			"text": "Compared with existing recursive neural models with tree structures, \r",
+			"relation": "comparison"
+		},
+		{
+			"parent": 2,
+			"text": "DSCNN does not rely on parsers and expensive phrase labeling, \r",
+			"relation": "elab-aspect"
+		},
+		{
+			"parent": 8,
+			"text": "and thus is not restricted to sentencelevel tasks.\r",
+			"relation": "cause"
+		},
+		{
+			"parent": 12,
+			"text": "Moreover, unlike other CNNbased models \r",
+			"relation": "contrast"
+		},
+		{
+			"parent": 10,
+			"text": "that analyze sentences locally by sliding windows, \r",
+			"relation": "elab-addition"
+		},
+		{
+			"parent": 2,
+			"text": "our system captures both the dependency information within each sentence and relationships across sentences in the same document.\r",
+			"relation": "elab-aspect"
+		},
+		{
+			"parent": 2,
+			"text": "Experiment results demonstrate \r",
+			"relation": "evaluation"
+		},
+		{
+			"parent": 13,
+			"text": "that our approach is achieving state-of-the-art performance on several tasks, \r",
+			"relation": "attribution"
+		},
+		{
+			"parent": 14,
+			"text": "including sentiment analysis, question type classification, and subjectivity classification.",
+			"relation": "elab-enum_member"
+		}
+	]
+}

@@ -26,9 +26,9 @@ There will be 14 lectures in total, each followed by a practical session during 
 ## Grading
 + Participation (5%): showing up for class, demonstrating preparedness, contributing to class discussions
 + Quizzes (20%): in-class quizzes about the required readings
-+ Homework (25%): post-class tasks concerning the lectures, practicals, and readings
++ Homework (20%): post-class tasks concerning the lectures, practicals, and readings
 + Final exam (20%): close-book exam covering the topics of the course
-+ Term project (30%): a research proposal (e.g. a theoretical or applied study of language from a computational perspective and supported by CL tools or resources, an improvement of a CL algorithm or an NLP application, etc.) and the preliminary implementation of the proposal
++ Term project (35%): a research proposal (e.g. a theoretical or applied study of language from a computational perspective and supported by CL tools or resources, an improvement of a CL algorithm or an NLP application, etc.) and the preliminary implementation of the proposal
 
 ## Readings
 + [Speech and Language Processing - An Introduction to Natural Language Processing, Computational Linguistics, and Speech Recognition](http://web.stanford.edu/~jurafsky/slp3/) by Daniel Jurafsky and James. H. Martin
@@ -58,10 +58,11 @@ Session | Slides | Required Readings | Extras
 9 | [Meaning Representation and Vector Semantics](slides/9)[[pdf](slides/9/9.pdf)]<br>[Practical 9](slides/9/prac9_CYK_revisited.pdf)<br>[Homework](slides/9/#39) | [J+M_14](readings/9/J+M_14.pdf) (14.1-14.4)<br> [J+M_6](readings/9/J+M_6.pdf) (6.1-6.3) |
 10 | [Semantic Similarity and Word Sense Disambiguation](slides/10) <br>[Teamwork submission guideline](slides/10/teamwork_submission_guideline.pdf)<br>[Homework](slides/10/#34) | [J+M_6](readings/9/J+M_6.pdf) (6.1-6.7)<br>[J+M_C](readings/10/J+M_C.pdf) |[Distributed word representations: vector comparison](slides/10/vector_comparison.mp4)
 11 | Teamwork presentation <br> [More on WordNet](slides/11)|[J+M_C](readings/10/J+M_C.pdf)(C.1-C.4)|[WordNet](https://wordnet.princeton.edu/)
-12 | Semantic Role Labeling and Computational Discourse  |  |
-13 | Online Language Resources: Advances, Applications, and Challenges  |  |
-14 | NLP Applications -1 |  |
-15 | NLP Applications -2 |  |
+12 | [Semantic Role Labeling]((slides/12) | [J+M_18](readings/12/J+M_18.pdf) |
+13 | Computational Discourse  |  |
+14 | Online Language Resources: Advances, Applications, and Challenges  |  |
+15 | NLP Applications -1 |  |
+16 | NLP Applications -2 |  |
 
 
 # WE

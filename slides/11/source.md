@@ -94,9 +94,9 @@ class: center, middle
 
 \\(\text{pathlen}(c_1,c_2)\\) = 1 + the number of edges in the shortest path in the thesaurus graph between the sense nodes \\(c_1\\) and \\(c_2\\)
 
-$$\text{sim}_\text{{path}}(c_1,c_2)=\frac{1}{\text{pathlen}(c_1,c_2)}$$
+$$\text{sim}_\text{{path}}(c_1,c_2) = \frac{1}{\text{pathlen}(c_1,c_2)}$$
 
-$$\text{wordsim}(w_1,w_2)= \underset{c_1 \in \text{senses}(w_1) \atop c_2 \in \text{senses}(w_2)}{\text{max}}\text{sim}(c_1,c_2)$$
+$$\text{wordsim}(w_1,w_2) = \underset{c_1 \in \text{senses}(w_1) \atop c_2 \in \text{senses}(w_2)}{\text{max}}\text{sim}(c_1,c_2)$$
 
 ]
 
@@ -107,9 +107,79 @@ $$\text{wordsim}(w_1,w_2)= \underset{c_1 \in \text{senses}(w_1) \atop c_2 \in \t
 ---
 ## Word similarity: refined algorithms
 
++ More fine-grained metrics, e.g., information-content word similarity
+
+  + Structure of the thesaurus
+  + Probabilistic information derived from a corpus
+
+.left-column-2[
+$$P(c) = \frac{\sum_{w \in words(c)} count(w)}{N}$$
+
+.smaller[
+\\(P(c)\\): the probability of encountering an instance of concept c in the corpus;
+
+\\(words(c)\\): the set of words subsumed by concept \\(c\\);
+
+\\(N\\): the total number of words in the corpus that are also present in the thesaurus.
+]
+]
+.right-column-4[
+<img src="images/augmented_hierarchy.png" width=450>
+]
+
+---
+## Word similarity: refined algorithms
+
++ More fine-grained metrics, e.g., information-content word similarity
+
+  + Structure of the thesaurus
+  + Probabilistic information derived from a corpus
+
+.left-column-2[
+$$P(c) = \frac{\sum_{w \in words(c)} count(w)}{N}$$
+
+$$\text{IC}(c) = - \log P(c)$$
+
+$$\text{sim}_\text{{Resnik}}(c_1,c_2) = - \log P(\text{LCS}(c_1,c_2))$$
+]
+
+.right-column-4[
+<img src="images/augmented_hierarchy.png" width=450>
+]
+
+???
+The logarithm of x to base b is denoted as logb (x) (or, without parentheses, as logb x, or even without explicit base as log x, when no confusion is possible).
+Logarithms can be used to simplify calculations, as the addition and subtraction of logarithms is equivalent to multiplication and division, though the use of printed tables of logarithms for this has declined with the spread of electronic calculators.
+
+$$\text{sim}_\text{{Resnik}}(c_1,c_2) = - \log P(\text{LCS}(c_1,c_2))$$
+
+$$\text{sim}_\text{{Lin}}(c_1,c_2) = \frac{2 \times \log P(\text{LCS}(c_1,c_2))}{\log P(c_1) + \log P(c_2)}$$
+
+$$\text{sim}_\text{{JC}}(c_1,c_2) = \frac{1}{2 \times \log P(\text{LCS}(c_1,c_2))- (\log P(c_1) + \log P(c_2))}$$
+
+$$\text{sim}_\text{{eLesk}}(c_1,c_2) = \sum_{r,q \in \text{RELS}} \text{overlap} ( \text{gloss}(r(c_1)),  \text{gloss}(q(c_2))\)$$
+---
+## Word similarity: five thesaurus/dictionary-based similarity measures
+
+<img src="images/five_measures.png" width=700>
+
 + [WordNet::Similarity](http://maraca.d.umn.edu/cgi-bin/similarity/similarity.cgi)
 
 + [Computing semantic similarity with NLTK](http://www.nltk.org/book/ch02.html#wordnet)
+
+
+---
+
+## Evaluating thesaurus-based similarity
+
++ NLP evaluation
+
+  "As the engineering branch of computational linguistics, natural language processing is concerned with the creation of artifacts that accomplish tasks. The operative question in evaluating an NLP algorithm or system is therefore the extent to which it produces the results for which it was designed. " (Resnik & Lin, 2010)
+
++ Evaluation metrics
+  + Correlation coefficient: <br>(1)human-labeled datasets; (2)TOEFL datasets; (3)contextual datasets
+
+  + End-application embedment
 
 ---
 ## Related projects
@@ -121,25 +191,63 @@ $$\text{wordsim}(w_1,w_2)= \underset{c_1 \in \text{senses}(w_1) \atop c_2 \in \t
 + Chinese Object-Oriented Lexicon (introduced by Zheng Hua)
 
 ---
-## Voluntary research tasks: online language resources for NLP
 
-Introduce an online language resource for NLP, together with the possible applications that interest you most. Such as:
-+ Online search engines equipped with big corpora
-  + [Word Sketch Engine](https://www.sketchengine.co.uk/)
-  + [Google Ngram](https://books.google.com/ngrams) .smaller[(Wiki: [Google Ngram Viewer](https://en.wikipedia.org/wiki/Google_Ngram_Viewer))]
-  + [WebCorp Search Engine](http://www.webcorp.org.uk/live/index.jsp)
-  + [CCL Corpus Search Engine](http://ccl.pku.edu.cn:8080/ccl_corpus/) (PKU)
-  + [BCC Corpus Search Engine](http://bcc.blcu.edu.cn/) (BLCU)
-  + ...
-+ Knowledge bases
-  + [HowNet](http://www.keenage.com/html/e_index.html) (Zhendong Dong)
-  + [The Emotion Ontology](http://ir.dlut.edu.cn/EmotionOntologyDownload) (Dalian University of Technology)
-  + ...
+## Recap: Algorithms to measure word similarity
 
++ Thesaurus-based algorithms
+
++ Distributional algorithms<br>
+
+  Cosine for measuring word similarity
+
+  + Word similarity as vector similarity
+
+  + Vector similarity as the cosine of the angle between the vectors
+
+---
+## Recap: Word similarity vs. word relatedness
+
+Mug, cup, coffee, croissant
+
+<img src="images/mug.png" height=200>
+<img src="images/cup.png" height=150>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img src="images/croissant_coffee.jpg" height=250>
+
++ Word similarity - a subcase of word relatedness
+
++ Not distinguished in the following measuring algorithm
+
+---
+## Recap: Measure of the association between words
+
+Positive Pointwise Mutual	Information	(PPMI)
+
+How much more are the two words co-occurring in our corpus than we would have a priori expected them to appear by chance?
+<br><br>
+
+$$ PMI(w,c) = \log_2 \frac{P(w,c)}{P(w)P(c)} $$
+
+$$ PPMI(w,c) = max (\log_2 \frac{P(w,c)}{P(w)P(c)} ,0)$$
+
+---
+## Recap: Word sense disambiguation (WSD)
+
++ Lexical ambiguity and an avalanche of competing interpretations
+
++ WSD: the task of selecting the correct sense for a word
+  + Input: a word in context along with a fixed inventory of potential senses<br>
+  + Output: the correct word sense for that use
+
+  _Reports said the plant was likely to close in December, leaving many jobless._<br><br>
+  plant 1: leafy green organism<br>
+  plant 2: equipment and fixtures for manufacturing<br>
+
++ Applications
 ---
 ## Voluntary research tasks: WSD algorithms
 
-+ Supervised
++ [Supervised](Supervised_WSD.pdf)
 .smaller[
   We know the answers for many examples and can use them to learn from their (automatically determinable) characteristics. We then apply the learned model to a comparable set of examples (not the same ones).
 ]
@@ -162,17 +270,17 @@ Introduce an online language resource for NLP, together with the possible applic
 
 \\(\surd\\) Week 12: Teamwork presentation
 
-\\(\Box\\) Week 13: Quiz 9
+\\(\surd\\) Week 13: Quiz 9
 
-\\(\Box\\) Week 14: Term project milestone 1 [idea(s)]
+\\(\Box\\) Week 14: Term project milestone 1 [idea(s)] (5%)
 
-\\(\Box\\) Week 15: Term project milestone 2 [literature review]
+\\(\Box\\) Week 15: Term project milestone 2 [literature review] (10%)
 
 \\(\Box\\) Week 16: Final exam
 
-\\(\Box\\) Week 17: Term project milestone 3 [methodology]
+\\(\Box\\) Week 17: Term project milestone 3 [methodology] (10%)
 
-\\(\Box\\) Week 18: Term project milestone 4 [final submission]
+\\(\Box\\) Week 18: Term project milestone 4 [final submission] (10%)
 
 ---
 
@@ -191,4 +299,4 @@ Introduce an online language resource for NLP, together with the possible applic
 class: center, middle
 ## Next session
 
-Semantic Role Labeling and Computational Discourse
+Semantic Role Labeling
