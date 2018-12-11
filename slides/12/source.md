@@ -244,4 +244,4 @@ Introduce an online language resource for NLP, together with the possible applic
 class: center, middle
 ## Next session
 
-Online language resources: <br>advances, applications, and challenges
+Computational Discourse
