@@ -231,6 +231,7 @@ Introduce an online language resource for NLP, together with the possible applic
 
 + ESODA (introduced by Liu Yipeng)
 
+
 ---
 ##Homework
 
@@ -239,6 +240,27 @@ Introduce an online language resource for NLP, together with the possible applic
   + [J+M_18](https://bxjthu.github.io/CompLing/readings/12/J+M_18.pdf)
 
 + Term project milestone 1 [idea(s)] (DDL: Dec. 18, 2018)
+
+
+---
+
+## Important events for the remaining weeks
+
+\\(\surd\\) Week 12: Teamwork presentation
+
+\\(\surd\\) Week 13: Quiz 9
+
+\\(\Box\\) Week 14: Term project milestone 1 [idea(s)] (5%)
+
+\\(\Box\\) Week 15: Term project milestone 2 [literature review] (10%)
+
+\\(\Box\\) Week 16: Final exam
+
+\\(\Box\\) Week 17: Term project milestone 3 [methodology] (10%)
+
+\\(\Box\\) Week 18: Term project milestone 4 [final submission] (10%)
+
+
 
 ---
 class: center, middle
