@@ -194,6 +194,8 @@ $$\text{sim}_\text{{eLesk}}(c_1,c_2) = \sum_{r,q \in \text{RELS}} \text{overlap}
 
 + [Semantic networks - in languages other than English](https://wordnet.princeton.edu/related-projects)
 
++ [NLTK-HOWTO: WordNet Interface](http://www.nltk.org/howto/wordnet.html)
+
 + Chinese Object-Oriented Lexicon (introduced by Zheng Hua)
 
 ---
