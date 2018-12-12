@@ -154,7 +154,7 @@ $$\text{sim}_\text{{Resnik}}(c_1,c_2) = - \log P(\text{LCS}(c_1,c_2))$$
 
 + The logarithm of x to base b is denoted as logb (x) (or, without parentheses, as logb x, or even without explicit base as log x, when no confusion is possible). .smaller[(Source: Wiki)]
 
-+ 在l(x)的定义中，log对数操作既可以以2为底，也可以以e为底，但它们没有本质区别，只差一个固定的倍数。当讨论信息编码的时候，采用以2为底比较方便，这时候I(x)的单位是bit；而讨论机器学习的时候，以e为底比较方便。.smaller[http://zhangtielei.com/posts/blog-deep-learning-foundation.html]
++ 在l(x)的定义中，log对数操作既可以以2为底，也可以以e为底，但它们没有本质区别，只差一个固定的倍数。当讨论信息编码的时候，采用以2为底比较方便，这时候I(x)的单位是bit；而讨论机器学习的时候，以e为底比较方便。.smaller[(source: http://zhangtielei.com/posts/blog-deep-learning-foundation.html)]
 
 ???
 $$\text{sim}_\text{{Resnik}}(c_1,c_2) = - \log P(\text{LCS}(c_1,c_2))$$
