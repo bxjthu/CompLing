@@ -217,11 +217,11 @@ Introduce an online language resource for NLP, together with the possible applic
   + [WebCorp Search Engine](http://www.webcorp.org.uk/live/index.jsp)
   + [CCL Corpus Search Engine](http://ccl.pku.edu.cn:8080/ccl_corpus/) (PKU)
   + [BCC Corpus Search Engine](http://bcc.blcu.edu.cn/) (BLCU)
-  + ...
 + Knowledge bases
+  + [PropBank](https://propbank.github.io/)
+  + [FrameNet](https://framenet.icsi.berkeley.edu/)
   + [HowNet](http://www.keenage.com/html/e_index.html) (Zhendong Dong)
   + [The Emotion Ontology](http://ir.dlut.edu.cn/EmotionOntologyDownload) (Dalian University of Technology)
-  + ...
 
 ---
 
