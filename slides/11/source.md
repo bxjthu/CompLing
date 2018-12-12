@@ -231,13 +231,16 @@ Mug, cup, coffee, croissant
 
 Positive Pointwise Mutual	Information	(PPMI)
 
-How much more are the two words co-occurring in our corpus than we would have a priori expected them to appear by chance?
-<br><br>
-
+How much more are the two words co-occurring in our corpus than we would expect if they were independent?
+<br>
+.left-column-4[
 $$ PMI(w,c) = \log_2 \frac{P(w,c)}{P(w)P(c)} $$
-
+<br>
 $$ PPMI(w,c) = max (\log_2 \frac{P(w,c)}{P(w)P(c)} ,0)$$
-
+]
+.right-column-3[
+<img src="images/log2.png" height=250>
+]
 ---
 ## Recap: Word sense disambiguation (WSD)
 
