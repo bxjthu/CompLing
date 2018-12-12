@@ -274,25 +274,6 @@ $$ PPMI(w,c) = max (\log_2 \frac{P(w,c)}{P(w)P(c)} ,0)$$
 .smaller[
   We start with no known answers, and no predefined senses. The set of “senses” is created automatically from the instances of each word in the training set.
 ]
-
----
-
-## Important events for the remaining weeks
-
-\\(\surd\\) Week 12: Teamwork presentation
-
-\\(\surd\\) Week 13: Quiz 9
-
-\\(\Box\\) Week 14: Term project milestone 1 [idea(s)] (5%)
-
-\\(\Box\\) Week 15: Term project milestone 2 [literature review] (10%)
-
-\\(\Box\\) Week 16: Final exam
-
-\\(\Box\\) Week 17: Term project milestone 3 [methodology] (10%)
-
-\\(\Box\\) Week 18: Term project milestone 4 [final submission] (10%)
-
 ---
 
 ##Homework
