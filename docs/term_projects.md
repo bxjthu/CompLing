@@ -1,6 +1,6 @@
 ## Some topics from the term projects of 2017
 
-+ A Method of Measuring of Coherence of an English Essay
++ A Method of Measuring of the Coherence of an English Essay
 
 + Evaluating the Discourse Coherence of English Speech Texts with Machine Learning – A Rhetorical Structure Model
 
@@ -10,9 +10,7 @@
 
 + Measuring the Advertisement Acceptance Based on the Comments on Bilibili
 
-+ Authorship Identification of Zhuangzi
-
-+ Paragraph Tagging For Model Initialization
++ Authorship Identification of _Zhuangzi_
 
 + Complex Word Identification Revisited
 
