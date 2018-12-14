@@ -58,7 +58,7 @@ Session | Slides | Required Readings | Extras
 9 | [Meaning Representation and Vector Semantics](slides/9)[[pdf](slides/9/9.pdf)]<br>[Practical 9](slides/9/prac9_CYK_revisited.pdf)<br>[Homework](slides/9/#39) | [J+M_14](readings/9/J+M_14.pdf) (14.1-14.4)<br> [J+M_6](readings/9/J+M_6.pdf) (6.1-6.3) |
 10 | [Semantic Similarity and Word Sense Disambiguation](slides/10) <br>[Teamwork submission guideline](slides/10/teamwork_submission_guideline.pdf)<br>[Homework](slides/10/#34) | [J+M_6](readings/9/J+M_6.pdf) (6.1-6.7)<br>[J+M_C](readings/10/J+M_C.pdf) |[Distributed word representations: vector comparison](slides/10/vector_comparison.mp4)
 11 | Teamwork presentation <br> [More on WordNet](slides/11)|[J+M_C](readings/10/J+M_C.pdf)(C.1-C.4)|[WordNet](https://wordnet.princeton.edu/)
-12 | [Practical 12](slides/12)<br>[Homework](slides/12/#3) |  |
+12 | [Practical 12](slides/12)<br>[Homework](slides/12/#3) |  |[Topics from term projects 2017](docs/term_projects)
 13 | Semantic Role Labeling and Computational Discourse  | [J+M_18](readings/12/J+M_18.pdf) |
 14 | Online Language Resources: Advances, Applications, and Challenges  |  |
 15 | NLP Applications -1 |  |
