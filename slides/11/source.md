@@ -274,6 +274,7 @@ $$ PPMI(w,c) = max (\log_2 \frac{P(w,c)}{P(w)P(c)} ,0)$$
 .smaller[
   We start with no known answers, and no predefined senses. The set of “senses” is created automatically from the instances of each word in the training set.
 ]
+
 ---
 
 ##Homework
@@ -286,6 +287,7 @@ $$ PPMI(w,c) = max (\log_2 \frac{P(w,c)}{P(w)P(c)} ,0)$$
 + Practice
 
   + http://www.nltk.org/book/ch02.html#wordnet
+
 
 ---
 class: center, middle
