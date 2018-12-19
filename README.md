@@ -59,7 +59,7 @@ Session | Slides | Required Readings | Extras
 10 | [Semantic Similarity and Word Sense Disambiguation](slides/10) <br>[Teamwork submission guideline](slides/10/teamwork_submission_guideline.pdf)<br>[Homework](slides/10/#34) | [J+M_6](readings/9/J+M_6.pdf) (6.1-6.7)<br>[J+M_C](readings/10/J+M_C.pdf) |[Distributed word representations: vector comparison](slides/10/vector_comparison.mp4)
 11 | Teamwork presentation <br> [More on WordNet](slides/11)|[J+M_C](readings/10/J+M_C.pdf)(C.1-C.4)|[WordNet](https://wordnet.princeton.edu/)
 12 | [Practical 12](slides/12)<br>[Homework](slides/12/#4) |  |[Topics from term projects 2017](docs/term_projects)<br>[Qing Lyu: Google Ngram](slides/12/Google_Ngram.pdf)
-13 | Semantic Role Labeling and Computational Discourse  | [J+M_18](readings/12/J+M_18.pdf) |
+13 | [Semantic Role Labeling and Computational Discourse](slides/13) | [J+M_18](readings/12/J+M_18.pdf)<br>[J+M_second_edition_21](readings/13/J+M_second_edition_21.pdf) |
 14 | Online Language Resources: Advances, Applications, and Challenges  |  |
 15 | NLP Applications -1 |  |
 16 | NLP Applications -2 |  |
