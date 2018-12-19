@@ -39,6 +39,12 @@ Introduce an online language resource for NLP, together with the possible applic
 
 + Term project milestone 1 [idea(s)] (DDL: Dec. 18, 2018)
 
+  For Milestone 1, you’ll submit 1 to 3 project ideas. For each idea you should describe:
+  1. A problem definition (1 to 2 paragraphs, plus an illustrative example)
+  2. A pointer to two or more papers or textbook sections that describe the problem
+  3. What evaluation metrics could be used to score system outputs (if applicable)
+  4. What type of data you will need, and how much data is available
+
 + [Some topics from the term projects of 2017](https://bxjthu.github.io/CompLing/docs/term_projects)
 
 
