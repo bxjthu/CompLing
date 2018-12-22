@@ -661,7 +661,7 @@ branching node that dominates A, also dominates B.
 
 + Term project milestone 2 [literature review] (DDL: Dec. 25, 2018)
 
-
+  [Read the detailed requirements](term_project_milestone_2.pdf)
 ---
 
 ## Important events for the remaining weeks
