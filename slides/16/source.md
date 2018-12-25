@@ -449,27 +449,8 @@ Sentence similarity measurement
 + know about computer-assisted translation
 
 ---
-## Final exam: sample questions
-
-.smaller[
-1. Which of the following matches regular expression /(very )+(fat )?(tall|ugly) man/<br>
-1) very fat man<br>
-2) fat tall man<br>
-3) very very fat ugly man<br>
-4) very very very tall man
-
-2. Convert the following FOL expression into a natural language sentence. <br>
-$\forall xVegetarianRestaurant(x) \implies Serves(x,VegetarianFood)$
-
-3. Discuss ambiguity in part-of-speech tagging and techniques that can be used to deal with it. Illustrate your discussion with examples.
-
-4. Describe two different natural language processing systems which require semantic information for optimal performance and explain how the semantic information could be obtained and integrated in the systems.
-
-5. Explain how to automatically resolve the pronominal anaphora in the following discourse:<br>
-_John saw a house he liked. The windows were large and the door was varnished. He wanted to go inside it._
-]
----
 class: center, middle
-## Next session
-
-NLP Applications
+<font color="gray">
+##That the powerful play goes on,
+##and you may contribute a verse.</font>
+##What will your verse be?<br><br><br>
