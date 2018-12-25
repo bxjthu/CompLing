@@ -27,7 +27,7 @@ There will be 14 lectures in total, each followed by a practical session during 
 + Participation (5%): showing up for class, demonstrating preparedness, contributing to class discussions
 + Quizzes (20%): in-class quizzes about the required readings
 + Homework (20%): post-class tasks concerning the lectures, practicals, and readings
-+ Final exam (20%): close-book exam covering the topics of the course
++ [Final exam](docs/final) (20%): close-book exam covering the topics of the course
 + Term project (35%): a research proposal (e.g. a theoretical or applied study of language from a computational perspective and supported by CL tools or resources, an improvement of a CL algorithm or an NLP application, etc.) and the preliminary implementation of the proposal
 
 ## Readings
