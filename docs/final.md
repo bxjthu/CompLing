@@ -2,7 +2,7 @@
 
 Date: Jan. 2, 2019
 
-Readings Covered by the final exam:
+Readings covered by the final exam:
 + Overview
   + [J+M_1](../readings/1/J+M_1.pdf)
 
@@ -21,5 +21,5 @@ Readings Covered by the final exam:
 
 + Language resources
   + [J+M_10: 10.4](../readings/6/J+M_10.pdf)
-  + [J+M_C: C.1-C.4](../readings/10/J+M_C.pdf)
+  + [J+M_C: intro; C.1-C.4](../readings/10/J+M_C.pdf)
   + [J+M_18: 18.4-18.5](../readings/13/J+M_18.pdf)
