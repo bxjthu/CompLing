@@ -15,11 +15,11 @@ Readings covered by the final exam:
   + [J+M_6: intro; 6.1-6.7](../readings/9/J+M_6.pdf)
 
 + <strike>Language specifics</strike>
-  + [J+M_2: 2.2](../readings/2/J+M_2.pdf)
-  + [J+M_second_edition_3: 3.1](../readings/2/J+M_second_edition_3.pdf)
-  + [J+M_10: 10.3](../readings/6/J+M_10.pdf)
+  + <strike>[J+M_2: 2.2](../readings/2/J+M_2.pdf)</strike>
+  + <strike>[J+M_second_edition_3: 3.1](../readings/2/J+M_second_edition_3.pdf)</strike>
+  + <strike>[J+M_10: 10.3](../readings/6/J+M_10.pdf)</strike>
 
 + Language resources
-  + [J+M_10: 10.4](../readings/6/J+M_10.pdf)
+  + <strike>[J+M_10: 10.4](../readings/6/J+M_10.pdf)</strike>
   + [J+M_C: intro; C.1-C.4](../readings/10/J+M_C.pdf)
-  + [J+M_18: 18.4-18.5](../readings/13/J+M_18.pdf)
+  + <strike>[J+M_18: 18.4-18.5](../readings/13/J+M_18.pdf)</strike>
