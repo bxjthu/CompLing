@@ -23,7 +23,7 @@
 
 ## [Term Project - Milestone 2 - Requirements](https://bxjthu.github.io/CompLing/slides/13/term_project_milestone_2.pdf)
 
-## Term Project - Milestone 3 - Requirements(Coming soon ...)
+## [Term Project - Milestone 3 - Requirements](https://bxjthu.github.io/CompLing/slides/16/term_project_milestone_3.pdf)
 
 For Milestone 3, you’ll introduce the technical details of your research, such as:
 
