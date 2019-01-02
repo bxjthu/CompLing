@@ -28,7 +28,7 @@ There will be 14 lectures in total, each followed by a practical session during 
 + Quizzes (20%): in-class quizzes about the required readings
 + Homework (20%): post-class tasks concerning the lectures, practicals, and readings
 + [Final exam](docs/final) (20%): close-book exam covering the topics of the course
-+ Term project (35%): a research proposal (e.g. a theoretical or applied study of language from a computational perspective and supported by CL tools or resources, an improvement of a CL algorithm or an NLP application, etc.) and the preliminary implementation of the proposal
++ [Term project](docs/term_projects) (35%): a research proposal (e.g. a theoretical or applied study of language from a computational perspective and supported by CL tools or resources, an improvement of a CL algorithm or an NLP application, etc.) and the preliminary implementation of the proposal
 
 ## Readings
 + [Speech and Language Processing - An Introduction to Natural Language Processing, Computational Linguistics, and Speech Recognition](http://web.stanford.edu/~jurafsky/slp3/) by Daniel Jurafsky and James. H. Martin
