@@ -1,6 +1,6 @@
 # English for Academic Purpose
 
-Scenarios of application
+## Scenarios of application
 
 Building personal connection with other researchers/students/professors
 + written communication (email)
