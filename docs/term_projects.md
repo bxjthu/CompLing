@@ -33,7 +33,7 @@ For Milestone 3, you’ll introduce the technical details of your research, such
 + the Python implementation, if applicable
 + the evaluation metrics to score system outputs, if applicable
 
-## Term Project - Milestone 4 - Requirements(Coming soon ...)
+## Term Project - Milestone 4 - Requirements
 
 For Milestone 4, you'll submit the complete research proposal, which is based on your submissions for Milestones 1, 2, and 3. Additionally, there should be:
 
